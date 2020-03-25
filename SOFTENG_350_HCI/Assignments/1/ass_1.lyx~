@@ -161,7 +161,63 @@ Design Review
 \end_layout
 
 \begin_layout Standard
-After searching coronavirus, the first result does not sadsa
+After searching coronavirus, the first result shows the definition for coronavir
+us, which may not be very useful to current students.
+ Current students would probably be more interested in the impact of coronavirus
+ on their studies.
+ 
+\end_layout
+
+\begin_layout Standard
+Good clear cut screen when choosing between future or current student.
+\end_layout
+
+\begin_layout Standard
+Breadcrumbs to go back to previous screens.
+\end_layout
+
+\begin_layout Standard
+Top bar seems to have no use other than to hold the uoa logo
+\end_layout
+
+\begin_layout Standard
+Clickable aspects are mostly shown in blue.
+ Exceptions are the current breadcrumb (not sure why it is clickable anyway)
+ and the Example: How do I pay my fees?
+\end_layout
+
+\begin_layout Standard
+Hover affects for links are more variable, with most being underlined, some
+ being underlined + highlighted.
+ 
+\end_layout
+
+\begin_layout Standard
+Search button does not get underlined or highlighted, only the mouse cursor
+ is changed to pointer.
+\end_layout
+
+\begin_layout Standard
+Lehman's law, the page numbers on the bottom have a very small hitbox so
+ they are harder to click
+\end_layout
+
+\begin_layout Standard
+Colors are mostly consistent, with blue and black and white.
+\end_layout
+
+\begin_layout Standard
+Typing in a word then hovering over the x icon does not change mouse cursor
+ to pointer which is an anti-pattern, a little confusing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename future-current.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
