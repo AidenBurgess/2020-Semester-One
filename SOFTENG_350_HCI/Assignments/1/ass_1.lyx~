@@ -214,6 +214,7 @@ Typing in a word then hovering over the x icon does not change mouse cursor
 \begin_layout Standard
 \begin_inset Graphics
 	filename future-current.png
+	scale 50
 
 \end_inset
 
@@ -223,6 +224,108 @@ Typing in a word then hovering over the x icon does not change mouse cursor
 \begin_layout Standard
 \begin_inset Graphics
 	filename coronavirus-simple-first.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Searching for covid-19 gives 5 results, then clicking the topic 
+\begin_inset Quotes eld
+\end_inset
+
+coronavirus
+\begin_inset Quotes erd
+\end_inset
+
+ reduces the number of results to 2.
+ This removed important articles such as 
+\begin_inset Quotes eld
+\end_inset
+
+Self-isolation in accomodation
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+Holding acommadation if still in China
+\begin_inset Quotes erd
+\end_inset
+
+, and 
+\begin_inset Quotes eld
+\end_inset
+
+Making changes to your graduation application
+\begin_inset Quotes erd
+\end_inset
+
+.
+ These results would be useful for certain students, so having them filtered
+ out when using the 
+\begin_inset Quotes eld
+\end_inset
+
+coronavirus
+\begin_inset Quotes erd
+\end_inset
+
+ topic is counter-intuitive and not a good user experience (which part of
+ usability does this impact?)
+\end_layout
+
+\begin_layout Standard
+When searching 
+\begin_inset Quotes eld
+\end_inset
+
+coronavirus exams
+\begin_inset Quotes erd
+\end_inset
+
+ the only result is not relevant to exams.
+ 
+\end_layout
+
+\begin_layout Standard
+Support for maori students
+\end_layout
+
+\begin_layout Standard
+The sixth result after searching campus map is relevant and requires four
+ clicks to reach the city campus map pdf.
+\end_layout
+
+\begin_layout Standard
+Nowhere on the academic integrity course page is an explanation of what
+ academic integrity is.
+\end_layout
+
+\begin_layout Standard
+None of the links on the page lead to a definition of academic integrity.
+\end_layout
+
+\begin_layout Standard
+Searching coffee leads to no relevant results
+\end_layout
+
+\begin_layout Standard
+Searching cafe leads to no relevant results
+\end_layout
+
+\begin_layout Standard
+No support at all for maori language (which is an official language of NZ)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename no-results-maori.png
+	scale 50
 
 \end_inset
 
