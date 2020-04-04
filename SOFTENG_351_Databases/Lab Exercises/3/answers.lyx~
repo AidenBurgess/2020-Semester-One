@@ -8,7 +8,7 @@
 \begin_preamble
 % Variables to change every new document
 \newcommand{\hmwkClass}{SOFTENG 351} % Course/class
-\newcommand{\hmwkNumber}{2} % Assignment number
+\newcommand{\hmwkNumber}{3} % Assignment number
 
 % Constants to set once
 \newcommand{\hmwkAuthorName}{Aiden Burgess} % Your name
@@ -167,7 +167,7 @@ a)
 \begin_layout Standard
 Area code is missing.
  e.g.
- Auckland has area code 09
+ Auckland has area code 09.
 \end_layout
 
 \begin_layout Subsection*
@@ -175,8 +175,7 @@ b)
 \end_layout
 
 \begin_layout Standard
-Add the information to the attributes such that they become a composite
- value of 
+Add the information to the attributes.
 \end_layout
 
 \begin_layout Subsection*
@@ -235,7 +234,7 @@ a)
 \end_layout
 
 \begin_layout Standard
-No integrity constraints violated
+No integrity constraints violated.
 \end_layout
 
 \begin_layout Subsection*
@@ -243,45 +242,225 @@ b)
 \end_layout
 
 \begin_layout Standard
-Dnum references a department with Dnumber 2.
+Dnum references a DEPARTMENT with Dnumber 2.
  No DEPARTMENT exists with Dnumber 2, so a referential integrity constraint
  is violated.
+\end_layout
+
+\begin_layout Standard
+Ways to fix:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message.
+\end_layout
+
+\begin_layout Itemize
+Before this transaction, add a DEPARTMENT with Dnumber of 2.
+\end_layout
+
+\begin_layout Itemize
+Use a Dnumber that exists in the DEPARTMENT table.
+\end_layout
+
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Standard
+There already exists a DEPARTMENT with Dnumber 4, as Dnumber is a key attribute,
+ this violates the key integrity constraint.
+\end_layout
+
+\begin_layout Standard
+Mgr_ssn references an EMPLOYEE with Ssn of 943775543.
+ No EMPLOYEE exists with Ssn 943775543, so a referential integrity constraint
+ is violated.
+\end_layout
+
+\begin_layout Standard
+Ways to fix both:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message.
+\end_layout
+
+\begin_layout Standard
+Ways to fix key integrity:
+\end_layout
+
+\begin_layout Itemize
+Use a Dnumber that is unique.
+\end_layout
+
+\begin_layout Standard
+Ways to fix referential integrity:
+\end_layout
+
+\begin_layout Itemize
+Use a Ssn of an existing EMPLOYEE.
+\end_layout
+
+\begin_layout Itemize
+Before this transaction, add a new EMPLOYEE with Ssn of 943775543.
 \end_layout
 
 \begin_layout Subsection*
 d)
 \end_layout
 
+\begin_layout Standard
+Inserting null into the Pno attribute column violates the key integrity
+ constraint, as the Pno attribute is part of the key.
+\end_layout
+
+\begin_layout Standard
+Essn references an EMPLOYEE with Ssn of 677678989.
+ No EMPLOYEE exists with Ssn of 677678989, so referential integrity is also
+ violated.
+\end_layout
+
+\begin_layout Standard
+Ways to fix both:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message.
+\end_layout
+
+\begin_layout Standard
+Ways to fix key integrity:
+\end_layout
+
+\begin_layout Itemize
+Use a Pno of an existing PROJECT.
+\end_layout
+
+\begin_layout Standard
+Ways to fix referential integrity:
+\end_layout
+
+\begin_layout Itemize
+Use a Ssn of an existing EMPLOYEE.
+\end_layout
+
+\begin_layout Itemize
+Before this transaction, add a new EMPLOYEE with Ssn of 677678989.
+\end_layout
+
 \begin_layout Subsection*
 e)
+\end_layout
+
+\begin_layout Standard
+No integrity constraints violated.
 \end_layout
 
 \begin_layout Subsection*
 f)
 \end_layout
 
+\begin_layout Standard
+No integrity constraints violated.
+\end_layout
+
 \begin_layout Subsection*
 g)
+\end_layout
+
+\begin_layout Standard
+This EMPLOYEE row is referenced in the EMPLOYEE, DEPARTMENT, WORKS_ON, and
+ DEPENDENT tables.
+ Therefore, the deletion of this row will violate referential integrity
+ constraints.
+\end_layout
+
+\begin_layout Standard
+Ways to fix:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message.
+\end_layout
+
+\begin_layout Itemize
+Delete row that references this EMPLOYEE in EMPLOYEE, DEPARTMENT, WORKS_ON,
+ and DEPENDENT tables, and cascade this change to all other affected rows/tables.
 \end_layout
 
 \begin_layout Subsection*
 h)
 \end_layout
 
+\begin_layout Standard
+This PROJECT Pnumber row is referenced in the WORKS_ON table.
+ Therefore, the deletion of this row will violate referential integrity
+ constraints.
+\end_layout
+
+\begin_layout Standard
+Ways to fix:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message.
+\end_layout
+
+\begin_layout Itemize
+Delete all rows in WORKS_ON that reference the Pnumber (1) of 'ProjectX'.
+\end_layout
+
 \begin_layout Subsection*
 i)
+\end_layout
+
+\begin_layout Standard
+No integrity constraints violated.
 \end_layout
 
 \begin_layout Subsection*
 j)
 \end_layout
 
+\begin_layout Standard
+There does not exist an EMPLOYEE with Ssn 943775543.
+ Therefore, this modification transaction violates a referential integrity
+ constraint.
+\end_layout
+
+\begin_layout Standard
+Ways to fix:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message.
+\end_layout
+
+\begin_layout Itemize
+Before this transaction, add a new EMPLOYEE with Ssn of 943775543.
+\end_layout
+
 \begin_layout Subsection*
 k)
 \end_layout
 
+\begin_layout Standard
+No integrity constraints violated.
+\end_layout
+
 \begin_layout Section*
 Q4
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q4.PNG
+	scale 60
+
+\end_inset
+
+
 \end_layout
 
 \end_body
