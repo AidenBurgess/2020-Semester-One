@@ -161,23 +161,69 @@ Q1
 \end_layout
 
 \begin_layout Subsection*
-a)
+a) 
+\end_layout
+
+\begin_layout Standard
+Area code is missing.
+ e.g.
+ Auckland has area code 09
 \end_layout
 
 \begin_layout Subsection*
-b)
+b) 
+\end_layout
+
+\begin_layout Standard
+Add the information to the attributes such that they become a composite
+ value of 
 \end_layout
 
 \begin_layout Subsection*
-c)
+c) 
+\end_layout
+
+\begin_layout Standard
+Access to first, middle and last name is easier if they are in separate
+ columns.
+ Searching is also easier if names are in separate columns.
+ There is less confusion when a person has several middle names or first
+ names as it is contained within separate columns.
+\end_layout
+
+\begin_layout Standard
+If the names are combined, retrieving the full name for a STUDENT is faster.
 \end_layout
 
 \begin_layout Subsection*
 d)
 \end_layout
 
+\begin_layout Standard
+Split the information if the segments have meaning.
+ If the information is generally retrieved fully (such as a mobile number)
+ then there is no need to split the information.
+\end_layout
+
 \begin_layout Section*
 Q2
+\end_layout
+
+\begin_layout Standard
+Book_ISBN is a foreign key in the TEXT table, which references the BOOK_ADOPTION
+ entity.
+\end_layout
+
+\begin_layout Standard
+Course# in ENROLL table is a foreign key for a COURSE entity.
+\end_layout
+
+\begin_layout Standard
+Course# in BOOK_ADOPTION table is a foreign key for a COURSE entity.
+\end_layout
+
+\begin_layout Standard
+SSN is foreign key for the ENROLL entity.
 \end_layout
 
 \begin_layout Section*
@@ -185,15 +231,21 @@ Q3
 \end_layout
 
 \begin_layout Subsection*
-a)
+a) 
+\end_layout
+
+\begin_layout Standard
+No integrity constraints violated
 \end_layout
 
 \begin_layout Subsection*
 b)
 \end_layout
 
-\begin_layout Subsection*
-c)
+\begin_layout Standard
+Dnum references a department with Dnumber 2.
+ No DEPARTMENT exists with Dnumber 2, so a referential integrity constraint
+ is violated.
 \end_layout
 
 \begin_layout Subsection*

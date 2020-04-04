@@ -332,5 +332,103 @@ No support at all for maori language (which is an official language of NZ)
 
 \end_layout
 
+\begin_layout Section
+Nielson's Heuristics
+\end_layout
+
+\begin_layout Subsection
+Visibility of system status
+\end_layout
+
+\begin_layout Subsection
+Match between system and the real world
+\end_layout
+
+\begin_layout Subsection
+User control and freedom
+\end_layout
+
+\begin_layout Standard
+Can I ask my question in Maori?
+\end_layout
+
+\begin_layout Subsection
+Consistency and standards
+\end_layout
+
+\begin_layout Standard
+Links and buttons do not have consistent styling
+\end_layout
+
+\begin_layout Subsection
+Error prevention
+\end_layout
+
+\begin_layout Standard
+Can i search something with a mispelling?
+\end_layout
+
+\begin_layout Standard
+Do i get error messages (no results found, try something else, or ask at
+ email)
+\end_layout
+
+\begin_layout Standard
+Undo and redo?
+\end_layout
+
+\begin_layout Subsection
+Recognition rather than recall
+\end_layout
+
+\begin_layout Standard
+Do links open in new tabs
+\end_layout
+
+\begin_layout Standard
+Do i know what the search is for this post
+\end_layout
+
+\begin_layout Subsection
+Flexibility and efficiency of use
+\end_layout
+
+\begin_layout Standard
+Why do i always have to click current or future student, should this not
+ be saved or skipped? Why is it mandatory?
+\end_layout
+
+\begin_layout Subsection
+Aesthetic and minimalist design
+\end_layout
+
+\begin_layout Standard
+Is there a difference between the current students and future students search?
+\end_layout
+
+\begin_layout Subsection
+Help users recognize, diagnose, and recover from errors
+\end_layout
+
+\begin_layout Standard
+Tell me about mispelling
+\end_layout
+
+\begin_layout Standard
+Tell me you can't recognise languages other than English
+\end_layout
+
+\begin_layout Subsection
+Help and documentation
+\end_layout
+
+\begin_layout Standard
+Where else can i go for help?
+\end_layout
+
+\begin_layout Standard
+Reminder to use grammarly to check for grammar, spelling, style errors
+\end_layout
+
 \end_body
 \end_document

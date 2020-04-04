@@ -161,6 +161,18 @@ Design Review
 \end_layout
 
 \begin_layout Standard
+USE A LOT OF pictures
+\end_layout
+
+\begin_layout Standard
+Prioritise and group things
+\end_layout
+
+\begin_layout Standard
+Look at 6 factors of usability
+\end_layout
+
+\begin_layout Standard
 After searching coronavirus, the first result shows the definition for coronavir
 us, which may not be very useful to current students.
  Current students would probably be more interested in the impact of coronavirus
@@ -336,6 +348,18 @@ No support at all for maori language (which is an official language of NZ)
 Nielson's Heuristics
 \end_layout
 
+\begin_layout Standard
+Make sure you're using the correct heuristic for the problem
+\end_layout
+
+\begin_layout Standard
+Even if a heuristic is not violated, make a note of it
+\end_layout
+
+\begin_layout Standard
+Severity rating = can i complete this task i want to
+\end_layout
+
 \begin_layout Subsection
 Visibility of system status
 \end_layout
@@ -358,6 +382,10 @@ Consistency and standards
 
 \begin_layout Standard
 Links and buttons do not have consistent styling
+\end_layout
+
+\begin_layout Standard
+search covid-19 gives 5 results, adding the coronavirus tag gets 2 results
 \end_layout
 
 \begin_layout Subsection

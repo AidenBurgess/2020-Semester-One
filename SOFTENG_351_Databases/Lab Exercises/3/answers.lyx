@@ -187,15 +187,22 @@ c)
 Access to first, middle and last name is easier if they are in separate
  columns.
  Searching is also easier if names are in separate columns.
- 
+ There is less confusion when a person has several middle names or first
+ names as it is contained within separate columns.
 \end_layout
 
 \begin_layout Standard
-If the names are combined, 
+If the names are combined, retrieving the full name for a STUDENT is faster.
 \end_layout
 
 \begin_layout Subsection*
 d)
+\end_layout
+
+\begin_layout Standard
+Split the information if the segments have meaning.
+ If the information is generally retrieved fully (such as a mobile number)
+ then there is no need to split the information.
 \end_layout
 
 \begin_layout Section*
@@ -208,12 +215,15 @@ Book_ISBN is a foreign key in the TEXT table, which references the BOOK_ADOPTION
 \end_layout
 
 \begin_layout Standard
-Course# in ENROLL and BOOK_ADOPTION tables is a foreign key for a COURSE
- entity.
+Course# in ENROLL table is a foreign key for a COURSE entity.
 \end_layout
 
 \begin_layout Standard
-SSN is foreign key in the ENROLL
+Course# in BOOK_ADOPTION table is a foreign key for a COURSE entity.
+\end_layout
+
+\begin_layout Standard
+SSN is foreign key for the ENROLL entity.
 \end_layout
 
 \begin_layout Section*
@@ -221,47 +231,165 @@ Q3
 \end_layout
 
 \begin_layout Subsection*
-a)
+a) 
+\end_layout
+
+\begin_layout Standard
+No integrity constraints violated
 \end_layout
 
 \begin_layout Subsection*
 b)
 \end_layout
 
+\begin_layout Standard
+Dnum references a DEPARTMENT with Dnumber 2.
+ No DEPARTMENT exists with Dnumber 2, so a referential integrity constraint
+ is violated.
+\end_layout
+
+\begin_layout Standard
+\SpecialChar breakableslash
+Also, DEPT_LOCATIONS does not have Dnumber 2
+\end_layout
+
+\begin_layout Standard
+Ways to fix:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message
+\end_layout
+
+\begin_layout Itemize
+heres another ; - )
+\end_layout
+
 \begin_layout Subsection*
 c)
+\end_layout
+
+\begin_layout Standard
+There already exists a DEPARTMENT with Dnumber 4, as Dnumber is a key attribute,
+ this violates the key integrity constraint.
+\end_layout
+
+\begin_layout Standard
+Mgr_ssn references an EMPLOYEE with Ssn of 943775543.
+ No EMPLOYEE exists with Ssn 943775543, so a referential integrity constraint
+ is violated.
+\end_layout
+
+\begin_layout Standard
+Ways to fix:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message
 \end_layout
 
 \begin_layout Subsection*
 d)
 \end_layout
 
+\begin_layout Standard
+Inserting null into the Pno attribute column violates the key integrity
+ constraint, as the Pno attribute is part of the key.
+\end_layout
+
+\begin_layout Standard
+Ways to fix:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message
+\end_layout
+
 \begin_layout Subsection*
 e)
+\end_layout
+
+\begin_layout Standard
+No integrity constraints violated
 \end_layout
 
 \begin_layout Subsection*
 f)
 \end_layout
 
+\begin_layout Standard
+No integrity constraints violated
+\end_layout
+
 \begin_layout Subsection*
 g)
+\end_layout
+
+\begin_layout Standard
+This EMPLOYEE row is referenced in the EMPLOYEE, DEPARTMENT, WORKS_ON, and
+ DEPENDENT tables.
+ Therefore, the deletion of this row will violate referential integrity
+ constraints.
+\end_layout
+
+\begin_layout Standard
+Ways to fix:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message
 \end_layout
 
 \begin_layout Subsection*
 h)
 \end_layout
 
+\begin_layout Standard
+This PROJECT row is referenced in the WORKS_ON table.
+ Therefore, the deletion of this row will violate referential integrity
+ constraints.
+\end_layout
+
+\begin_layout Standard
+Ways to fix:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message
+\end_layout
+
 \begin_layout Subsection*
 i)
+\end_layout
+
+\begin_layout Standard
+No integrity constraints violated.
 \end_layout
 
 \begin_layout Subsection*
 j)
 \end_layout
 
+\begin_layout Standard
+There does not exist an EMPLOYEE with Ssn 943775543.
+ Therefore, this modification transaction violates a referential integrity
+ constraint.
+\end_layout
+
+\begin_layout Standard
+Ways to fix:
+\end_layout
+
+\begin_layout Itemize
+Ignore this transaction and provide error message
+\end_layout
+
 \begin_layout Subsection*
 k)
+\end_layout
+
+\begin_layout Standard
+No integrity constraints violated.
 \end_layout
 
 \begin_layout Section*
