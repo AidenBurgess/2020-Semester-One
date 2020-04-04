@@ -156,8 +156,24 @@ start
 
 \end_layout
 
+\begin_layout Standard
+Run this shit through Grammarly before submitting
+\end_layout
+
 \begin_layout Section
-Design Review
+Design Review (800 words)
+\end_layout
+
+\begin_layout Standard
+Usefulness + usability, what is the difference?
+\end_layout
+
+\begin_layout Standard
+USE A LOT OF pictures
+\end_layout
+
+\begin_layout Standard
+Prioritise and group things
 \end_layout
 
 \begin_layout Standard
@@ -169,56 +185,11 @@ us, which may not be very useful to current students.
 \end_layout
 
 \begin_layout Standard
-Good clear cut screen when choosing between future or current student.
-\end_layout
-
-\begin_layout Standard
-Breadcrumbs to go back to previous screens.
-\end_layout
-
-\begin_layout Standard
-Top bar seems to have no use other than to hold the uoa logo
-\end_layout
-
-\begin_layout Standard
-Clickable aspects are mostly shown in blue.
- Exceptions are the current breadcrumb (not sure why it is clickable anyway)
- and the Example: How do I pay my fees?
-\end_layout
-
-\begin_layout Standard
-Hover affects for links are more variable, with most being underlined, some
- being underlined + highlighted.
- 
-\end_layout
-
-\begin_layout Standard
-Search button does not get underlined or highlighted, only the mouse cursor
- is changed to pointer.
-\end_layout
-
-\begin_layout Standard
-Lehman's law, the page numbers on the bottom have a very small hitbox so
- they are harder to click
-\end_layout
-
-\begin_layout Standard
 Colors are mostly consistent, with blue and black and white.
 \end_layout
 
 \begin_layout Standard
-Typing in a word then hovering over the x icon does not change mouse cursor
- to pointer which is an anti-pattern, a little confusing.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename future-current.png
-	scale 50
-
-\end_inset
-
-
+Something about breadcrumbs functionality?
 \end_layout
 
 \begin_layout Standard
@@ -229,6 +200,116 @@ Typing in a word then hovering over the x icon does not change mouse cursor
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Usefulness - why do these issues impact usefulness?
+\end_layout
+
+\begin_layout Standard
+There are no search results for 
+\begin_inset Quotes eld
+\end_inset
+
+coffee
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+cafe
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Searching does not appear to support the Maori language.
+ As Maori is commonly spoken and an official language of NZ, there are accessibi
+lity issues.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename no-results-maori.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nowhere on the academic integrity course page is an explanation of what
+ academic integrity is.
+\end_layout
+
+\begin_layout Standard
+None of the links on the page lead to a definition of academic integrity.
+\end_layout
+
+\begin_layout Standard
+Says Updated, next to some articles, however we can not see the date of
+ post/update.
+ which is a missing functionality.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Update.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The sixth result after searching campus map is relevant and requires four
+ clicks to reach the city campus map pdf.
+\end_layout
+
+\begin_layout Standard
+When searching 
+\begin_inset Quotes eld
+\end_inset
+
+coronavirus exams
+\begin_inset Quotes erd
+\end_inset
+
+ the only result is not relevant to exams.
+ 
+\end_layout
+
+\begin_layout Subsection
+Fit for Use
+\end_layout
+
+\begin_layout Standard
+The search for 
+\begin_inset Quotes eld
+\end_inset
+
+covid-19
+\begin_inset Quotes erd
+\end_inset
+
+ yields five results.
+ Further specifying the search by adding the 
+\begin_inset Quotes eld
+\end_inset
+
+Coronavirus
+\begin_inset Quotes erd
+\end_inset
+
+ topic reduces search results to just two results.
+ The implementation of topics seems to be faulty.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -245,7 +326,7 @@ coronavirus
 \begin_inset Quotes eld
 \end_inset
 
-Self-isolation in accomodation
+Self-isolation in accommodation
 \begin_inset Quotes erd
 \end_inset
 
@@ -253,7 +334,7 @@ Self-isolation in accomodation
 \begin_inset Quotes eld
 \end_inset
 
-Holding acommadation if still in China
+Holding accommodation if still in China
 \begin_inset Quotes erd
 \end_inset
 
@@ -279,52 +360,30 @@ coronavirus
  usability does this impact?)
 \end_layout
 
+\begin_layout Subsection
+Ease of Learning
+\end_layout
+
 \begin_layout Standard
-When searching 
-\begin_inset Quotes eld
-\end_inset
-
-coronavirus exams
-\begin_inset Quotes erd
-\end_inset
-
- the only result is not relevant to exams.
+Hover affects for links are more variable, with most being underlined, some
+ being underlined + highlighted.
  
 \end_layout
 
 \begin_layout Standard
-Support for maori students
+Search button does not get underlined or highlighted, only the mouse cursor
+ is changed to pointer.
 \end_layout
 
 \begin_layout Standard
-The sixth result after searching campus map is relevant and requires four
- clicks to reach the city campus map pdf.
-\end_layout
-
-\begin_layout Standard
-Nowhere on the academic integrity course page is an explanation of what
- academic integrity is.
-\end_layout
-
-\begin_layout Standard
-None of the links on the page lead to a definition of academic integrity.
-\end_layout
-
-\begin_layout Standard
-Searching coffee leads to no relevant results
-\end_layout
-
-\begin_layout Standard
-Searching cafe leads to no relevant results
-\end_layout
-
-\begin_layout Standard
-No support at all for maori language (which is an official language of NZ)
+Typing in a word then hovering over the x icon does not change mouse cursor
+ to pointer which is an anti-pattern, a little confusing.
+ Also the x button has a small hitbox
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename no-results-maori.png
+	filename delete_button.png
 	scale 50
 
 \end_inset
@@ -332,8 +391,80 @@ No support at all for maori language (which is an official language of NZ)
 
 \end_layout
 
+\begin_layout Standard
+Lehman's law, the page numbers on the bottom have a very small hitbox so
+ they are harder to click
+\end_layout
+
+\begin_layout Subsection
+Efficiency of Use
+\end_layout
+
+\begin_layout Standard
+Have to go through the pick of Current vs Future user every time, which
+ might not be necessary and is time consuming.
+ Maybe it should just remember your previous choice.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename future-current.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Memorability
+\end_layout
+
+\begin_layout Standard
+Seems fine
+\end_layout
+
+\begin_layout Subsection
+Error Frequency and Severity
+\end_layout
+
+\begin_layout Subsection
+Subjective Satisfaction
+\end_layout
+
+\begin_layout Standard
+Top bar seems to have no use other than to hold the UoA logo, seems to be
+ a 
+\begin_inset Quotes eld
+\end_inset
+
+waste of space
+\begin_inset Quotes erd
+\end_inset
+
+ (CHANGE THIS)
+\end_layout
+
+\begin_layout Standard
+Clickable aspects are mostly shown in blue.
+ Exceptions are the current breadcrumb (not sure why it is clickable anyway)
+ and the Example: How do I pay my fees?
+\end_layout
+
 \begin_layout Section
-Nielson's Heuristics
+Nielson's Heuristics (1200 words)
+\end_layout
+
+\begin_layout Standard
+Make sure you're using the correct heuristic for the problem
+\end_layout
+
+\begin_layout Standard
+Even if a heuristic is not violated, make a note of it
+\end_layout
+
+\begin_layout Standard
+Severity rating = can i complete this task i want to
 \end_layout
 
 \begin_layout Subsection
@@ -358,6 +489,10 @@ Consistency and standards
 
 \begin_layout Standard
 Links and buttons do not have consistent styling
+\end_layout
+
+\begin_layout Standard
+search covid-19 gives 5 results, adding the coronavirus tag gets 2 results
 \end_layout
 
 \begin_layout Subsection
@@ -428,6 +563,10 @@ Where else can i go for help?
 
 \begin_layout Standard
 Reminder to use grammarly to check for grammar, spelling, style errors
+\end_layout
+
+\begin_layout Section
+Impacts of Human Memory (500 words)
 \end_layout
 
 \end_body
