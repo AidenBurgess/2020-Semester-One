@@ -19,4 +19,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Aiden\Desktop\glut-3.7.6-bin\glut32.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="C:\Users\Aiden\Desktop\glut-3.7.6-bin\glut32.lib" />
+  </ItemGroup>
 </Project>

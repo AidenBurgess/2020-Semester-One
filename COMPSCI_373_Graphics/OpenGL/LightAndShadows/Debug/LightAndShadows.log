@@ -1,11 +1,1 @@
-﻿  Trackball.cpp
-  LightAndShadows.cpp
-d:\sample code\lightandshadows\lightandshadows.cpp(20): warning C4838: conversion from 'double' to 'const float' requires a narrowing conversion
-d:\sample code\lightandshadows\lightandshadows.cpp(23): warning C4838: conversion from 'double' to 'const float' requires a narrowing conversion
-d:\sample code\lightandshadows\lightandshadows.cpp(24): warning C4838: conversion from 'double' to 'const float' requires a narrowing conversion
-d:\sample code\lightandshadows\lightandshadows.cpp(25): warning C4838: conversion from 'double' to 'const float' requires a narrowing conversion
-d:\sample code\lightandshadows\lightandshadows.cpp(26): warning C4838: conversion from 'double' to 'const float' requires a narrowing conversion
-d:\sample code\lightandshadows\lightandshadows.cpp(29): warning C4838: conversion from 'double' to 'const float' requires a narrowing conversion
-d:\sample code\lightandshadows\lightandshadows.cpp(48): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
-  Generating Code...
-  LightAndShadows.vcxproj -> D:\Sample Code\LightAndShadows\Debug\LightAndShadows.exe
+﻿  LightAndShadows.vcxproj -> D:\Courses\COMPSCI_373_Graphics\OpenGL\LightAndShadows\Debug\LightAndShadows.exe

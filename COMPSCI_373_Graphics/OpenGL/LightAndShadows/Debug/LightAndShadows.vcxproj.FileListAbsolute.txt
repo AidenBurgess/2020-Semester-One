@@ -1,0 +1,2 @@
+D:\Courses\COMPSCI_373_Graphics\OpenGL\LightAndShadows\Debug\LightAndShadows.exe
+D:\Courses\COMPSCI_373_Graphics\OpenGL\LightAndShadows\Debug\LightAndShadows.pdb
