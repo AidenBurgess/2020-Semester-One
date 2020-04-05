@@ -157,7 +157,19 @@ start
 \end_layout
 
 \begin_layout Standard
-Run this shit through Grammarly before submitting
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -165,36 +177,36 @@ Design Review (800 words)
 \end_layout
 
 \begin_layout Standard
-Usefulness + usability, what is the difference?
+In this section of the report, the issues within subsections are ordered
+ by criticality.
+ Issues are categorized in the usefulness category if they refer to the
+ content, although this may overlap with the fit for use section.
+ If issues could fit into multiple categories, they are shown in the most
+ relevant category.
 \end_layout
 
 \begin_layout Standard
-USE A LOT OF pictures
+The system goal for the AskAuckland web page is to provide information relating
+ to a user's query regarding the University.
+ Therefore, searching should be fast, easy, and accurate.
+ The content should relate to students of the University (both current and
+ future).
+ Issues are things that hinder this ideal experience.
+\end_layout
+
+\begin_layout Subsection
+Usefulness Issues
 \end_layout
 
 \begin_layout Standard
-Prioritise and group things
-\end_layout
-
-\begin_layout Standard
-After searching coronavirus, the first result shows the definition for coronavir
-us, which may not be very useful to current students.
- Current students would probably be more interested in the impact of coronavirus
- on their studies.
- 
-\end_layout
-
-\begin_layout Standard
-Colors are mostly consistent, with blue and black and white.
-\end_layout
-
-\begin_layout Standard
-Something about breadcrumbs functionality?
+Searching does not appear to support the Maori language.
+ As Maori is commonly spoken and an official language of NZ, there are accessibi
+lity issues.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename coronavirus-simple-first.png
+	filename no-results-maori.png
 	scale 50
 
 \end_inset
@@ -202,8 +214,75 @@ Something about breadcrumbs functionality?
 
 \end_layout
 
-\begin_layout Subsection
-Usefulness - why do these issues impact usefulness?
+\begin_layout Standard
+A simple search for 
+\begin_inset Quotes eld
+\end_inset
+
+academic integrity
+\begin_inset Quotes erd
+\end_inset
+
+ has many results relating to academic integrity.
+ However, academic integrity is never defined in the articles.
+ Furthermore, none of the links in the articles leads to a definition of
+ academic integrity.
+\end_layout
+
+\begin_layout Standard
+Next to some articles, there is an 
+\begin_inset Quotes eld
+\end_inset
+
+Updated
+\begin_inset Quotes erd
+\end_inset
+
+ flag; however, the date of the post/update is not visible.
+ This lack of specificity limits the functionality of this feature.
+ The time posted is essential for these articles as they may become outdated.
+ An article from five years ago is not as relevant as one posted six months
+ ago.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Update.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Looking for a lecture room is also difficult.
+ It requires going to the sixth result after searching 
+\begin_inset Quotes eld
+\end_inset
+
+campus map
+\begin_inset Quotes erd
+\end_inset
+
+ and requires four clicks to reach the city campus map pdf.
+ This also makes it inefficient for use, as this process would need to be
+ repeated each time.
+\end_layout
+
+\begin_layout Standard
+When searching 
+\begin_inset Quotes eld
+\end_inset
+
+exam
+\begin_inset Quotes erd
+\end_inset
+
+ with the coronavirus topic there is one result which is not relevant to
+ exams.
+ This would be a fairly common question asked, but there does not appear
+ to be information on the AskAuckland site.
 \end_layout
 
 \begin_layout Standard
@@ -224,69 +303,11 @@ cafe
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Searching does not appear to support the Maori language.
- As Maori is commonly spoken and an official language of NZ, there are accessibi
-lity issues.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename no-results-maori.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Nowhere on the academic integrity course page is an explanation of what
- academic integrity is.
-\end_layout
-
-\begin_layout Standard
-None of the links on the page lead to a definition of academic integrity.
-\end_layout
-
-\begin_layout Standard
-Says Updated, next to some articles, however we can not see the date of
- post/update.
- which is a missing functionality.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename Update.PNG
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The sixth result after searching campus map is relevant and requires four
- clicks to reach the city campus map pdf.
-\end_layout
-
-\begin_layout Standard
-When searching 
-\begin_inset Quotes eld
-\end_inset
-
-coronavirus exams
-\begin_inset Quotes erd
-\end_inset
-
- the only result is not relevant to exams.
- 
+ This type of search should be covered as it would be a commonly asked question.
 \end_layout
 
 \begin_layout Subsection
-Fit for Use
+Fit for Use Issues
 \end_layout
 
 \begin_layout Standard
@@ -298,8 +319,21 @@ covid-19
 \begin_inset Quotes erd
 \end_inset
 
- yields five results.
- Further specifying the search by adding the 
+ yields twelve results.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename covid-before.PNG
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Further specifying the search by adding the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -308,21 +342,22 @@ Coronavirus
 \end_inset
 
  topic reduces search results to just two results.
- The implementation of topics seems to be faulty.
  
 \end_layout
 
 \begin_layout Standard
-Searching for covid-19 gives 5 results, then clicking the topic 
-\begin_inset Quotes eld
+\begin_inset Graphics
+	filename covid-after.PNG
+	scale 65
+
 \end_inset
 
-coronavirus
-\begin_inset Quotes erd
-\end_inset
 
- reduces the number of results to 2.
- This removed important articles such as 
+\end_layout
+
+\begin_layout Standard
+The implementation of topics seems to be faulty.
+ The titles of some of the removed articles are 
 \begin_inset Quotes eld
 \end_inset
 
@@ -347,8 +382,8 @@ Making changes to your graduation application
 \end_inset
 
 .
- These results would be useful for certain students, so having them filtered
- out when using the 
+ These results would be useful for students, so having them filtered out
+ when using the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -356,35 +391,70 @@ coronavirus
 \begin_inset Quotes erd
 \end_inset
 
- topic is counter-intuitive and not a good user experience (which part of
- usability does this impact?)
-\end_layout
+ topic is counter-intuitive and not a good user experience.
+ Therefore, the functionality of 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Subsection
-Ease of Learning
+topics
+\begin_inset Quotes erd
+\end_inset
+
+ is compromised.
 \end_layout
 
 \begin_layout Standard
-Hover affects for links are more variable, with most being underlined, some
- being underlined + highlighted.
+Another potential issue with the topic feature is removing a topic from
+ a search by clicking 
+\begin_inset Quotes eld
+\end_inset
+
+Current students
+\begin_inset Quotes erd
+\end_inset
+
+ under topic removes the search term.
+ 
+\end_layout
+
+\begin_layout Subsection
+Ease of Learning Issues
+\end_layout
+
+\begin_layout Standard
+Hover effects for links are variable, with most being underlined, but some
+ being underlined and highlighted.
  
 \end_layout
 
 \begin_layout Standard
-Search button does not get underlined or highlighted, only the mouse cursor
- is changed to pointer.
+The search button does not get underlined or highlighted, only the mouse
+ cursor is changed to a pointer.
 \end_layout
 
 \begin_layout Standard
-Typing in a word then hovering over the x icon does not change mouse cursor
- to pointer which is an anti-pattern, a little confusing.
- Also the x button has a small hitbox
+Most clickable aspects are shown in blue.
+ However, the current breadcrumb is clickable but not blue.
+ A further question is why the current breadcrumb is clickable, as it provides
+ no functionality.
+\end_layout
+
+\begin_layout Standard
+Another anti-pattern is the 
+\begin_inset Quotes eld
+\end_inset
+
+Example: How do I pay my fees?
+\begin_inset Quotes erd
+\end_inset
+
+ section, which is blue but not clickable.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename delete_button.png
-	scale 50
+	filename blue-antipattern.png
+	scale 55
 
 \end_inset
 
@@ -392,18 +462,60 @@ Typing in a word then hovering over the x icon does not change mouse cursor
 \end_layout
 
 \begin_layout Standard
-Lehman's law, the page numbers on the bottom have a very small hitbox so
- they are harder to click
-\end_layout
-
-\begin_layout Subsection
-Efficiency of Use
+Typing in a word then hovering over the 'x' icon does not change the mouse
+ cursor to a pointer which is an anti-pattern, a little confusing.
+ Also, the 'x' icon has a small hit-box, making it harder to click.
 \end_layout
 
 \begin_layout Standard
-Have to go through the pick of Current vs Future user every time, which
- might not be necessary and is time consuming.
- Maybe it should just remember your previous choice.
+\begin_inset Graphics
+	filename delete_button.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The page numbers that appear at the bottom of a search page have a small
+ hit-box, making them harder to click according to Fitt's law.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename page-numbers.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Efficiency of Use Issues
+\end_layout
+
+\begin_layout Standard
+Each visit to AskAuckland requires the user to pick either 
+\begin_inset Quotes eld
+\end_inset
+
+current
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+future
+\begin_inset Quotes erd
+\end_inset
+
+ student.
+ This is a time-consuming step for returning users as it must be done each
+ time.
 \end_layout
 
 \begin_layout Standard
@@ -417,42 +529,90 @@ Have to go through the pick of Current vs Future user every time, which
 \end_layout
 
 \begin_layout Subsection
-Memorability
+Error Frequency and Severity Issues
 \end_layout
 
 \begin_layout Standard
-Seems fine
+When a user makes a spelling error, no results are returned, and there is
+ no indication that the user has made a mistake.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename misspelling.png
+	scale 70
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Error Frequency and Severity
-\end_layout
-
-\begin_layout Subsection
-Subjective Satisfaction
+Subjective Satisfaction Issues
 \end_layout
 
 \begin_layout Standard
-Top bar seems to have no use other than to hold the UoA logo, seems to be
- a 
-\begin_inset Quotes eld
-\end_inset
-
-waste of space
-\begin_inset Quotes erd
-\end_inset
-
- (CHANGE THIS)
+The top bar seems to have no use other than to hold the University of Auckland
+ logo, which appears to be a bad use of space.
 \end_layout
 
 \begin_layout Standard
-Clickable aspects are mostly shown in blue.
- Exceptions are the current breadcrumb (not sure why it is clickable anyway)
- and the Example: How do I pay my fees?
+\begin_inset Graphics
+	filename top-bar.PNG
+	scale 55
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Nielson's Heuristics (1200 words)
+\end_layout
+
+\begin_layout Standard
+Nielson's heuristics are a general guideline on user interface design.
+ In this section, these ten characteristics will be examined in regards
+ to six scenarios:
+\end_layout
+
+\begin_layout Enumerate
+What a current student should do about COVID-19
+\end_layout
+
+\begin_layout Enumerate
+What support for Maori students is available
+\end_layout
+
+\begin_layout Enumerate
+How to find a specific lecture theatre
+\end_layout
+
+\begin_layout Enumerate
+What is academic integrity
+\end_layout
+
+\begin_layout Enumerate
+Find out where to get a coffee on campus
+\end_layout
+
+\begin_layout Enumerate
+Ask about something in the Maori language
+\end_layout
+
+\begin_layout Standard
+The process for gathering issues started with an observation and exploration
+ of the main AskAuckland web page, looking specifically for anti-patterns
+ and visual issues.
+ Following this, the scenarios were carried out whilst constantly examining
+ signs of usability issues.
+ These were all recorded and then categorized into the ten heuristics.
+ The criticality of each issue is noted and determined by the impact on
+ users trying to perform a scenario.
+ There are three levels of criticality: low, medium, and high.
+ If an issue completely blocks a scenario then it is of high criticality,
+ while an issue that annoys a user would be of low criticality.
 \end_layout
 
 \begin_layout Standard
@@ -471,12 +631,74 @@ Severity rating = can i complete this task i want to
 Visibility of system status
 \end_layout
 
+\begin_layout Standard
+
+\emph on
+The system should always keep users informed about what is going on, through
+ appropriate feedback within reasonable time.
+\end_layout
+
+\begin_layout Subsubsection
+Previous Clicked Link Not Purple - Low Severity
+\end_layout
+
+\begin_layout Standard
+A convention across many websites is to color links purple if they have
+ been previously visited.
+ This helps the user recognise what they have used before for future searches.
+\end_layout
+
 \begin_layout Subsection
 Match between system and the real world
 \end_layout
 
+\begin_layout Standard
+
+\emph on
+The system should speak the users' language, with words, phrases and concepts
+ familiar to the user, rather than system-oriented terms.
+ Follow real-world conventions, making information appear in a natural and
+ logical order.
+\end_layout
+
+\begin_layout Subsubsection
+Maori Language Support - High Severity
+\end_layout
+
+\begin_layout Standard
+Searching does not work if the language used to search is Maori.
+\end_layout
+
+\begin_layout Standard
+There is also no option to change the language of the site to be in Maori.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename no-results-maori.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solution: Either translate Maori and search that way, or implement Maori
+ language support with a switch language button
+\end_layout
+
 \begin_layout Subsection
 User control and freedom
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Users often choose system functions by mistake and will need a clearly marked
+ "emergency exit" to leave the unwanted state without having to go through
+ an extended dialogue.
+ Support undo and redo.
 \end_layout
 
 \begin_layout Standard
@@ -485,6 +707,41 @@ Can I ask my question in Maori?
 
 \begin_layout Subsection
 Consistency and standards
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Users should not have to wonder whether different words, situations, or
+ actions mean the same thing.
+ Follow platform conventions.
+\end_layout
+
+\begin_layout Subsubsection
+Inconsistent Link Styling - Low Severity
+\end_layout
+
+\begin_layout Standard
+While most links are colored blue, there are some exceptions.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+Example: How do I pay my fees?
+\begin_inset Quotes erd
+\end_inset
+
+ paragraph is not a link even though it is blue.
+ The current breadcrumb is a link even though it is not colored blue.
+ Links in the footer are not blue but white.
+\end_layout
+
+\begin_layout Standard
+Solution: Make links consistent in styling 
+\end_layout
+
+\begin_layout Subsubsection
+Inconsistent Hover Styling - Low Severity
 \end_layout
 
 \begin_layout Standard
@@ -497,6 +754,44 @@ search covid-19 gives 5 results, adding the coronavirus tag gets 2 results
 
 \begin_layout Subsection
 Error prevention
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Even better than good error messages is a careful design which prevents
+ a problem from occurring in the first place.
+ Either eliminate error-prone conditions or check for them and present users
+ with a confirmation option before they commit to the action.
+\end_layout
+
+\begin_layout Subsubsection
+Misspelling Not Checked - Medium Severity
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename misspelling.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is quite a common mistake for user's to make.
+ So the fact that there is no indication that there has been a misspelling
+ (something like 
+\begin_inset Quotes eld
+\end_inset
+
+No results, please check your spelling
+\begin_inset Quotes erd
+\end_inset
+
+) is an issue.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -517,6 +812,17 @@ Recognition rather than recall
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+Minimize the user's memory load by making objects, actions, and options
+ visible.
+ The user should not have to remember information from one part of the dialogue
+ to another.
+ Instructions for use of the system should be visible or easily retrievable
+ whenever appropriate.
+\end_layout
+
+\begin_layout Standard
 Do links open in new tabs
 \end_layout
 
@@ -529,8 +835,30 @@ Flexibility and efficiency of use
 \end_layout
 
 \begin_layout Standard
-Why do i always have to click current or future student, should this not
- be saved or skipped? Why is it mandatory?
+
+\emph on
+Accelerators — unseen by the novice user — may often speed up the interaction
+ for the expert user such that the system can cater to both inexperienced
+ and experienced users.
+ Allow users to tailor frequent actions.
+\end_layout
+
+\begin_layout Standard
+Can hit enter instead of clicking the search button
+\end_layout
+
+\begin_layout Subsubsection
+Mandatory Selection of Future or Current Student - Medium Severity
+\end_layout
+
+\begin_layout Standard
+This is a small roadblock for experienced users.
+ 
+\end_layout
+
+\begin_layout Standard
+Solution: Save the previous answer in a cookie and use that for future sessions.
+ Or on the homepage, have a search bar on top which can be used immediately.
 \end_layout
 
 \begin_layout Subsection
@@ -538,7 +866,25 @@ Aesthetic and minimalist design
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+Dialogues should not contain information which is irrelevant or rarely needed.
+ Every extra unit of information in a dialogue competes with the relevant
+ units of information and diminishes their relative visibility.
+\end_layout
+
+\begin_layout Standard
 Is there a difference between the current students and future students search?
+ Seems to be slightly different
+\end_layout
+
+\begin_layout Subsubsection
+Top Bar Emptiness - Low Severity
+\end_layout
+
+\begin_layout Standard
+The top bar containing the University of Auckland logo and link is sparse
+ and takes up a lot of screen real estate.
 \end_layout
 
 \begin_layout Subsection
@@ -546,7 +892,36 @@ Help users recognize, diagnose, and recover from errors
 \end_layout
 
 \begin_layout Standard
-Tell me about mispelling
+
+\emph on
+Error messages should be expressed in plain language (no codes), precisely
+ indicate the problem, and constructively suggest a solution.
+\end_layout
+
+\begin_layout Subsubsection
+Unclear Error Message - Medium Severity
+\end_layout
+
+\begin_layout Standard
+Although error messages were rare, there were occasions where searching
+ for something after the site had been idle results in an error message.
+ The error message is not useful for the user.
+ After searching again, the warning did not occur again.
+ This is a confusing experience for the user.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename error-message.PNG
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solution
 \end_layout
 
 \begin_layout Standard
@@ -558,15 +933,71 @@ Help and documentation
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+Even though it is better if the system can be used without documentation,
+ it may be necessary to provide help and documentation.
+ Any such information should be easy to search, focused on the user's task,
+ list concrete steps to be carried out, and not be too large.
+\end_layout
+
+\begin_layout Subsubsection
+No Help Page/Tooltips - High Severity
+\end_layout
+
+\begin_layout Standard
+There is no help
+\end_layout
+
+\begin_layout Standard
 Where else can i go for help?
 \end_layout
 
 \begin_layout Standard
-Reminder to use grammarly to check for grammar, spelling, style errors
+Can't ask a question directly if it not answered, no contact button
+\end_layout
+
+\begin_layout Standard
+No tooltips/help page
+\end_layout
+
+\begin_layout Subsubsection
+No Contact Page - High Severity
+\end_layout
+
+\begin_layout Standard
+The main purpose of the AskAuckland website is to get answers to commonly
+ asked questions.
+ If a question returns no results, there is currently no indication of how
+ else the user can receive an answer.
+\end_layout
+
+\begin_layout Standard
+Solution: In the footer add a link 
+\begin_inset Quotes eld
+\end_inset
+
+Contact for specific questions
+\begin_inset Quotes erd
+\end_inset
+
+ where the user can submit custom questions to be answered.
 \end_layout
 
 \begin_layout Section
 Impacts of Human Memory (500 words)
+\end_layout
+
+\begin_layout Standard
+Something about breadcrumbs functionality?
+\end_layout
+
+\begin_layout Standard
+Topics
+\end_layout
+
+\begin_layout Standard
+Search stays (unless you remove a topic)
 \end_layout
 
 \end_body
