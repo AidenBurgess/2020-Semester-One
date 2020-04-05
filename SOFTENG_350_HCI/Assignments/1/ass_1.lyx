@@ -1038,12 +1038,12 @@ The current state of the website does have considerable concern for human
 \end_layout
 
 \begin_layout Subsection
-Patterns
+Recognition
 \end_layout
 
 \begin_layout Standard
-Using known patterns in the user interface draws from the fact that recognition
- is a
+Using known patterns in the user interface allows users to recognise them
+ and learn how to use the website faster.
 \end_layout
 
 \begin_layout Standard
@@ -1052,7 +1052,7 @@ Uses known patterns such as blue for links, underline on hover, and search
 \end_layout
 
 \begin_layout Standard
-Picking a topic via a list instead of drop-down is an anti-pattern though.
+Loading gif indicates that search results are incoming
 \end_layout
 
 \begin_layout Standard
@@ -1061,7 +1061,17 @@ After clicking the search button, the results appear on the same page as
 \end_layout
 
 \begin_layout Standard
-Loading gif indicates that search results are incoming
+When an element on the web page has functionality that a user is familiar
+ with, but using a different pattern, this makes the interface more difficult
+ to learn.
+\end_layout
+
+\begin_layout Standard
+An example of this is
+\end_layout
+
+\begin_layout Standard
+Picking a topic via a list instead of drop-down is an anti-pattern though.
 \end_layout
 
 \begin_layout Standard
