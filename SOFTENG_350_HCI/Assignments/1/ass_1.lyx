@@ -188,7 +188,7 @@ Design Review
 \begin_layout Standard
 In this section of the report, the issues within subsections are ordered
  by criticality.
- Issues are categorized in the usefulness category if they refer to the
+ Issues are categorised in the usefulness category if they refer to the
  content, although this may overlap with the fit for use section.
  If issues could fit into multiple categories, they are shown in the most
  relevant category.
@@ -288,7 +288,7 @@ exam
 \begin_inset Quotes erd
 \end_inset
 
- with the coronavirus topic there is one result which is not relevant to
+ with the coronavirus topic, there is one result which is not relevant to
  exams.
  This would be a fairly common question asked, but there does not appear
  to be information on the AskAuckland site.
@@ -400,7 +400,7 @@ coronavirus
 \begin_inset Quotes erd
 \end_inset
 
- topic is counter-intuitive and not a good user experience.
+ topic is counter-intuitive and not good user experience.
  Therefore, the functionality of 
 \begin_inset Quotes eld
 \end_inset
@@ -437,7 +437,7 @@ Hover effects for links are variable, with most being underlined, but some
 \end_layout
 
 \begin_layout Standard
-The search button does not get underlined or highlighted, only the mouse
+The search button does not get underlined or highlighted; only the mouse
  cursor is changed to a pointer.
 \end_layout
 
@@ -569,8 +569,15 @@ The top bar seems to have no use other than to hold the University of Auckland
 \begin_layout Standard
 \begin_inset Graphics
 	filename top-bar.PNG
-	scale 55
+	scale 50
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -614,7 +621,7 @@ Ask about something in the Maori language
 The process for gathering issues started with an observation and exploration
  of the main AskAuckland web page, looking specifically for anti-patterns
  and visual issues.
- Following this, the scenarios were carried out whilst constantly examining
+ Following this, the scenarios were carried out while constantly examining
  signs of usability issues.
  These were all recorded and then categorised into the ten heuristics.
  The criticality of each item is noted and determined by the impact on users
@@ -674,7 +681,7 @@ Searching does not work if the language used to search is Maori.
 \end_layout
 
 \begin_layout Standard
-Solution: Either translate Maori and search using the translation, or implement
+Solution: Either translate Maori and search using the translation or implement
  Maori language support with a switch language button.
 \end_layout
 
@@ -1008,6 +1015,7 @@ The main purpose of the AskAuckland website is to get answers to commonly
 \begin_layout Standard
 \begin_inset Graphics
 	filename no-results.png
+	scale 55
 
 \end_inset
 
@@ -1026,8 +1034,15 @@ Can't find an answer to your question? Click here
  where the user can submit custom questions to be answered.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Impacts of Human Memory (500 words)
+Impacts of Human Memory
 \end_layout
 
 \begin_layout Standard
@@ -1044,78 +1059,49 @@ Recognition
 \begin_layout Standard
 Using known patterns in the user interface allows users to recognise them
  and learn how to use the website faster.
+ Here are some examples used:
+\end_layout
+
+\begin_layout Itemize
+Blue colour for links
+\end_layout
+
+\begin_layout Itemize
+Underline links on hover with the mouse
+\end_layout
+
+\begin_layout Itemize
+Search field appearance and functionality
+\end_layout
+
+\begin_layout Itemize
+A loading GIF appears after clicking the search icon, indicating the user
+ to wait on the current page and that their input has been recognised.
 \end_layout
 
 \begin_layout Standard
-Uses known patterns such as blue for links, underline on hover, and search
- field
+The site also takes advantage of known logos and icons to aid in recognition;
+ they are also more readable than words:
 \end_layout
 
-\begin_layout Standard
-Loading gif indicates that search results are incoming
-\end_layout
-
-\begin_layout Standard
-After clicking the search button, the results appear on the same page as
- the search without clearing the search
-\end_layout
-
-\begin_layout Standard
-When an element on the web page has functionality that a user is familiar
- with, but using a different pattern, this makes the interface more difficult
- to learn.
-\end_layout
-
-\begin_layout Standard
-An example of this is
-\end_layout
-
-\begin_layout Standard
-Picking a topic via a list instead of drop-down is an anti-pattern though.
-\end_layout
-
-\begin_layout Standard
-Logos/icons
-\end_layout
-
-\begin_layout Standard
-Consistent logo which brings you back to auckland.ac.nz as on the homepage.
- Can use this pattern (ref book)
+\begin_layout Itemize
+The logo in the top left corner is consistent in both look and functionality
+ as the one on auckland.ac.nz.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
 	filename main.PNG
-	scale 60
+	scale 75
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-Icons make for easier readability
-\end_layout
-
-\begin_layout Standard
-- Search icon, consistent icon
-\end_layout
-
-\begin_layout Standard
-- Topic delete icon, consistent icon
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename icons.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-- Previous and next icons 
+\begin_layout Itemize
+The previous and next icons are recognisable and have the same hover effect
+ as links, indicating they can be clicked.
 \end_layout
 
 \begin_layout Standard
@@ -1128,44 +1114,95 @@ Icons make for easier readability
 
 \end_layout
 
-\begin_layout Standard
-- Clear search icon (faulty)
+\begin_layout Itemize
+In the search section, the search icon and the two delete icons are easily
+ recognisable, although the two delete icons are not the same shape.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Graphics
+	filename icons.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Another issue is with the hover functionality of the delete icon in the
+ search field.
+ There is no hover effect, which contradicts the other buttons on the page.
+\end_layout
+
+\begin_layout Standard
+When an element on the web page has functionality that a user is familiar
+ with but uses a different pattern, this makes the interface more difficult
+ to learn.
+ The topic section is an anti-pattern.
+ The functionality of the topic section is to allow the user to pick one
+ item from a list of items to refine the search.
+ However, this type of functionality is already covered by a drop-down.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename topic-section.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cognitive Load
+\end_layout
+
+\begin_layout Standard
+Lowering the amount of information that needs to be held in the user's head
+ at one time reduces stress.
+ In the website, many features support the user's working memory:
+\end_layout
+
+\begin_layout Itemize
+Topics shown on the results page and updates when picking a new topic.
+\end_layout
+
+\begin_layout Itemize
+After clicking the search button, the results appear on the same page as
+ the search without clearing the search.
+\end_layout
+
+\begin_layout Itemize
 Breadcrumbs show where you are on the site as well as whether you are on
- current student or future student
+ current student or future student.
 \end_layout
 
 \begin_layout Standard
-Topics shown on results page and updates when picking new topic
+The names of topics are all short, with an average of 1.75 words.
 \end_layout
 
 \begin_layout Standard
-Names of topics all relatively short (maximum number of words is 4, average
- is 1.75 words)
+The user task stack is small, so if someone is interrupted when searching,
+ they should be able to return to that page and recall their task.
+ This effect further enhances these issues:
+\end_layout
+
+\begin_layout Itemize
+An issue is that removing a topic removes the search term.
+ The user may forget this piece of information.
+\end_layout
+
+\begin_layout Itemize
+Another issue is the search term not visible on article pages, leading to
+ the same problem.
 \end_layout
 
 \begin_layout Standard
-Removing a topic removes the search term
-\end_layout
-
-\begin_layout Standard
-Links
-\end_layout
-
-\begin_layout Standard
-Search term not visible on article pages
-\end_layout
-
-\begin_layout Standard
-- User task stack is small, so if someone is interrupted when doing a search,
- they should be able to come back to that page and recall what they were
- looking for
-\end_layout
-
-\begin_layout Standard
-Recently viewed section important
+However, these two issues are alleviated by the recently viewed section
+ feature.
 \end_layout
 
 \begin_layout Standard
@@ -1177,8 +1214,18 @@ Recently viewed section important
 
 \end_layout
 
+\begin_layout Subsection
+Shortcuts
+\end_layout
+
 \begin_layout Standard
-Purple colour for previously visited articles not present
+A useful feature for experienced users is the physical affordance of typing
+ enter instead of clicking the search button.
+\end_layout
+
+\begin_layout Standard
+Overall, the website has areas of improvement, but there are already many
+ features which counteract human memory limitations.
 \end_layout
 
 \end_body

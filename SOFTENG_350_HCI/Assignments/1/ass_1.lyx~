@@ -576,6 +576,13 @@ The top bar seems to have no use other than to hold the University of Auckland
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Nielson's Heuristics
 \end_layout
@@ -1008,6 +1015,7 @@ The main purpose of the AskAuckland website is to get answers to commonly
 \begin_layout Standard
 \begin_inset Graphics
 	filename no-results.png
+	scale 55
 
 \end_inset
 
@@ -1026,33 +1034,194 @@ Can't find an answer to your question? Click here
  where the user can submit custom questions to be answered.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Impacts of Human Memory (500 words)
+Impacts of Human Memory
 \end_layout
 
 \begin_layout Standard
+The current state of the website does have considerable concern for human
+ memory limitations.
+ However, there are some areas which can be improved to improve the user
+ experience.
+\end_layout
+
+\begin_layout Subsection
+Recognition
+\end_layout
+
+\begin_layout Standard
+Using known patterns in the user interface allows users to recognise them
+ and learn how to use the website faster.
+ Here are some examples used:
+\end_layout
+
+\begin_layout Itemize
+Blue colour for links
+\end_layout
+
+\begin_layout Itemize
+Underline links on hover with the mouse
+\end_layout
+
+\begin_layout Itemize
+Search field appearance and functionality
+\end_layout
+
+\begin_layout Itemize
+A loading GIF appears after clicking the search icon, indicating the user
+ to wait on the current page and that their input has been recognised.
+\end_layout
+
+\begin_layout Standard
+The site also takes advantage of known logos and icons to aid in recognition;
+ they are also more readable than words:
+\end_layout
+
+\begin_layout Itemize
+The logo in the top left corner is consistent in both look and functionality
+ as the one on auckland.ac.nz.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename main.PNG
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The previous and next icons are recognisable and have the same hover effect
+ as links, indicating they can be clicked.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename prev-next.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In the search section, the search icon and the two delete icons are easily
+ recognisable, although the two delete icons are not the same shape.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename icons.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Another issue is with the hover functionality of the delete icon in the
+ search field.
+ There is no hover effect, which contradicts the other buttons on the page.
+\end_layout
+
+\begin_layout Standard
+When an element on the web page has functionality that a user is familiar
+ with but uses a different pattern, this makes the interface more difficult
+ to learn.
+ The topic section is an anti-pattern.
+ Clearly, the functionality of the topic section is to allow the user to
+ pick one item from a list of items to refine the search.
+ However, this type of functionality is already covered by a drop-down.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename topic-section.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cognitive Load
+\end_layout
+
+\begin_layout Standard
+Lowering the amount of information that needs to be held in the user's head
+ at one time reduces stress.
+ In the website, many features support the user's working memory:
+\end_layout
+
+\begin_layout Itemize
+Topics shown on the results page and updates when picking a new topic.
+\end_layout
+
+\begin_layout Itemize
 After clicking the search button, the results appear on the same page as
- the search without clearing the search
+ the search without clearing the search.
+\end_layout
+
+\begin_layout Itemize
+Breadcrumbs show where you are on the site as well as whether you are on
+ current student or future student.
 \end_layout
 
 \begin_layout Standard
-Something about breadcrumbs functionality?
+The names of topics are all short, with an average of 1.75 words.
 \end_layout
 
 \begin_layout Standard
-Topics
+The user task stack is small, so if someone is interrupted when doing a
+ search, they should be able to come back to that page and recall their
+ task.
+ This effect further enhances these issues:
+\end_layout
+
+\begin_layout Itemize
+An issue is that removing a topic removes the search term.
+ The user may forget this piece of information.
+\end_layout
+
+\begin_layout Itemize
+Another issue is the search term not visible on article pages, leading to
+ the same problem.
 \end_layout
 
 \begin_layout Standard
-Search stays (unless you remove a topic)
+However, these two issues are alleviated by the recently viewed section
+ feature.
 \end_layout
 
 \begin_layout Standard
-Links
+\begin_inset Graphics
+	filename recently-viewed.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Shortcuts
 \end_layout
 
 \begin_layout Standard
-Search term not visible on page
+A useful feature for experienced users is the physical affordance of typing
+ enter instead of clicking the search button.
 \end_layout
 
 \end_body
