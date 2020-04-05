@@ -182,7 +182,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
-Design Review (800 words)
+Design Review
 \end_layout
 
 \begin_layout Standard
@@ -577,11 +577,7 @@ The top bar seems to have no use other than to hold the University of Auckland
 \end_layout
 
 \begin_layout Section
-Nielson's Heuristics (1200 words)
-\end_layout
-
-\begin_layout Standard
-JUSTIFY SEVERITIES
+Nielson's Heuristics
 \end_layout
 
 \begin_layout Standard
@@ -620,11 +616,11 @@ The process for gathering issues started with an observation and exploration
  and visual issues.
  Following this, the scenarios were carried out whilst constantly examining
  signs of usability issues.
- These were all recorded and then categorized into the ten heuristics.
- The criticality of each issue is noted and determined by the impact on
- users trying to perform a scenario.
+ These were all recorded and then categorised into the ten heuristics.
+ The criticality of each item is noted and determined by the impact on users
+ trying to perform a scenario.
  There are three levels of criticality: low, medium, and high.
- If an issue completely blocks a scenario then it is of high criticality,
+ If an issue completely blocks a scenario, then it is of high criticality,
  while an issue that annoys a user would be of low criticality.
 \end_layout
 
@@ -632,37 +628,26 @@ The process for gathering issues started with an observation and exploration
 Visibility of system status
 \end_layout
 
-\begin_layout Standard
-
-\emph on
-The system should always keep users informed about what is going on, through
- appropriate feedback within reasonable time.
-\end_layout
-
 \begin_layout Subsubsection
 Previous Clicked Link Not Purple - Low Severity
 \end_layout
 
 \begin_layout Standard
-A convention across many websites is to color links purple if they have
+A convention across many websites is to colour links purple if they have
  been previously visited.
  This helps the user recognise what they have used before for future searches.
- Although missing this feature reduces the ability of users to recognise
- which articles they have already visited, it is not serious enough to hinder
- any tasks.
+ Although missing this feature reduces the ability of users to identify
+ articles they have already visited, it is not severe enough to hinder any
+ tasks.
+\end_layout
+
+\begin_layout Standard
+Solution: If a user has visited an article before, the link in the search
+ results should be purple.
 \end_layout
 
 \begin_layout Subsection
 Match between system and the real world
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-The system should speak the users' language, with words, phrases and concepts
- familiar to the user, rather than system-oriented terms.
- Follow real-world conventions, making information appear in a natural and
- logical order.
 \end_layout
 
 \begin_layout Subsubsection
@@ -672,6 +657,10 @@ Maori Language Support - High Severity
 \begin_layout Standard
 Searching does not work if the language used to search is Maori.
  There is also no option to change the language of the site to be in Maori.
+ Maori is an official language of New Zealand; people who can only speak
+ Maori would not be able to use the AskAuckland site.
+ Consequently, this issue can ultimately hinder a user from completing the
+ primary task of searching.
 \end_layout
 
 \begin_layout Standard
@@ -685,25 +674,16 @@ Searching does not work if the language used to search is Maori.
 \end_layout
 
 \begin_layout Standard
-Solution: Either translate Maori and search that way, or implement Maori
- language support with a switch language button
+Solution: Either translate Maori and search using the translation, or implement
+ Maori language support with a switch language button.
 \end_layout
 
 \begin_layout Subsection
 User control and freedom
 \end_layout
 
-\begin_layout Standard
-
-\emph on
-Users often choose system functions by mistake and will need a clearly marked
- "emergency exit" to leave the unwanted state without having to go through
- an extended dialogue.
- Support undo and redo.
-\end_layout
-
 \begin_layout Subsubsection
-Search Term Not Saved
+Search Term Not Saved - Low Severity
 \end_layout
 
 \begin_layout Standard
@@ -716,11 +696,14 @@ Current students
 \end_inset
 
  breadcrumb does not preserve the search term used to find the article.
+ A user who would like to visit multiple articles would be annoyed by this
+ issue.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
 	filename blank-search.PNG
+	scale 55
 
 \end_inset
 
@@ -734,14 +717,6 @@ Solution: Add another breadcrumb which is shown when in articles, allowing
 
 \begin_layout Subsection
 Consistency and standards
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Users should not have to wonder whether different words, situations, or
- actions mean the same thing.
- Follow platform conventions.
 \end_layout
 
 \begin_layout Subsubsection
@@ -768,8 +743,8 @@ coronavirus
  topic reduces the number of results to two.
  This is disconcerting as the topic and search terms are synonyms, but many
  important results are omitted.
- Therefore, the risk is high that user's would miss articles and not be
- able to complete their scenario if they encounter this issue.
+ Therefore, the risk is high that users would miss articles and not be able
+ to complete their scenario if they encounter this issue.
 \end_layout
 
 \begin_layout Standard
@@ -792,7 +767,7 @@ Inconsistent Link Styling - Low Severity
 \end_layout
 
 \begin_layout Standard
-While most links are colored blue, there are some exceptions.
+While most links are coloured blue, there are some exceptions.
  The 
 \begin_inset Quotes eld
 \end_inset
@@ -801,40 +776,31 @@ Example: How do I pay my fees?
 \begin_inset Quotes erd
 \end_inset
 
- paragraph is not a link even though it is blue.
- The current breadcrumb is a link even though it is not colored blue.
- Links in the footer are not blue but white.
- Also hover animations for links vary as well.
- This issue is only a minor a
+ paragraph is not a link although it is blue.
+ Although the current breadcrumb is not coloured blue, it is a link.
+ Links in the footer are white.
+ Hover animations for links vary as well: underlining, highlighting, and
+ no animation.
+ This issue is only a minor annoyance for users and would not prevent any
+ from completing their task.
 \end_layout
 
 \begin_layout Standard
-Solution: Make all links blue
-\end_layout
+\begin_inset Graphics
+	filename blue-antipattern.png
+	scale 55
 
-\begin_layout Subsubsection
-Inconsistent Hover Styling - Low Severity
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Links and buttons do not have consistent styling
-\end_layout
-
-\begin_layout Standard
-search covid-19 gives 5 results, adding the coronavirus tag gets 2 results
+Solution: Make all links blue, with underline hover animation.
 \end_layout
 
 \begin_layout Subsection
 Error prevention
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Even better than good error messages is a careful design which prevents
- a problem from occurring in the first place.
- Either eliminate error-prone conditions or check for them and present users
- with a confirmation option before they commit to the action.
 \end_layout
 
 \begin_layout Subsubsection
@@ -842,7 +808,7 @@ Misspelling Not Checked - Medium Severity
 \end_layout
 
 \begin_layout Standard
-This is quite a common mistake for user's to make.
+This is quite a common mistake for users to make.
  So the fact that there is no indication that there has been a misspelling
  (something like 
 \begin_inset Quotes eld
@@ -853,9 +819,9 @@ No results, please check your spelling
 \end_inset
 
 ) is an issue.
- If a user is not a native English speaker, or their spelling is not accurate,
+ If a user is not a native English speaker or their spelling is not accurate,
  this error could prevent them from completing a scenario, but most users
- would check their search term again.
+ would recheck their search term.
 \end_layout
 
 \begin_layout Standard
@@ -892,32 +858,22 @@ Please recheck your spelling.
 Recognition rather than recall
 \end_layout
 
-\begin_layout Standard
-
-\emph on
-Minimize the user's memory load by making objects, actions, and options
- visible.
- The user should not have to remember information from one part of the dialogue
- to another.
- Instructions for use of the system should be visible or easily retrievable
- whenever appropriate.
-\end_layout
-
-\begin_layout Standard
-Do links open in new tabs
-\end_layout
-
 \begin_layout Subsubsection
-Search Term Not Shown
+Search Term Not Shown - Low Severity
 \end_layout
 
 \begin_layout Standard
-When inside an article, it is not clear which
+When inside an article, it is not clear which search term was used to reach
+ this article.
+ If a user leaves the page, they may forget what they were looking for.
+ Most of the time, a user should be able to tell what search term was used,
+ so this issue would only be a minor hindrance.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
 	filename search-not-saved.png
+	scale 60
 
 \end_inset
 
@@ -925,33 +881,22 @@ When inside an article, it is not clear which
 \end_layout
 
 \begin_layout Standard
-Solution:
+Solution: Include the search term as an additional breadcrumb on the article
+ page.
 \end_layout
 
 \begin_layout Subsection
 Flexibility and efficiency of use
 \end_layout
 
-\begin_layout Standard
-
-\emph on
-Accelerators — unseen by the novice user — may often speed up the interaction
- for the expert user such that the system can cater to both inexperienced
- and experienced users.
- Allow users to tailor frequent actions.
-\end_layout
-
-\begin_layout Standard
-Can hit enter instead of clicking the search button
-\end_layout
-
 \begin_layout Subsubsection
-Mandatory Selection of Future or Current Student - Medium Severity
+Mandatory Selection of Future or Current Student - Low Severity
 \end_layout
 
 \begin_layout Standard
 This feature is a roadblock for experienced users.
- It limits the speed at which users who are used to the site can ask a question.
+ It limits the speed at which users who are used to the site can ask a question,
+ but does not hinder particular scenarios greatly.
 \end_layout
 
 \begin_layout Standard
@@ -973,54 +918,38 @@ Solution: Save the previous answer in a cookie and use that for future sessions.
 Aesthetic and minimalist design
 \end_layout
 
-\begin_layout Standard
-
-\emph on
-Dialogues should not contain information which is irrelevant or rarely needed.
- Every extra unit of information in a dialogue competes with the relevant
- units of information and diminishes their relative visibility.
-\end_layout
-
-\begin_layout Standard
-Is there a difference between the current students and future students search?
- Seems to be slightly different
-\end_layout
-
 \begin_layout Subsubsection
-Top Bar Emptiness - Low Severity
+Only two results showing - Low Severity
 \end_layout
 
 \begin_layout Standard
-The top bar containing the University of Auckland logo and link is sparse
- and takes up a lot of screen real estate.
+The top bar and containing the University of Auckland logo and the topic
+ section take up unnecessary amounts of space.
+ Users would not be confused but may be slightly annoyed by having to scroll
+ to see their search results.
 \end_layout
 
 \begin_layout Standard
-Solution:
-\end_layout
+\begin_inset Graphics
+	filename save-space.png
+	scale 50
 
-\begin_layout Subsubsection
-Topic Section Space - Low Severity
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The topic section takes up significant space
-\end_layout
-
-\begin_layout Standard
-Solution: Replace the section with a drop-down list in alphabetical order
- (Hick-Hyman Law).
+Solution: Move the logo to the left-hand side of the screen and move up
+ the main content of the page.
+ Replace the topic section with a drop-down list in alphabetical order (Hick-Hym
+an Law).
+ Making these changes should result in an extra four results available without
+ scrolling.
 \end_layout
 
 \begin_layout Subsection
-Help users recognize, diagnose, and recover from errors
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Error messages should be expressed in plain language (no codes), precisely
- indicate the problem, and constructively suggest a solution.
+Help users recognise, diagnose, and recover from errors
 \end_layout
 
 \begin_layout Subsubsection
@@ -1031,14 +960,16 @@ Unclear Error Message - Medium Severity
 Although error messages were rare, there were occasions where searching
  for something after the site had been idle results in an error message.
  The error message is not useful for the user.
- After searching again, the warning did not occur again.
+ After searching again, the warning did not occur.
  This is a confusing experience for the user.
+ Some users may leave the site after receiving a message like this or think
+ there is something wrong with the search term, so the impact is moderate.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
 	filename error-message.PNG
-	scale 60
+	scale 65
 
 \end_inset
 
@@ -1057,46 +988,8 @@ Please try again, you have timed out.
 .
 \end_layout
 
-\begin_layout Standard
-Tell me you can't recognise languages other than English
-\end_layout
-
 \begin_layout Subsection
 Help and documentation
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Even though it is better if the system can be used without documentation,
- it may be necessary to provide help and documentation.
- Any such information should be easy to search, focused on the user's task,
- list concrete steps to be carried out, and not be too large.
-\end_layout
-
-\begin_layout Subsubsection
-No Help Page/Tooltips - High Severity
-\end_layout
-
-\begin_layout Standard
-This might be the same as the next one and is doubtful for such a simple
- site to have a help page
-\end_layout
-
-\begin_layout Standard
-There is no help
-\end_layout
-
-\begin_layout Standard
-Where else can i go for help?
-\end_layout
-
-\begin_layout Standard
-Can't ask a question directly if it not answered, no contact button
-\end_layout
-
-\begin_layout Standard
-No tooltips/help page
 \end_layout
 
 \begin_layout Subsubsection
@@ -1107,15 +1000,26 @@ No Contact Page - High Severity
 The main purpose of the AskAuckland website is to get answers to commonly
  asked questions.
  If a question returns no results, there is currently no indication of how
- else the user can receive an answer.
+ else the user can receive a response.
+ Scenarios such as looking for coffee the definition for academic integrity
+ are not possible due to this inflexibility.
 \end_layout
 
 \begin_layout Standard
-Solution: In the footer add a link 
+\begin_inset Graphics
+	filename no-results.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solution: In the search results section, add a link 
 \begin_inset Quotes eld
 \end_inset
 
-Contact for specific questions
+Can't find an answer to your question? Click here
 \begin_inset Quotes erd
 \end_inset
 
@@ -1124,6 +1028,11 @@ Contact for specific questions
 
 \begin_layout Section
 Impacts of Human Memory (500 words)
+\end_layout
+
+\begin_layout Standard
+After clicking the search button, the results appear on the same page as
+ the search without clearing the search
 \end_layout
 
 \begin_layout Standard
@@ -1136,6 +1045,14 @@ Topics
 
 \begin_layout Standard
 Search stays (unless you remove a topic)
+\end_layout
+
+\begin_layout Standard
+Links
+\end_layout
+
+\begin_layout Standard
+Search term not visible on page
 \end_layout
 
 \end_body
