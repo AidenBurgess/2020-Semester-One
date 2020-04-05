@@ -93,7 +93,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -121,7 +130,7 @@
 \color #008000
 \end_index
 \secnumdepth 3
-\tocdepth 3
+\tocdepth 2
 \paragraph_separation skip
 \defskip bigskip
 \is_math_indent 0
@@ -695,6 +704,7 @@ User control and freedom
 \begin_layout Standard
 
 \emph on
+\SpecialChar breakableslash
 Users often choose system functions by mistake and will need a clearly marked
  "emergency exit" to leave the unwanted state without having to go through
  an extended dialogue.
@@ -703,6 +713,36 @@ Users often choose system functions by mistake and will need a clearly marked
 
 \begin_layout Standard
 Can I ask my question in Maori?
+\end_layout
+
+\begin_layout Subsubsection
+Search Term Not Saved
+\end_layout
+
+\begin_layout Standard
+When in an article, clicking 
+\begin_inset Quotes eld
+\end_inset
+
+Current students
+\begin_inset Quotes erd
+\end_inset
+
+ breadcrumb does not preserve the search term used to find the article.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename blank-search.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solution: Add another breadcrumb which is shown when in articles, allowing
+ the user to go back to their previous search term.
 \end_layout
 
 \begin_layout Subsection
@@ -715,6 +755,31 @@ Consistency and standards
 Users should not have to wonder whether different words, situations, or
  actions mean the same thing.
  Follow platform conventions.
+\end_layout
+
+\begin_layout Subsubsection
+Choosing Topic Eliminates Relevant Results - High Severity
+\end_layout
+
+\begin_layout Standard
+Searching for 
+\begin_inset Quotes eld
+\end_inset
+
+covid-19
+\begin_inset Quotes erd
+\end_inset
+
+ yields twelve results, adding the 
+\begin_inset Quotes eld
+\end_inset
+
+coronavirus
+\begin_inset Quotes erd
+\end_inset
+
+ topic reduces the number of results to two.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -826,8 +891,25 @@ Minimize the user's memory load by making objects, actions, and options
 Do links open in new tabs
 \end_layout
 
+\begin_layout Subsubsection
+Search Term Not Shown
+\end_layout
+
 \begin_layout Standard
-Do i know what the search is for this post
+When inside an article, it is not clear which
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename search-not-saved.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solution:
 \end_layout
 
 \begin_layout Subsection
@@ -852,8 +934,18 @@ Mandatory Selection of Future or Current Student - Medium Severity
 \end_layout
 
 \begin_layout Standard
-This is a small roadblock for experienced users.
- 
+This feature is a roadblock for experienced users.
+ It limits the speed at which users who are used to the site can ask a question.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename future-current.png
+	scale 50
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -885,6 +977,19 @@ Top Bar Emptiness - Low Severity
 \begin_layout Standard
 The top bar containing the University of Auckland logo and link is sparse
  and takes up a lot of screen real estate.
+\end_layout
+
+\begin_layout Subsubsection
+Topic Section Space - Low Severity
+\end_layout
+
+\begin_layout Standard
+The topic section takes up significant space
+\end_layout
+
+\begin_layout Standard
+Solution: Replace the section with a drop-down list in alphabetical order
+ (Hick-Hyman Law).
 \end_layout
 
 \begin_layout Subsection
@@ -921,7 +1026,15 @@ Although error messages were rare, there were occasions where searching
 \end_layout
 
 \begin_layout Standard
-Solution
+Solution: Use a more meaningful error message for the user such as 
+\begin_inset Quotes eld
+\end_inset
+
+Please try again, you have timed out.
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -943,6 +1056,11 @@ Even though it is better if the system can be used without documentation,
 
 \begin_layout Subsubsection
 No Help Page/Tooltips - High Severity
+\end_layout
+
+\begin_layout Standard
+This might be the same as the next one and is doubltful for such a simple
+ site to have a help page
 \end_layout
 
 \begin_layout Standard
