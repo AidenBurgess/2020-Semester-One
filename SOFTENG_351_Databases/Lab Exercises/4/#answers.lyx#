@@ -193,35 +193,218 @@ CREATE SCHEMA COURSE_INFO;
 \end_layout
 
 \begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
 CREATE TABLE STUDENT (
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+
 Name VARCHAR(50) NOT NULL,
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+
 Student_number INT NOT NULL,
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+
 Class INT NOT NULL,
 \end_layout
 
-\begin_layout Standard
-Major VARCHAR(10)
+\begin_layout Plain Layout
+
+Major VARCHAR(10),
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+
+PRIMARY KEY (Student_number)
+\end_layout
+
+\begin_layout Plain Layout
+
 );
 \end_layout
 
-\begin_layout Standard
-CREATE TABLE COURSE;
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-CREATE TABLE PREREQUISITE;
+\begin_inset listings
+lstparams "language=SQL,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE COURSE (
+\end_layout
+
+\begin_layout Plain Layout
+
+Course_name VARCHAR(50) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Course_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Credit_hours INT NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Department VARCHAR(10) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+PRIMARY KEY (Course_number)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE PREREQUISITE (
+\end_layout
+
+\begin_layout Plain Layout
+
+Course_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Prerequisite_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number),
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Prerequisite_number) REFERENCES COURSE(Course_number)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE SECTION (
+\end_layout
+
+\begin_layout Plain Layout
+
+Section_identifier INT NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Prerequisite_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number),
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Prerequisite_number) REFERENCES COURSE(Course_number)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE PREREQUISITE (
+\end_layout
+
+\begin_layout Plain Layout
+
+Course_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Prerequisite_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number),
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Prerequisite_number) REFERENCES COURSE(Course_number)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

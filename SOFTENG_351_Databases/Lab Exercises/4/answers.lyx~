@@ -8,7 +8,7 @@
 \begin_preamble
 % Variables to change every new document
 \newcommand{\hmwkClass}{SOFTENG 351} % Course/class
-\newcommand{\hmwkNumber}{3} % Assignment number
+\newcommand{\hmwkNumber}{4} % Assignment number
 
 % Constants to set once
 \newcommand{\hmwkAuthorName}{Aiden Burgess} % Your name
@@ -157,314 +157,272 @@ start
 \end_layout
 
 \begin_layout Section*
-Q1
-\end_layout
-
-\begin_layout Subsection*
-a) 
-\end_layout
-
-\begin_layout Standard
-Area code is missing.
- e.g.
- Auckland has area code 09.
-\end_layout
-
-\begin_layout Subsection*
-b) 
-\end_layout
-
-\begin_layout Standard
-Add the information to the attributes, as these two pieces of information
- are not that useful by themselves.
- If these pieces of information are critical and at some point may be retrieved
- individually (without their respective phone numbers), then for efficiency
- they should be added as columns.
-\end_layout
-
-\begin_layout Subsection*
-c) 
-\end_layout
-
-\begin_layout Standard
-Access to first, middle and last name is easier if they are in separate
- columns.
- Searching is also easier if names are in separate columns.
- There is less confusion when a person has several middle names or first
- names as it is contained within separate columns.
-\end_layout
-
-\begin_layout Standard
-If the names are combined, retrieving the full name for a STUDENT is faster.
-\end_layout
-
-\begin_layout Subsection*
-d)
-\end_layout
-
-\begin_layout Standard
-Split the information if the segments have meaning.
- If the information is generally retrieved fully (such as a mobile number)
- then there is no need to split the information.
-\end_layout
-
-\begin_layout Section*
 Q2
 \end_layout
 
-\begin_layout Standard
-Book_ISBN is a foreign key in the TEXT table, which references the BOOK_ADOPTION
- entity.
+\begin_layout Subsection*
+Referential Integrity Constraints
 \end_layout
 
 \begin_layout Standard
-Course# in ENROLL table is a foreign key for a COURSE entity.
+SECTION.Course_number = COURSE.Course_number
 \end_layout
 
 \begin_layout Standard
-Course# in BOOK_ADOPTION table is a foreign key for a COURSE entity.
+GRADE_REPORT.Student_number = STUDENT.Student_number
 \end_layout
 
 \begin_layout Standard
-SSN is foreign key for the ENROLL entity.
+GRADE_REPORT.Section_identifier = SECTION.Section_identifier
 \end_layout
 
-\begin_layout Section*
-Q3
+\begin_layout Standard
+PREREQUISITE.Course_number = COURSE.Course_number
+\end_layout
+
+\begin_layout Standard
+PREREQUISITE.Prerequisite_number = COURSE.Course_number
 \end_layout
 
 \begin_layout Subsection*
-a) 
+SQL DDL Statements
 \end_layout
 
 \begin_layout Standard
-No integrity constraints violated.
-\end_layout
-
-\begin_layout Subsection*
-b)
+CREATE SCHEMA COURSE_INFO;
 \end_layout
 
 \begin_layout Standard
-Dnum references a DEPARTMENT with Dnumber 2.
- No DEPARTMENT exists with Dnumber 2, so a referential integrity constraint
- is violated.
+\begin_inset listings
+lstparams "language=SQL,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE STUDENT (
 \end_layout
 
-\begin_layout Standard
-Ways to fix:
+\begin_layout Plain Layout
+
+Name VARCHAR(50) NOT NULL,
 \end_layout
 
-\begin_layout Itemize
-Ignore this transaction and provide error message.
+\begin_layout Plain Layout
+
+Student_number INT NOT NULL,
 \end_layout
 
-\begin_layout Itemize
-Before this transaction, add a DEPARTMENT with Dnumber of 2.
+\begin_layout Plain Layout
+
+Class INT NOT NULL,
 \end_layout
 
-\begin_layout Itemize
-Use a Dnumber that exists in the DEPARTMENT table.
+\begin_layout Plain Layout
+
+Major VARCHAR(10),
 \end_layout
 
-\begin_layout Subsection*
-c)
+\begin_layout Plain Layout
+
+PRIMARY KEY (Student_number)
 \end_layout
 
-\begin_layout Standard
-There already exists a DEPARTMENT with Dnumber 4, as Dnumber is a key attribute,
- this violates the key integrity constraint.
-\end_layout
+\begin_layout Plain Layout
 
-\begin_layout Standard
-Mgr_ssn references an EMPLOYEE with Ssn of 943775543.
- No EMPLOYEE exists with Ssn 943775543, so a referential integrity constraint
- is violated.
+);
 \end_layout
-
-\begin_layout Standard
-Ways to fix both:
-\end_layout
-
-\begin_layout Itemize
-Ignore this transaction and provide error message.
-\end_layout
-
-\begin_layout Standard
-Ways to fix key integrity:
-\end_layout
-
-\begin_layout Itemize
-Use a Dnumber that is unique.
-\end_layout
-
-\begin_layout Standard
-Ways to fix referential integrity:
-\end_layout
-
-\begin_layout Itemize
-Use a Ssn of an existing EMPLOYEE.
-\end_layout
-
-\begin_layout Itemize
-Before this transaction, add a new EMPLOYEE with Ssn of 943775543.
-\end_layout
-
-\begin_layout Subsection*
-d)
-\end_layout
-
-\begin_layout Standard
-Inserting null into the Pno attribute column violates the key integrity
- constraint, as the Pno attribute is part of the key.
-\end_layout
-
-\begin_layout Standard
-Essn references an EMPLOYEE with Ssn of 677678989.
- No EMPLOYEE exists with Ssn of 677678989, so referential integrity is also
- violated.
-\end_layout
-
-\begin_layout Standard
-Ways to fix both:
-\end_layout
-
-\begin_layout Itemize
-Ignore this transaction and provide error message.
-\end_layout
-
-\begin_layout Standard
-Ways to fix key integrity:
-\end_layout
-
-\begin_layout Itemize
-Use a Pno of an existing PROJECT.
-\end_layout
-
-\begin_layout Standard
-Ways to fix referential integrity:
-\end_layout
-
-\begin_layout Itemize
-Use a Ssn of an existing EMPLOYEE.
-\end_layout
-
-\begin_layout Itemize
-Before this transaction, add a new EMPLOYEE with Ssn of 677678989.
-\end_layout
-
-\begin_layout Subsection*
-e)
-\end_layout
-
-\begin_layout Standard
-No integrity constraints violated.
-\end_layout
-
-\begin_layout Subsection*
-f)
-\end_layout
-
-\begin_layout Standard
-No integrity constraints violated.
-\end_layout
-
-\begin_layout Subsection*
-g)
-\end_layout
-
-\begin_layout Standard
-This EMPLOYEE row is referenced in the EMPLOYEE, DEPARTMENT, WORKS_ON, and
- DEPENDENT tables.
- Therefore, the deletion of this row will violate referential integrity
- constraints.
-\end_layout
-
-\begin_layout Standard
-Ways to fix:
-\end_layout
-
-\begin_layout Itemize
-Ignore this transaction and provide error message.
-\end_layout
-
-\begin_layout Itemize
-Delete row that references this EMPLOYEE in EMPLOYEE, DEPARTMENT, WORKS_ON,
- and DEPENDENT tables, and cascade this change to all other affected rows/tables.
-\end_layout
-
-\begin_layout Subsection*
-h)
-\end_layout
-
-\begin_layout Standard
-This PROJECT Pnumber row is referenced in the WORKS_ON table.
- Therefore, the deletion of this row will violate referential integrity
- constraints.
-\end_layout
-
-\begin_layout Standard
-Ways to fix:
-\end_layout
-
-\begin_layout Itemize
-Ignore this transaction and provide error message.
-\end_layout
-
-\begin_layout Itemize
-Delete all rows in WORKS_ON that reference the Pnumber (1) of 'ProjectX'.
-\end_layout
-
-\begin_layout Subsection*
-i)
-\end_layout
-
-\begin_layout Standard
-No integrity constraints violated.
-\end_layout
-
-\begin_layout Subsection*
-j)
-\end_layout
-
-\begin_layout Standard
-There does not exist an EMPLOYEE with Ssn 943775543.
- Therefore, this modification transaction violates a referential integrity
- constraint.
-\end_layout
-
-\begin_layout Standard
-Ways to fix:
-\end_layout
-
-\begin_layout Itemize
-Ignore this transaction and provide error message.
-\end_layout
-
-\begin_layout Itemize
-Before this transaction, add a new EMPLOYEE with Ssn of 943775543.
-\end_layout
-
-\begin_layout Subsection*
-k)
-\end_layout
-
-\begin_layout Standard
-No integrity constraints violated.
-\end_layout
-
-\begin_layout Section*
-Q4
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename Q4.PNG
-	scale 60
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE COURSE (
+\end_layout
+
+\begin_layout Plain Layout
+
+Course_name VARCHAR(50) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Course_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Credit_hours INT NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Department VARCHAR(10) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+PRIMARY KEY (Course_number)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE PREREQUISITE (
+\end_layout
+
+\begin_layout Plain Layout
+
+Course_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Prerequisite_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+PRIMARY KEY (Course_number, Prerequisite_number),
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number),
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Prerequisite_number) REFERENCES COURSE(Course_number)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE SECTION (
+\end_layout
+
+\begin_layout Plain Layout
+
+Section_identifier INT NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Prerequisite_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+PRIMARY KEY (Section_identifier),
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number),
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Prerequisite_number) REFERENCES COURSE(Course_number)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE PREREQUISITE (
+\end_layout
+
+\begin_layout Plain Layout
+
+Course_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Prerequisite_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number),
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Prerequisite_number) REFERENCES COURSE(Course_number)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+CREATE TABLE SECTION;
+\end_layout
+
+\begin_layout Standard
+CREATE TABLE GRADE_REPORT;
 \end_layout
 
 \end_body
