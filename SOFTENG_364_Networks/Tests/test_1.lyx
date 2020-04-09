@@ -100,19 +100,20 @@ Q2
 \end_layout
 
 \begin_layout Standard
-Streaming movies requires a high download speed.
+Streaming movies requires a high download speed, as videos generally have
+ a high data requirement.
+ The amount of download speed needed depends on the amount of people who
+ would be using the connection at the same time.
+ Another factor that impacts which access network each family should choose
+ is their financial situation, as different networks come with different
+ costs.
+ Ultrafast fibre usually cost the most per month.
+ 
 \end_layout
 
 \begin_layout Standard
-Depends on the size of the family
-\end_layout
-
-\begin_layout Standard
-Depends on the cost
-\end_layout
-
-\begin_layout Standard
-Congestion
+For the purposes of consistency, we will assume that the families have the
+ same amount of people and cost is not an issue.
 \end_layout
 
 \begin_layout Subsection*
@@ -120,17 +121,9 @@ First Family
 \end_layout
 
 \begin_layout Standard
-WAN vs ADSL
-\end_layout
-
-\begin_layout Standard
-ADSL less latency
-\end_layout
-
-\begin_layout Standard
 The first family should choose the wireless access network with 2-20 MBits/s
  as this is a faster speed than the alternative.
- 
+ This will allow 1-2 movies to be streamed at a time.
 \end_layout
 
 \begin_layout Subsection*
@@ -138,8 +131,9 @@ Second Family
 \end_layout
 
 \begin_layout Standard
-Latency should not be an issue.
- The second family should choose
+The second family should choose the ultrafast broadband as it has the fastest
+ download rate.
+ This will allow each person to stream a movie at once.
 \end_layout
 
 \begin_layout Subsection*
@@ -149,10 +143,10 @@ Equity
 \begin_layout Standard
 The first family has a lower download speed, meaning they have a worse experienc
 e than the second family.
- This may come from loading issues and lower resolution movies.
+ This may result in loading issues and lower resolution movies.
  The first family is disadvantaged by their location.
  Even though the two families are paying the same amount for the streaming
- service
+ service, their experiences are different because of their internet access.
 \end_layout
 
 \begin_layout Section*
@@ -267,7 +261,7 @@ iv
 \end_layout
 
 \begin_layout Section*
-Q4
+Q4 - DONE
 \end_layout
 
 \begin_layout Standard
@@ -313,7 +307,10 @@ Window size of 1:
 \end_layout
 
 \begin_layout Standard
-64bit packet every 541ms, 
+64bit packet every 541ms,
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $Throughput=\frac{64}{541\times10^{-3}}=118.3bit/s$
 \end_inset
 
@@ -329,10 +326,6 @@ Window size of 7:
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-118.3*7=828.1 bit/s
 \end_layout
 
 \begin_layout Standard

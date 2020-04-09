@@ -373,7 +373,7 @@ PRIMARY KEY (Section_identifier),
 
 \begin_layout Plain Layout
 
-FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number),
+FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number)
 \end_layout
 
 \begin_layout Plain Layout

@@ -348,7 +348,22 @@ Section_identifier INT NOT NULL,
 
 \begin_layout Plain Layout
 
-Prerequisite_number VARCHAR(14) NOT NULL,
+Course_number VARCHAR(14) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Semester ENUM('Fall', 'Winter', 'Spring', 'Summer') NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Year CHAR(2) NOT NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+Instructor VARCHAR(20) NOT NULL,
 \end_layout
 
 \begin_layout Plain Layout
@@ -359,11 +374,6 @@ PRIMARY KEY (Section_identifier),
 \begin_layout Plain Layout
 
 FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number),
-\end_layout
-
-\begin_layout Plain Layout
-
-FOREIGN KEY (Prerequisite_number) REFERENCES COURSE(Course_number)
 \end_layout
 
 \begin_layout Plain Layout
@@ -384,27 +394,37 @@ status open
 
 \begin_layout Plain Layout
 
-CREATE TABLE PREREQUISITE (
+CREATE TABLE GRADE_REPORT (
 \end_layout
 
 \begin_layout Plain Layout
 
-Course_number VARCHAR(14) NOT NULL,
+Student_number INT NOT NULL,
 \end_layout
 
 \begin_layout Plain Layout
 
-Prerequisite_number VARCHAR(14) NOT NULL,
+Section_identifier INT NOT NULL,
 \end_layout
 
 \begin_layout Plain Layout
 
-FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number),
+GRADE CHAR(1),
 \end_layout
 
 \begin_layout Plain Layout
 
-FOREIGN KEY (Prerequisite_number) REFERENCES COURSE(Course_number)
+PRIMARY KEY (Student_number, Section_identifier),
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Student_number) REFERENCES STUDENT(Student_number),
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Section_identifier) REFERENCES SECTION(Section_identifier)
 \end_layout
 
 \begin_layout Plain Layout
@@ -415,14 +435,6 @@ FOREIGN KEY (Prerequisite_number) REFERENCES COURSE(Course_number)
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-CREATE TABLE SECTION;
-\end_layout
-
-\begin_layout Standard
-CREATE TABLE GRADE_REPORT;
 \end_layout
 
 \end_body

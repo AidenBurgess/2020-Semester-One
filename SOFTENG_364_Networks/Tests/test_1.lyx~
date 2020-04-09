@@ -100,7 +100,7 @@ Q2
 \end_layout
 
 \begin_layout Standard
-Streaming movies requires a lot of bandwidth.
+Streaming movies requires a high download speed.
 \end_layout
 
 \begin_layout Standard
@@ -120,6 +120,14 @@ First Family
 \end_layout
 
 \begin_layout Standard
+WAN vs ADSL
+\end_layout
+
+\begin_layout Standard
+ADSL less latency
+\end_layout
+
+\begin_layout Standard
 The first family should choose the wireless access network with 2-20 MBits/s
  as this is a faster speed than the alternative.
  
@@ -130,15 +138,25 @@ Second Family
 \end_layout
 
 \begin_layout Standard
-WAN vs ADSL
+Latency should not be an issue.
+ The second family should choose
+\end_layout
+
+\begin_layout Subsection*
+Equity
 \end_layout
 
 \begin_layout Standard
-Latency should not be an issue.
+The first family has a lower download speed, meaning they have a worse experienc
+e than the second family.
+ This may come from loading issues and lower resolution movies.
+ The first family is disadvantaged by their location.
+ Even though the two families are paying the same amount for the streaming
+ service
 \end_layout
 
 \begin_layout Section*
-Q3
+Q3 - DONE
 \end_layout
 
 \begin_layout Standard
@@ -284,11 +302,22 @@ Packet size = 64bits
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $TotalDelay=540+1=541ms$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Window size of 1:
 \end_layout
 
 \begin_layout Standard
-64bit packet every 541ms, throughput = 118.3 bit/s
+64bit packet every 541ms, 
+\begin_inset Formula $Throughput=\frac{64}{541\times10^{-3}}=118.3bit/s$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -296,7 +325,25 @@ Window size of 7:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $Throughput=\frac{7\times64}{541\times10^{-3}}=828.1bit/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 118.3*7=828.1 bit/s
+\end_layout
+
+\begin_layout Standard
+Window size of 15:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Throughput=\frac{15\times64}{541\times10^{-3}}=1774.5bit/s=1.775Kbit/s$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -304,11 +351,14 @@ Window size of 127:
 \end_layout
 
 \begin_layout Standard
-118.3*127=15024.1 bit/s = 15.0 Kbit/s
+\begin_inset Formula $Throughput=\frac{127\times64}{541\times10^{-3}}=15024bit/s=15.02Kbit/s$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
-Q5
+Q5 - DONE
 \end_layout
 
 \begin_layout Standard
@@ -320,16 +370,36 @@ Q5
 
 \end_layout
 
+\begin_layout Standard
+Assumption: The round trip time between the students’s host and the webserver
+ is 54 msec
+\end_layout
+
 \begin_layout Subsection*
 i
 \end_layout
 
 \begin_layout Standard
-Time to establish TCP connection + time taken to receive data
+The browser retrieves ip address from DNS servers.
+ 39ms
 \end_layout
 
 \begin_layout Standard
-(38+1) + (38+1)=78ms
+The browser first establishes a TCP connection then retrieves the home page.
+ 2RTT
+\end_layout
+
+\begin_layout Standard
+Then the browser establishes 4 parallel TCP connections then retrieve the
+ 4 objects.
+ 2RTT
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $TotalTime=39+2\times54+2\times54=255ms$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -337,12 +407,17 @@ ii
 \end_layout
 
 \begin_layout Standard
-The second DNS server has cached the web page.
- So the time taken is just one RTT
+The first DNS server has cached the IP address of internetnz.nz so the local
+ University of Auckland DNS server does not need to contact the second DNS
+ server but immediately returns the IP address of the website.
+\end_layout
+
+\begin_layout Standard
+Therefore, the time to find the IP address is reduced by 38ms.
 \end_layout
 
 \begin_layout Section*
-Q6
+Q6 - DONE
 \end_layout
 
 \begin_layout Standard
@@ -355,11 +430,27 @@ Q6
 \end_layout
 
 \begin_layout Standard
-DNS queries
+A DNS query is a request for information from a DNS server.
+ Different types of queries require different inputs and provide corresponding
+ outputs.
+ For example, given a hostname, the server will provide the IP address.
+\end_layout
+
+\begin_layout Standard
+A root server contacts authoritative name servers if a name mapping is unknown,
+ and retrieves it.
+\end_layout
+
+\begin_layout Standard
+Therefore, if a root server is down, then some DNS queries may not resolve.
+ This is because root servers are are the top of the hierarchical database.
+ As we can not contact the authoritative name servers for websites which
+ are registered at this root server, it can lead to certain websites being
+ unreachable, or slow to load (having to retrieve data from other routes).
 \end_layout
 
 \begin_layout Section*
-Q7
+Q7 - DONE
 \end_layout
 
 \begin_layout Standard
@@ -376,23 +467,65 @@ i
 \end_layout
 
 \begin_layout Standard
-140-100=40bits
+The amount of data in the second segment is the difference between the second
+ and the third segment sequence numbers.
+ This is because the sequence number of the third segment is the sequence
+ number of the second segment plus the number of bits in the second segment.
+\end_layout
+
+\begin_layout Standard
+160-140 = 20 bits
 \end_layout
 
 \begin_layout Subsection*
 ii
 \end_layout
 
+\begin_layout Standard
+Source port: 80, Destination port: 23576
+\end_layout
+
 \begin_layout Subsection*
 iii
+\end_layout
+
+\begin_layout Standard
+Source port: 23576, Destination port: 80 for each ACK
+\end_layout
+
+\begin_layout Standard
+First ACK is 140 because the host has received a segment in order with the
+ expected seq#.
+ Therefore, the receiver sends an ACK with the sum of the previous segment
+ number and byte number.
+\end_layout
+
+\begin_layout Standard
+Second ACK would be 140 as the host has received an out-of-order segment
+ higher-than-expect seq#.
+ Therefore, there is a gap in the sequence numbers.
+ So the host immediately sends duplicate ACK, indicating seq# of next expected
+ byte, which is the same as the previous ACK.
 \end_layout
 
 \begin_layout Subsection*
 iv
 \end_layout
 
+\begin_layout Standard
+Each socket has a RcvBuffer set via socket options.
+ Without TCP flow control, the receiver's buffer would overflow.
+ TCP flow control stops this issue by having the receiver inform the sender
+ of its free buffer space by including rwnd value in the TCP header.
+ The rwnd value is RcvBuffer-buffered data.
+ By providing this information, the sender limits the amount of unACKed
+ data to the receiver's rwnd value.
+ In this way, the receiver controls the rate of transmission of the sender,
+ guaranteeing that the buffer will not overflow.
+\end_layout
+
 \begin_layout Section*
-Q8
+Q8 -DONE
 \end_layout
 
 \begin_layout Standard
@@ -429,6 +562,12 @@ The client has received the SYNACK, indicating the server is live.
 \begin_layout Standard
 Packet#3 concludes the TCP 3-way handshake and there is now a connection
  between the client and server.
+\end_layout
+
+\begin_layout Standard
+Packet#4 is a HTTP protocol request.
+ Unknown if the GET is successful as we can not see beyond packet#4, so
+ we can not tell if this request was ACKed.
 \end_layout
 
 \end_body
