@@ -1,0 +1,574 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip bigskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Q2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Streaming movies requires a high download speed.
+\end_layout
+
+\begin_layout Standard
+Depends on the size of the family
+\end_layout
+
+\begin_layout Standard
+Depends on the cost
+\end_layout
+
+\begin_layout Standard
+Congestion
+\end_layout
+
+\begin_layout Subsection*
+First Family
+\end_layout
+
+\begin_layout Standard
+WAN vs ADSL
+\end_layout
+
+\begin_layout Standard
+ADSL less latency
+\end_layout
+
+\begin_layout Standard
+The first family should choose the wireless access network with 2-20 MBits/s
+ as this is a faster speed than the alternative.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Second Family
+\end_layout
+
+\begin_layout Standard
+Latency should not be an issue.
+ The second family should choose
+\end_layout
+
+\begin_layout Subsection*
+Equity
+\end_layout
+
+\begin_layout Standard
+The first family has a lower download speed, meaning they have a worse experienc
+e than the second family.
+ This may come from loading issues and lower resolution movies.
+ The first family is disadvantaged by their location.
+ Even though the two families are paying the same amount for the streaming
+ service
+\end_layout
+
+\begin_layout Section*
+Q3 - DONE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assume point-to-point link is 20Mbits/s
+\end_layout
+
+\begin_layout Standard
+Assume Y = 38
+\end_layout
+
+\begin_layout Standard
+Assume Z = 2
+\end_layout
+
+\begin_layout Subsection*
+i
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $TransmissionDelay=\frac{PacketSize}{TransmissionRate}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $PacketSize=TransmissionDelay\times TransmissionRate$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $PacketSize=(2\times10^{-3})\times(20\times10^{6})=40\times10^{3}bits=40Kbits$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection*
+ii
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $RTT=2.\frac{distance}{speed}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $distance=\frac{1}{2}RTT\times speed$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $distance=\frac{1}{2}\times(38\times10^{-3})\times(3\times10^{8})=5.7\times10^{6}m=5700km$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+iii
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Utilization=\frac{TransmissionDelay}{TransmissionDelay+RTT}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Utilization=\frac{(2\times10^{-3})}{(2\times10^{-3})+(38\times10^{-3})}\times100\%=5\%$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+iv
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Utilization=\frac{WindowSize\times TransmissionDelay}{TransmissionDelay+RTT}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $WindowSize=\frac{Utilization\times(TransmissionDelay+RTT)}{TransmissionDelay}=\frac{0.7\times(2\times10^{-3}+38\times10^{-3})}{2\times10^{-3}}=14packets$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Q4
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assume packet size is 512 bytes.
+\end_layout
+
+\begin_layout Standard
+Packet size = 64bits
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $RTT=270ms\times2=540ms$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $d_{trans}=\frac{PacketSize}{TransmissionRate}=\frac{64}{64\times10^{3}}=1ms$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $TotalDelay=540+1=541ms$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Window size of 1:
+\end_layout
+
+\begin_layout Standard
+64bit packet every 541ms, 
+\begin_inset Formula $Throughput=\frac{64}{541\times10^{-3}}=118.3bit/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Window size of 7:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Throughput=\frac{7\times64}{541\times10^{-3}}=828.1bit/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+118.3*7=828.1 bit/s
+\end_layout
+
+\begin_layout Standard
+Window size of 15:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Throughput=\frac{15\times64}{541\times10^{-3}}=1774.5bit/s=1.775Kbit/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Window size of 127:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Throughput=\frac{127\times64}{541\times10^{-3}}=15024bit/s=15.02Kbit/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Q5 - DONE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q53.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assumption: The round trip time between the students’s host and the webserver
+ is 54 msec
+\end_layout
+
+\begin_layout Subsection*
+i
+\end_layout
+
+\begin_layout Standard
+The browser retrieves ip address from DNS servers.
+ 39ms
+\end_layout
+
+\begin_layout Standard
+The browser first establishes a TCP connection then retrieves the home page.
+ 2RTT
+\end_layout
+
+\begin_layout Standard
+Then the browser establishes 4 parallel TCP connections then retrieve the
+ 4 objects.
+ 2RTT
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $TotalTime=39+2\times54+2\times54=255ms$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+ii
+\end_layout
+
+\begin_layout Standard
+The first DNS server has cached the IP address of internetnz.nz so the local
+ University of Auckland DNS server does not need to contact the second DNS
+ server but immediately returns the IP address of the website.
+\end_layout
+
+\begin_layout Standard
+Therefore, the time to find the IP address is reduced by 38ms.
+\end_layout
+
+\begin_layout Section*
+Q6 - DONE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q6.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A DNS query is a request for information from a DNS server.
+ Different types of queries require different inputs and provide corresponding
+ outputs.
+ For example, given a hostname, the server will provide the IP address.
+\end_layout
+
+\begin_layout Standard
+A root server contacts authoritative name servers if a name mapping is unknown,
+ and retrieves it.
+\end_layout
+
+\begin_layout Standard
+Therefore, if a root server is down, then some DNS queries may not resolve.
+ This is because root servers are are the top of the hierarchical database.
+ As we can not contact the authoritative name servers for websites which
+ are registered at this root server, it can lead to certain websites being
+ unreachable, or slow to load (having to retrieve data from other routes).
+\end_layout
+
+\begin_layout Section*
+Q7 - DONE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q7.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+i
+\end_layout
+
+\begin_layout Standard
+The amount of data in the second segment is the difference between the second
+ and the third segment sequence numbers.
+ This is because the sequence number of the third segment is the sequence
+ number of the second segment plus the number of bits in the second segment.
+\end_layout
+
+\begin_layout Standard
+160-140 = 20 bits
+\end_layout
+
+\begin_layout Subsection*
+ii
+\end_layout
+
+\begin_layout Standard
+Source port: 80, Destination port: 23576
+\end_layout
+
+\begin_layout Subsection*
+iii
+\end_layout
+
+\begin_layout Standard
+Source port: 23576, Destination port: 80 for each ACK
+\end_layout
+
+\begin_layout Standard
+First ACK is 140 because the host has received a segment in order with the
+ expected seq#.
+ Therefore, the receiver sends an ACK with the sum of the previous segment
+ number and byte number.
+\end_layout
+
+\begin_layout Standard
+Second ACK would be 140 as the host has received an out-of-order segment
+ higher-than-expect seq#.
+ Therefore, there is a gap in the sequence numbers.
+ So the host immediately sends duplicate ACK, indicating seq# of next expected
+ byte, which is the same as the previous ACK.
+\end_layout
+
+\begin_layout Subsection*
+iv
+\end_layout
+
+\begin_layout Standard
+Each socket has a RcvBuffer set via socket options.
+ Without TCP flow control, the receiver's buffer would overflow.
+ TCP flow control stops this issue by having the receiver inform the sender
+ of its free buffer space by including rwnd value in the TCP header.
+ The rwnd value is RcvBuffer-buffered data.
+ By providing this information, the sender limits the amount of unACKed
+ data to the receiver's rwnd value.
+ In this way, the receiver controls the rate of transmission of the sender,
+ guaranteeing that the buffer will not overflow.
+\end_layout
+
+\begin_layout Section*
+Q8 -DONE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q8.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The initiator (client) has an IP address of 10.0.52.164.
+ This is identified by the packet#1, containing the SYN flag set to 1, which
+ indicates that the host is wanting to open a connection.
+ The seq# is 0.
+ This is the first step of the TCP 3-way handshake.
+\end_layout
+
+\begin_layout Standard
+Packet#2 from the IP address 61.8.0.17 has both the SYN and ACK flag set to
+ 1, indicating that the host (server) agrees to open a connection.
+ The seq# is 0.
+ The Ack# is 1, which is seq+1 of the previous packet.
+\end_layout
+
+\begin_layout Standard
+The client has received the SYNACK, indicating the server is live.
+ The third packet sent indicates to the server that the client is live.
+ The Ack# is 1, which is seq+1 of the previous packet.
+ 
+\end_layout
+
+\begin_layout Standard
+Packet#3 concludes the TCP 3-way handshake and there is now a connection
+ between the client and server.
+\end_layout
+
+\begin_layout Standard
+Packet#4 is a HTTP protocol request.
+ Unknown if the GET is successful as we can not see beyond packet#4, so
+ we can not tell if this request was ACKed.
+\end_layout
+
+\end_body
+\end_document
