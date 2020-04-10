@@ -157,6 +157,185 @@ start
 \end_layout
 
 \begin_layout Section*
+Q1
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE EMPLOYEE(     
+\end_layout
+
+\begin_layout Plain Layout
+
+	Fname VARCHAR(15) NOT NULL,     
+\end_layout
+
+\begin_layout Plain Layout
+
+	Minit CHAR,    
+\end_layout
+
+\begin_layout Plain Layout
+
+	Lname VARCHAR(15) NOT NULL,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	Ssn CHAR(9) NOT NULL,  
+\end_layout
+
+\begin_layout Plain Layout
+
+	Bdate DATE,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	Address VARCHAR(30),  
+\end_layout
+
+\begin_layout Plain Layout
+
+	Sex CHAR,    
+\end_layout
+
+\begin_layout Plain Layout
+
+	Salary DECIMAL(10,2),   
+\end_layout
+
+\begin_layout Plain Layout
+
+	Super_ssn CHAR(9),   
+\end_layout
+
+\begin_layout Plain Layout
+
+	Dno INT NOT NULL,   
+\end_layout
+
+\begin_layout Plain Layout
+
+	PRIMARY KEY(Ssn)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE DEPARTMENT( 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	Dname VARCHAR(15) NOT NULL,     
+\end_layout
+
+\begin_layout Plain Layout
+
+	Dnumber INT NOT NULL,     
+\end_layout
+
+\begin_layout Plain Layout
+
+	Mgr_ssn CHAR(9) NOT NULL,     
+\end_layout
+
+\begin_layout Plain Layout
+
+	Mgr_start_date DATE,     
+\end_layout
+
+\begin_layout Plain Layout
+
+	PRIMARY KEY (Dnumber),     
+\end_layout
+
+\begin_layout Plain Layout
+
+	UNIQUE (Dname),     
+\end_layout
+
+\begin_layout Plain Layout
+
+	FOREIGN KEY (Mgr_ssn) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	REFERENCES EMPLOYEE(Ssn) 
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE TABLE DEPT_LOCATIONS ( 	
+\end_layout
+
+\begin_layout Plain Layout
+
+Dnumber INT NOT NULL,     
+\end_layout
+
+\begin_layout Plain Layout
+
+Dlocation VARCHAR(15) NOT NULL,     
+\end_layout
+
+\begin_layout Plain Layout
+
+PRIMARY KEY (Dnumber, Dlocation),     
+\end_layout
+
+\begin_layout Plain Layout
+
+FOREIGN KEY (Dnumber) REFERENCES DEPARTMENT(Dnumber) 
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
 Q2
 \end_layout
 
@@ -210,7 +389,7 @@ Name VARCHAR(50) NOT NULL,
 
 \begin_layout Plain Layout
 
-Student_number INT NOT NULL,
+Student_number CHAR(9) NOT NULL,
 \end_layout
 
 \begin_layout Plain Layout
@@ -399,7 +578,7 @@ CREATE TABLE GRADE_REPORT (
 
 \begin_layout Plain Layout
 
-Student_number INT NOT NULL,
+Student_number CHAR(9) NOT NULL,
 \end_layout
 
 \begin_layout Plain Layout
