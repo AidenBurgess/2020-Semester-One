@@ -160,74 +160,20 @@ start
 Q1
 \end_layout
 
+\begin_layout Subsection*
+a)
+\end_layout
+
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=SQL"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-CREATE TABLE EMPLOYEE(     
-\end_layout
-
-\begin_layout Plain Layout
-
-	Fname VARCHAR(15) NOT NULL,     
-\end_layout
-
-\begin_layout Plain Layout
-
-	Minit CHAR,    
-\end_layout
-
-\begin_layout Plain Layout
-
-	Lname VARCHAR(15) NOT NULL,   
-\end_layout
-
-\begin_layout Plain Layout
-
-	Ssn CHAR(9) NOT NULL,  
-\end_layout
-
-\begin_layout Plain Layout
-
-	Bdate DATE,   
-\end_layout
-
-\begin_layout Plain Layout
-
-	Address VARCHAR(30),  
-\end_layout
-
-\begin_layout Plain Layout
-
-	Sex CHAR,    
-\end_layout
-
-\begin_layout Plain Layout
-
-	Salary DECIMAL(10,2),   
-\end_layout
-
-\begin_layout Plain Layout
-
-	Super_ssn CHAR(9),   
-\end_layout
-
-\begin_layout Plain Layout
-
-	Dno INT NOT NULL,   
-\end_layout
-
-\begin_layout Plain Layout
-
-	PRIMARY KEY(Ssn)
-\end_layout
-
-\begin_layout Plain Layout
-
-);
+INSERT INTO EMPLOYEE('Robert', 'F', 'Scott', '943775543', '1942-06-21',
+ '2365 Newcastle Rd, Bellaire, TX', ‘M’, 58000, '888665555', 1);
 \end_layout
 
 \end_inset
@@ -235,59 +181,19 @@ CREATE TABLE EMPLOYEE(
 
 \end_layout
 
+\begin_layout Subsection*
+b)
+\end_layout
+
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=SQL"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-CREATE TABLE DEPARTMENT( 	
-\end_layout
-
-\begin_layout Plain Layout
-
-	Dname VARCHAR(15) NOT NULL,     
-\end_layout
-
-\begin_layout Plain Layout
-
-	Dnumber INT NOT NULL,     
-\end_layout
-
-\begin_layout Plain Layout
-
-	Mgr_ssn CHAR(9) NOT NULL,     
-\end_layout
-
-\begin_layout Plain Layout
-
-	Mgr_start_date DATE,     
-\end_layout
-
-\begin_layout Plain Layout
-
-	PRIMARY KEY (Dnumber),     
-\end_layout
-
-\begin_layout Plain Layout
-
-	UNIQUE (Dname),     
-\end_layout
-
-\begin_layout Plain Layout
-
-	FOREIGN KEY (Mgr_ssn) 
-\end_layout
-
-\begin_layout Plain Layout
-
-	REFERENCES EMPLOYEE(Ssn) 
-\end_layout
-
-\begin_layout Plain Layout
-
-);
+INSERT INTO PROJECT('ProductA', 4, 'Bellaire', 2);
 \end_layout
 
 \end_inset
@@ -295,39 +201,19 @@ CREATE TABLE DEPARTMENT(
 
 \end_layout
 
+\begin_layout Subsection*
+c)
+\end_layout
+
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=SQL"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-CREATE TABLE DEPT_LOCATIONS ( 	
-\end_layout
-
-\begin_layout Plain Layout
-
-	Dnumber INT NOT NULL,     
-\end_layout
-
-\begin_layout Plain Layout
-
-	Dlocation VARCHAR(15) NOT NULL,     
-\end_layout
-
-\begin_layout Plain Layout
-
-	PRIMARY KEY (Dnumber, Dlocation),     
-\end_layout
-
-\begin_layout Plain Layout
-
-	FOREIGN KEY (Dnumber) REFERENCES DEPARTMENT(Dnumber) 
-\end_layout
-
-\begin_layout Plain Layout
-
-);
+INSERT INTO DEPARTMENT('Production', 4, '943775543', '1988-10-01');
 \end_layout
 
 \end_inset
@@ -335,54 +221,204 @@ CREATE TABLE DEPT_LOCATIONS (
 
 \end_layout
 
+\begin_layout Subsection*
+d)
+\end_layout
+
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=SQL"
 inline false
 status open
 
 \begin_layout Plain Layout
 
-CREATE TABLE PROJECT ( 	
+INSERT INTO WORKS_ON('677678989', null, '40.0');
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+e)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+INSERT INTO DEPENDENT('453453453', 'John', M, '1960-12-12', 'SPOUSE');
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+f)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+DELETE FROM WORKS_ON
 \end_layout
 
 \begin_layout Plain Layout
 
-	Pname VARCHAR(15) NOT NULL,     
+WHERE ESSN='333445555';
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+g)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+DELETE FROM EMPLOYEE
 \end_layout
 
 \begin_layout Plain Layout
 
-	Pnumber INT NOT NULL,     
+WHERE SSN='987654321';
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+h)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+DELETE FROM PROJECT
 \end_layout
 
 \begin_layout Plain Layout
 
-	Plocation VARCHAR(15),     
+WHERE PNAME='ProductX';
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+i)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+UPDATE DEPARTMENT
 \end_layout
 
 \begin_layout Plain Layout
 
-	Dnum INT NOT NULL,     
+SET MGR_SSN='123456789', MGR_START_DATE  PNAME='ProductX'
 \end_layout
 
 \begin_layout Plain Layout
 
-	PRIMARY KEY (Pnumber),     
+WHERE DNUMBER=5;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+j)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+UPDATE EMPLOYEE
 \end_layout
 
 \begin_layout Plain Layout
 
-	UNIQUE (Pname),     
+SET SUPER_SSN='943775543'
 \end_layout
 
 \begin_layout Plain Layout
 
-	FOREIGN KEY (Dnum) REFERENCES DEPARTMENT (Dnumber) 
+WHERE SSN='999887777';
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+k)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+UPDATE WORKS_ON
 \end_layout
 
 \begin_layout Plain Layout
 
-);
+SET HOURS='5.0'
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE ESSN= '999887777' AND PNO=10;
 \end_layout
 
 \end_inset

@@ -157,6 +157,276 @@ start
 \end_layout
 
 \begin_layout Section*
+Q1
+\end_layout
+
+\begin_layout Subsection*
+a)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+INSERT INTO EMPLOYEE('Robert', 'F', 'Scott', '943775543', '1942-06-21',
+ '2365 Newcastle Rd, Bellaire, TX', ‘M’, 58000, '888665555', 1);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+INSERT INTO PROJECT('ProductA', 4, 'Bellaire', 2);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+INSERT INTO DEPARTMENT('Production', 4, '943775543', '1988-10-01');
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+d)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+INSERT INTO WORKS_ON('677678989', null, '40.0');
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+e)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+INSERT INTO DEPENDENT('453453453', 'John', M, '1960-12-12', 'SPOUSE');
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+f)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+DELETE FROM WORKS_ON
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE ESSN='333445555';
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+g)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+DELETE FROM EMPLOYEE
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE SSN='987654321';
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+h)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+DELETE FROM PROJECT
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE PNAME='ProductX';
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+i)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+UPDATE DEPARTMENT
+\end_layout
+
+\begin_layout Plain Layout
+
+SET MGR_SSN='123456789', MGR_START_DATE  PNAME='ProductX'
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE DNUMBER=5;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+j)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+UPDATE EMPLOYEE
+\end_layout
+
+\begin_layout Plain Layout
+
+SET SUPER_SSN='943775543'
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE SSN='999887777';
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+k)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+UPDATE WORKS_ON
+\end_layout
+
+\begin_layout Plain Layout
+
+SET HOURS='5.0'
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE ESSN= '999887777' AND PNO=10;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
 Q2
 \end_layout
 
@@ -210,7 +480,7 @@ Name VARCHAR(50) NOT NULL,
 
 \begin_layout Plain Layout
 
-Student_number INT NOT NULL,
+Student_number CHAR(9) NOT NULL,
 \end_layout
 
 \begin_layout Plain Layout
@@ -399,7 +669,7 @@ CREATE TABLE GRADE_REPORT (
 
 \begin_layout Plain Layout
 
-Student_number INT NOT NULL,
+Student_number CHAR(9) NOT NULL,
 \end_layout
 
 \begin_layout Plain Layout
