@@ -160,12 +160,184 @@ start
 Exercise 1
 \end_layout
 
+\begin_layout Subsection*
+I.
+ File transfer using TCP
+\end_layout
+
 \begin_layout Standard
 Run TCPserver_Exercise1.py, then run TCPclient_Exercise1.py
 \end_layout
 
 \begin_layout Standard
 The received file is named output.wav
+\end_layout
+
+\begin_layout Standard
+The original and received .wav file are the same.
+ This is shown by the same size of the file, and by observation of the sounds
+ the wav files produce.
+\end_layout
+
+\begin_layout Subsection*
+II.
+ Timing of the file transfer
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 1II.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The time taken for the transfer is 8.98ms.
+\end_layout
+
+\begin_layout Subsection*
+III.
+ Wireshark analysis of file transfer
+\end_layout
+
+\begin_layout Subsubsection*
+5
+\end_layout
+
+\begin_layout Standard
+Packets #1, #2, and #3 are are the TCP 3-way handshake.
+ This is shown by the SYN flag, then the SYNACK, then the ACK flag.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 1III1.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+6
+\end_layout
+
+\begin_layout Standard
+The shutdown packets are #1804-#1807.
+ These are recognised by the FINACK flags being set, and the acknowledgment
+ packets in response to those packets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 1III2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+7
+\end_layout
+
+\begin_layout Standard
+The source and destination IP addresses are both 127.0.0.1, as we are sending
+ and receiving on localhost.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 1III4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+8
+\end_layout
+
+\begin_layout Standard
+The source port is 53064 and the destination port is 12000 (as specified
+ in the python file).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 1III3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+9
+\end_layout
+
+\begin_layout Standard
+The file transfer started with packet #4, the first to contain data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 1III5.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+10
+\end_layout
+
+\begin_layout Standard
+The file transfer ended on packet #1804, with a the FIN and ACK flags set.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 1III6.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+11
+\end_layout
+
+\begin_layout Standard
+Discuss the file transfer process
+\end_layout
+
+\begin_layout Subsubsection*
+12
+\end_layout
+
+\begin_layout Standard
+According to WireShark, the amount of time the file transfer took was 23.7ms
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 1III8.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Exercise 2
 \end_layout
 
 \end_body

@@ -170,7 +170,7 @@ Run TCPserver_Exercise1.py, then run TCPclient_Exercise1.py
 \end_layout
 
 \begin_layout Standard
-The received file is named received.wav
+The received file is named output.wav
 \end_layout
 
 \begin_layout Standard
