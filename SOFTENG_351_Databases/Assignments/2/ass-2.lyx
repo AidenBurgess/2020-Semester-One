@@ -156,8 +156,12 @@ start
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Part*
 Q1
+\end_layout
+
+\begin_layout Section*
+1)
 \end_layout
 
 \begin_layout Standard
@@ -193,7 +197,7 @@ UNION (SELECT Pname, Pnumber, Plocation FROM PROJECT, WORKS_ON, EMPLOYEE
 \end_layout
 
 \begin_layout Section*
-Q2
+2)
 \end_layout
 
 \begin_layout Standard
@@ -224,7 +228,7 @@ SELECT DISTINCT Ssn, Fname, Lname  FROM EMPLOYEE, WORKS_ON, PROJECT WHERE
 \end_layout
 
 \begin_layout Section*
-Q3
+3)
 \end_layout
 
 \begin_layout Standard
@@ -255,31 +259,441 @@ SELECT Pname, Hours, Ssn, Fname, Lname FROM EMPLOYEE, WORKS_ON, PROJECT,
 \end_layout
 
 \begin_layout Section*
-Q4
+4)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT Fname, Lname, Dname AS "HoD" FROM EMPLOYEE, DEPARTMENT WHERE Dno=Dnumber
+ AND Super_ssn IS NULL AND Mgr_ssn = Ssn
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q4.png
+	scale 35
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
-Q5
+5)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT Ssn, Fname, Lname, Sex FROM EMPLOYEE WHERE (SELECT COUNT(*)     
+   FROM DEPENDENT        WHERE Essn=Ssn) 		>=2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q5.png
+	scale 35
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
-Q6
+6)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT Dno, Dname, COUNT(*) AS No_of_Employees, SUM(Salary) AS Total_Sal,
+ MAX(Salary) AS Highest_Sal, MIN(Salary) AS Lowest_Sal, AVG(Salary) AS Average_S
+al FROM EMPLOYEE NATURAL JOIN DEPARTMENT WHERE Dno=Dnumber GROUP BY Dno
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q6.png
+	scale 35
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
-Q7
+7)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT Pno, Pname, COUNT(*) AS Team_Size, SUM(Hours) AS Total_Hours FROM
+ PROJECT, WORKS_ON WHERE Pnumber=Pno GROUP BY Pnumber HAVING COUNT(*)>2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q7.png
+	scale 35
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
-Q8
+8)
+\end_layout
+
+\begin_layout Subsection*
+a)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE VIEW dept_managers AS SELECT Dno, Dname, Fname, Lname, Salary FROM
+ DEPARTMENT, EMPLOYEE WHERE Mgr_ssn=Ssn AND Dno=Dnumber 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q8a.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE VIEW proj_summary AS SELECT Pno, Pname, Dname, COUNT(*) AS Team_Size,
+ SUM(Hours) AS Total_Hours FROM PROJECT, WORKS_ON, DEPARTMENT WHERE Pno=Pnumber
+ AND Dnum=Dnumber GROUP BY Pno 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q8b.png
+	scale 45
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
-Q9
+9)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT * FROM EMPLOYEE ORDER BY Salary DESC LIMIT 0, 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q9.png
+	scale 45
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
-Q10
+10)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT SUM(Hours) AS Work_load, Salary, Dname AS Department  FROM EMPLOYEE,
+ WORKS_ON, DEPARTMENT WHERE Dno=Dnumber AND Ssn=Essn GROUP BY Ssn ORDER
+ BY SUM(Hours) DESC LIMIT 0, 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q10.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Q2
+\end_layout
+
+\begin_layout Section*
+a)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT crn, ctitle, C.cprefix, C.cno, sid, fname, lname FROM courses AS C,
+ students, sections AS S WHERE C.cno=S.cno AND S.crn="10101" AND S.term="FA"
+ AND S.year="2002"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset Graphics
+	filename 2a.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT DISTINCT E.crn, C.ctitle, S.cprefix, S.cno, S.days, S.startTime, S.endTime,
+ S.room, S.instructor FROM enrolls AS E, sections AS S, courses AS C WHERE
+ E.sid="1111" AND E.term="FA" AND E.year="2002" AND C.cno=S.cno AND E.crn=S.crn
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q2b.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+c)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT S.year, S.term, S.cprefix, S.cno, C.ctitle, E.grade FROM enrolls AS E,
+ sections as S, courses as C WHERE E.crn=S.crn AND E.term=S.term AND E.year=S.year
+ AND S.cno=C.cno AND E.sid="1111"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Q2c.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+d)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+CREATE ASSERTION workload_restriction CHECK (NOT EXISTS(
+\end_layout
+
+\begin_layout Plain Layout
+
+    SELECT *
+\end_layout
+
+\begin_layout Plain Layout
+
+	FROM students AS ST, enrolls AS E, sections AS S, courses AS C
+\end_layout
+
+\begin_layout Plain Layout
+
+    WHERE ST.sType="UGRAD" AND E.sid=ST.sid AND E.crn=S.crn AND S.cno=C.cno AND
+\end_layout
+
+\begin_layout Plain Layout
+
+	E.term=S.term AND E.year=S.year
+\end_layout
+
+\begin_layout Plain Layout
+
+	GROUP BY E.sid, E.term, E.year
+\end_layout
+
+\begin_layout Plain Layout
+
+    HAVING SUM(C.chours)>20
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    UNION
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	SELECT *
+\end_layout
+
+\begin_layout Plain Layout
+
+	FROM students AS ST, enrolls AS E, sections AS S, courses AS C
+\end_layout
+
+\begin_layout Plain Layout
+
+    WHERE ST.sType="GRAD" AND E.sid=ST.sid AND E.crn=S.crn AND S.cno=C.cno AND
+ E.term=S.term AND E.year=S.year
+\end_layout
+
+\begin_layout Plain Layout
+
+    GROUP BY E.sid, E.term, E.year
+\end_layout
+
+\begin_layout Plain Layout
+
+    HAVING SUM(C.chours)>15)
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
