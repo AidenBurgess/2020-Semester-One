@@ -170,7 +170,7 @@ Run TCPserver_Exercise1.py, then run TCPclient_Exercise1.py
 \end_layout
 
 \begin_layout Standard
-The received file is named output.wav
+The received file is named received.wav
 \end_layout
 
 \begin_layout Standard
@@ -367,7 +367,7 @@ HTTP GET requests to MaryTTS Server
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="19" columns="9">
+<lyxtabular version="3" rows="20" columns="9">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -825,7 +825,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-165 
+165
 \end_layout
 
 \end_inset
@@ -1074,7 +1074,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-177 
+177
 \end_layout
 
 \end_inset
@@ -1240,7 +1240,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-193 
+193
 \end_layout
 
 \end_inset
@@ -1323,7 +1323,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-240 
+240
 \end_layout
 
 \end_inset
@@ -1406,7 +1406,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-239 
+239
 \end_layout
 
 \end_inset
@@ -1462,6 +1462,89 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
+18.961087
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+255 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19.626276
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+606
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+POST
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 27.033301
 \end_layout
 
@@ -1489,7 +1572,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-659 
+659
 \end_layout
 
 \end_inset
@@ -1572,7 +1655,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-656 
+656
 \end_layout
 
 \end_inset
@@ -1628,6 +1711,89 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
+28.878285
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+667
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+POST
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 36.386060
 \end_layout
 
@@ -1655,7 +1821,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-904 
+904
 \end_layout
 
 \end_inset
@@ -1738,90 +1904,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-903 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+903
 \end_layout
 
 \end_inset
@@ -1877,7 +1960,16 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
+40.185856
+\end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+950
 \end_layout
 
 \end_inset
@@ -1922,16 +2014,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+POST
 \end_layout
 
 \end_inset
@@ -1959,10 +2042,6 @@ lorem ipsum lm
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
