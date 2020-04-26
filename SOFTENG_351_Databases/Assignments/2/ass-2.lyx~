@@ -607,6 +607,7 @@ d)
 
 \begin_layout Standard
 \begin_inset listings
+lstparams "language=SQL"
 inline false
 status open
 
@@ -632,7 +633,12 @@ CREATE ASSERTION workload_restriction CHECK (NOT EXISTS(
 
 \begin_layout Plain Layout
 
-	E.term=S.term AND E.year=S.year     GROUP BY E.sid, E.term, E.year
+	E.term=S.term AND E.year=S.year
+\end_layout
+
+\begin_layout Plain Layout
+
+	GROUP BY E.sid, E.term, E.year
 \end_layout
 
 \begin_layout Plain Layout
@@ -646,7 +652,7 @@ CREATE ASSERTION workload_restriction CHECK (NOT EXISTS(
 
 \begin_layout Plain Layout
 
-    UNION        
+    UNION
 \end_layout
 
 \begin_layout Plain Layout
@@ -682,7 +688,7 @@ CREATE ASSERTION workload_restriction CHECK (NOT EXISTS(
 
 \begin_layout Plain Layout
 
-)
+);
 \end_layout
 
 \end_inset

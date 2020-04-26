@@ -341,7 +341,8 @@ Exercise 2
 \end_layout
 
 \begin_layout Subsection*
-1 Analysis of Interaction with the MaryTTS server in Auckland.
+1.
+ Analysis of Interaction with the MaryTTS server in Auckland.
 \end_layout
 
 \begin_layout Standard
@@ -367,10 +368,8 @@ HTTP GET requests to MaryTTS Server
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="19" columns="9">
+<lyxtabular version="3" rows="20" columns="7">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -433,29 +432,11 @@ Dest port#
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Description
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Description
 \end_layout
 
 \end_inset
@@ -516,29 +497,11 @@ Description
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-lorem ipsum lm
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Retrieve HTML file for web page
 \end_layout
 
 \end_inset
@@ -585,7 +548,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -594,25 +557,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -621,7 +566,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Retrieve mary.js file needed for web page
 \end_layout
 
 \end_inset
@@ -668,7 +613,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -677,25 +622,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -704,7 +631,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Retrieve icon for tab
 \end_layout
 
 \end_inset
@@ -751,7 +678,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -760,25 +687,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -787,7 +696,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Retrieve voices list
 \end_layout
 
 \end_inset
@@ -825,7 +734,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-165 
+165
 \end_layout
 
 \end_inset
@@ -834,7 +743,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -843,25 +752,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -870,7 +761,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Retrieve input/output options
 \end_layout
 
 \end_inset
@@ -917,7 +808,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -926,25 +817,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -953,7 +826,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Retrive audio output filetypes
 \end_layout
 
 \end_inset
@@ -1000,7 +873,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1009,25 +882,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1036,7 +891,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Retrieve audio effects and their default values
 \end_layout
 
 \end_inset
@@ -1074,7 +929,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-177 
+177
 \end_layout
 
 \end_inset
@@ -1083,7 +938,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1092,25 +947,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1119,7 +956,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Retrieve icon for ???
 \end_layout
 
 \end_inset
@@ -1166,7 +1003,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1175,25 +1012,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1202,7 +1021,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+/exampletext?voice=sh_neu-hsmm HTTP/1.1 
 \end_layout
 
 \end_inset
@@ -1240,7 +1059,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-193 
+193
 \end_layout
 
 \end_inset
@@ -1249,7 +1068,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1258,25 +1077,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1285,7 +1086,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+/exampletext?datatype=TEXT&locale=en_NZ HTTP/1.1 
 \end_layout
 
 \end_inset
@@ -1323,7 +1124,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-240 
+240
 \end_layout
 
 \end_inset
@@ -1332,7 +1133,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1341,25 +1142,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1368,7 +1151,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+/exampletext?datatype=TEXT&locale=en_US HTTP/1.1 
 \end_layout
 
 \end_inset
@@ -1406,7 +1189,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-239 
+239
 \end_layout
 
 \end_inset
@@ -1415,7 +1198,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1424,25 +1207,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1451,7 +1216,72 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
+/exampletext?voice=cmu-slt-hsmm HTTP/1.1 
+\end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18.961087
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+255 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19.626276
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+606
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.110.55.236
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+130.216.236.122
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Passing arguments to website to generate audio file
 \end_layout
 
 \end_inset
@@ -1489,7 +1319,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-659 
+659
 \end_layout
 
 \end_inset
@@ -1498,7 +1328,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1507,25 +1337,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1534,7 +1346,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+/exampletext?voice=akl_nz_sh_neu-hsmm HTTP/1.1 
 \end_layout
 
 \end_inset
@@ -1572,7 +1384,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-656 
+656
 \end_layout
 
 \end_inset
@@ -1581,7 +1393,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1590,25 +1402,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1617,7 +1411,72 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
+/exampletext?datatype=TEXT&locale=en_NZ HTTP/1.1 
+\end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28.878285
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+667
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.110.55.236
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+130.216.236.122
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Passing arguments to website to generate audio file
 \end_layout
 
 \end_inset
@@ -1655,7 +1514,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-904 
+904
 \end_layout
 
 \end_inset
@@ -1664,7 +1523,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1673,25 +1532,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1700,7 +1541,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+/exampletext?datatype=TEXT&locale=mi HTTP/1.1 
 \end_layout
 
 \end_inset
@@ -1738,7 +1579,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-903 
+903
 \end_layout
 
 \end_inset
@@ -1747,7 +1588,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1756,25 +1597,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1783,90 +1606,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+/exampletext?voice=akl_mi_pk_voice1-hsmm HTTP/1.1 
 \end_layout
 
 \end_inset
@@ -1877,7 +1617,16 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
+40.185856
+\end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+950
 \end_layout
 
 \end_inset
@@ -1904,7 +1653,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+10.110.55.236
 \end_layout
 
 \end_inset
@@ -1913,34 +1662,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+130.216.236.122
 \end_layout
 
 \end_inset
@@ -1949,7 +1671,7 @@ lorem ipsum lm
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Passing arguments to website to generate audio file
 \end_layout
 
 \end_inset
@@ -1962,13 +1684,14 @@ lorem ipsum lm
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection*
+2.
+ Analysis of the MaryTTS server based in Germany
 \end_layout
 
 \end_body
