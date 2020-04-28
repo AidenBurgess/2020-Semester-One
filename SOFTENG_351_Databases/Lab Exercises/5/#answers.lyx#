@@ -429,7 +429,65 @@ a)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\pi_{Fname,Lname}(\sigma_{(Dno=4\,AND\,Salary>40000)\,OR\,(Dno=5\,AND\,Salary=}EMPLOYEE)$
+\begin_inset Formula $\pi_{Fname,Lname}(\sigma_{(Dno=4\,AND\,Salary>40000)\,OR\,(Dno=5\,AND\,Salary<30000)}(EMPLOYEE))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $DEP4\_EMPS\leftarrow\sigma_{Dno=4}(EMPLOYEE)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $RESULT1\leftarrow\pi_{Ssn}(DEP4\_EMPS)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $RESULT2(Ssn)\leftarrow\pi_{Super\_ssn}(DEP4\_EMPS)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $RESULT\leftarrow RESULT1\cup RESULT2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Standard
+Need to rename as well
+\end_layout
+
+\begin_layout Standard
+Checking null is not easy, need to use left join
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $EMPS\_WITH\_SUPER\leftarrow\pi_{Fname,Lname}(\sigma_{Super\_ssn\,IS\,NULL}(EMPLOYEE))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $RESULT(First\_Name,Last\_Name)\leftarrow\pi_{Fname,Lname}(EMPLOYEE)-EMPS\_WITH\_SUPER$
 \end_inset
 
 
