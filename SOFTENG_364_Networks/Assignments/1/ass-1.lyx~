@@ -1810,7 +1810,7 @@ Description
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.026077
+0.879162 
 \end_layout
 
 \end_inset
@@ -1819,7 +1819,7 @@ Description
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+16
 \end_layout
 
 \end_inset
@@ -1828,7 +1828,7 @@ Description
 \begin_inset Text
 
 \begin_layout Plain Layout
-58626
+56530
 \end_layout
 
 \end_inset
@@ -1857,7 +1857,7 @@ Retrieve HTML file for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.056283
+0.914332
 \end_layout
 
 \end_inset
@@ -1866,7 +1866,7 @@ Retrieve HTML file for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-88
+19
 \end_layout
 
 \end_inset
@@ -1875,7 +1875,7 @@ Retrieve HTML file for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.060862
+1.464286
 \end_layout
 
 \end_inset
@@ -1884,7 +1884,7 @@ Retrieve HTML file for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-93
+55
 \end_layout
 
 \end_inset
@@ -1893,7 +1893,7 @@ Retrieve HTML file for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-58627
+56532
 \end_layout
 
 \end_inset
@@ -1922,7 +1922,7 @@ Retrieve mary.js file needed for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.064732
+0.914730
 \end_layout
 
 \end_inset
@@ -1931,7 +1931,7 @@ Retrieve mary.js file needed for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-108
+20
 \end_layout
 
 \end_inset
@@ -1940,7 +1940,7 @@ Retrieve mary.js file needed for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.069526
+1.190484
 \end_layout
 
 \end_inset
@@ -1949,7 +1949,7 @@ Retrieve mary.js file needed for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-122
+41
 \end_layout
 
 \end_inset
@@ -1958,7 +1958,7 @@ Retrieve mary.js file needed for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-58628
+56529
 \end_layout
 
 \end_inset
@@ -1987,7 +1987,7 @@ Retrieve icon for tab
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.153521
+1.509861
 \end_layout
 
 \end_inset
@@ -1996,7 +1996,7 @@ Retrieve icon for tab
 \begin_inset Text
 
 \begin_layout Plain Layout
-147
+61 
 \end_layout
 
 \end_inset
@@ -2005,7 +2005,7 @@ Retrieve icon for tab
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.159704
+1.784339
 \end_layout
 
 \end_inset
@@ -2014,7 +2014,7 @@ Retrieve icon for tab
 \begin_inset Text
 
 \begin_layout Plain Layout
-160
+74
 \end_layout
 
 \end_inset
@@ -2023,7 +2023,7 @@ Retrieve icon for tab
 \begin_inset Text
 
 \begin_layout Plain Layout
-58630
+56531
 \end_layout
 
 \end_inset
@@ -2052,7 +2052,7 @@ Retrieve voices list
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.155872
+1.782997
 \end_layout
 
 \end_inset
@@ -2061,7 +2061,7 @@ Retrieve voices list
 \begin_inset Text
 
 \begin_layout Plain Layout
-154
+69
 \end_layout
 
 \end_inset
@@ -2070,7 +2070,7 @@ Retrieve voices list
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.161205
+2.057822
 \end_layout
 
 \end_inset
@@ -2079,7 +2079,7 @@ Retrieve voices list
 \begin_inset Text
 
 \begin_layout Plain Layout
-165
+86
 \end_layout
 
 \end_inset
@@ -2088,7 +2088,7 @@ Retrieve voices list
 \begin_inset Text
 
 \begin_layout Plain Layout
-58631
+56827
 \end_layout
 
 \end_inset
@@ -2117,7 +2117,7 @@ Retrieve input/output options
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.155895
+1.783909
 \end_layout
 
 \end_inset
@@ -2126,7 +2126,7 @@ Retrieve input/output options
 \begin_inset Text
 
 \begin_layout Plain Layout
-155
+73
 \end_layout
 
 \end_inset
@@ -2135,7 +2135,7 @@ Retrieve input/output options
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.161624
+2.059000
 \end_layout
 
 \end_inset
@@ -2144,7 +2144,7 @@ Retrieve input/output options
 \begin_inset Text
 
 \begin_layout Plain Layout
-170
+89
 \end_layout
 
 \end_inset
@@ -2153,7 +2153,7 @@ Retrieve input/output options
 \begin_inset Text
 
 \begin_layout Plain Layout
-58632
+56830
 \end_layout
 
 \end_inset
@@ -2182,7 +2182,7 @@ Retrive audio output filetypes
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.156218
+1.785124
 \end_layout
 
 \end_inset
@@ -2191,7 +2191,7 @@ Retrive audio output filetypes
 \begin_inset Text
 
 \begin_layout Plain Layout
-156
+78
 \end_layout
 
 \end_inset
@@ -2200,7 +2200,7 @@ Retrive audio output filetypes
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.163576
+2.060645
 \end_layout
 
 \end_inset
@@ -2209,7 +2209,7 @@ Retrive audio output filetypes
 \begin_inset Text
 
 \begin_layout Plain Layout
-173
+102
 \end_layout
 
 \end_inset
@@ -2218,7 +2218,7 @@ Retrive audio output filetypes
 \begin_inset Text
 
 \begin_layout Plain Layout
-58633
+56829
 \end_layout
 
 \end_inset
@@ -2247,7 +2247,7 @@ Retrieve audio effects and their default values
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.160807
+1.785212
 \end_layout
 
 \end_inset
@@ -2256,7 +2256,7 @@ Retrieve audio effects and their default values
 \begin_inset Text
 
 \begin_layout Plain Layout
-163
+79
 \end_layout
 
 \end_inset
@@ -2265,7 +2265,7 @@ Retrieve audio effects and their default values
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.166295
+2.059691
 \end_layout
 
 \end_inset
@@ -2274,7 +2274,7 @@ Retrieve audio effects and their default values
 \begin_inset Text
 
 \begin_layout Plain Layout
-177
+98
 \end_layout
 
 \end_inset
@@ -2283,7 +2283,7 @@ Retrieve audio effects and their default values
 \begin_inset Text
 
 \begin_layout Plain Layout
-58634
+56531
 \end_layout
 
 \end_inset
@@ -2312,7 +2312,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.170574
+2.066442
 \end_layout
 
 \end_inset
@@ -2321,7 +2321,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-187
+105
 \end_layout
 
 \end_inset
@@ -2330,7 +2330,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.191741
+2.341127
 \end_layout
 
 \end_inset
@@ -2339,7 +2339,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-191
+112
 \end_layout
 
 \end_inset
@@ -2348,7 +2348,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-58631
+56829
 \end_layout
 
 \end_inset
@@ -2366,7 +2366,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?voice=sh_neu-hsmm HTTP/1.1
+
 \end_layout
 
 \end_inset
@@ -2377,7 +2377,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.171599
+2.067146
 \end_layout
 
 \end_inset
@@ -2386,7 +2386,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-190
+106
 \end_layout
 
 \end_inset
@@ -2395,7 +2395,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.191840
+2.339862
 \end_layout
 
 \end_inset
@@ -2404,7 +2404,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-193
+110
 \end_layout
 
 \end_inset
@@ -2413,7 +2413,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-58633
+56830
 \end_layout
 
 \end_inset
@@ -2431,7 +2431,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?datatype=TEXT&locale=en_NZ HTTP/1.1
+
 \end_layout
 
 \end_inset
@@ -2442,7 +2442,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-16.498194
+18.839862
 \end_layout
 
 \end_inset
@@ -2451,7 +2451,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-237
+233
 \end_layout
 
 \end_inset
@@ -2460,7 +2460,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-16.524372
+19.115119
 \end_layout
 
 \end_inset
@@ -2469,7 +2469,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-240
+245
 \end_layout
 
 \end_inset
@@ -2478,7 +2478,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-58633
+56829
 \end_layout
 
 \end_inset
@@ -2496,7 +2496,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?datatype=TEXT&locale=en_US HTTP/1.1
+
 \end_layout
 
 \end_inset
@@ -2507,7 +2507,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-16.499392
+18.840093
 \end_layout
 
 \end_inset
@@ -2516,7 +2516,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-238
+234
 \end_layout
 
 \end_inset
@@ -2525,7 +2525,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-16.524310
+19.113948
 \end_layout
 
 \end_inset
@@ -2534,7 +2534,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-239
+243
 \end_layout
 
 \end_inset
@@ -2543,7 +2543,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-58631
+56830
 \end_layout
 
 \end_inset
@@ -2561,7 +2561,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?voice=cmu-slt-hsmm HTTP/1.1
+
 \end_layout
 
 \end_inset
@@ -2572,7 +2572,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-18.961087
+35.612788
 \end_layout
 
 \end_inset
@@ -2581,7 +2581,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-255
+403
 \end_layout
 
 \end_inset
@@ -2590,7 +2590,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-19.626276
+36.623951
 \end_layout
 
 \end_inset
@@ -2599,7 +2599,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-606
+487
 \end_layout
 
 \end_inset
@@ -2608,7 +2608,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-58633
+56829
 \end_layout
 
 \end_inset
@@ -2626,7 +2626,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-Passing arguments to website to generate audio file
+
 \end_layout
 
 \end_inset
@@ -2637,7 +2637,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-27.033301
+51.590572
 \end_layout
 
 \end_inset
@@ -2646,7 +2646,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-653
+564
 \end_layout
 
 \end_inset
@@ -2655,7 +2655,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-27.100822
+51.865692
 \end_layout
 
 \end_inset
@@ -2664,7 +2664,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-659
+570
 \end_layout
 
 \end_inset
@@ -2673,7 +2673,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-58633
+56829
 \end_layout
 
 \end_inset
@@ -2691,7 +2691,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?voice=akl_nz_sh_neu-hsmm HTTP/1.1
+
 \end_layout
 
 \end_inset
@@ -2702,7 +2702,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-27.033314
+51.590995
 \end_layout
 
 \end_inset
@@ -2711,7 +2711,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-654
+565
 \end_layout
 
 \end_inset
@@ -2720,7 +2720,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-27.100695
+51.864715
 \end_layout
 
 \end_inset
@@ -2729,7 +2729,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-656
+568
 \end_layout
 
 \end_inset
@@ -2738,7 +2738,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-58631
+56830
 \end_layout
 
 \end_inset
@@ -2756,7 +2756,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?datatype=TEXT&locale=en_NZ HTTP/1.1
+
 \end_layout
 
 \end_inset
@@ -2767,7 +2767,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-28.878285
+62.117288
 \end_layout
 
 \end_inset
@@ -2776,7 +2776,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-667
+695
 \end_layout
 
 \end_inset
@@ -2785,7 +2785,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+63.939109
 \end_layout
 
 \end_inset
@@ -2794,7 +2794,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+960
 \end_layout
 
 \end_inset
@@ -2803,7 +2803,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-58631
+56829
 \end_layout
 
 \end_inset
@@ -2821,7 +2821,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-Passing arguments to website to generate audio file
+
 \end_layout
 
 \end_inset
@@ -2832,7 +2832,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-36.386060
+73.296216 
 \end_layout
 
 \end_inset
@@ -2841,7 +2841,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-900
+1038 
 \end_layout
 
 \end_inset
@@ -2850,7 +2850,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-36.393621
+73.571083
 \end_layout
 
 \end_inset
@@ -2859,7 +2859,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-904
+1042
 \end_layout
 
 \end_inset
@@ -2868,7 +2868,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-58631
+56829
 \end_layout
 
 \end_inset
@@ -2886,7 +2886,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?datatype=TEXT&locale=mi HTTP/1.1
+
 \end_layout
 
 \end_inset
@@ -2897,7 +2897,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-36.386308
+73.296669
 \end_layout
 
 \end_inset
@@ -2906,7 +2906,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-901
+1039 
 \end_layout
 
 \end_inset
@@ -2915,7 +2915,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-36.393561
+73.570419
 \end_layout
 
 \end_inset
@@ -2924,7 +2924,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-903
+1040
 \end_layout
 
 \end_inset
@@ -2933,7 +2933,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-58633
+56830
 \end_layout
 
 \end_inset
@@ -2951,7 +2951,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?voice=akl_mi_pk_voice1-hsmm HTTP/1.1
+
 \end_layout
 
 \end_inset
@@ -2962,7 +2962,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-40.185856
+83.536958
 \end_layout
 
 \end_inset
@@ -2971,7 +2971,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-950
+1102
 \end_layout
 
 \end_inset
@@ -2980,7 +2980,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+84.470687
 \end_layout
 
 \end_inset
@@ -2989,7 +2989,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1176
 \end_layout
 
 \end_inset
@@ -2998,7 +2998,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-58631
+56829
 \end_layout
 
 \end_inset
@@ -3016,7 +3016,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-Passing arguments to website to generate audio file
+
 \end_layout
 
 \end_inset
