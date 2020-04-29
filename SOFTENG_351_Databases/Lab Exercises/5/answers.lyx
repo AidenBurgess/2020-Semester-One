@@ -297,11 +297,7 @@ b)
 \end_layout
 
 \begin_layout Standard
-Yes it is possible.
- The question is ambiguous so I will assume that the required query is:
- For each department whose average male employee salary is more than $30,000,
- retrieve the department name and the number of male employees working for
- that department.
+The following statement assumes Dname to be a key.
 \end_layout
 
 \begin_layout Standard
@@ -329,17 +325,42 @@ M
 \begin_inset Quotes erd
 \end_inset
 
-
+ AND Dno IN (
 \end_layout
 
 \begin_layout Plain Layout
 
-GROUP BY Dnumber 
+    SELECT Dname, COUNT(*)
 \end_layout
 
 \begin_layout Plain Layout
 
-HAVING AVG(Salary)>30000;
+    FROM DEPARTMENT, EMPLOYEE 
+\end_layout
+
+\begin_layout Plain Layout
+
+    WHERE Dno=Dnumber 
+\end_layout
+
+\begin_layout Plain Layout
+
+    GROUP BY Dnumber 
+\end_layout
+
+\begin_layout Plain Layout
+
+    HAVING AVG(Salary)>30000
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+GROUP BY Dname;
 \end_layout
 
 \end_inset
@@ -349,7 +370,7 @@ HAVING AVG(Salary)>30000;
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="4" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -388,6 +409,26 @@ Research
 
 \begin_layout Plain Layout
 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administration
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
 \end_layout
 
 \end_inset
@@ -435,6 +476,79 @@ a)
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fname
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lname
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Jennifer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wallace
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Joyce
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+English
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 b)
 \end_layout
@@ -467,12 +581,132 @@ b)
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ssn
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+999887777
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+987654321
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+987987987
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+888665555
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 c)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $RESULT(First\_Name,Last\_Name)\leftarrow\pi_{Fname,Lname}(\sigma_{Super\_ssn\,IS\,NULL}(EMPLOYEE))$
+\begin_inset Formula $RESULT(First\_Name,Last\_Name)\leftarrow\pi_{Fname,Lname}(\sigma_{Super\_ssn\,IS\,NULL\,AND\,Salary>50000}(EMPLOYEE))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fname
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lname
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+James
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Borg
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
 \end_inset
 
 
