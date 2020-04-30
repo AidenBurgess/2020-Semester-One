@@ -200,12 +200,42 @@ Each topping has a price per unit
 \end_layout
 
 \begin_layout Enumerate
-An image of their frozen yoghurt selection is shown to aid human memory
+An image of their frozen yogurt selection is shown to aid human memory
 \end_layout
 
 \begin_layout Enumerate
-The total price of their frozen yoghurt is shown and dynamically updated
+The total price of their frozen yogurt is shown and dynamically updated
  as toppings are added or removed.
+\end_layout
+
+\begin_layout Standard
+Each element is surrounded by white/empty area, which indicates that the
+ icons and text are figures in the application.
+\end_layout
+
+\begin_layout Standard
+The images, name, and price of each row are aligned with each other, while
+ the top bar area and heading 
+\begin_inset Quotes eld
+\end_inset
+
+Select Topping
+\begin_inset Quotes erd
+\end_inset
+
+ have different fates, indicating different sections of the application.
+\end_layout
+
+\begin_layout Standard
+The background image of 
+\begin_inset Quotes eld
+\end_inset
+
+Select Toppings
+\begin_inset Quotes erd
+\end_inset
+
+ is large, which allows it to be seen as the ground through the Area Principle.
 \end_layout
 
 \begin_layout Section*
@@ -222,6 +252,29 @@ The total price of their frozen yoghurt is shown and dynamically updated
 
 \end_layout
 
+\begin_layout Standard
+The user touches the sprinkles box once.
+ This replaces the price tag with a quantity selector with 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ as its default value.
+ There are arrows to the left and right of the quantity, which allow the
+ user to increase or decrease the amount of topping.
+ These are common UI elements which aids human memory.
+ The arrows are mirrored and placed in a row, by the symmetry principle,
+ this allows the quantity selector to be seen as a whole.
+\end_layout
+
+\begin_layout Standard
+The total cost of the yogurt has also increased to reflect the change in
+ toppings.
+\end_layout
+
 \begin_layout Section*
 1c
 \end_layout
@@ -234,6 +287,16 @@ The total price of their frozen yoghurt is shown and dynamically updated
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The user taps on the total to find a breakdown of the cost.
+ The costs are ordered from highest to lowest, so those with the greatest
+ impact on the overall price can be seen first.
+ The elements are arranged in rows and each column starts at the same spot,
+ and is aligned with the total at the bottom of the screen.
+ This ties the two sections together by the common fate principle.
+ There is unity in the style and format of how the rows are presented.
 \end_layout
 
 \end_body

@@ -231,7 +231,15 @@ Select Topping
 \end_layout
 
 \begin_layout Standard
-Background ima
+Background image of 
+\begin_inset Quotes eld
+\end_inset
+
+Select Toppings
+\begin_inset Quotes erd
+\end_inset
+
+ is large, which allows it to be seen as the ground through the Area Principle.
 \end_layout
 
 \begin_layout Section*
@@ -249,8 +257,26 @@ Background ima
 \end_layout
 
 \begin_layout Standard
-The user touches the sprinkles box once and the banana box.
- Then the user touches the right arrow of the banana box quantity.
+The user touches the sprinkles box once.
+ This replaces the price tag with a quantity selector with 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ as its default value.
+ There are arrows to the left and right of the (symettry) quantity, which
+ allow the user to increase or decrease the amount of topping.
+ These are common UI elements which aids human memory.
+ The arrows are mirrored and placed in a row, by the symmetry principle,
+ this allows the quantity selector to be seen as a whole.
+\end_layout
+
+\begin_layout Standard
+The total cost of the yogurt has also increased to reflect the change in
+ toppings.
 \end_layout
 
 \begin_layout Section*
@@ -265,6 +291,10 @@ The user touches the sprinkles box once and the banana box.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The user taps on the total to find a breakdown of the cost
 \end_layout
 
 \end_body
