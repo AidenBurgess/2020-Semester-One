@@ -268,11 +268,10 @@ The user touches the sprinkles box once.
  These are common UI elements which aids human memory.
  The arrows are mirrored and placed in a row, by the symmetry principle,
  this allows the quantity selector to be seen as a whole.
-\end_layout
-
-\begin_layout Standard
-The total cost of the yogurt has also increased to reflect the change in
- toppings.
+ The user then touches the banana box and then touches the right arrow to
+ increase the amount of banana toppings again.
+ Each time the quantity of a topping is changed, the total price changes
+ to dynamically show the user the new price.
 \end_layout
 
 \begin_layout Section*

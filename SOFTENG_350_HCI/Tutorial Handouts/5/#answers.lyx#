@@ -200,16 +200,12 @@ Each topping has a price per unit
 \end_layout
 
 \begin_layout Enumerate
-An image of their frozen yoghurt selection is shown to aid human memory
+An image of their frozen yogurt selection is shown to aid human memory
 \end_layout
 
 \begin_layout Enumerate
-The total price of their frozen yoghurt is shown and dynamically updated
+The total price of their frozen yogurt is shown and dynamically updated
  as toppings are added or removed.
-\end_layout
-
-\begin_layout Standard
-Arranged in rows with dif
 \end_layout
 
 \begin_layout Standard
@@ -218,8 +214,8 @@ Each element is surrounded by white/empty area, which indicates that the
 \end_layout
 
 \begin_layout Standard
-Common fate principle, images, name, and price are aligned with each other,
- while the top bar area and heading 
+The images, name, and price of each row are aligned with each other, while
+ the top bar area and heading 
 \begin_inset Quotes eld
 \end_inset
 
@@ -231,7 +227,7 @@ Select Topping
 \end_layout
 
 \begin_layout Standard
-Background image of 
+The background image of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -267,11 +263,13 @@ The user touches the sprinkles box once.
 \end_inset
 
  as its default value.
- There are arrows to the left and right of the (symettry) quantity, which
- allow the user to increase or decrease the amount of topping.
+ There are arrows to the left and right of the quantity, which allow the
+ user to increase or decrease the amount of topping.
  These are common UI elements which aids human memory.
  The arrows are mirrored and placed in a row, by the symmetry principle,
  this allows the quantity selector to be seen as a whole.
+ The user then touches the banana box and then touches the right arrow to
+ increase the amount of banana toppings again.
 \end_layout
 
 \begin_layout Standard
@@ -286,7 +284,7 @@ The total cost of the yogurt has also increased to reflect the change in
 \begin_layout Standard
 \begin_inset Graphics
 	filename c.jpg
-	scale 20
+	scale 18
 
 \end_inset
 
@@ -294,7 +292,13 @@ The total cost of the yogurt has also increased to reflect the change in
 \end_layout
 
 \begin_layout Standard
-The user taps on the total to find a breakdown of the cost
+The user taps on the total to find a breakdown of the cost.
+ The costs are ordered from highest to lowest, so those with the greatest
+ impact on the overall price can be seen first.
+ The elements are arranged in rows and each column starts at the same spot,
+ and is aligned with the total at the bottom of the screen.
+ This ties the two sections together by the common fate principle.
+ There is unity in the style and format of how the rows are presented.
 \end_layout
 
 \end_body
