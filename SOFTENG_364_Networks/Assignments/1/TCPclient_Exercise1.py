@@ -1,5 +1,4 @@
-import socket
-import time
+import socket, time
 
 HOST, PORT = "localhost", 12000
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -15,5 +14,6 @@ with open("received.wav", "wb") as data:
         data.write(line)
 end_time = time.time()
 s.close()
+
 print("File transfer complete – file name: audio.wav, saved as received.wav")
 print(f"start: {start_time} end: {end_time} difference: {end_time-start_time}")

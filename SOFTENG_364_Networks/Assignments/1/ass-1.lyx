@@ -195,7 +195,25 @@ II.
 \end_layout
 
 \begin_layout Standard
-The time taken for the transfer is 8.98ms.
+The start of the timing is measured just after the code to write a new file
+ is executed.
+\end_layout
+
+\begin_layout Standard
+The timer was put here because after this the data starts to be read.
+\end_layout
+
+\begin_layout Standard
+The end of the timing is measured after the client has been sent no more
+ data.
+\end_layout
+
+\begin_layout Standard
+There is some inaccuracy as it takes time to execute the timing commands.
+\end_layout
+
+\begin_layout Standard
+The time taken for the transfer is 2.96ms.
 \end_layout
 
 \begin_layout Subsection*
@@ -214,8 +232,7 @@ Packets #1, #2, and #3 are are the TCP 3-way handshake.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename 1III1.png
-	scale 55
+	filename pasted1.png
 
 \end_inset
 
@@ -227,14 +244,14 @@ Packets #1, #2, and #3 are are the TCP 3-way handshake.
 \end_layout
 
 \begin_layout Standard
-The shutdown packets are #1804-#1807.
+The shutdown packets are #276-279.
  These are recognised by the FINACK flags being set, and the acknowledgment
  packets in response to those packets.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename 1III2.png
+	filename pasted2.png
 
 \end_inset
 
@@ -264,13 +281,13 @@ The source and destination IP addresses are both 127.0.0.1, as we are sending
 \end_layout
 
 \begin_layout Standard
-The source port is 53064 and the destination port is 12000 (as specified
+The source port is 62774 and the destination port is 12000 (as specified
  in the python file).
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename 1III3.png
+	filename pasted3.png
 
 \end_inset
 
@@ -287,7 +304,7 @@ The file transfer started with packet #4, the first to contain data.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename 1III5.png
+	filename pasted4.png
 
 \end_inset
 
@@ -319,6 +336,30 @@ The file transfer ended on packet #1804, with a the FIN and ACK flags set.
 Discuss the file transfer process
 \end_layout
 
+\begin_layout Standard
+sent in 1024 byte chunks
+\end_layout
+
+\begin_layout Standard
+IP, TCP
+\end_layout
+
+\begin_layout Standard
+do any packets go missing
+\end_layout
+
+\begin_layout Standard
+whats going on, can we interpret the wireshark
+\end_layout
+
+\begin_layout Standard
+acknowledgements
+\end_layout
+
+\begin_layout Standard
+sequence numbers
+\end_layout
+
 \begin_layout Subsubsection*
 12
 \end_layout
@@ -336,6 +377,10 @@ According to WireShark, the amount of time the file transfer took was 23.7ms
 
 \end_layout
 
+\begin_layout Standard
+if they are not comparable say so
+\end_layout
+
 \begin_layout Section*
 Exercise 2
 \end_layout
@@ -346,7 +391,9 @@ Exercise 2
 \end_layout
 
 \begin_layout Standard
-Look at end of tcp stream for ending packetsz` 
+The last packet is assumed to be the HTTP OK response.
+ If this is not present, then the last TCP packet where the packets are
+ reassembled is assumed to be the last packet#
 \end_layout
 
 \begin_layout Standard
@@ -371,6 +418,21 @@ HTTP GET requests to UoA MaryTTS Server
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="20" columns="7">
 <features tabularvalignment="middle">
@@ -386,6 +448,8 @@ HTTP GET requests to UoA MaryTTS Server
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Starting time
 \end_layout
 
@@ -395,6 +459,8 @@ Starting time
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 GET Packet#
 \end_layout
 
@@ -404,6 +470,8 @@ GET Packet#
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Ending time
 \end_layout
 
@@ -413,6 +481,8 @@ Ending time
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Last Packet#
 \end_layout
 
@@ -422,6 +492,8 @@ Last Packet#
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Source port#
 \end_layout
 
@@ -431,6 +503,8 @@ Source port#
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Dest port#
 \end_layout
 
@@ -440,6 +514,8 @@ Dest port#
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Description
 \end_layout
 
@@ -635,7 +711,7 @@ Retrieve mary.js file needed for web page
 \begin_inset Text
 
 \begin_layout Plain Layout
-Retrieve icon for tab
+Retrieve icon for tab title
 \end_layout
 
 \end_inset
@@ -830,7 +906,7 @@ Retrieve input/output options
 \begin_inset Text
 
 \begin_layout Plain Layout
-Retrive audio output filetypes
+Retrieve audio output file-types
 \end_layout
 
 \end_inset
@@ -960,7 +1036,7 @@ Retrieve audio effects and their default values
 \begin_inset Text
 
 \begin_layout Plain Layout
-Retrieve icon for ???
+Retrieve icon for logo
 \end_layout
 
 \end_inset
@@ -1025,7 +1101,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?voice=sh_neu-hsmm HTTP/1.1 
+Change voice to sh_neu-hsmm
 \end_layout
 
 \end_inset
@@ -1090,7 +1166,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?datatype=TEXT&locale=en_NZ HTTP/1.1 
+Get default input text for NZ English
 \end_layout
 
 \end_inset
@@ -1155,7 +1231,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?datatype=TEXT&locale=en_US HTTP/1.1 
+Get default input text for US English
 \end_layout
 
 \end_inset
@@ -1220,7 +1296,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?voice=cmu-slt-hsmm HTTP/1.1 
+Change voice to cmu-slt-hsmm
 \end_layout
 
 \end_inset
@@ -1350,7 +1426,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?voice=akl_nz_sh_neu-hsmm HTTP/1.1 
+Change voice to sh_neu-hsmm
 \end_layout
 
 \end_inset
@@ -1415,7 +1491,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?datatype=TEXT&locale=en_NZ HTTP/1.1 
+Get default input text for NZ English
 \end_layout
 
 \end_inset
@@ -1444,7 +1520,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+29.417301
 \end_layout
 
 \end_inset
@@ -1453,7 +1529,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+859
 \end_layout
 
 \end_inset
@@ -1545,7 +1621,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?datatype=TEXT&locale=mi HTTP/1.1 
+Get default input text for Maori
 \end_layout
 
 \end_inset
@@ -1610,7 +1686,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-/exampletext?voice=akl_mi_pk_voice1-hsmm HTTP/1.1 
+Change voice to akl_mi_pk_voice1-hsmm
 \end_layout
 
 \end_inset
@@ -1639,7 +1715,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+40.321462
 \end_layout
 
 \end_inset
@@ -1648,7 +1724,7 @@ Passing arguments to website to generate audio file
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1023
 \end_layout
 
 \end_inset
@@ -1686,6 +1762,17 @@ Passing arguments to website to generate audio file
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1704,13 +1791,28 @@ wide false
 sideways false
 status open
 
-\begin_layout Plain Layout
+\begin_layout LyX-Code
 \noindent
 \align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 HTTP GET requests to MaryTTS Server
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{
+\backslash
+textwidth}{!}{
 \end_layout
 
 \end_inset
@@ -1725,12 +1827,14 @@ HTTP GET requests to MaryTTS Server
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Starting time
 \end_layout
 
@@ -1740,6 +1844,8 @@ Starting time
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 GET Packet#
 \end_layout
 
@@ -1749,6 +1855,8 @@ GET Packet#
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Ending time
 \end_layout
 
@@ -1758,6 +1866,8 @@ Ending time
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Last Packet#
 \end_layout
 
@@ -1767,6 +1877,8 @@ Last Packet#
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Source port#
 \end_layout
 
@@ -1776,6 +1888,8 @@ Source port#
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Dest port#
 \end_layout
 
@@ -1785,6 +1899,8 @@ Dest port#
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\series bold
 Description
 \end_layout
 
@@ -2175,7 +2291,7 @@ Retrieve input/output options
 \begin_inset Text
 
 \begin_layout Plain Layout
-Retrive audio output filetypes
+Retrieve audio output file-types
 \end_layout
 
 \end_inset
@@ -2305,7 +2421,7 @@ Retrieve audio effects and their default values
 \begin_inset Text
 
 \begin_layout Plain Layout
-Retrieve icon for ???
+Retrieve icon for logo
 \end_layout
 
 \end_inset
@@ -2370,7 +2486,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Get default input text for French
 \end_layout
 
 \end_inset
@@ -2435,7 +2551,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Change voice to upmc-pierre-hsmm
 \end_layout
 
 \end_inset
@@ -2500,7 +2616,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Get default input text for British English
 \end_layout
 
 \end_inset
@@ -2565,7 +2681,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Change voice to dfki-spike-hsmm
 \end_layout
 
 \end_inset
@@ -2630,7 +2746,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Passing arguments to website to generate audio file
 \end_layout
 
 \end_inset
@@ -2695,7 +2811,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Get default input text for US English
 \end_layout
 
 \end_inset
@@ -2760,7 +2876,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Change voice to cmu-slt-hsmm
 \end_layout
 
 \end_inset
@@ -2825,7 +2941,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Passing arguments to website to generate audio file
 \end_layout
 
 \end_inset
@@ -2890,7 +3006,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Get default input text for German
 \end_layout
 
 \end_inset
@@ -2955,7 +3071,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Change voice to bits4
 \end_layout
 
 \end_inset
@@ -3020,7 +3136,7 @@ Retrieve icon for ???
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Passing arguments to website to generate audio file
 \end_layout
 
 \end_inset
@@ -3031,11 +3147,205 @@ Retrieve icon for ???
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.
+ Comparison of the two MaryTTS systems from a networks perspective
+\end_layout
+
+\begin_layout Standard
+The first eight packets are the same, which facilitate the set up of the
+ website.
+ The first HTTP GET request retrieves the HTML file for the web page.
+ After retrieving this information, both websites retrieve files referenced
+ in the web page, which are: mary.js, an icon for the tab, voice list, input
+ and output options, audio output file-types, audio effects and their default
+ values, and the logo icon displayed on the web page.
+\end_layout
+
+\begin_layout Standard
+a) total # processes
+\end_layout
+
+\begin_layout Standard
+Assuming each unique port number used corresponeds to a process, the number
+ of processes are as follows:
+\end_layout
+
+\begin_layout Standard
+MARYNZ: 8
+\end_layout
+
+\begin_layout Standard
+MARYDE: 8
+\end_layout
+
+\begin_layout Standard
+b) port numbers used
+\end_layout
+
+\begin_layout Standard
+MARYNZ used source port numbers 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+58626 
+58627
+ 58628
+ 58630 
+58631
+ 58632
+ 58633
+ 58634 
+\end_layout
+
+\begin_layout Standard
+MARYDE used source port numbers 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+56529 56530 56531 56532 56827 56829 56830 56830
+\end_layout
+
+\begin_layout Standard
+c) Total #Gets 
+\end_layout
+
+\begin_layout Standard
+MARYNZ: 19
+\end_layout
+
+\begin_layout Standard
+MARYDE: 19
+\end_layout
+
+\begin_layout Standard
+d) Time taken to download text spoken by cmu-slt-hsmm en_US fem
+\end_layout
+
+\begin_layout Standard
+MARYNZ: 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+19.626276
+ - 18.961087 = 0.665189s
+\end_layout
+
+\begin_layout Standard
+MARYDE: 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+63.939109
+ -
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+62.117288 = 1.821821s
+\end_layout
+
+\begin_layout Standard
+This is due to distance, prop time
+\end_layout
+
+\begin_layout Standard
+e) #packets in get statements that precedes the streaming of audio wav
+\end_layout
+
+\begin_layout Standard
+MARYNZ: 1: 2, 2: 2, 3: 2
+\end_layout
+
+\begin_layout Standard
+MARYDE: 1: 2, 2:2, 3: 2
+\end_layout
+
+\begin_layout Standard
+f) #packets in streamed audio files
+\end_layout
+
+\begin_layout Standard
+MARYNZ: 1: 175, 2: 74, 3: 28
+\end_layout
+
+\begin_layout Standard
+MARYDE: 1: 62, 2: 171, 3: 60
 \end_layout
 
 \end_body

@@ -8,6 +8,6 @@ print(f"Server started listening {HOST}: {PORT}")
 conn, addr = s.accept()
 
 with open("audioTRM.wav", "rb") as data:
-    for line in data:
-        conn.sendall(line)
+    while line := data.read(1024):
+        conn.send(line)
 conn.close()
