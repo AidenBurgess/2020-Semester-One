@@ -586,7 +586,7 @@ Lname
 \begin_inset Text
 
 \begin_layout Plain Layout
-James
+Borg
 \end_layout
 
 \end_inset
@@ -601,6 +601,30 @@ James
 
 \begin_layout Section*
 2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted2.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to prove that a relation schema is 2NF, we need to show that all
+ non-prime attributes are fully functionally dependent on the primary key.
+ Therefore, it needs to be shown that the removal of either Order_no or
+ Item_no would violate functional dependency.
+ If Order_no was removed, then Odate would not be unique value, assuming
+ that Odate can be the same for two orders.
+ This shows that the relational schema is not 2NF.
+\end_layout
+
+\begin_layout Standard
+As the relational schema is not 2NF, it is also not 3NF.
 \end_layout
 
 \end_body
