@@ -233,6 +233,7 @@ Packets #1, #2, and #3 are are the TCP 3-way handshake.
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted1.png
+	scale 60
 
 \end_inset
 
@@ -252,6 +253,7 @@ The shutdown packets are #276-279.
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted2.png
+	scale 60
 
 \end_inset
 
@@ -270,6 +272,7 @@ The source and destination IP addresses are both 127.0.0.1, as we are sending
 \begin_layout Standard
 \begin_inset Graphics
 	filename 1III4.png
+	scale 60
 
 \end_inset
 
@@ -305,6 +308,7 @@ The file transfer started with packet #4, the first to contain data.
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted4.png
+	scale 70
 
 \end_inset
 
@@ -322,6 +326,7 @@ The file transfer ended on packet #1804, with a the FIN and ACK flags set.
 \begin_layout Standard
 \begin_inset Graphics
 	filename 1III6.png
+	scale 60
 
 \end_inset
 
@@ -371,6 +376,7 @@ According to WireShark, the amount of time the file transfer took was 23.7ms
 \begin_layout Standard
 \begin_inset Graphics
 	filename 1III8.png
+	scale 70
 
 \end_inset
 
@@ -3181,28 +3187,7 @@ The first eight packets are the same, which facilitate the set up of the
 \end_layout
 
 \begin_layout Standard
-a) total # processes
-\end_layout
-
-\begin_layout Standard
-Assuming each unique port number used corresponeds to a process, the number
- of processes are as follows:
-\end_layout
-
-\begin_layout Standard
-MARYNZ: 8
-\end_layout
-
-\begin_layout Standard
-MARYDE: 8
-\end_layout
-
-\begin_layout Standard
-b) port numbers used
-\end_layout
-
-\begin_layout Standard
-MARYNZ used source port numbers 
+The port numbers that MARYNZ utilizes are: 58626, 58627,
 \family roman
 \series medium
 \shape up
@@ -3215,11 +3200,11 @@ MARYNZ used source port numbers
 \uwave off
 \noun off
 \color none
-58626 58627 58628 58630 58631 58632 58633 58634 
+ 58628, 58630, 58631, 58632, 58633, and 58634.
 \end_layout
 
 \begin_layout Standard
-MARYDE used source port numbers 
+The port numbers that MARYDE utilizes are
 \family roman
 \series medium
 \shape up
@@ -3232,111 +3217,125 @@ MARYDE used source port numbers
 \uwave off
 \noun off
 \color none
-56529 56530 56531 56532 56827 56829 56830 56830
+: 56529, 56530, 56531, 56532, 56827, 56829, 56830, and 56830.
 \end_layout
 
 \begin_layout Standard
-c) Total #Gets 
+As each unique port number used corresponds to a process, the number of
+ processes for both MARYNZ and MARYDE are eight.
 \end_layout
 
 \begin_layout Standard
-MARYNZ: 19
+Another similarity between MARYNZ and MARYDE are the number of 
+\begin_inset Quotes eld
+\end_inset
+
+GETs
+\begin_inset Quotes erd
+\end_inset
+
+, which are both nineteen.
 \end_layout
 
 \begin_layout Standard
-MARYDE: 19
+A major difference between these two systems are the download times for
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+cmu-slt-hsmm en_US fem
+\begin_inset Quotes erd
+\end_inset
+
+ text.
+ MARYNZ took 0.665189 seconds, while MARYDE 1.821821 seconds.
+ As the MARYNZ server is located in New Zealand, which is closer to the
+ host than the MARYDE server, the propogation time for messages is lower.
 \end_layout
 
 \begin_layout Standard
-d) Time taken to download text spoken by cmu-slt-hsmm en_US fem
+The number of packets in the 
+\begin_inset Quotes eld
+\end_inset
+
+GET
+\begin_inset Quotes erd
+\end_inset
+
+ statements that precedes the streaming of the audio files is consistent
+ for all audio files, at two packets.
 \end_layout
 
 \begin_layout Standard
-MARYNZ: 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-19.626276 - 18.961087 = 0.665189s
+However, the number of packets in the streamed audio files does differ between
+ the two systems.
+ MARYNZ has an average of 92 packets (from 175, 74, 28) and MARYDE has an
+ average of 97 packets (62, 171, 60).
+ This difference may be due to differences in the amount of text needed
+ to be synthesized, as the voices and input text are not always the same.
 \end_layout
 
 \begin_layout Standard
-MARYDE: 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-63.939109 -
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-62.117288 = 1.821821s
-\end_layout
+The time to download text spoken by 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Standard
-This is due to distance, prop time
-\end_layout
+sh_eu-hsmm en_NZ male Hmm
+\begin_inset Quotes erd
+\end_inset
 
-\begin_layout Standard
-e) #packets in get statements that precedes the streaming of audio wav
-\end_layout
+ was 0.539016 seconds compared to 0.135606 seconds for the 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Standard
-MARYNZ: 1: 2, 2: 2, 3: 2
-\end_layout
+akl_mi_pk_voice1-hsmm mi male hmm
+\begin_inset Quotes erd
+\end_inset
 
-\begin_layout Standard
-MARYDE: 1: 2, 2:2, 3: 2
-\end_layout
+ and 0.665189 seconds for 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Standard
-f) #packets in streamed audio files
-\end_layout
+cmu-slt-hsmm en_US fem
+\begin_inset Quotes erd
+\end_inset
 
-\begin_layout Standard
-MARYNZ: 1: 175, 2: 74, 3: 28
-\end_layout
+.
+ The reason why akl_mi_pk has a low time is probably due to the input text
+ being quite short 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Standard
-MARYDE: 1: 62, 2: 171, 3: 60
+Haere Mai
+\begin_inset Quotes erd
+\end_inset
+
+ versus 
+\begin_inset Quotes eld
+\end_inset
+
+Welcome to the world of speech synthesis
+\begin_inset Quotes erd
+\end_inset
+
+ for the other two voices.
+ The difference in timing between 
+\begin_inset Quotes eld
+\end_inset
+
+sh_eu-hsmm
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+cmu-slt-hsmm
+\begin_inset Quotes erd
+\end_inset
+
+ may be due to queuing, or processing time for these different voices.
 \end_layout
 
 \begin_layout Subsection*
