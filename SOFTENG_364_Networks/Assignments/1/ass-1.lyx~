@@ -281,13 +281,13 @@ The source and destination IP addresses are both 127.0.0.1, as we are sending
 \end_layout
 
 \begin_layout Standard
-The source port is 53064 and the destination port is 12000 (as specified
+The source port is 62774 and the destination port is 12000 (as specified
  in the python file).
 \end_layout
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename 1III3.png
+	filename pasted3.png
 
 \end_inset
 
@@ -304,7 +304,7 @@ The file transfer started with packet #4, the first to contain data.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename 1III5.png
+	filename pasted4.png
 
 \end_inset
 
@@ -3215,14 +3215,7 @@ MARYNZ used source port numbers
 \uwave off
 \noun off
 \color none
-58626 
-58627
- 58628
- 58630 
-58631
- 58632
- 58633
- 58634 
+58626 58627 58628 58630 58631 58632 58633 58634 
 \end_layout
 
 \begin_layout Standard
@@ -3272,8 +3265,7 @@ MARYNZ:
 \uwave off
 \noun off
 \color none
-19.626276
- - 18.961087 = 0.665189s
+19.626276 - 18.961087 = 0.665189s
 \end_layout
 
 \begin_layout Standard
@@ -3290,8 +3282,7 @@ MARYDE:
 \uwave off
 \noun off
 \color none
-63.939109
- -
+63.939109 -
 \family default
 \series default
 \shape default
@@ -3346,6 +3337,162 @@ MARYNZ: 1: 175, 2: 74, 3: 28
 
 \begin_layout Standard
 MARYDE: 1: 62, 2: 171, 3: 60
+\end_layout
+
+\begin_layout Subsection*
+4.
+ Traceroute to MaryNZ and MaryDE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted6.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Traceroute to MaryNZ, 130.216.236.122
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted7.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Route diagram for MaryNZ
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted8.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Traceroute to MaryDE, 134.96.190.208
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted9.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Route Diagram to MaryDE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
