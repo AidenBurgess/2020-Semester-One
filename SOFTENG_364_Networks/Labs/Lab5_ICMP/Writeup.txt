@@ -1,0 +1,65 @@
+What are the Type/Code values for an ICMP echo request and echo reply packet, respectively?
+Request
+- Type = 8
+- Code = 0
+Reply
+- Type = 0
+- Code = 0
+
+How do the Identifier and Sequence Number compare for an echo request and the corresponding echo reply?
+Identifier and sequence number are the same for a pair of req/reply
+
+How do the Identifier and Sequence Number compare for successive echo request packets?
+Identifier number stays the same
+Sequence number increases by 1 each time
+
+Is the data in the echo reply the same as in the echo request or different? Where do you think this 
+data is coming from?
+The data in the req and reply are the same. The data is probably coming from the original sender's req
+
+Why are there no responses for the ping requests to auckland.ac.nz?
+Auckland university server does not support ICMP, so cannot respond
+
+What is the Type/Code value for an ICMP TTL Exceeded packet?
+Type = 11
+Code = 0
+Receiver can identify format of the packet by looking at TYPE/CODE field first before assuming a structure.
+
+How long is the ICMP header of a TTL Exceeded packet? Select different parts of the header in Wireshark to
+see how they correspond to the bytes in the packet.
+
+Type = 1B
+Code = 1B
+Checksum = 2B
+Unused = 4B
+Total = 8B
+
+The ICMP payload contains an IP header. What is the TTL value in this header? Explain why it has this value. 
+TTL = 1. As the payload is passed along, the TTL is decremented by 1 until it is 1. At this point the payload 
+dies and it not passed on anymore.
+
+
+How does your computer (the source) learn the IP address of a router along the path from a TTL exceeded
+packet? Say where on this packet the IP address is found. You might proceed by looking at an echo packet
+to see the source and destination IP addresses. The routers along the path will have a different IP address,
+and this address will be present on the TTL Exceeded packet. If you are unsure, you can examine the
+traceroute text output to see the IP addresses of routers and look for these addresses on the TTL Exceeded
+packets.
+
+A packet with TTL of 1 dies at that router, which illicits an ICMP message (type TTLE). This message includes
+the router DNS name and ip address. The ip address can be found in the source field of the IPv4 section of the
+TTLE message.
+
+How many times is each router along the path probed by traceroute? Look at the TTL Exceeded responses
+and see if you can discern a pattern.
+3 times each
+
+How does your computer (the source) craft an echo request packet to find (by eliciting a TTL Exceeded
+response) the router N hops along the path towards the destination? Describe the key attributes of the echo
+request packet. The echo request packets sent by traceroute are probing successively more distant routers
+along the path. You can look at these packets and see how they differ when they elicit responses from
+different routers.
+
+Source ip = host ip. Dest ip = server ip. TTL = N
+
+
