@@ -165,7 +165,7 @@ High Fidelity Screen
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -186,7 +186,7 @@ separation "3pt"
 shadowsize "4pt"
 framecolor "black"
 backgroundcolor "none"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -234,6 +234,14 @@ Description of Visual Design
 \end_layout
 
 \begin_layout Itemize
+The design is based on Material Design, with elements being layered on top
+ of each other, casting shadows.
+ The first layer is a blank canvas, the second layer contains the cards,
+ header, and text.
+ The third layer contain the images.
+\end_layout
+
+\begin_layout Itemize
 The top food item is separated from the secondary list.
  By the Proximity Principle, the user understands that these two sections
  are separate (although looking similiar).
@@ -276,45 +284,95 @@ Meatball
 \end_layout
 
 \begin_layout Itemize
-Back button
+To help human memory, many icons are used, such as the 
+\begin_inset Quotes eld
+\end_inset
+
+-
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
++
+\begin_inset Quotes erd
+\end_inset
+
+ for changing quantity, and the add to cart icon.
 \end_layout
 
 \begin_layout Itemize
-Add to cart button + text
+Unity is achieved in the design through the consistent styling of the food
+ cards, and color palette.
 \end_layout
 
 \begin_layout Itemize
-Dynamic total amount
+Emphasis is placed on the titles of dishes and the 
+\begin_inset Quotes eld
+\end_inset
+
+Add to Cart
+\begin_inset Quotes erd
+\end_inset
+
+ button through color.
 \end_layout
 
 \begin_layout Itemize
--+ icons
+The balance of the screen is top-weighted.
+ The image and card is larger, to remind the user of their main dish.
 \end_layout
 
-\begin_layout Itemize
-Unity - Same style of food cards
-\end_layout
-
-\begin_layout Itemize
-Emphasis - on the titles of dishes
-\end_layout
-
-\begin_layout Itemize
-Balance - Top part of screen is higher weighted, as the image is larger,
- indicating the significance of the chosen food item.
+\begin_layout Section*
+Image Sources
 \end_layout
 
 \begin_layout Standard
+Ravioli: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
 https://commons.wikimedia.org/wiki/File:Flickr_-_cyclonebill_-_Ravioli_med_skinke_
 og_asparges_i_mascarponecreme.jpg
 \end_layout
 
-\begin_layout Standard
-https://flickr.com/photos/160866001@N07/33729007398/
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Garlic Bread: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://flickr.com/photos/160866001@N07/33729007398/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Caesar Salad: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
 https://www.flickr.com/photos/gpeters/3010150846 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

@@ -165,7 +165,7 @@ High Fidelity Screen
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -177,7 +177,7 @@ has_inner_box 1
 inner_pos "s"
 use_parbox 0
 use_makebox 0
-width "48text%"
+width "47text%"
 special "none"
 height "1in"
 height_special "totalheight"
@@ -186,7 +186,7 @@ separation "3pt"
 shadowsize "4pt"
 framecolor "black"
 backgroundcolor "none"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -233,74 +233,146 @@ High Fidelity Screen
 Description of Visual Design
 \end_layout
 
-\begin_layout Standard
-Proximity princple Header food item is different than the following list
+\begin_layout Itemize
+The design is based on Material Design, with elements being layered on top
+ of each other, casting shadows.
+ The first layer is a blank canvas, the second layer contains the cards,
+ header, and text.
+ The third layer contain the images.
+\end_layout
+
+\begin_layout Itemize
+The top food item is separated from the secondary list.
+ By the Proximity Principle, the user understands that these two sections
+ are separate (although looking similiar).
+\end_layout
+
+\begin_layout Itemize
+The list of side dishes follow the Common Fate Principle, by aligning the
+ images, titles, descriptions, and quantity selectors.
+\end_layout
+
+\begin_layout Itemize
+Each image in the food 
+\begin_inset Quotes eld
+\end_inset
+
+cards
+\begin_inset Quotes erd
+\end_inset
+
+ is small in area, so they are seen as the figure due to the Area Principle.
+\end_layout
+
+\begin_layout Itemize
+The images are also seen as figures through the Surroundedness Principle.
+ Another element that uses this principle is the descriptions.
+\end_layout
+
+\begin_layout Itemize
+The Continuity Principle is used by the side dishes list, as the 
+\begin_inset Quotes eld
+\end_inset
+
+Meatball
+\begin_inset Quotes erd
+\end_inset
+
+ item is slightly offscreen, the user assumes they can scroll down to see
+ more items.
+ This is also aided by the scrollbar to the right of the list.
+\end_layout
+
+\begin_layout Itemize
+To help human memory, many icons are used, such as the 
+\begin_inset Quotes eld
+\end_inset
+
+-
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
++
+\begin_inset Quotes erd
+\end_inset
+
+ for changing quantity, and the add to cart icon.
+\end_layout
+
+\begin_layout Itemize
+Unity is achieved in the design through the consistent styling of the food
+ cards, and color palette.
+\end_layout
+
+\begin_layout Itemize
+Emphasis is placed on the titles of dishes and the 
+\begin_inset Quotes eld
+\end_inset
+
+Add to Cart
+\begin_inset Quotes erd
+\end_inset
+
+ button through color.
+\end_layout
+
+\begin_layout Itemize
+The balance of the screen is top-weighted.
+ The image and card is larger, to remind the user of their main dish.
+\end_layout
+
+\begin_layout Section*
+Image Sources
 \end_layout
 
 \begin_layout Standard
-Common Fate principle, Images, Food Names, descriptions, selectors are aligned
-\end_layout
+Ravioli: 
+\begin_inset Flex URL
+status open
 
-\begin_layout Standard
-Area principle, image takes small area
-\end_layout
+\begin_layout Plain Layout
 
-\begin_layout Standard
-Surroundedness principle
-\end_layout
-
-\begin_layout Standard
-Continuity principle Meatball, can assume we can scroll down
-\end_layout
-
-\begin_layout Standard
-Whitespace
-\end_layout
-
-\begin_layout Standard
-Scrollbar
-\end_layout
-
-\begin_layout Standard
-Back button
-\end_layout
-
-\begin_layout Standard
-Add to cart button + text
-\end_layout
-
-\begin_layout Standard
-Dynamic total amount
-\end_layout
-
-\begin_layout Standard
--+ icons
-\end_layout
-
-\begin_layout Standard
-Unity - Same style of food cards
-\end_layout
-
-\begin_layout Standard
-Emphasis - on the titles of dishes
-\end_layout
-
-\begin_layout Standard
-Balance - Top part of screen is higher weighted, as the image is larger,
- indicating the significance of the chosen food item.
-\end_layout
-
-\begin_layout Standard
 https://commons.wikimedia.org/wiki/File:Flickr_-_cyclonebill_-_Ravioli_med_skinke_
 og_asparges_i_mascarponecreme.jpg
 \end_layout
 
-\begin_layout Standard
-https://flickr.com/photos/160866001@N07/33729007398/
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Garlic Bread: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://flickr.com/photos/160866001@N07/33729007398/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Caesar Salad: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
 https://www.flickr.com/photos/gpeters/3010150846 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
