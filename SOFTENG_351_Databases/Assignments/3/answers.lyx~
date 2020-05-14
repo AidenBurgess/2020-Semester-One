@@ -187,7 +187,7 @@ i.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $Size=4+8=12bytes$
+\begin_inset Formula $Size=4+8=12\,bytes$
 \end_inset
 
 
@@ -197,8 +197,167 @@ i.
 ii.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula $bfr_{idx}=\lfloor\frac{512}{12}\rfloor=42$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 iii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#IdxEntries=7500$
+\end_inset
+
+ - same as number of blocks
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b_{idx}=\lceil\frac{7500}{42}\rceil=179\,blocks$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+2
+\end_layout
+
+\begin_layout Subsection*
+a)
+\end_layout
+
+\begin_layout Subsubsection*
+i.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#LeafBlocks=\lceil\frac{1,000,000}{10}\rceil=100,000\,blocks$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#Lvl\_1\_Blocks=\lceil\frac{100,000}{100}\rceil=1,000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#Lvl\_2\_Blocks=\lceil\frac{1,000}{100}\rceil=10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Total\_Blocks=100,000+1,000+10=101,010\,blocks$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+ii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#I/O=h=3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Subsubsection*
+i.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#LeafBlocks=\lceil\frac{1,000,000}{10}\rceil=100,000\,blocks$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#Lvl\_1\_Blocks=\lceil\frac{1,000,000}{100}\rceil=10,000$
+\end_inset
+
+ - as it is dense
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#Lvl\_2\_Blocks=\lceil\frac{10,000}{100}\rceil=100$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Total\_Blocks=100,000+10,000+100=110,100\,blocks$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+ii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#I/O=h=3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Subsubsection*
+i.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#LeafBlocks=\lceil\frac{1,000,000}{7}\rceil=100,000\,blocks$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#Lvl\_1\_Blocks=\lceil\frac{100,000}{70}\rceil=1429$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#Lvl\_2\_Blocks=\lceil\frac{1,429}{70}\rceil=21$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Total\_Blocks=100,000+10,000+100=110,100\,blocks$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+ii.
 \end_layout
 
 \end_body
