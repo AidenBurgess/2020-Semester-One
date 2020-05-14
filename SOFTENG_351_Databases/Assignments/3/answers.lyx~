@@ -329,28 +329,28 @@ i.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\#LeafBlocks=\lceil\frac{1,000,000}{7}\rceil=100,000\,blocks$
+\begin_inset Formula $\#LeafBlocks=\lceil\frac{1,000,000}{7}\rceil=142,858\,blocks$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\#Lvl\_1\_Blocks=\lceil\frac{100,000}{70}\rceil=1429$
+\begin_inset Formula $\#Lvl\_1\_Blocks=\lceil\frac{142,858}{70}\rceil=2041$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\#Lvl\_2\_Blocks=\lceil\frac{1,429}{70}\rceil=21$
+\begin_inset Formula $\#Lvl\_2\_Blocks=\lceil\frac{2,041}{70}\rceil=30$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $Total\_Blocks=100,000+10,000+100=110,100\,blocks$
+\begin_inset Formula $Total\_Blocks=142,858+2,041+30=144,929\,blocks$
 \end_inset
 
 
@@ -358,6 +358,113 @@ i.
 
 \begin_layout Subsubsection*
 ii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\#I/O=h=3$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted1.png
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+After insertion of 43
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted2.png
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+After insertion of 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted3.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+After insertion of 92
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
