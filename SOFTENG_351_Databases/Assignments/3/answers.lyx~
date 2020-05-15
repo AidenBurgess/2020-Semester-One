@@ -375,7 +375,7 @@ ii.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -407,7 +407,7 @@ After insertion of 43
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -439,7 +439,7 @@ After insertion of 4
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -465,6 +465,10 @@ After insertion of 92
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section*
+4
 \end_layout
 
 \end_body
