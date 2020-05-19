@@ -256,7 +256,14 @@ i.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $Total\_Blocks=100,000+1,000+10=101,010\,blocks$
+\begin_inset Formula $\#Lvl\_3\_Blocks=\lceil\frac{10}{100}\rceil=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Total\_Blocks=100,000+1,000+10+1=101,011\,blocks$
 \end_inset
 
 
@@ -267,7 +274,7 @@ ii.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\#I/O=h=3$
+\begin_inset Formula $\#I/O=h=4$
 \end_inset
 
 
@@ -303,7 +310,14 @@ i.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $Total\_Blocks=100,000+10,000+100=110,100\,blocks$
+\begin_inset Formula $\#Lvl\_3\_Blocks=\lceil\frac{100}{100}\rceil=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Total\_Blocks=100,000+10,000+100+1=110,101\,blocks$
 \end_inset
 
 
@@ -314,7 +328,7 @@ ii.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\#I/O=h=3$
+\begin_inset Formula $\#I/O=h=4$
 \end_inset
 
 
@@ -350,7 +364,14 @@ i.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $Total\_Blocks=142,858+2,041+30=144,929\,blocks$
+\begin_inset Formula $\#Lvl\_3\_Blocks=\lceil\frac{30}{70}\rceil=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Total\_Blocks=142,858+2,041+30+1=144,930\,blocks$
 \end_inset
 
 
@@ -361,7 +382,14 @@ ii.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\#I/O=h=3$
+\begin_inset Formula $\#I/O=h=4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -373,6 +401,7 @@ ii.
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status collapsed
@@ -405,6 +434,7 @@ After insertion of 43
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status collapsed
@@ -437,6 +467,7 @@ After insertion of 4
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status collapsed
@@ -462,6 +493,13 @@ After insertion of 92
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -772,13 +810,13 @@ After insertion of 7
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename pasted4.png
+	filename pasted6.png
 	scale 70
 
 \end_inset
@@ -787,7 +825,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-After insertion of 37
+After insertion of 69
 \end_layout
 
 \end_inset
