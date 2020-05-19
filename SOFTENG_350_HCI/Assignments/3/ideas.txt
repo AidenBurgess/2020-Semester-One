@@ -1,0 +1,5 @@
+add comments to files
+have a group chat for a directory
+Assign tasks to members
+Notifications/reminders to work on something
+
