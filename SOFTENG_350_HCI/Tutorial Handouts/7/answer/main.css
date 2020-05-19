@@ -1,0 +1,30 @@
+img {
+    height: 465px;
+    width: 616px;
+    border: solid 4px transparent;
+}
+
+img.thumb {
+    height: 90px;
+    width: 120px;
+    float: left;
+}
+
+.flex-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.full-item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.desc {
+    margin-left: 20px;
+    width: 500px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<title>Example Gallery</title>
+<!-- author: Gerald Weber, 2020-05-07 -->
+<!-- all images from Wikimedia commons -->
+</head>
+<link rel=stylesheet type="text/css" href="main01.css">
+<body> 
+
+
+<img id="fullview"  src="full/01.jpg">
+
+<img class="thumb" onclick='changeMainImg(this);' src="full/01.jpg">
+<img class="thumb" onclick='changeMainImg(this);' src="full/02.jpg">
+<img class="thumb" onclick='changeMainImg(this);' src="full/03.jpg">
+<img class="thumb" onclick='changeMainImg(this);' src="full/04.jpg">
+<img class="thumb" onclick='changeMainImg(this);' src="full/05.jpg">
+<img class="thumb" onclick='changeMainImg(this);' src="full/06.jpg">
+<img class="thumb" onclick='changeMainImg(this);' src="full/07.jpg">
+<img class="thumb" onclick='changeMainImg(this);' src="full/08.jpg">
+<img class="thumb" onclick='changeMainImg(this);' src="full/09.jpg">
+
+
+
+<script >
+    function changeMainImg(that) {
+        document.getElementById("fullview").src=that.src;
+    }
+</script>
+
+
+
+
+
