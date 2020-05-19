@@ -1,0 +1,181 @@
+import java.util.*;
+
+public class DijkstrasAlgrorithm implements NodeSetDisplay {
+	private Network _network;
+	private Set<NetworkNode> _nodes = new TreeSet<NetworkNode>(new NetworkNodeComparator());
+	
+	/** 
+	 * Initialises the algorithm with a new network
+	 * @param network the new network to use
+	 */
+    public void initialise(Network network) {
+    	_network = network;
+    	_nodes.clear();
+        for (NetworkNode node: network.getNodes()) {
+        	_nodes.add(new NetworkNode(node.getId()));
+        }
+    }
+
+    /**
+     * Updates all the costs of the nodes from a specific source node
+     * @param source     the id of node to use as the source node
+     * @param display    an NodeSetDisplay instance to display the results
+     * @throws Exception thrown if the source node does not exist
+     */
+    public void calculate(String source, NodeSetDisplay display) throws Exception {
+    	// Initialise the two sets
+    	Set<NetworkNode> nodesToCheck = new HashSet<NetworkNode>();
+    	Set<NetworkNode> nodesChecked = new TreeSet<NetworkNode>(new NetworkNodeComparator());
+    	nodesToCheck.addAll(_nodes);
+    	
+    	// To simplify things, store all the nodes in a map - this allows us to
+    	// quickly retrieve a node in later steps
+    	Map<String, NetworkNode> mappedNodes = new HashMap<String, NetworkNode>();
+    	for (NetworkNode node: _nodes) {
+    		mappedNodes.put(node.getId(), node);
+    	}
+    	
+    	// Find the source node and set the initial costs
+    	NetworkNode nodeToRemove = initialiseNodesForCalculate(source);
+    	if (nodeToRemove == null) {
+    		throw new Exception("Source node not found");
+    	}
+    	else {
+    		nodesToCheck.remove(nodeToRemove);
+    		nodesChecked.add(nodeToRemove);
+    		updateNodeCosts(nodeToRemove, mappedNodes);
+    	}
+    	
+    	// Now do the real work: find the next node in nodesToCheck that is a
+    	// minimum and move it over
+    	int size = _nodes.size();
+    	for (int loop = 0; loop < size - 1; loop++) {
+        	if (display != null) {
+        		display.display(loop == 0, String.format("#%d", loop), formatNodeSet(nodesChecked));
+        	}      	
+        	
+        	// Find the node with the lowest current cost
+        	NetworkNode currentNode = findLowestCostNode(nodesToCheck);
+
+        	if (currentNode == null) {
+        		// We have to include this here, as there may be unreachable
+        		// nodes in the graph
+        		break;
+        	} else {
+        		// Update the costs and move the node between sets
+        		nodesToCheck.remove(currentNode);
+        		nodesChecked.add(currentNode);
+        		updateNodeCosts(currentNode, mappedNodes);
+        	}
+    	}
+    	
+    	// Display the last line
+    	if (display != null) {
+    		display.display(false, String.format("#%d", size - 1), formatNodeSet(nodesChecked));
+    	}
+    }
+    
+    private static String formatNodeSet(Set<NetworkNode> nodes) {
+    	StringBuilder builder = new StringBuilder();
+    	for (NetworkNode node: nodes) {
+    		builder.append(node.getId());
+    	}
+    	return builder.toString();
+    }
+
+    /**
+     * Finds the next node with the lowest cost
+     * @param nodesToCheck the current set of available nodes
+     * @return             either the node with the lowest cost or null (if there
+     *                     are no available nodes)
+     */
+	private NetworkNode findLowestCostNode(Set<NetworkNode> nodesToCheck) {
+		// TODO: find the node with the lowest cost
+		NetworkNode currentNode = null;
+		long cost = Long.MAX_VALUE;
+		for (NetworkNode node: nodesToCheck) {
+			if (node.getCost() < cost) {
+				currentNode = node;
+				cost = node.getCost();
+			}
+		}
+		return currentNode;
+	}
+
+	/**
+	 * Initialises the nodes with their initial cost values
+	 * The initial cost will be zero for the source node and inf. (Long.MAX_VALUE)
+	 * for all other nodes.
+	 * @param source the id of the source node
+	 * @return       the source node, if found, otherwise null
+	 */
+	private NetworkNode initialiseNodesForCalculate(String source) {
+		NetworkNode nodeToRemove = null;
+		for (NetworkNode node: _nodes) {
+			if (node.getId().equals(source)) {
+				node.setCost(0);
+				node.setPredecessor(source);
+			nodeToRemove = node;
+			} else {
+				node.setCost(Long.MAX_VALUE);
+				node.setPredecessor("");
+			}
+		}
+		return nodeToRemove;
+	}
+
+	/**
+	 * Updates the costs from the current
+	 * This method will iterate through all the links and check if the link connects to
+	 * the node. If it does, it then calculates the cost to the second node via the link
+	 * and sets the lower of the current or new cost. If the new cost is lower, it also
+	 * updates the predecessor to the current node.
+	 * @param node        the current node being checked
+	 * @param mappedNodes the map of all nodes, used to quickly retrieve the nodes
+	 */
+    private void updateNodeCosts(NetworkNode node, Map<String, NetworkNode> mappedNodes) {
+    	// TODO: update the costs to get to a node from the current node
+    	for (NetworkLink link: _network.getLinks()) {
+    		if (link.getSrc().equals(node.getId()) | link.getDst().equals(node.getId())) {
+    			
+    			String other = node.getId() != link.getSrc() ? link.getDst() : link.getSrc();
+    			NetworkNode next = mappedNodes.get(other);
+    			long altcost = node.getCost() + Long.parseLong(link.getCost());
+    		    			
+    			if (altcost < next.getCost()) {
+    				next.setCost(altcost);
+    				next.setPredecessor(other);
+    			}
+    		}
+    	}
+	}
+
+    /**
+     * Displays the current costs and predecessors for all nodes
+     * @param printHeader if true, this method will display the header first,
+     *                    then all the node costs
+     * @param label       the label to use for the line                   
+     */
+	public void display(boolean printHeader, String prefix, String suffix) {
+    	if (printHeader) {
+    		System.out.print("Node:\t");
+	    	for (NetworkNode node: _nodes) {
+	    		System.out.printf("%s\t", node.getId());
+	    	}
+	    	System.out.println();
+    	}
+
+		System.out.printf("%s:\t", prefix);
+    	for (NetworkNode node: _nodes) {
+			// TODO: get the current cost and predecessor
+			long cost = node.getCost();	
+			String predecessor = node.getPredecessor();
+    		if (cost == Long.MAX_VALUE) {
+    			System.out.print("Inf.\t");
+    		} else {
+    			System.out.printf("%d,%s\t", cost, predecessor);
+    		}
+    	}
+    	System.out.println(suffix);
+    }
+}

@@ -1,0 +1,52 @@
+import java.io.FileReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.json.simple.JSONObject; 
+import org.json.simple.parser.JSONParser; 
+
+import org.graphstream.graph.*;
+import org.graphstream.graph.implementations.SingleGraph;
+
+public class NetJSONReader {
+	public static void main(String[] args) throws Exception  
+    { 
+		// Load and parse the JSON
+		String currentDir = System.getProperty("user.dir");
+		String jsonPath = Paths.get(currentDir, "Lab-6.json").toString();
+		System.out.format("Loading Network graph from %s\n", jsonPath);
+		JSONObject netData = (JSONObject)new JSONParser()
+				.parse(new FileReader(jsonPath)); 
+          
+        // Retrieve the data type and verify it  
+        String dataType = (String)netData.get("type"); 
+        if (!dataType.equals("NetworkGraph")) {
+        	throw new Exception("Unknown network object: '" + dataType + "'"); 
+        }
+        
+        Network network = Network.parse(netData);
+		System.out.format("Network graph has been loaded\n");
+		System.out.format("Loaded %d nodes\n", network.getNodes().size());
+		// TODO: Display the number of links loaded
+		System.out.format("Loaded %d links\n", network.getLinks().size());
+		// TODO: Visualise the network
+		System.out.println("Generating graph");
+		// Start a new graph and add each node
+		Graph graph = new SingleGraph("Lab 1");
+		network.getNodes().forEach(node -> {
+		 // Retrieve the node ID and use this as the ID in the graph
+			String nodeId = node.getId();
+			Node n = graph.addNode(nodeId); 		// Adds the node
+			n.addAttribute("ui.label", nodeId); 	// Sets the UI label so we can see the ID
+													// in the visualisation
+		});
+		network.getLinks().forEach(link -> {
+			Edge e = graph.addEdge(link.getSrc()+link.getDst(), link.getSrc(), link.getDst());
+			e.addAttribute("ui.label", link.getCost());
+			e.addAttribute("layout.weight", link.getCost());
+		});
+		graph.display();
+		System.out.println("Graph generated");
+		// TODO: Calculate the weights in the network
+	} 
+}

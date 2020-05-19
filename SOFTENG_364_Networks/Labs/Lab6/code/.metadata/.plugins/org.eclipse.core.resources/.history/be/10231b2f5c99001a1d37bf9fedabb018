@@ -1,0 +1,24 @@
+public class NetworkLink {
+	private String _src;
+	private String _dst;
+	private int _cost;
+
+	// TODO: include the current cost and predecessor
+	
+	public NetworkLink(String id) {
+		_id = id;
+	}
+	
+	public String getSrc() {
+		return _src;
+	}
+	
+	public String getDst() {
+		return _dst;
+	}
+	
+	public int getCost() {
+		return _cost;
+	}
+	// TODO: include getters and setters for the current cost and predecessor
+}

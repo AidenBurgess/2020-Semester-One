@@ -1,0 +1,79 @@
+{
+    "type": "NetworkGraph",
+    "protocol": "olsr",
+    "version": "0.6.6",
+    "metric": "etx",
+    "label": "Lab-6 Network",
+    "nodes": [
+        {
+            "id": "u"
+        },
+        {
+            "id": "v"
+        },
+        {
+            "id": "w"
+        },
+        {
+            "id": "x"
+        },
+        {
+            "id": "y"
+        },
+        {
+            "id": "z"
+        }
+    ],
+    "links": [
+        {
+            "source": "u",
+            "target": "x",
+            "cost": 5
+        },
+        {
+            "source": "u",
+            "target": "w",
+            "cost": 3
+        },
+        {
+            "source": "u",
+            "target": "v",
+            "cost": 7
+        },
+        {
+            "source": "x",
+            "target": "z",
+            "cost": 9
+        },
+        {
+            "source": "x",
+            "target": "y",
+            "cost": 7
+        },
+        {
+            "source": "x",
+            "target": "w",
+            "cost": 4
+        },
+        {
+            "source": "w",
+            "target": "y",
+            "cost": 8
+        },
+        {
+            "source": "w",
+            "target": "v",
+            "cost": 3
+        },
+        {
+            "source": "v",
+            "target": "y",
+            "cost": 4
+        },
+        {
+            "source": "y",
+            "target": "z",
+            "cost": 2
+        }
+    ]
+}

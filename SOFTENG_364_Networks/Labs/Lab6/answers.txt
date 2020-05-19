@@ -1,0 +1,31 @@
+What is JSON?
+Javascript Object Notation. Lightweight format for storing and transporting data.
+
+What types of network-related entities does NetJSON support? Which one is used to encode network
+graphs?
+Routers, nodes
+
+What identifiers are available for nodes?
+ipv4, ipv6, mac address, hash etc...
+
+How are attributes associated with nodes and links?
+They are properties of that node/link object
+
+What are the minimum attributes needed to record an edge?
+src id, dest id, cost
+
+What are the names of the attributes in NetJSON?
+members
+
+How many iterations are needed to fully resolve the costs for a network with ten nodes?
+5
+
+If two nodes have the same current cost, how do you select the node to resolve next?
+The first one encountered is resolved first.
+
+What are the initial values for all nodes in the network? What are the values after the source node has been
+moved to the checked set?
+Inf.
+
+What will be the cost of a node if it cannot be reached from the source node?
+Inf.
