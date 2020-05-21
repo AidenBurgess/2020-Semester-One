@@ -233,6 +233,44 @@ Examples of this type are: DBMS system designers and implementors, database
  tool developers, operators and maintenance personnel.
 \end_layout
 
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Standard
+The three-tier client/server architecture divides the system into three
+ layers: client/presentation layer, application/web server, and the database
+ server.
+\end_layout
+
+\begin_layout Standard
+The client layer is responsible for accepting requests from the user and
+ sending requests to the web server.
+\end_layout
+
+\begin_layout Standard
+The web server integrates business logic to decide which data is required
+ to fulfill the user request, and may reorganise such data.
+ It connects to both the client and the database server.
+ It may request data from the database server or from another system.
+\end_layout
+
+\begin_layout Standard
+The database server manages data from different sources, which could be
+ a relational database, a file database, or a cloud database.
+ It manages such data and hides the details of the data storage from the
+ web and client layers.
+\end_layout
+
+\begin_layout Standard
+This architecture enhances security as neither the web or client layers
+ know the details of how the data is stored.
+ The web server can also perform additional permissions checking and other
+ security features.
+ The client only has access to the api of the web server, so they do not
+ know how the web server handles their requests either.
+\end_layout
+
 \begin_layout Section*
 2
 \end_layout
@@ -748,7 +786,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Buffer pool after request f
+Buffer pool after request g
 \end_layout
 
 \end_inset
@@ -781,7 +819,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Buffer pool after request f
+Buffer pool after request h
 \end_layout
 
 \end_inset
@@ -814,7 +852,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Buffer pool after request f
+Buffer pool after request i
 \end_layout
 
 \end_inset
