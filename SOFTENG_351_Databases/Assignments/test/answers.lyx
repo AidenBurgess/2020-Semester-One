@@ -260,5 +260,312 @@ Examples of this type are: DBMS system designers and implementors, database
  tool developers, operators and maintenance personnel.
 \end_layout
 
+\begin_layout Section*
+2
+\end_layout
+
+\begin_layout Subsection*
+a)
+\end_layout
+
+\begin_layout Standard
+Assumptions:
+\end_layout
+
+\begin_layout Itemize
+A member can put any amount of items for sale.
+\end_layout
+
+\begin_layout Itemize
+An item has only one seller.
+\end_layout
+
+\begin_layout Itemize
+An item does not need to be sold.
+\end_layout
+
+\begin_layout Itemize
+A member can buy any amount of items.
+\end_layout
+
+\begin_layout Itemize
+A member can bid on an item multiple times.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted1.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Entity-Relationship diagram for online auction database system
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted2.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Entity-Relationship diagram for online auction database system
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+3
+\end_layout
+
+\begin_layout Subsection*
+a)
+\end_layout
+
+\begin_layout Subsubsection*
+i.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+(SELECT Ssn, Fname, Lname
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM EMPLOYEE
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE Dno=1)
+\end_layout
+
+\begin_layout Plain Layout
+
+UNION
+\end_layout
+
+\begin_layout Plain Layout
+
+(SELECT S.Ssn, S.Fname, S.Lname
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM EMPLOYEE AS S, Employee AS E
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE E.Superssn=S.Ssn AND S.Dno=1)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+ii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT Dnumber, Dname, AVG(Salary)AS AVG_Sal
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM DEPARTMENT, EMPLOYEE
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE Dnumber=Dno
+\end_layout
+
+\begin_layout Plain Layout
+
+GROUP BY Dnumber
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+iii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT Ssn
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM EMPLOYEE
+\end_layout
+
+\begin_layout Plain Layout
+
+LEFT JOIN DEPENDENT
+\end_layout
+
+\begin_layout Plain Layout
+
+ON DEPENDENT.Essn=EMPLOYEE.Ssn
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE Essn IS NULL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Subsubsection*
+i.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT Ssn
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM EMPLOYEE
+\end_layout
+
+\begin_layout Plain Layout
+
+LEFT JOIN DEPENDENT
+\end_layout
+
+\begin_layout Plain Layout
+
+ON DEPENDENT.Essn=EMPLOYEE.Ssn
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE Essn IS NULL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+ii.
+\end_layout
+
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Subsubsection*
+i.
+\end_layout
+
+\begin_layout Subsubsection*
+ii.
+\end_layout
+
+\begin_layout Subsubsection*
+iii.
+\end_layout
+
 \end_body
 \end_document
