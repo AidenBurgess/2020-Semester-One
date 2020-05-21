@@ -161,12 +161,7 @@ start
 \end_layout
 
 \begin_layout Subsection*
-a) What are the main advantages of using a database solution?
-\end_layout
-
-\begin_layout Standard
-Data abstraction allows storage details to be hidden so users can see a
- conceptual view of the database.
+a)
 \end_layout
 
 \begin_layout Standard
@@ -174,16 +169,7 @@ Programs refer to data model constructs rather than data storage details.
 \end_layout
 
 \begin_layout Standard
-Support of multiple views of the data.
-\end_layout
-
-\begin_layout Standard
 Allowing a set of concurrent users to retrieve from and to update the database.
-\end_layout
-
-\begin_layout Standard
-Concurrency control within the DBMS guarantees that each transaction is
- correctly executed or aborted.
 \end_layout
 
 \begin_layout Standard
@@ -206,24 +192,11 @@ Providing storage structures for efficient query processing.
 \end_layout
 
 \begin_layout Standard
-Providing backup and recovery services.
-\end_layout
-
-\begin_layout Standard
-Providing multiple interfaces to different classes of users.
-\end_layout
-
-\begin_layout Standard
 Representing complex relationships among data.
 \end_layout
 
-\begin_layout Standard
-Enforcing integrity constraints on the database.
-\end_layout
-
 \begin_layout Subsection*
-b) What are the different types of database users (give examples of each
- types)?
+b)
 \end_layout
 
 \begin_layout Standard
@@ -298,10 +271,6 @@ placement H
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \noindent
@@ -586,11 +555,6 @@ i.
 \end_layout
 
 \begin_layout Standard
-Retrieve the names of employees (show Fname and Lname) who do not work on
- any project
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula $EMP\_PROJECT(Ssn)\leftarrow EMPLOYEE\bowtie_{Ssn=Essn}WORKS\_ON$
 \end_inset
 
@@ -616,11 +580,6 @@ ii.
 \end_layout
 
 \begin_layout Standard
-Retrieve the names of employees (show Fname and Lname) who work on every
- project.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula $SSN\_ALL\_PROJECTS(Ssn)\leftarrow\pi_{Essn,Pno}(WORKS\_ON)\,\div\,\rho_{(Pno)}\pi_{Pnumber}(PROJECT)$
 \end_inset
 
@@ -639,15 +598,6 @@ iii.
 \end_layout
 
 \begin_layout Standard
-Retrieve the average salaries of all male and female employees, (show Gender
- and Average_Salary).
-\end_layout
-
-\begin_layout Standard
-DNO ℱCOUNT SSN, AVERAGE Salary (EMPLOYEE) 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula $RESULT(Gender,\,Average\_Salary)\leftarrow{}_{Sex}\Im_{AVERAGE\,Salary}(EMPLOYEE)$
 \end_inset
 
@@ -656,12 +606,6 @@ DNO ℱCOUNT SSN, AVERAGE Salary (EMPLOYEE)
 
 \begin_layout Section*
 4
-\end_layout
-
-\begin_layout Standard
-Based on the given primary key and the additional function dependencies,
- is this relation in 1NF, 2NF, or 3NF? Why or why not? How would you successivel
-y normalize it completely to 2NF and 3NF? 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -722,6 +666,201 @@ COMMISION(Salesman_id, Commision)
 
 \begin_layout Subsubsection*
 Normalize to 3NF
+\end_layout
+
+\begin_layout Standard
+No more steps need to be completed as the result of 2NF normalization is
+ also 3NF.
+\end_layout
+
+\begin_layout Section*
+5
+\end_layout
+
+\begin_layout Subsection*
+a)
+\end_layout
+
+\begin_layout Standard
+An accountant at a trading company wants to give each trading employee a
+ raise of a certain percentage each year, depending on how the company performed
+ that year.
+ PSM can simplify this process - which would be tedious to do manually -
+ into a single command with a percentage as an input.
+ The procedure could contain logic functionality, raising different employees
+ and managers salaries at different rates.
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted6.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Buffer pool after request f
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted7.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Buffer pool after request f
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted8.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Buffer pool after request f
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted9.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Buffer pool after request f
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Subsubsection*
+i.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Time=5ms+5ms+\frac{1MB}{100MB/s}=20ms$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+ii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Time=5ms+5ms+\frac{1B}{1\times10^{6}B/s}=10.001ms$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+iii.
+\end_layout
+
+\begin_layout Standard
+Less space is wasted than larger block sizes when storing small files, as
+ the lowest amount of space a block can contain is 1KB.
+ Less I/Os are needed to be executed for large files as each block is large.
 \end_layout
 
 \end_body

@@ -300,10 +300,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
@@ -745,10 +741,144 @@ An accountant at a trading company wants to give each trading employee a
  that year.
  PSM can simplify this process - which would be tedious to do manually -
  into a single command with a percentage as an input.
+ The procedure could contain logic functionality, raising different employees
+ and managers salaries at different rates.
 \end_layout
 
 \begin_layout Subsection*
 b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted6.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Buffer pool after request f
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted7.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Buffer pool after request f
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted8.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Buffer pool after request f
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted9.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Buffer pool after request f
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -759,12 +889,31 @@ c)
 i.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula $Time=5ms+5ms+\frac{1MB}{100MB/s}=20ms$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 ii.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula $Time=5ms+5ms+\frac{1B}{1\times10^{6}B/s}=10.001ms$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 iii.
+\end_layout
+
+\begin_layout Standard
+Less space is wasted than larger block sizes when storing small files.
+ Access times for random access files is better than smaller block sizes.
 \end_layout
 
 \end_body
