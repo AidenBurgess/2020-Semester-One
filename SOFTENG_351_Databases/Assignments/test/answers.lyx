@@ -8,7 +8,7 @@
 \begin_preamble
 % Variables to change every new document
 \newcommand{\hmwkClass}{SOFTENG 351} % Course/class
-\newcommand{\hmwkNumber}{3} % Assignment number
+\newcommand{\hmwkNumber}{} % Assignment number
 
 % Constants to set once
 \newcommand{\hmwkAuthorName}{Aiden Burgess} % Your name
@@ -45,7 +45,7 @@
 % Set up the header and footer
 \pagestyle{fancy}
 \lhead{\hmwkAuthorName} % Top left header
-\rhead{\hmwkClass:\ Assignment\ \#\hmwkNumber}
+\rhead{\hmwkClass: Test}
 \lfoot{\lastxmark} % Bottom left footer
 \cfoot{} % Bottom center footer
 \rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
@@ -55,7 +55,7 @@
 % The following 2 commands setup the title page
 \title{
 \vspace{2in}
-\textmd{\textbf{\hmwkClass:\ Assignment\ \#\hmwkNumber}}\\
+\textmd{\textbf{\hmwkClass:\ Test \hmwkNumber}}\\
 \normalsize\vspace{0.1in}\small{ \today }\\
 \vspace{3in}
 }
@@ -157,7 +157,107 @@ start
 \end_layout
 
 \begin_layout Section*
+1
+\end_layout
 
+\begin_layout Subsection*
+a) What are the main advantages of using a database solution?
+\end_layout
+
+\begin_layout Standard
+Data abstraction allows storage details to be hidden so users can see a
+ conceptual view of the database.
+\end_layout
+
+\begin_layout Standard
+Programs refer to data model constructs rather than data storage details.
+\end_layout
+
+\begin_layout Standard
+Support of multiple views of the data.
+\end_layout
+
+\begin_layout Standard
+Allowing a set of concurrent users to retrieve from and to update the database.
+\end_layout
+
+\begin_layout Standard
+Concurrency control within the DBMS guarantees that each transaction is
+ correctly executed or aborted.
+\end_layout
+
+\begin_layout Standard
+Recovery subsystem ensures each completed transaction has its effect permanently
+ recorded in the database.
+\end_layout
+
+\begin_layout Standard
+Controlling redundancy in data storage and in development and maintenance
+ efforts.
+\end_layout
+
+\begin_layout Standard
+Restricting unauthorized access to data.
+ Only the DBA staff uses privileged commands and facilities.
+\end_layout
+
+\begin_layout Standard
+Providing storage structures for efficient query processing.
+\end_layout
+
+\begin_layout Standard
+Providing backup and recovery services.
+\end_layout
+
+\begin_layout Standard
+Providing multiple interfaces to different classes of users.
+\end_layout
+
+\begin_layout Standard
+Representing complex relationships among data.
+\end_layout
+
+\begin_layout Standard
+Enforcing integrity constraints on the database.
+\end_layout
+
+\begin_layout Subsection*
+b) What are the different types of database users (give examples of each
+ types)?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Actors on the Scene
+\begin_inset Quotes erd
+\end_inset
+
+ - Those who actually use and control the database content, and those who
+ design, develop and maintain database applications.
+\end_layout
+
+\begin_layout Standard
+Examples of this type are: database administrators, database designers,
+ end-users, system analysts, application programmers and Business Analysts.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Workers Behind the Scene
+\begin_inset Quotes erd
+\end_inset
+
+ - Those who design and develop the DBMS software and related tools, and
+ the computer systems operators
+\end_layout
+
+\begin_layout Standard
+Examples of this type are: DBMS system designers and implementors, database
+ tool developers, operators and maintenance personnel.
 \end_layout
 
 \end_body

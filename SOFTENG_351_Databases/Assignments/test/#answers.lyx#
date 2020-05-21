@@ -168,5 +168,47 @@ a)
 What are the main advantages of using a database solution?
 \end_layout
 
+\begin_layout Standard
+Data abstraction allows storage details to be hidden so users can see a
+ conceptual view of the database.
+\end_layout
+
+\begin_layout Standard
+Programs refer to data model constructs rather than data storage details.
+\end_layout
+
+\begin_layout Standard
+Support of multiple views of the data.
+\end_layout
+
+\begin_layout Standard
+Allowing a set of concurrent users to retrieve from and to update the database.
+\end_layout
+
+\begin_layout Standard
+Concurrency control within the DBMS guarantees that each transaction is
+ correctly executed or aborted.
+\end_layout
+
+\begin_layout Standard
+Recovery subsystem ensures each completed transaction has its effect permanently
+ recorded in the database.
+\end_layout
+
+\begin_layout Standard
+Controlling redundancy in data storage and in development and maintenance
+ efforts.
+\end_layout
+
+\begin_layout Standard
+Restricting unauthorized access to data.
+ Only the DBA staff uses privileged commands and facilities.
+\end_layout
+
+\begin_layout Standard
+Providing Storage Structures (e.g.
+ indexes) for efficient query processing.
+\end_layout
+
 \end_body
 \end_document
