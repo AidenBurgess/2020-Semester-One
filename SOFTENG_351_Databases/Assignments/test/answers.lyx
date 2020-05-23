@@ -691,15 +691,31 @@ i.e.
 \end_layout
 
 \begin_layout Standard
-SALE_DISCOUNT(Car_no, Salesman_id, Discount_amt)
+SALE_DISCOUNT(
+\bar under
+Car_no
+\bar default
+, 
+\bar under
+Salesman_id
+\bar default
+, Discount_amt)
 \end_layout
 
 \begin_layout Standard
-SALE_DATE(Car_no, Date_sold)
+SALE_DATE(
+\bar under
+Car_no
+\bar default
+, Date_sold)
 \end_layout
 
 \begin_layout Standard
-COMMISION(Salesman_id, Commision)
+COMMISION(
+\bar under
+Salesman_id
+\bar default
+, Commision)
 \end_layout
 
 \begin_layout Subsubsection*
@@ -709,6 +725,8 @@ Normalize to 3NF
 \begin_layout Standard
 No more steps need to be completed as the result of 2NF normalization is
  also 3NF.
+ If there were any transitive dependencies between a non prime attribute
+ and the primary key of any relation then this would need to be removed.
 \end_layout
 
 \begin_layout Section*
@@ -738,14 +756,13 @@ b)
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename pasted6.png
-	scale 50
+	filename pasted10.png
 
 \end_inset
 
@@ -771,14 +788,13 @@ Buffer pool after request f
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename pasted7.png
-	scale 50
+	filename pasted11.png
 
 \end_inset
 
@@ -804,14 +820,13 @@ Buffer pool after request g
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename pasted8.png
-	scale 50
+	filename pasted12.png
 
 \end_inset
 
@@ -837,14 +852,13 @@ Buffer pool after request h
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename pasted9.png
-	scale 50
+	filename pasted14.png
 
 \end_inset
 

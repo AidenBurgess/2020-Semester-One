@@ -618,7 +618,7 @@ ii.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $SSN\_ALL\_PROJECTS(Ssn)\leftarrow\pi_{Essn,Pno}(WORKS\_ON)\,\div\,\rho_{(Pno)}\pi_{Pnumber}(PROJECT)$
+\begin_inset Formula $SSN\_ALL\_PROJECTS(Ssn)\leftarrow\pi_{Essn,Pno}(WORKS\_ON)\,\div\,\rho_{Pno}(\pi_{Pnumber}(PROJECT))$
 \end_inset
 
 
@@ -691,15 +691,31 @@ i.e.
 \end_layout
 
 \begin_layout Standard
-SALE_DISCOUNT(Car_no, Salesman_id, Discount_amt)
+SALE_DISCOUNT(
+\bar under
+Car_no
+\bar default
+, 
+\bar under
+Salesman_id
+\bar default
+, Discount_amt)
 \end_layout
 
 \begin_layout Standard
-SALE_DATE(Car_no, Date_sold)
+SALE_DATE(
+\bar under
+Car_no
+\bar default
+, Date_sold)
 \end_layout
 
 \begin_layout Standard
-COMMISION(Salesman_id, Commision)
+COMMISION(
+\bar under
+Salesman_id
+\bar default
+, Commision)
 \end_layout
 
 \begin_layout Subsubsection*
@@ -709,6 +725,8 @@ Normalize to 3NF
 \begin_layout Standard
 No more steps need to be completed as the result of 2NF normalization is
  also 3NF.
+ If there were any transitive dependencies between a non prime attribute
+ and the primary key of any relation then this would need to be removed.
 \end_layout
 
 \begin_layout Section*
