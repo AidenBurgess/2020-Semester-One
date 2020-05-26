@@ -404,14 +404,14 @@ ii.
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename pasted1.png
-	scale 70
+	filename pasted7.png
+	scale 60
 
 \end_inset
 
@@ -419,7 +419,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-After insertion of 43
+Before and after insertion of 43
 \end_layout
 
 \end_inset
@@ -437,46 +437,13 @@ After insertion of 43
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename pasted2.png
-	scale 70
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-After insertion of 4
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename pasted3.png
+	filename pasted9.png
 	scale 50
 
 \end_inset
@@ -485,7 +452,40 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-After insertion of 92
+Before and after insertion of 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pasted10.png
+	scale 45
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Before and after insertion of 92
 \end_layout
 
 \end_inset
