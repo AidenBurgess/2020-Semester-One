@@ -1,0 +1,27 @@
+What is the port this example is using? Can you explain why this port is used? Hint: look up the Daytime
+protocol.
+Port: 13
+The Daytime Protocol is a service in the Internet Protocol Suite. It is intended for testing and measurement purposes in computer networks.
+A host may connect to a server that supports the Daytime Protocol on either Transmission Control Protocol (TCP) or 
+User Datagram Protocol (UDP) port 13. The server returns an ASCII character string of the current date and time in an unspecified format.
+
+Why does the read loop check until -1 is received?
+-1 indicates that there is no more data to read as end of stream has been reached.
+
+For the Daytime client, you did not need to send any data to the server. How would you modify the echo
+server to behave in a similar manner?
+After connection is accepted, send data
+
+If you change the order of write and read statements in the client program, does it change the output? For
+example, try doing two or more writes before your reads or interleaving writes and reads.
+Yes, it gets stuck trying to read in data
+
+How many clients can the server handle at one time? How could you modify your program to handle more
+clients? Try to think of multiple ways you could extend your program.
+Only one at a time. Could use threads to handle each new request, or have a queue.
+
+What port is the server using to accept the client connection? How do you think this port is allocated? How
+is this port different from the server?
+port 3333. By choice/random - whatever is free at the time. The port passes information between the app layer and transport layer,
+while the server processes the information and makes requests.
+
