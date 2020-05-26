@@ -22,6 +22,14 @@ Only one at a time. Could use threads to handle each new request, or have a queu
 
 What port is the server using to accept the client connection? How do you think this port is allocated? How
 is this port different from the server?
-port 3333. By choice/random - whatever is free at the time. The port passes information between the app layer and transport layer,
+port 59593. By choice/random - whatever is free at the time. The port passes information between the app layer and transport layer,
 while the server processes the information and makes requests.
+
+What will happen when a client stops running without closing the connection first?
+java.net.SocketException: Connection reset
+Looks like the socket detects this and closes anyway
+
+What are the port numbers being allocated to the clients for the multi-threaded server? How do they differ
+from the single thread server?
+The port numbers keep incrementing as more connections are added.
 

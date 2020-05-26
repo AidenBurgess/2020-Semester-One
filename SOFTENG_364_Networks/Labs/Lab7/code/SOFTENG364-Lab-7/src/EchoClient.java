@@ -12,15 +12,14 @@ public class EchoClient {
 
 			DataInputStream dataIn = new DataInputStream(socket.getInputStream());
 			DataOutputStream dataOut = new DataOutputStream(socket.getOutputStream());
+
+			String msg = "Hello World!";
+			dataOut.writeUTF(msg);
+			dataOut.writeUTF("stop");
+			dataOut.flush();
 			
 			String returned = "";
 			returned  = dataIn.readUTF();
-
-			String msg = "Hello World! stop";
-			dataOut.writeUTF(msg);
-			dataOut.flush();
-			
-
 			
 			System.out.format("Received message%s ", returned);
 			System.out.println("Done");

@@ -11,12 +11,22 @@ public class EchoServer {
 			serverSocket = new ServerSocket(localPort);
 
 			System.out.format("Listing in port %d%n", localPort);
-			Socket socket = serverSocket.accept();
-			handleClientConnection(socket);
-			serverSocket.close();
+			while (true) {
+				Socket socket = serverSocket.accept();
+				new Thread(new Runnable() {
+					public void run() {
+						try {
+							handleClientConnection(socket);
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
+				}).start();
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		} 
+		
 	}
 
 	private static void handleClientConnection(Socket socket) throws IOException {
