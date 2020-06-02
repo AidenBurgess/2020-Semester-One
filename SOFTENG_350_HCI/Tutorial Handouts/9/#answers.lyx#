@@ -163,7 +163,7 @@ Section 1
 \begin_layout Standard
 When trying to share a file to a friend using Google Drive, I clicked the
  share button.
- On the share dialog, I noticed a feedback option.
+ On the share dialog, I noticed that there was a feedback option.
  Curious, I clicked on it and was astounded to see a 
 \begin_inset Quotes eld
 \end_inset
@@ -172,19 +172,14 @@ When trying to share a file to a friend using Google Drive, I clicked the
 \begin_inset Quotes erd
 \end_inset
 
- error-page.
- It was unexpected to me that a company as large as Google would have such
- an obvious issue on their website.
+ error page.
+ The reason for my surprise was that it was unexpected to me that a company
+ as large as Google would have such an obvious issue on their website.
  Through SOFTENG 350, I learned that this type of issue was a usability
  issue (error frequency and severity).
  This then lead to my thinking about how their website was tested.
  Maybe they were not using diverse enough personas, or their usage testing
- was not sufficient.
- I learned from this situation that even at the largest and most successful
- companies and applications, user testing and user experience remain important
- concepts.
- As a developer, I should engage in evaluating usability and pushing for
- more diverse testing of systems I may come to develop.
+ 
 \end_layout
 
 \begin_layout Section*
