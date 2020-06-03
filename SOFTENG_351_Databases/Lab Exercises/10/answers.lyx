@@ -7,8 +7,8 @@
 \textclass article
 \begin_preamble
 % Variables to change every new document
-\newcommand{\hmwkClass}{SOFTENG 350} % Course/class
-\newcommand{\hmwkNumber}{9} % Assignment number
+\newcommand{\hmwkClass}{SOFTENG 351} % Course/class
+\newcommand{\hmwkNumber}{7} % Assignment number
 
 % Constants to set once
 \newcommand{\hmwkAuthorName}{Aiden Burgess} % Your name
@@ -157,61 +157,209 @@ start
 \end_layout
 
 \begin_layout Section*
-Section 1
+1)
 \end_layout
 
 \begin_layout Standard
-When trying to share a file to a friend using Google Drive, I clicked the
- share button.
- On the share dialog, I noticed that there was a feedback option.
- Curious, I clicked on it and was astounded to see a 
-\begin_inset Quotes eld
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+delimiter &
+\end_layout
+
+\begin_layout Plain Layout
+
+create procedure init(in p int(11)) begin
+\end_layout
+
+\begin_layout Plain Layout
+
+    declare x int;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    select count(*) into x from (
+\end_layout
+
+\begin_layout Plain Layout
+
+    select COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS
+\end_layout
+
+\begin_layout Plain Layout
+
+    where TABLE_SCHEMA='COMPANY' and TABLE_NAME='PROJECT')
+\end_layout
+
+\begin_layout Plain Layout
+
+    as COLUMN_NAMES where COLUMN_NAME='Hours';
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    IF x = 0 then begin
+\end_layout
+
+\begin_layout Plain Layout
+
+        alter table PROJECT add column Hours float;
+\end_layout
+
+\begin_layout Plain Layout
+
+        update PROJECT set Hours=0.0 where Pnumber=p;
+\end_layout
+
+\begin_layout Plain Layout
+
+    end;
+\end_layout
+
+\begin_layout Plain Layout
+
+    end if;
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
 \end_inset
 
-403
-\begin_inset Quotes erd
-\end_inset
 
- error page.
- The reason for my surprise was that it was unexpected to me that a company
- as large as Google would have such an obvious issue on their website.
- Through SOFTENG 350, I learned that this type of issue was a usability
- issue (error frequency and severity).
- This then lead to my thinking about how their website was tested.
- Maybe they were not using diverse enough personas, or their usage testing
- 
 \end_layout
 
 \begin_layout Section*
-Section 2
+2)
 \end_layout
 
 \begin_layout Standard
-It was interesting learning about accessibility and screen readers, as during
- my summer internship, I had to implement keyboard navigation on a page
- I developed.
- The lecture taught me the value of that functionality, and about why my
- employers cared enough to include the feature.
- Another feature that supported accessibility that I did not realise at
- the time was internationalisation.
- This feature allows people who speak different languages to effectively
- use the application.
- The market size for the product increases, as well as the accessibility.
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+delimiter &
 \end_layout
 
-\begin_layout Section*
-Section 3
+\begin_layout Plain Layout
+
+create procedure stat() begin
 \end_layout
 
-\begin_layout Standard
-It would be interesting and valuable for my professional development if
- in the future I could use the design techniques to create and iterate over
- a design.
- Learning about the users, developing personas, and going through the entire
- design process from start to finish is something that I would like to do
- in a professional context in a future workspace.
- Whether it be an internal web application or external API, I believe iterating
- through the design process would be a valuable experience.
+\begin_layout Plain Layout
+
+  declare pmin, pmax, i, total int; 
+\end_layout
+
+\begin_layout Plain Layout
+
+  select min(Pnumber) into pmin from PROJECT;
+\end_layout
+
+\begin_layout Plain Layout
+
+  select max(Pnumber) into pmax from PROJECT; 
+\end_layout
+
+\begin_layout Plain Layout
+
+  set i = pmin;
+\end_layout
+
+\begin_layout Plain Layout
+
+  processing: loop
+\end_layout
+
+\begin_layout Plain Layout
+
+    if i > pmax then leave processing;
+\end_layout
+
+\begin_layout Plain Layout
+
+    end if;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    -- Find total num hours
+\end_layout
+
+\begin_layout Plain Layout
+
+    select sum(Hours) into total from WORKS_ON WHERE Pno=i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    if total is null Then
+\end_layout
+
+\begin_layout Plain Layout
+
+      set total=0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    end if;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    -- Update value
+\end_layout
+
+\begin_layout Plain Layout
+
+    update PROJECT set Hours=total where Pnumber=i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    set i = i+1;
+\end_layout
+
+\begin_layout Plain Layout
+
+  end loop processing;
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
