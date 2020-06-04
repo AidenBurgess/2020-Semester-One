@@ -178,7 +178,7 @@ a)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $n_{w}\times\frac{n_{x}}{V(x\,B)}\times\frac{n_{y}}{V(y\,C)}\times\frac{n_{z}}{V(z\,D)}=1000\times40\times60\times100=240,000,000\,tuples$
+\begin_inset Formula $n_{w}\times\frac{n_{x}}{V(x\,B)}\times\frac{n_{y}}{V(y\,C)}\times\frac{n_{z}}{V(Z\,D)}=1000\times40\times60\times100=240,000,000\,tuples$
 \end_inset
 
 
@@ -199,59 +199,20 @@ b)
 c)
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $estimate(\vert\sigma_{C=20}(y)\vert)=\frac{n_{y}}{V(y,\,C)}=\frac{3000}{50}=60$
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
 d)
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $estimate(\vert\sigma_{C=20}(y)\bowtie z\vert)=60\times\frac{n_{z}}{V(z,\,D)}=60\times\frac{4000}{40}=6000$
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection*
 e)
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $w\bowtie y=0$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-As there are no common fields, the result of a natural join will be empty.
-\end_layout
-
 \begin_layout Subsection*
 f)
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $estimate(\vert\sigma_{D>10}(z)\vert)=\frac{n_{y}}{V(y,\,C)}=\frac{3000}{50}=60$
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
 g)
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $estimate(\vert\sigma_{A=1\,and\,b=2}(w)\vert)=\frac{n_{y}}{V(y,\,C)}=\frac{3000}{50}=60$
-\end_inset
-
-
 \end_layout
 
 \end_body
