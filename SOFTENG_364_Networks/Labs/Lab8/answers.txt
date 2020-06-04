@@ -17,3 +17,30 @@ What Cipher method is chosen by the Server? Give its name and value.
 Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
 
 What are the TLS blocks that are included in this message?
+Certificate, Server key exchange, Server hello done
+
+Who sends the certificate? The client, the server or both?
+Server
+
+How many certificates are being sent? Think about why this number of certificates is being sent.
+Only one. This is to verify to the client that the server is who they say they are.
+
+What are the TLS blocks that are included in this message?
+Client Key Exchange, Change Cipher Spec, Encrypted Handshake message
+
+At the Record Layer, what Content-Type values are used to indicate each of these messages? Are these values
+the same or different than that used for the Hello and Certificate messages? Note that this question is asking
+you to look at the Record Layer and not an inner Hand-shake Protocol.
+22,20,22
+
+Who sends the Change Cipher Spec message, the client, the server, or both?
+both
+
+What are the contents carried inside the Change Cipher Spec message?
+A single byte (maybe a boolean)
+
+At the Record Layer, what Content-Type value is used to signal an alert?
+21
+
+How are the contents of the alert sent? Are they encrypted or plain-text?
+Encrypted
