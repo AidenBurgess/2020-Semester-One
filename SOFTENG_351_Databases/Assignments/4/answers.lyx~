@@ -307,6 +307,50 @@ a)
 b)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula $estimate(\vert w\bowtie x\vert)=n_{w}\times\frac{n_{x}}{V(x,\,B)}=1000\times\frac{2000}{50}=40,000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $estimate(\vert y\bowtie z\vert)=n_{y}\times\frac{n_{z}}{V(z,\,D)}=3000\times\frac{4000}{40}=300,000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $estimate(\vert(w\bowtie x)\bowtie(y\bowtie z)\vert)=n_{w\bowtie x}\times\frac{n_{y\bowtie z}}{V(C,\,y\bowtie z)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The only unknown variable is 
+\begin_inset Formula $V(C,\,y\bowtie z)$
+\end_inset
+
+, but this is able to be estimated too:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $estimate(V(C,\,y\bowtie z))=min\{V(y,C),n_{y\bowtie z}\}=min\{50,300,000\}=50$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula $estimate(\vert(w\bowtie x)\bowtie(y\bowtie z)\vert)=40,000\times\frac{300,000}{50}=240,000,000\,tuples$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 c)
 \end_layout
