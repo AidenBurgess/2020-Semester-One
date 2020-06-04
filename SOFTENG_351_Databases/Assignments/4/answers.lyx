@@ -237,10 +237,15 @@ f)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $estimate(\vert\sigma_{D>10}(z)\vert)=\frac{n_{y}}{V(y,\,C)}=\frac{3000}{50}=60$
+\begin_inset Formula $estimate(\vert\sigma_{D>10}(z)\vert)=\frac{n_{z}}{3}=1333$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Assuming queries involving inequality tend to retrieve a small fraction
+ of the possible tuples.
 \end_layout
 
 \begin_layout Subsection*
