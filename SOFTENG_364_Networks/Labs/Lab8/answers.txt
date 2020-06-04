@@ -1,0 +1,19 @@
+What is the Content-Type for a record containing “Application Data”?
+Application Data (23)
+
+What version constant is used in your trace, and which version of TLS does it represent?
+0x0303 -> TLS 1.2
+
+Does the Length cover the Record Layer header as well as payload, or only the payload?
+Only the payload
+
+How long, in bytes, is the random data in the Hellos?
+32 bytes
+
+How long, in bytes, is the session identifier sent by the server?
+1 byte
+
+What Cipher method is chosen by the Server? Give its name and value.
+Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
+
+What are the TLS blocks that are included in this message?
