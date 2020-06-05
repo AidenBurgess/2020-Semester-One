@@ -1,4 +1,2 @@
-Search1,Search,127.0.0.1:10124,1
-Search2,Search,127.0.0.1:10125,-1
-Operator1,Operator,127.0.0.1:10126,-1
-Relay2,Relay,127.0.0.1:10128,1
+y,Search,127.0.0.1:10124,2
+z,Search,127.0.0.1:10125,7
