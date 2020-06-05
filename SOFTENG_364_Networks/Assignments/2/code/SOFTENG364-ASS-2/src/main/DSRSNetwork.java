@@ -22,6 +22,7 @@ import drones.BaseDrone.DroneType;
 public class DSRSNetwork {
 	
 	private static  HashMap<String, HashMap<String, Integer>> forwardingTable = new HashMap<>();
+	private static HashMap<String, Integer> oldCosts = new HashMap<>();
 	private static ArrayList<BaseDrone> droneList = new ArrayList<>();
 	
 	public static void main(String[] args) {
@@ -54,7 +55,12 @@ public class DSRSNetwork {
 		System.out.println("Reading client list: starting");
 		while ((row = csvReader.readLine()) != null) {
 		    String[] data = row.split(",");
-		    droneList.add(new BaseDrone(data[0], data[1], data[2], data[3]));
+		    BaseDrone newDrone = new BaseDrone(data[0], data[1], data[2], data[3]);
+		    droneList.add(newDrone);
+			// Add initial row to costs
+			HashMap<String, Integer>initCosts = new HashMap<String, Integer>();
+			initCosts.put(newDrone._name, 0);
+			forwardingTable.put(newDrone._name, initCosts);
 		}
 		csvReader.close();
 		System.out.println("Reading client list: finished - " + droneList.size() + " clients read");
@@ -63,6 +69,7 @@ public class DSRSNetwork {
 	private static void pingClients() {
 		System.out.println("Pinging all clients: starting");
 		forwardingTable.put("Relay1", new HashMap<String, Integer>());
+		forwardingTable.get("Relay1").put("Relay1", 0);
 		
 		droneList.forEach(drone -> {
 			long startTime = System.currentTimeMillis();
@@ -147,25 +154,31 @@ public class DSRSNetwork {
 		
 		dataOut.writeUTF("ACK\n");
 		dataOut.flush();
+		// Preserve old costs
+		copyOldCosts();
 		
 		// Get costs in a good format
-		HashMap<String, Integer> costs = new HashMap<>();
 		for (String costInfo: data.split(",")) {
 			String dest = costInfo.split("=")[0];
 			Integer cost = Integer.parseInt(costInfo.split("=")[1]);
-			forwardingTable.get(origin).put(dest, cost);
+			if (cost < 0) {
+				forwardingTable.get(origin).remove(dest);
+				cost = null;
+			} else {
+				forwardingTable.get(origin).put(dest, cost);				
+			}
+			// Update drones if need be
+			if (origin.equals("Relay1")) {
+				for (BaseDrone drone: droneList) {
+					if (drone._name.equals(dest)) {
+						drone._lastResponseTime = cost;
+					}
+				}
+			}
 		}
 		
-		updateForwardingTable();
-		
-//		boolean updatesExist = updateForwardingTable(originDrone, costs);
-//		if (updatesExist) {
-//			sendUpdatedDV();
-//		} else {
-//			System.out.println("Skipping DV update send");
-//		}
-		
-
+		ArrayList<String> updates = updateForwardingTable();
+		sendUpdatedDV(updates);
 		
 		dataIn.close();
 		dataOut.close();
@@ -175,76 +188,89 @@ public class DSRSNetwork {
 		writeForwardingTable();
 	}
 	
-	private static void updateForwardingTable() {
+	private static ArrayList<String> updateForwardingTable() {
+		ArrayList<String> updated = new ArrayList<>();
 		for (BaseDrone drone: droneList) {
-			calculateCost(drone._name);
+			String update = calculateCost(drone._name);
+			if (update != null) {
+				updated.add(update);
+			}
 		}
-		forwardingTable.forEach((key, value) -> {
-			System.out.println(key + " "  + value);
-		});
+		return updated;
 	}
 	
 	
-	private static void sendUpdatedDV() {
-//		System.out.println("Sending updated DVs");
-//		for (BaseDrone drone: clients) {
-//			if (drone._type != DroneType.RELAY) { continue; }
-//			System.out.print("- Sending to " + drone._name + "...");
-//			try {
-//				sendUpdate(drone);
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//			System.out.println("done");
-//		}
+	private static void sendUpdatedDV(ArrayList<String> updates) {
+		if (updates.size() == 0) {
+			System.out.println("Skipping DV update send");
+			return;
+		}
+		
+		System.out.println("Sending updated DVs");
+		// build update string
+		String updateMsg = "UPDATE:";
+		updateMsg += "Relay1:";
+		ArrayList<String> paths = new ArrayList<>();
+		for (String update: updates) {
+
+			String[] info = update.split(" ");
+			String dest = info[0];
+			String thru = info[1];
+			String cost = info[2];
+			paths.add(dest + "=" + cost);
+		}
+		updateMsg += String.join(",", paths);
+		updateMsg +=":"+ updates.size() + "\n";
+		
+		for (BaseDrone drone: droneList) {
+			if (drone._type != DroneType.RELAY) { continue; }
+			System.out.print("- Sending to " + drone._name + "...");
+			try {
+				sendUpdate(drone, updateMsg);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			System.out.println("done");
+		}
 	}
 	
-	private static void sendUpdate(BaseDrone client) throws IOException {
-//		Socket socket = new Socket(client._IPAddress, client._port);
-//
-//		DataOutputStream dataOut = new DataOutputStream(socket.getOutputStream());
-//		DataInputStream dataIn = new DataInputStream(socket.getInputStream());
-//
-//		String msg = "UPDATE:";
-//		msg += "Relay1:";
-//		ArrayList<String> paths = new ArrayList<>();
-//		for (Map.Entry<String,String> path : currentPath.entrySet())  {
-//			String dest = path.getKey();
-//			String through = path.getValue();
-//			if (dest.equals("Relay1")) { continue; }
-//			int cost = networkCosts.get(through).get(dest);
-//			paths.add(dest+"="+cost);
-//		}
-//		msg += String.join(",", paths);
-//		msg +=":"+ clients.size() + "\n";
-//
-//		dataOut.writeUTF(msg);
-//		dataOut.flush();
-//		
-//		dataIn.readUTF();
-//		
-//		dataOut.close();
-//		socket.close();
+	private static void sendUpdate(BaseDrone client, String msg) throws IOException {
+		Socket socket = new Socket(client._IPAddress, client._port);
+
+		DataOutputStream dataOut = new DataOutputStream(socket.getOutputStream());
+		DataInputStream dataIn = new DataInputStream(socket.getInputStream());
+
+		dataOut.writeUTF(msg);
+		dataOut.flush();
+		
+		dataIn.readUTF();
+		
+		dataOut.close();
+		socket.close();
 	}
 	
 	private static void writeForwardingTable() throws IOException {
-//		BufferedWriter fooWriter = new BufferedWriter(new FileWriter("forwarding-Relay1.csv"));
-//		currentPath.forEach( (dest, through) -> {
-//			if (dest.equals("Relay1")) { return; }
-//			try {
-//				fooWriter.write(dest + "," + through);
-//				fooWriter.newLine();
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//		});
-//		fooWriter.close();
+		BufferedWriter fooWriter = new BufferedWriter(new FileWriter("forwarding-Relay1.csv"));
+		droneList.forEach( drone -> {
+			String dest = drone._name;
+			String[] info = getPath(dest).split(" ");
+			String thru = info[1];
+			
+			if (dest.equals("Relay1")) { return; }
+			
+			try {
+				fooWriter.write(thru + "," + dest);
+				fooWriter.newLine();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		});
+		fooWriter.close();
 	}
 	
-	private static void calculateCost(String dest) {
+	private static String calculateCost(String dest) {
 		// D_relay1(to) = min(c(relay1, through) + c(through, dest))
 		String src = "Relay1";
-
 		System.out.print("- Calculating cost for " + dest + "...");
 		Integer newCost = Integer.MAX_VALUE;
 		String altDrone = "";
@@ -258,20 +284,66 @@ public class DSRSNetwork {
 				altDrone = thru;
 			}
 		}
+		Integer oldCost = oldCosts.get(dest);
+		if (oldCost == null) {
+			oldCost = Integer.MAX_VALUE;
+		}
 		
-		System.out.println(newCost);
+		if (!newCost.equals(oldCost)) {
+			if (newCost.equals(Integer.MAX_VALUE)) {
+				forwardingTable.get("Relay1").remove(dest);
+				System.out.println("cost updated to -1, " + dest + " is unreachable");
+				return dest + " " +  "Relay1" + " -1";
+			} else {
+				forwardingTable.get("Relay1").put(dest, newCost);
+				System.out.println("cost updated to " + newCost + " via " + altDrone);
+				return dest + " " + altDrone + " " + newCost;
+			}
+		}
+		else {
+			System.out.println("no change");
+		}
 		
-//		// Check if alternative route has been found
-//		if (newCost == currentCosts.get(near)) {
-//			System.out.println("no change");
-//		} else {
-//			changed = true;
-//			if (newCost == Integer.MAX_VALUE) { newCost = -1; }
-//			System.out.println("cost updated to " + newCost + " via " + altDrone);	
-//			currentCosts.put(near, newCost);
-//			currentPath.put(near, altDrone);
-//		}
+		return null;
+	}
 	
+	private static String getPath(String dest) {
+		String src = "Relay1";
+		Integer newCost = Integer.MAX_VALUE;
+		String altDrone = "";
+		for (BaseDrone throughDrone: droneList) {
+			String thru = throughDrone._name;
+			Integer thruCost = forwardingTable.get(src).get(thru);
+			Integer destCost = forwardingTable.get(thru).get(dest);
+			if (thruCost == null || destCost == null) { continue; }
+			if (thruCost+destCost < newCost) {
+				newCost = thruCost+destCost;
+				altDrone = thru;
+			}
+		}
+		Integer oldCost = oldCosts.get(dest);
+		if (oldCost == null) {
+			oldCost = Integer.MAX_VALUE;
+		}
+		return dest + " " + altDrone + " " + newCost; 
+	}
+	
+	private static void copyOldCosts() {
+		oldCosts.clear();
+	    for (Map.Entry<String, Integer> entry : forwardingTable.get("Relay1").entrySet()) {
+	    	oldCosts.put(entry.getKey(),entry.getValue());
+	    }
+	}
+	
+	private static void resetBaseRow() {
+	    HashMap<String, Integer> baseRow = forwardingTable.get("Relay1");
+	    baseRow.clear();
+	    for (BaseDrone drone: droneList) {
+	    	if (drone._lastResponseTime == null) {
+	    		continue;
+	    	}
+	    	baseRow.put(drone._name, drone._lastResponseTime);
+	    }
 	}
 
 }
