@@ -69,17 +69,9 @@ public class BaseDrone {
 		socket.close();
 	}
 
-
-	@Override
-	public String toString() {
-		return "BaseDrone [_name=" + _name + ", _type=" + _type + ", _IPAddress=" + _IPAddress + ", _lastResponseTime="
-				+ _lastResponseTime + "]";
-	}
-	
 	public String getTypeString() {
 		String lowercase = _type.toString().toLowerCase();
 		return lowercase.substring(0, 1).toUpperCase() + lowercase.substring(1);
 	}
-	
 	
 }

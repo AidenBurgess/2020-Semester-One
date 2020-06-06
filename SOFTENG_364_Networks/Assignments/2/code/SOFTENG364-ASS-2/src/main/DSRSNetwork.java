@@ -156,7 +156,7 @@ public class DSRSNetwork {
 		dataOut.flush();
 		// Preserve old costs
 		copyOldCosts();
-		
+		resetBaseRow();
 		// Get costs in a good format
 		for (String costInfo: data.split(",")) {
 			String dest = costInfo.split("=")[0];
@@ -172,6 +172,7 @@ public class DSRSNetwork {
 				for (BaseDrone drone: droneList) {
 					if (drone._name.equals(dest)) {
 						drone._lastResponseTime = cost;
+						resetBaseRow();
 					}
 				}
 			}
@@ -338,6 +339,7 @@ public class DSRSNetwork {
 	private static void resetBaseRow() {
 	    HashMap<String, Integer> baseRow = forwardingTable.get("Relay1");
 	    baseRow.clear();
+    	baseRow.put("Relay1", 0);
 	    for (BaseDrone drone: droneList) {
 	    	if (drone._lastResponseTime == null) {
 	    		continue;
