@@ -170,7 +170,7 @@ Therefore, we must use block nested-loop join which will require:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $n_{s}+n_{r}\,IOs$
+\begin_inset Formula $b_{s}+b_{r}\,IOs$
 \end_inset
 
 
@@ -233,6 +233,7 @@ a)
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted3.png
+	scale 60
 
 \end_inset
 
@@ -260,7 +261,7 @@ c)
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted4.png
-	scale 60
+	scale 50
 
 \end_inset
 
@@ -344,16 +345,6 @@ Lookup tuple for E in
 
 \begin_layout Section*
 5.
-\end_layout
-
-\begin_layout Standard
-Consider the relations r1(A, B, C), r2(C, D, E), and r3(E, F) without primary
- keys, except the entire schema.
- LetV (C, r1) be 900,V (C, r2) be 1100,V (E, r2) be 50, and V (E, r3) be
- 100.
- Assume that r1 has 1000 tuples, r2 has 1500 tuples, and r3 has 750 tuples.
- Estimate the size of r1 ./ r2 ./ r3 and give an efficient strategy for computingt
-he join.
 \end_layout
 
 \begin_layout Standard
