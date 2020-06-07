@@ -1,5 +1,3 @@
-package main;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
@@ -13,11 +11,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-
-import drones.BaseDrone;
-import drones.BaseDrone.DroneType;
 
 public class DSRSNetwork {
 	
@@ -109,7 +103,11 @@ public class DSRSNetwork {
 		BufferedWriter fooWriter = new BufferedWriter(new FileWriter("clients-Relay1.csv"));
 		droneList.forEach(drone-> {
 			try {
-				fooWriter.write(String.join(",", drone._name, drone.getTypeString(), drone._fullAddress, String.valueOf(drone._lastResponseTime)));
+				Integer time = drone._lastResponseTime;
+				if (time == null) {
+					time = -1;
+				}
+				fooWriter.write(String.join(",", drone._name, drone.getTypeString(), drone._fullAddress, String.valueOf(time)));
 				fooWriter.newLine();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -224,7 +222,7 @@ public class DSRSNetwork {
 		updateMsg +=":"+ updates.size() + "\n";
 		
 		for (BaseDrone drone: droneList) {
-			if (drone._type != DroneType.RELAY) { continue; }
+			if (drone._type != BaseDrone.DroneType.RELAY) { continue; }
 			System.out.print("- Sending to " + drone._name + "...");
 			try {
 				sendUpdate(drone, updateMsg);
@@ -260,7 +258,12 @@ public class DSRSNetwork {
 			if (dest.equals("Relay1")) { return; }
 			
 			try {
-				fooWriter.write(thru + "," + dest);
+				// If neighbouring node, then print dest last
+				if (forwardingTable.get("Relay1").containsKey(dest)) {
+					fooWriter.write(thru + "," + dest);					
+				} else {
+					fooWriter.write(dest + "," + thru);
+				}
 				fooWriter.newLine();
 			} catch (IOException e) {
 				e.printStackTrace();

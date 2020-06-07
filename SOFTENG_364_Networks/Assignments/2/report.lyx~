@@ -179,5 +179,10 @@ No authentication of messages occurs, so an attacker could easily spoof
  
 \end_layout
 
+\begin_layout Standard
+Storage of files on local drive without any encryption is suspect.
+ Hacker could change initial costs by hacking computer.
+\end_layout
+
 \end_body
 \end_document

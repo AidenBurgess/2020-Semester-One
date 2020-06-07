@@ -184,5 +184,9 @@ Storage of files on local drive without any encryption is suspect.
  Hacker could change initial costs by hacking computer.
 \end_layout
 
+\begin_layout Standard
+Replay attacks
+\end_layout
+
 \end_body
 \end_document
