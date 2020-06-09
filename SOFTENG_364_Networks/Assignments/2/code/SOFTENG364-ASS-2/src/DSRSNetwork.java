@@ -73,7 +73,7 @@ public class DSRSNetwork {
 				int duration = (int) (endTime - startTime)/1000;
 				drone._lastResponseTime = duration;
 				forwardingTable.get("Relay1").put(drone._name, drone._lastResponseTime);
-				System.out.print("ping received after " + duration + "s\n");
+				System.out.println("ping received after " + duration + "s");
 			} catch (IOException e) {
 				drone._lastResponseTime = null;
 				System.out.print("could not ping\n");
@@ -83,7 +83,7 @@ public class DSRSNetwork {
 	}
 	
 	private static void ping(BaseDrone client) throws IOException {
-		System.out.println("Pinging " + client._name + "...");
+		System.out.print("Pinging " + client._name + "...");
 		Socket socket = new Socket(client._IPAddress, client._port);
 
 		DataOutputStream dataOut = new DataOutputStream(socket.getOutputStream());
@@ -291,6 +291,8 @@ public class DSRSNetwork {
 		Integer oldCost = oldCosts.get(dest);
 		if (oldCost == null) {
 			oldCost = Integer.MAX_VALUE;
+		} else {
+			forwardingTable.get("Relay1").put(dest, oldCost);			
 		}
 		
 		if (!newCost.equals(oldCost)) {

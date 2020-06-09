@@ -161,22 +161,26 @@ Reflection on Security
 \end_layout
 
 \begin_layout Standard
-The current security system is very flawed
+Currently, our system has not had any thought put into it about security.
+ Therefore, it is vulnerable to many attacks and manipulation.
 \end_layout
 
 \begin_layout Standard
-No thought has been put into security in the current system
+There is no encryption of the messages.
+ Therefore, an attacker could read these messages and find out sensitive
+ information.
 \end_layout
 
 \begin_layout Standard
-None of the communications are encrypted
+No authentication occurs between the sender and receiver drones.
+ An attacker could easily spoof their identity and act as one or many of
+ the drones.
 \end_layout
 
 \begin_layout Standard
-No authentication of messages occurs, so an attacker could easily spoof
- a message and cause the drones to miscalculate costs, or falsely believe
- they are disconnected.
- 
+Message integrity has not been established or checked in our system.
+ Therefore, these drones are vulnerable to replay attacks, and will not
+ detect any corrupted/altered messages.
 \end_layout
 
 \begin_layout Standard
