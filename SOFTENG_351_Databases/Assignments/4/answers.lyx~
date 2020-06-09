@@ -359,6 +359,10 @@ c)
 4.
 \end_layout
 
+\begin_layout Standard
+Need to demonstrate why it is the best
+\end_layout
+
 \begin_layout Subsection*
 a)
 \end_layout
@@ -373,6 +377,28 @@ c)
 
 \begin_layout Section*
 5.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The schedule is not conflict-serializable, as there is a cycle in the precedence
+ graph between 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section*

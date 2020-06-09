@@ -359,6 +359,10 @@ c)
 4.
 \end_layout
 
+\begin_layout Standard
+Need to demonstrate why it is the best
+\end_layout
+
 \begin_layout Subsection*
 a)
 \end_layout
@@ -423,6 +427,22 @@ d)
 
 \begin_layout Section*
 8.
+\end_layout
+
+\begin_layout Standard
+A deadlock occurs when there is a cycle in the wait-for graph.
+ This means that the transactions in this cycle can not be completed as
+ they block each other from completing.
+\end_layout
+
+\begin_layout Standard
+One solution is to detect when a deadlock occurs and to choose a transaction
+ as a victim to be undone and restart.
+\end_layout
+
+\begin_layout Standard
+Another solution is to setup a time limit so that a transaction that exceeds
+ this limit waiting is undone and restarted.
 \end_layout
 
 \begin_layout Section*
