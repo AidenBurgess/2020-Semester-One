@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Assignment 3 Base code Adapted from W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--import javascript files-->
+  <script src="javascript/SubNavigation.js"></script>
+  <script src="javascript/Folders.js"></script>
+  <script src="javascript/Files.js"></script>
+  <script src="javascript/ShareFile.js"></script>
+  <script src="javascript/FileRelationGraph.js"></script>
+  <script src="javascript/Version.js"></script>
+  <script src="javascript/SideBar.js"></script>
+  <script defer src="fontawesome-free-5.13.0-web/js/all.js"></script>
+  <!--css import-->
+  <link rel="stylesheet" href="css/TopNavigationBar.css" type="text/css">
+  <link rel="stylesheet" href="css/SideBar.css" type="text/css">
+  <link rel="stylesheet" href="css/SubNavigation.css" type="text/css">
+  <link rel="stylesheet" href="css/QuickAccess.css" type="text/css">
+  <link rel="stylesheet" href="css/Folders.css" type="text/css">
+  <link rel="stylesheet" href="css/Files.css" type="text/css">
+  <link rel="stylesheet" href="css/ShareFile.css" type="text/css">
+  <link rel="stylesheet" href="css/FileRelationGraph.css" type="text/css">
+  <link rel="stylesheet" href="css/Version.css" type="text/css">
+  <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.css">
+
+</head>
+
+<style>
+  html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif}
+  .w3-bar-block .w3-bar-item {padding: 16px}
+</style>
+
+<body>
+  <div class="w3-overlay w3-hide-large w3-animate-opacity" style="cursor:pointer" title="Close Sidemenu" id="myOverlay"></div>
+
+  <!--side bar-->
+  <div class = "sideBar">
+    <!-- Side Navigation -->
+    <nav class="w3-sidebar w3-bar-block" style="z-index:3;width:250px;" id="mySidebar">
+
+      <!--logo-->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-large w3-hover-light-blue" style="padding: 0" onclick="goToRootDirectory()">
+        <div style="display: flex">
+          <img src="resource/logo.png"> <h1 style="margin-left: 10px">Drive</h1>
+        </div>
+      </a>
+
+      <div style="display: flex" id="newFolder" class="w3-button w3-hover-light-grey">
+        <i class="fas fa-plus fa-2x"></i> <h2>New</h2>
+      </div>
+
+      <!--Enggen 303-->
+      <a id="button-EN303" onclick="openFolder('Enggen303-folder'); changeSideBarButtonColor(this.id)" href="javascript:void(0)" class="side-bar-button w3-bar-item w3-button w3-hover-light-blue">
+        <div class="flex-container">
+          <div class="triangle-right"></div>
+          <i class="fas fa-folder fa-2x w3-margin-left"></i><p class="folder-title">Enggen 303</p>
+        </div>
+      </a>
+
+      <!--Softeng 350-->
+      <a id="button-SE350" onclick="openFolder('Softeng350-folder'); changeSideBarButtonColor(this.id);
+          ToggleExpandContent(this.id,'softeng350-folder-expand')"
+         class="side-bar-button w3-bar-item w3-button w3-hover-light-blue">
+        <div class="flex-container" style="padding-right: 0">
+          <div id="softeng350-folder-triangle" class="triangle-right"></div>
+          <i class="fas fa-folder fa-2x w3-margin-left"></i><p class="folder-title">Softeng 350</p>
+        </div>
+      </a>
+
+      <!--softeng 350 expand-->
+      <div id="softeng350-folder-expand" style="padding-left: 8px; display: none">
+        <a id="button-SE350-A1" class="side-bar-button w3-bar-item w3-button w3-hover-light-blue" onclick="changeSideBarButtonColor(this.id)">
+          <div class="flex-container">
+            <div class="triangle-right"></div>
+            <i class="fas fa-folder fa-lg w3-margin-left"></i><p class="folder-title">Assignment 1</p>
+          </div>
+        </a>
+        <a id="button-SE350-A2" class="side-bar-button w3-bar-item w3-button w3-hover-light-blue"
+           onclick="changeSideBarButtonColor(this.id)">
+          <div class="flex-container">
+            <div class="triangle-right"></div>
+            <i class="fas fa-folder fa-lg w3-margin-left"></i><p class="folder-title">Assignment 2</p>
+          </div>
+        </a>
+        <a id="button-SE350-A3" class="side-bar-button w3-bar-item w3-button w3-hover-light-blue"
+           onclick="changeSideBarButtonColor(this.id)">
+          <div class="flex-container">
+            <div class="triangle-right"></div>
+            <i class="fas fa-folder fa-lg w3-margin-left"></i><p class="folder-title">Assignment 3</p>
+          </div>
+        </a>
+      </div>
+
+      <!--Softeng 351-->
+      <a id="button-SE351" onclick="openFolder('Softeng351-folder'); changeSideBarButtonColor(this.id)" href="javascript:void(0)" class="side-bar-button w3-bar-item w3-button w3-hover-light-blue">
+        <div class="flex-container" style="padding-right: 0">
+          <div class="triangle-right"></div>
+          <i class="fas fa-folder fa-2x w3-margin-left"></i><p class="folder-title">Softeng 351</p>
+        </div>
+      </a>
+
+      <!--  Softeng 364-->
+      <a id="button-SE364" onclick="openFolder('Softeng364-folder'); changeSideBarButtonColor(this.id)" href="javascript:void(0)" class="side-bar-button w3-bar-item w3-button w3-hover-light-blue">
+        <div class="flex-container" style="padding-right: 0">
+          <div class="triangle-right"></div>
+          <i class="fas fa-folder fa-2x w3-margin-left"></i><p class="folder-title">Softeng 364</p>
+        </div>
+      </a>
+
+      <hr class="break">
+
+      <!--Others -->
+      <a id="Others-button" onclick="openFolder(this.id); changeSideBarButtonColor(this.id)" href="javascript:void(0)"
+         class="side-bar-button w3-bar-item w3-button w3-hover-light-blue">
+        <div class="flex-container" style="padding-right: 0">
+          <div class="triangle-right other-folder-triangle"></div>
+          <i class="fas fa-folder fa-2x w3-margin-left" style="color: black"></i><p class="folder-title">Others</p>
+        </div>
+      </a>
+
+      <!-- Past Enrolled-->
+      <a id="Past&nbsp;Enrolled-button" onclick="openFolder(this.id); changeSideBarButtonColor(this.id)" href="javascript:void(0)"
+         class="side-bar-button w3-bar-item w3-button w3-hover-light-blue">
+        <div class="flex-container" style="padding-right: 0">
+          <div class="triangle-right other-folder-triangle"></div>
+          <i class="fas fa-folder fa-2x w3-margin-left" style="color: black"></i><p class="folder-title">Past Enrolled</p>
+        </div>
+      </a>
+
+      <hr class="break">
+
+      <!--Recent-->
+      <a id="Recent-button" href="#" class="side-bar-button w3-bar-item w3-button w3-hover-light-blue"
+         onclick="openFolder(this.id); changeSideBarButtonColor(this.id)">
+        <i class="far fa-clock fa-2x w3-margin-right"></i>Recent
+      </a>
+
+      <!--Starred-->
+      <a id="Starred-button" href="#" class="side-bar-button w3-bar-item w3-button w3-hover-light-blue"
+         style="padding: 12px" onclick="openFolder(this.id); changeSideBarButtonColor(this.id)">
+        <i class="fas fa-star fa-2x w3-margin-right"></i>Starred
+      </a>
+
+      <!--Bin-->
+      <a id="Bin-button" href="#" class="side-bar-button w3-bar-item w3-button w3-hover-light-blue"
+         onclick="openFolder(this.id); changeSideBarButtonColor(this.id)">
+        <i class="fa fa-trash fa-2x w3-margin-right"></i> Bin
+      </a>
+    </nav>
+</div>
+
+  <div class="w3-main" style="margin-left:250px;">
+    <!--top navigation bar-->
+    <div class = "topBar">
+      <div class="topnav flex-container" style="justify-content: space-between">
+
+        <!--Confirmation box showing after the user shares a file -->
+        <div id="successful-shared-alert" class="w3-animate-top">
+          <a class="w3-right" onclick="document.getElementById('successful-shared-alert').style.display = 'none'"></a>
+          <i class="fa fa-check-circle-o w3-margin-right"></i>
+          <strong id="alert-message">Files successfully shared!</strong>
+        </div>
+
+        <!--Search box-->
+        <div class="wrapper">
+          <button class="search-button" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
+          <input class="search-input" style="width: 89%" type="text" placeholder="Search in Drive">
+        </div>
+
+        <!--Help icon and setting icon-->
+        <div class="icon-container">
+          <a href="#question"><i class="far fa-question-circle fa-2x icon"></i></a>
+          <a href="#setting"><i class="fas fa-cog fa-2x icon"></i></a>
+        </div>
+
+        <!--more app icon-->
+        <div style="display: flex">
+          <div class="icon-container">
+            <a href="#moreApp"><i class="fas fa-bars fa-2x icon"></i></a>
+          </div>
+
+          <!--User account button-->
+          <a href="#login"><img class="login" src="resource/login.png"></a>
+        </div>
+
+      </div>
+    </div>
+
+    <!--sub navigation bar-->
+    <div class = "subBar">
+      <div class="flex-container" style="padding-top: 32px; justify-content: space-between">
+
+        <!--file directory-->
+        <button class="file-path-button file-path" id="homepage-dropdown-button">My Drive
+          <i class="fa fa-caret-down"></i>
+        </button>
+
+        <!--folder directory after opening softeng350 folder-->
+        <div id="softeng350-folder-path" class="file-path" style="display:none;">
+          <button class="file-path-button" onclick="goToRootDirectory()">My Drive</button>
+          <i class="fas fa-chevron-right"></i>
+          <button class="file-path-button" id="folderNameButton">
+            Softeng350<i class="fa fa-caret-down"></i>
+          </button>
+        </div>
+
+        <!--graph button-->
+        <div>
+          <div class="tooltip">
+            <button id="graph-button" class="w3-button" style="outline:none" onclick="showFileRelationGraph()">
+              Graph<i class="far fa-images fa-2x icon"></i>
+            </button>
+
+            <!--tooltip text for the graph button-->
+            <span class="tooltiptext">Show files with the same tag in the current folder</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <hr class="break">
+
+    </div>
+
+    <!--quick access-->
+    <div class = "quickAccess">
+      <div id="quick-access-component">
+
+        <!--title-->
+        <div class="flex-container">
+          <p class="sub-title">
+            Quick access
+          </p>
+        </div>
+
+        <div class="flex-container">
+          <!-- report.doc file under quick access-->
+          <div class="file-container">
+            <img class="file" src="resource/file.png">
+            <i id="report.doc" class="fas fa-history fa-2x icon" onclick="showVersionPopup(this.id)"></i>
+          </div>
+
+          <!-- rQ3.docx file under quick access-->
+          <div class="file-container">
+            <img class="file" src="resource/file2.png">
+            <i id="Q3.docx" class="fas fa-history fa-2x icon" onclick="showVersionPopup(this.id)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--folders-->
+    <div class = "folder" style="margin-left:0px;">
+      <div id="folders-tittle" class="flex-container" style="justify-content: space-between">
+        <p class="sub-title">Folders</p>
+
+        <div class="sort-container">
+          <!-- Sort folder based on their name-->
+          <button class="dropbtn sort-button file-path-button">
+            Name
+          </button>
+
+          <!--ascending order or descending order icon-->
+          <i class="fas fa-arrow-up fa-2x icon"></i>
+        </div>
+      </div>
+
+      <!--folders in the root directory-->
+      <div id="route-folder-container" class="folder-container">
+
+        <!--Enggen303 folder-->
+        <button ondblclick="openFolder(this.id)" onfocus="hoverFolderImage(this.id)" onblur="resetImage(this.id)" class="folder-button" id="Enggen303-folder">
+          <img class="folder" id="enggen303" src="resource/enggen303Folder.png">
+        </button>
+
+        <!--Softeng350 folder-->
+        <button ondblclick="openFolder(this.id)" onfocus="hoverFolderImage(this.id)" onblur="resetImage(this.id)" class="folder-button" id="Softeng350-folder">
+          <img class="folder" id="softeng350" src="resource/softeng350Folder.png">
+        </button>
+
+        <!--Softeng351 folder-->
+        <button ondblclick="openFolder(this.id)"  onfocus="hoverFolderImage(this.id)" onblur="resetImage(this.id)" class="folder-button" id="Softeng351-folder">
+          <img class="folder" id="softeng351" src="resource/softeng351Folder.png">
+        </button>
+
+        <!--Softeng364 folder-->
+        <button ondblclick="openFolder(this.id)"  onfocus="hoverFolderImage(this.id)" onblur="resetImage(this.id)" class="folder-button" id="Softeng364-folder">
+          <img class="folder" id="softeng364" src="resource/softeng364Folder.png">
+        </button>
+      </div>
+
+      <!--folders inside softeng350-->
+      <div id="softeng350-folder-container">
+
+        <!--Assignment1 folder-->
+        <button  onfocus="hoverFolderImage(this.id)" onblur="resetImage(this.id)" class="folder-button" id="A1-folder">
+          <img class="folder" id="A1" src="resource/assignment1.png">
+        </button>
+
+        <!--Assignment2 folder-->
+        <button onfocus="hoverFolderImage(this.id)" onblur="resetImage(this.id)" class="folder-button" id="A2-folder" >
+          <img class="folder" id="A2" src="resource/assignment2.png">
+        </button>
+
+        <!--Assignment3 folder-->
+        <button onfocus="hoverFolderImage(this.id)" onblur="resetImage(this.id)" class="folder-button" id="A3-folder">
+          <img class="folder" id="A3" src="resource/assignment3.png">
+        </button>
+      </div>
+    </div>
+
+    <!--files-->
+    <div class="file">
+      <div id="file-section" style="display:none;">
+        <!--title-->
+        <div class="flex-container" style="justify-content: space-between">
+          <p class="sub-title">Files</p>
+        </div>
+
+        <!--files in the softeng 350 folder-->
+        <div id="softeng350-file-container" class="flex-container">
+          <div style="position: relative">
+            <!--draft file-->
+            <button oncontextmenu="rightButtonClicked('draft-dropdown-content'); return false" onfocus="hoverFileImage(this.id)"
+                    onblur="resetFileImage(this.id)" class="file-button" id="softeng350-draft" style="position:relative;">
+              <img class="file" id="draft-unclick" src="resource/draftFile-unclick.png">
+              <img class="file" id="draft-click" style="display: none" src="resource/draftFile-clicked.png">
+              <i id="draft.doc" class="fas fa-history fa-2x icon" onclick="showVersionPopup(this.id)" style="top: 0"></i>
+            </button>
+
+            <!--share file button-->
+            <div id="draft-dropdown-content" class="dropdown-content" style="display: none; position: absolute">
+              <a href="#" onclick="showPopup()"><i class="fas fa-user-alt"></i>Share</a>
+            </div>
+          </div>
+
+          <div style="position: relative; margin-left: 20px">
+            <!--Slides file-->
+            <button oncontextmenu="rightButtonClicked('slides-dropdown-content'); return false" onfocus="hoverFileImage(this.id)"
+                    onblur="resetFileImage(this.id)" class="file-button" id="softeng350-slides" style="position: relative">
+              <img class="file" id="slide-unclick" src="resource/slides.png">
+              <img class="file" id="slide-click" style="display: none" src="resource/slides-clicked.png">
+              <i id="slides.ppt" class="fas fa-history fa-2x icon" onclick="showVersionPopup(this.id)" style="top: 0"></i>
+            </button>
+
+            <!--share file button-->
+            <div id="slides-dropdown-content" class="dropdown-content" style="display: none; position: absolute">
+              <a href="#" onclick="showPopup()"><i class="fas fa-user-alt"></i>Share</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--share file popup-->
+  <div class="share">
+    <!-- Modal that pops up when you click on "Share File" -->
+    <div id="share-file-popup" class="w3-modal" style="z-index:4;" >
+      <div class="w3-modal-content">
+
+        <!--title-->
+        <div class="flex-container" style="justify-content: space-between">
+          <h5>Share with others</h5>
+          <div style="display: flex">
+            <h5>Get shareable link</h5>
+            <i class="fas fa-link icon"></i>
+          </div>
+        </div>
+
+        <div>
+          <!--share link-->
+          <div class="flex-container share-link-container">
+            <div class="link-container">
+              <p style="color: gray; margin: auto 0 auto 10px">Anyone with the link</p>
+
+              <!--Permission of the person who gets the link-->
+              <select id="dropbtn" class="w3-select w3-border" name="option" style="width: 15%; background-color: darkgray; text-align-last:center; outline: none;">
+                <option value="View">Can view</option>
+                <option value="comment">Can comment</option>
+                <option value="edit">Can edit</option>
+              </select>
+            </div>
+
+            <!--Copy link button-->
+            <button class="copy-link-button">
+              Copy Link
+            </button>
+          </div>
+
+          <!--showing the link shared-->
+          <div class="link-message">
+            <p style="color: grey; margin: 0; text-decoration: underline">
+              https://drive.upi.com/drive/folders/SE350/A3/draft
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <!--share related files as well-->
+          <button id="share-all-file-button" onclick="showOrHideRelatedFiles(this.id)" class="share-file-button">
+            Share all files containing the same tag
+          </button>
+
+          <div id="multiple-file" class="flex-container" style="position:relative; display: none">
+
+            <!--common tags of all files in this relationship graph-->
+            <div class="tag-container" style="position: absolute">
+              <img src="resource/tag.png" style="width: 100px; margin-top: 20px">
+            </div>
+
+            <!--relationship graph-->
+            <div>
+              <img src="resource/share-related-file-all.png" class="related-shared-graph">
+            </div>
+          </div>
+
+          <hr class="break" style="margin: 10px 20px; width: auto"; >
+
+        </div>
+
+        <!--people to share-->
+        <div>
+          <p style="color: grey; margin-left: 20px; margin-bottom: 0">Send link to people</p>
+          <div class="flex-container" style="justify-content: space-between;">
+            <input id = "email-text-input" type="text" placeholder="Enter names or email address">
+
+            <!--Permission dropdown button-->
+            <select class="w3-select w3-border" name="option" style="width: 17%; background-color: lightgrey; text-align-last:center; outline: none;">
+              <option value="View">Viewer</option>
+              <option value="comment">Commenter</option>
+              <option value="edit">Editor</option>
+            </select>
+          </div>
+        </div>
+
+        <!--showing the owner of files-->
+        <div id = "owner" class = "imgContainer">
+          <img src="resource/owner.jpg" class = "imgOwner">
+          <div class="overlay"></div>
+        </div>
+
+        <div class="w3-panel">
+          <!--sharing message-->
+          <input class="w3-input w3-border w3-margin-bottom" style="height:150px" placeholder="Message">
+
+          <!--share or delete button-->
+          <div class="w3-section w3-right">
+            <a class="w3-button w3-red" onclick="hidePopup()">Delete</i></a>
+            <a class="w3-button w3-blue" onclick="hidePopup(); fileSuccessfullySharedAlert( 'Files successfully shared!' )">
+              Share
+              <i class="fa fa-paper-plane" style="margin: auto 5px"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--file relationship graph-->
+  <div class="fileRelation">
+      <!-- Modal that pops up when you click on image icon" -->
+      <div id="file-relation-popup" class="w3-modal" style="z-index:3;">
+        <div class="w3-modal-content" style="padding-top: 50px; padding-right: 20px; padding-left: 20px; background-color:#e6e6e6">
+
+          <!--back button-->
+          <div style="margin-bottom: 10px">
+            <i id="back-icon" class="fas fa-arrow-left fa-2x icon" style="color:#3399ff" onclick="showAllGraphs()"></i>
+          </div>
+
+          <div class="w3-container">
+            <div id="draft-related-graph-container" class="w3-cell">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;Files related to draft.doc:</p>
+
+              <!--graph showing all files related to draft file-->
+              <button class="graph-container" onclick="showDraftGraphOnly()">
+                <img class="graphs" id="draft-related-graph" src="resource/share-related-file-all.png" style="width: 100%">
+              </button>
+            </div>
+
+            <div id="slide-related-graph-container" class="w3-cell">
+              <p id="p2">File related to slides.ppt:</p>
+
+              <!--graph showing all files related to Slides file-->
+              <button class="graph-container">
+                <img class="graphs" id="ppt-related-graph" src="resource/slides-related-graph.png" style="width: 100%">
+              </button>
+            </div>
+
+            <!--displayed if there is no file in the current folder-->
+            <div id="empty-container" class="w3-cell" style="display: none">
+              <p>No files in the current folder</p>
+              <p>Please select a folder with file inside it</p>
+            </div>
+          </div>
+
+          <!--showing the name of the current folder-->
+          <h4 id="file-position" style="margin-bottom: 0; font-weight: bold;">In Folder SE350</h4>
+
+          <div class="w3-panel">
+            <div class="w3-section w3-right">
+
+              <!--close the popup-->
+              <button class="w3-button w3-blue" onclick="hideFileRelationGraph()">Close</i></button>
+
+              <!--share all related files-->
+              <button id="share-related-graph-button" class="w3-button w3-blue" onclick="shareRelatedGraph()"
+                      disabled>
+                Share<i class="fa fa-paper-plane" style="margin: auto 5px"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!--file version popup-->
+  <div class="version">
+    <!-- Modal that pops up when the user click on image icon" -->
+    <div id="version-popup" class="w3-modal w3-animate-zoom" style="z-index:3; background-color: transparent">
+      <div class="w3-modal-content" style="padding-top: 20px; padding-right: 20px; padding-left: 20px;
+      background-color:#e6e6e6; width: 600px">
+
+        <!--close icon, clicking it will close the popup-->
+        <i class="fas fa-times w3-right fa-2x" onclick="hideVersion()"></i>
+
+        <!--  title	-->
+        <h4 id="version-title">Previous version for draft.doc</h4>
+
+        <div class="w3-container">
+
+          <!--Side bar: current version and version 1 buttons-->
+          <div class="sidenav w3-cell-top w3-cell">
+            <a id="version2-button" class="version-buttons" style="background-color: white"
+               onclick="changeVersionDisplayed(this.id,'version2-graph')">Current Version</a>
+            <a id="version1-button" class="version-buttons" onclick="changeVersionDisplayed(this.id,'version1-graph')">
+              Version 1
+            </a>
+          </div>
+
+          <!--images to show the content in different versions-->
+          <div class="w3-cell">
+            <img class="version-graphs" id="version2-graph" src="resource/version2.png" style="width: 100%; height:300px">
+            <img class="version-graphs" id="version1-graph" src="resource/version1.png" style="width: 100%; height:300px; display: none">
+          </div>
+        </div>
+
+        <div class="w3-panel">
+          <div class="w3-section w3-right">
+
+            <!--allow users to roll back to the version chosen-->
+            <button class="w3-button w3-blue" onclick="changeFileVersion()"></i>Go back to this version</button>
+
+            <!--share the chosen version-->
+            <button id="share-version-related-graph-button" class="w3-button w3-blue" onclick="showPopup()">
+              Share<i class="fa fa-paper-plane" style="margin: auto 5px"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+.sidenav {
+    height: 100%;
+    width: 125px;
+    background-color: #b3d9ff;
+}
+
+.sidenav a {
+    display: block;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidenav a:hover {
+    background-color: #4d94ff;
+}
+
+.w3-container{
+    padding-left: 0;
+    padding-right: 0;
+}

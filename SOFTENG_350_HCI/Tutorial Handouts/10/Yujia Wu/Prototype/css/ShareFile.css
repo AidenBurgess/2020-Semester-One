@@ -1,0 +1,90 @@
+.w3-modal-content{
+    border-radius:10px;
+}
+.fa-link {
+    margin: auto auto auto 10px;
+    color: black;
+    background-color: lightgray;
+}
+
+.link-container {
+    width: 100%;
+    background-color: #d9d9d9;
+    display: flex;
+}
+
+.copy-link-button {
+    background-color: #1a75ff;
+    color:white;
+    border: none;
+    width: 100px;
+    cursor: pointer;
+    outline: none;
+}
+
+.copy-link-button:hover {
+    background-color: #4d94ff;
+}
+
+.share-link-container {
+    height:35px;
+    justify-content: space-between;
+}
+
+.link-message {
+    border:1px solid #d9d9d9;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.share-file-button {
+    background-color: dodgerblue;
+    color: white;
+    margin-left: 20px;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.tag-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#choose-all {
+    height: 20px;
+    width: 20px;
+}
+
+.related-shared-graph {
+    width: 60%;
+    margin-left: 20%;
+}
+
+#email-text-input {
+    width: 100%;
+    border: 1px grey solid;
+}
+
+#owner{
+    width:100%
+}
+
+.imgOwner{
+    width: 95%;
+    margin-left: 2%;
+}
+
+
+.w3-red:hover{
+    background-color: #ff8080 !important;
+    color:white !important;
+}
+
+

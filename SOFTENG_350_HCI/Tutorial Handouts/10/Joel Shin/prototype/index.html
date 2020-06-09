@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Assignment 3 Base code Adapted from W3.CSS Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Implements w3.css from https://www.w3schools.com/w3css/ -->
+    <link rel="stylesheet" href="w3.css" />
+    <!-- Implements the RobotoDraft font from https://fonts.google.com/specimen/Roboto-->
+    <link href="https://fonts.googleapis.com/css?family=RobotoDraft" rel="stylesheet" type="text/css" />
+    <!-- Implements the font awesome icons from http://fontawesome.io -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+
+  <body>
+    <!-- Top bar -->
+    <div id="header">
+      <a href="javascript:void(0)" id="title" onclick="openProjectView()">
+        <i class="fa fa-cloud-upload"></i> &nbsp; StudyShare
+      </a> 
+      <a href="javascript:void(0)" class="right-icon">
+        <i class="fa fa-cog"></i>
+      </a>
+      <a href="javascript:void(0)" class="right-icon">
+        <i class="fa fa-user-circle"></i>
+      </a>
+      <a href="javascript:void(0)" class="right-icon">
+        <i class="fa fa-bell"></i>
+      </a>
+
+      <div style="position: absolute; right: 10px; top: 55px;"> 
+        <a href="javascript:void(0)" onclick="openCreateOptions()" class="createbutton" id="createbutton">
+          <i class="fa fa-plus-square-o w3-xxxlarge" style="text-shadow: 1px 4px 8px #141414;"></i>
+        </a>
+      </div>   
+    </div>
+
+    <!-- Side Navigation -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-animate-left w3-card"
+      style="z-index:3; width:320px; padding: 0;"
+      id="mySidebar"
+    >
+      <a
+        id="highlight-nav-element"
+        href="javascript:void(0)"
+        class="w3-bar-item w3-button"
+        onclick="openProjectView()"
+      >
+        <i class="fa fa-folder w3-margin-right"></i>
+        <span id="projects-num">Projects (5)</span>
+      </a>
+
+      <a
+        id="project-sub-navigation"
+        href="javascript:void(0)"
+        class="w3-bar-item w3-button"
+        style="font-size: 14px; margin-left: 20px; background-color: #393939; display: none"
+      >
+        <i class="fa fa-folder w3-margin-right"></i>StudyShare Development
+      </a>
+
+      <a href="#" class="w3-bar-item w3-button">
+        <i class="fa fa-users w3-margin-right"></i>
+        Groups (3)
+      </a>
+
+      <a href="javascript:void(0)" class="w3-bar-item w3-button">
+        <i class="fa fa-file w3-margin-right"></i>
+        Files (0)
+      </a>
+
+      <a href="#" class="w3-bar-item w3-button">
+        <i class="fa fa-hourglass-end w3-margin-right"></i>Draft Files
+      </a>
+      
+      <a href="#" class="w3-bar-item w3-button">
+        <i class="fa fa-trash w3-margin-right"></i>Trash
+      </a>
+    </nav>
+    
+    <!-- Page content -->
+
+      <!-- Sort drop down -->
+      <div id="filter">
+      <label for="sort">Sort by:</label>
+      <select name="pets" id="pet-select" style="background-color: #c9c9c9; height: 30px">
+          <option value="due-date">Due date</option>
+          <option value="creation-date">Creation date</option>
+          <option value="alphabetical">Alphabetical</option>
+          <option value="tag">Tag</option>
+      </select>
+  
+    </div>
+    
+    <!-- Create buttons at top right corner -->
+    <div id="createOptions" class="createOptions">
+      <a href="javascript:void(0)" id="createbuttonclose" class="closebtn" onclick="closeCreateOptions()">&times; </a>
+      <a href="javascript:void(0)" onclick="closeCreateOptions(); showCreateProject()"><i class="fa fa-folder w3-margin-right"></i>New project</a>
+      <a href="javascript:void(0)" onclick="closeCreateOptions(); showNewFile()"><i class="fa fa-pencil w3-margin-right"></i>New file</a>
+      <a href="javascript:void(0)" onclick="closeCreateOptions(); showUploadFile()"><i class="fa fa-upload w3-margin-right"></i>Upload file</a>
+      <a href="#" onclick="closeCreateOptions();"><i class="fa fa-users w3-margin-right"></i>New group</a>
+    </div>
+
+    <!-- List of projects -->
+    <div class="project-grid-container" id="projects">
+      <div class="project-item">
+        <div class="project-banner">
+          <a href="javascript:void(0)" class="project-title" onclick="openAProjectExtended(0)">
+            SOFTENG 350 Assignment 3
+          </a>
+          <i class="fa fa-ellipsis-v"  onclick="showEditProject(0)"></i>
+        </div>
+          
+        <p class="project-description" style="height: 80%">  
+          <span style="display: flex;">
+            <span style="display: flex;
+                        flex-direction: column;">
+              <span>
+                <i class="fa fa-user w3-margin-right"></i>  People:
+                <br>
+            
+                <span class="users" style="flex: 0 0 65%;">
+                  <label>&emsp;&emsp;Me</label>
+                  <br>
+                  <label>&emsp;&emsp;Kate Matthews</label>
+                  <br>
+                  <label>&emsp;&emsp;Robert Chen</label>
+                </span>
+              </span>
+              <br>
+              <br>
+              <span style="margin-top: auto;">
+                <i class="fa fa-clock-o w3-margin-right"></i>  Due: <span class="due-date"> 8 Jun 2020</span>
+              </span>
+            </span>
+            <span class="tags" style="flex: 1; display: flex; flex-direction: column;
+                                      justify-content: space-betwen;">
+              <button class="w3-button" style="margin-left:auto;background-color: #393939;margin-bottom: 5px;">
+                SOFTENG350
+                <i style="margin-left:10px;" class="fa fa fa-tag"></i>
+              </button>
+              <button class="w3-button" style="background-color: #393939; margin-left: auto;margin-bottom: 5px;">
+                Urgent
+                <i style="margin-left:10px;" class="fa fa fa-tag"></i>
+              </button>
+              <button class="w3-button" style="background-color: #393939; margin-left: auto; margin-bottom: 5px;">
+                Assignment
+                <i style="margin-left:10px;" class="fa fa fa-tag"></i>
+              </button>
+  
+            </span>
+          </span>   
+        </p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-banner">
+          <a href="javascript:void(0)" class="project-title" onclick="openAProjectExtended(1)">
+            Monitor Tools Ver 1.0
+          </a>
+          <i class="fa fa-ellipsis-v"  onclick="showEditProject(1)"></i>
+        </div>
+          
+        <p class="project-description" style="height: 80%"> 
+          <span style="display: flex; height: 85%">
+            <span style="display: flex;
+                         flex-direction: column;">
+              <span>
+                <i class="fa fa-user w3-margin-right"></i>  Group:
+                <br>
+            
+                <span class="users" style="flex: 0 0 65%;">
+                  <label>&emsp;&emsp;MT DevTeam</label>
+                </span>
+              </span>
+              <br>
+              <br>
+              <span style="margin-top: auto;">
+                <i class="fa fa-clock-o w3-margin-right"></i>  Due: <span class="due-date"> 12 Jun 2020</span>
+              </span>
+            </span>
+            <span class="tags" style="flex: 1; display: flex; flex-direction: column;
+                                      justify-content: space-betwen;">
+              <button class="w3-button" style="margin-left:auto;background-color: #393939;margin-bottom: 5px;">
+                Monitor Tools
+                <i style="margin-left:10px;" class="fa fa fa-tag"></i>
+              </button>
+            </span>
+          </span>    
+        </p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-banner">
+          <a href="javascript:void(0)" class="project-title" onclick="openAProjectExtended(2)">
+            ENGGEN 303 Report
+          </a>
+          <i class="fa fa-ellipsis-v"  onclick="showEditProject(2)"></i>
+        </div>
+          
+        <p class="project-description" style="height: 80%"> 
+          <span style="display: flex; height: 85%">
+            <span style="display: flex;
+                         flex-direction: column;">
+              <span>
+                <i class="fa fa-user w3-margin-right"></i>  Group:
+                <br>
+            
+                <span class="users" style="flex: 0 0 65%;">
+                  <label>&emsp;&emsp;Bob's Buddies</label>
+                </span>
+              </span>
+              <br>
+              <br>
+              <span style="margin-top: auto;">
+                <i class="fa fa-clock-o w3-margin-right"></i>  Due: <span class="due-date"> 14 Jul 2020</span>
+              </span>
+            </span>
+            <span class="tags" style="flex: 1; display: flex; flex-direction: column;
+                                      justify-content: space-betwen;">
+              <button class="w3-button" style="margin-left:auto;background-color: #393939;margin-bottom: 5px;">
+                ENGGEN303
+                <i style="margin-left:10px;" class="fa fa fa-tag"></i>
+              </button>
+              <button class="w3-button" style="margin-left:auto;background-color: #393939;margin-bottom: 5px;">
+                Assignment
+                <i style="margin-left:10px;" class="fa fa fa-tag"></i>
+              </button>
+            </span>
+          </span>   
+        </p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-banner">
+          <a href="javascript:void(0)" class="project-title" onclick="openAProjectExtended(3)">
+            Monitor Tools UI beta
+          </a>
+          <i class="fa fa-ellipsis-v"  onclick="showEditProject(3)"></i>
+        </div>
+        
+        <p class="project-description" style="height: 80%"> 
+          <span style="display: flex; height: 85%">
+            <span style="display: flex;
+                         flex-direction: column;">
+              <span>
+                <i class="fa fa-user w3-margin-right"></i>  Group:
+                <br>
+          
+                <span class="users" style="flex: 0 0 65%;">
+                  <label>&emsp;&emsp;MT DevTeam</label>
+                </span>
+              </span>
+              <br>
+              <br>
+              <br>
+              <span style="margin-top: auto;">
+                <i class="fa fa-clock-o w3-margin-right"></i>  Due: <span class="due-date"> 31 Aug 2020</span>
+              </span>
+            </span>
+            <span class="tags" style="flex: 1; display: flex; flex-direction: column;
+                                      justify-content: space-betwen;">
+              <button class="w3-button" style="margin-left:auto;background-color: #393939;margin-bottom: 5px;">
+                Monitor Tools
+                <i style="margin-left:10px;" class="fa fa fa-tag"></i>
+              </button>
+            </span>
+          </span>  
+        </p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-banner">
+          <a href="javascript:void(0)" class="project-title" onclick="openAProjectExtended(4)">
+            Fitness Tracker
+          </a>
+          <i class="fa fa-ellipsis-v"  onclick="showEditProject(4)"></i>
+        </div>
+          
+        <p class="project-description" style="height: 80%"> 
+          <span style="display: flex; height: 85%">
+            <span style="display: flex;
+                         flex-direction: column;">
+              <span>
+                <i class="fa fa-user w3-margin-right"></i>  People:
+                <br>
+            
+                <span class="users" style="flex: 0 0 65%;">
+                  <label>&emsp;&emsp;Me</label>
+                </span>
+              </span>
+              <br>
+              <br>
+              <br>
+              <span style="margin-top: auto;">
+                <i class="fa fa-clock-o w3-margin-right"></i>  Due: <span class="due-date"> 2 Dec 2020</span>
+              </span>
+            </span>
+            <span class="tags" style="flex: 1; display: flex; flex-direction: column;
+            justify-content: space-betwen;">
+            </span>
+          </span>
+        </p>
+      </div>
+
+      <div class="project-item" id="hidden-project">
+        <div class="project-banner">
+          <a href="javascript:void(0)" class="project-title" onclick="openAProject()">
+            StudyShare Development
+          </a>
+          <i class="fa fa-ellipsis-v"  onclick="showEditProject(5)"></i>
+        </div>
+        
+        <p class="project-description" style="height: 80%"> 
+          <span style="display: flex; height: 85%">
+            <span style="display: flex;
+                         flex-direction: column;">
+              <span>
+                <i class="fa fa-user w3-margin-right"></i>  Group:
+                <br>
+          
+                <span class="users" style="flex: 0 0 65%;">
+                  <label>&emsp;&emsp;StudyShare</label>
+                </span>
+              </span>
+              <br>
+              <br>
+              <br>
+              <span style="margin-top: auto;">
+                <i class="fa fa-clock-o w3-margin-right"></i>  Due: <span class="due-date"> 14 Jan 2021</span>
+              </span>
+            </span>
+            <span class="tags" style="flex: 1; display: flex; flex-direction: column;
+                                      justify-content: space-betwen;">
+              <button class="w3-button" style="margin-left:auto;background-color: #393939;margin-bottom: 5px;">
+                StudyShare
+                <i style="margin-left:10px;" class="fa fa fa-tag"></i>
+              </button>
+            </span>
+          </span>   
+        </p>
+      </div>
+
+    </div>
+    
+    <!-- Inside a project -->
+    <div class="file-view-grid" id="project-view">
+      <p class="file-view-header">Name</p>
+      <p class="file-view-header center">Last edited</p>
+      <p class="file-view-header center">Edited by</p>
+      <p class="file-view-header center"></p>
+
+      <p class="file uploaded-file" >index.html</p>
+      <p class="file uploaded-file center">Today</p>
+      <p class="file uploaded-file center">Me</p>
+      <i class="fa fa-ellipsis-v file uploaded-file center" onclick="showEditFile()"></i>
+
+      <p class="file created-file delete">report.doc</p>
+      <p class="file created-file center delete">Today</p>
+      <p class="file created-file center delete">Me</p>
+      <i class="fa fa-ellipsis-v file created-file center delete" onclick="showEditFile()"></i>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Modal that pops up when you click on "New Project" -->
+    <div id="create-project" class="w3-modal" style="z-index:4">
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="project-banner" style="padding: 8px 16px">
+          <h2 style="background-color: inherit">Create Project</h2>
+        </div>
+        <div class="w3-panel">
+          <label>Project Name</label>
+          <input class="w3-input w3-margin-bottom" type="text"/>  
+
+          <label for="due">Due date</label>
+          <input class="w3-input w3-margin-bottom" type="date" id="due" name="due"
+                 value="2020-06-03"
+                 min="2020-06-03"
+                 style="display: block; cursor: pointer;"
+          />
+
+          <label>Share with</label>
+          <br />
+
+          <div style=" display: grid; grid-template-columns: 1fr 94.375px;">
+            <select class="w3-input" type="text" style="display: block; cursor: pointer;"/>
+              <option></option>
+              <option>John Smith &#xf007</option>
+              <option>Kate Matthews &#xf007</option>
+              <option>Robert Chen &#xf007</option>
+              <option>MT DevTeam &#xf0c0</option>
+              <option>Bob's Buddies &#xf0c0</option>
+              <option>StudyShare &#xf0c0</option>
+            </select>
+            
+            <button style="width: 94.375px; height: 40px" onclick="showHiddenUser()">
+              Add <i class="fa fa-user-plus"></i>
+            </button>
+            
+            <div class="w3-input" id="hidden-shared-user" style = "display: none;"">
+              <p style="margin: 0">StudyShare<i class="	fa fa-user-times" style="float: right;"></i></p>
+            </div>
+          </div>
+          
+          <br>
+
+          <label>Add tag</label>
+          <br />
+          <div style="display: grid; grid-template-columns: 1fr 94.375px;">
+            <input class="w3-input" type="text" id="new-project-tag-input" />
+            <button
+              style="width: 94.375px; height: 40px"
+              onclick="
+                document.getElementById('new-project-add-tag').style.display='block';
+                document.getElementById('new-project-tag-input').value=''"
+            >Add <i class="fa fa-tag"></i></button>
+          </div>
+          <button class="w3-button" id="new-project-add-tag" style="background-color: #393939; display: none;">
+            StudyShare
+            <i style="margin-left:10px;" class="fa fa-tag"></i>
+          </button>    
+          <br>
+
+          <label>Message</label>
+          <input
+            class="w3-input w3-margin-bottom"
+            style="height:150px"
+            placeholder=""
+          />
+          <div class="w3-section">
+            <a
+              class="w3-button w3-red"
+              onclick="document.getElementById('create-project').style.display='none'"
+              >Cancel <i class="fa fa-remove"></i
+            ></a>
+            <a
+              class="w3-button w3-green w3-right"
+              onclick="createNewProject(); openSuccessModal('New Project Created')"
+              >Create <i class="fa fa-paper-plane"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal that pops up when you click on "Edit project ellipsis" -->
+    <div id="edit-project" class="w3-modal" style="z-index:4">
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="project-banner" style="padding: 8px 16px">
+          <h2 style="background-color: inherit">Edit Project</h2>
+        </div>
+        <div class="w3-panel">
+          <label>Project Name</label>
+          <input class="w3-input w3-margin-bottom" id="edit-project-name" type="text" value="SOFTENG 350 Assignment 3"/>
+  
+          <label for="due">Due date</label>
+          <input class="w3-input w3-margin-bottom" type="date" id="edit-due-date" name="due"
+                 value="2020-06-08"
+                 min="2020-06-03"
+                 style="display: block; cursor: pointer;"
+          />
+  
+          <label>Share with</label>
+          <br />
+          <div style="
+            display: grid;
+            grid-template-columns: 1fr 94.375px;
+          ">
+            <select class="w3-input" type="text"
+                    style="display: block; cursor: pointer;" id="edit-share-name"/>
+              <option></option>
+              <option>John Smith &#xf007</option>
+              <option>MT DevTeam &#xf0c0</option>
+              <option>Bob's Buddies &#xf0c0</option>
+              <option>StudyShare &#xf0c0</option>
+            </select>
+
+            <button style="width: 94.375px; height: 40px" onclick="addUser()">Add <i class="fa fa-user-plus"></i></button>
+            <!-- To be populated with shared users -->
+            <span id="edit-users"></span>
+            <br>
+          </div>
+          <br>
+  
+          <label>Add tag</label>
+          <br />
+          <div style="
+            display: grid;
+            grid-template-columns: 1fr 94.375px;
+          ">
+            <input class="w3-input" type="text" id="edit-tag-name" />
+            <button style="width: 94.375px; height: 40px;" onclick="addTag()">Add <i class="fa fa-tag"></i></button>
+          </div>
+          <!-- To be populated with tags -->
+          <span id="edit-tags"></span>
+          <br /><br />
+  
+          <label>Message</label>
+          <input
+            class="w3-input w3-margin-bottom"
+            style="height:150px"
+            placeholder=""
+          />
+          <div class="w3-section">
+            <a
+              class="w3-button w3-red"
+              onclick="closeEditModal();"
+            >Cancel <i class="fa fa-remove"></i>
+            </a>
+            <a
+              class="w3-button w3-green w3-right"
+              onclick="openProjectEditSuccessModal(), doEdit()"
+            >Edit <i class="fa fa-pencil"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal that pops up when you click on "New File" -->
+    <div id="new-file" class="w3-modal" style="z-index:4">
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="project-banner" style="padding: 8px 16px">
+          <h2 style="background-color: inherit">New File</h2>
+        </div>
+        <div class="w3-panel">
+          <label>File Name</label>
+          <input class="w3-input w3-margin-bottom" type="text" />
+
+          <label for="due">Add to project</label>
+
+          <select class="w3-input w3-margin-bottom"
+                  style="display: block; cursor: pointer; caret-color: transparent;"
+                  onkeypress="return false;"
+          >
+            <option></option>
+            <option>SOFTENG 350 Assignment 3</option>
+            <option>Monitor Tools Ver 1.0</option>
+            <option>ENGGEN 303 Report</option>
+            <option>Monitor Tools UI beta</option>
+            <option>Fitness Tracker</option>
+            <option>StudyShare Development</option>
+          </select>   
+
+          <label>File type</label>
+          <br/>
+          <div>
+            <select class="w3-input" type="text"
+                    style="display: block; cursor: pointer;"/>
+              <option></option>
+              <option>Document</option>
+              <option>Slideshow</option>
+              <option>Spreadsheet</option>
+            </select>
+          </div>
+          
+          <br>
+          <label>Message</label>
+            <input
+              class="w3-input w3-margin-bottom"
+              style="height:150px"
+              placeholder=""
+            />
+          <br>
+          <div class="w3-section">
+            <a
+              class="w3-button w3-red"
+              onclick="document.getElementById('new-file').style.display='none'"
+              >Cancel <i class="fa fa-remove"></i>
+            </a>
+            <a
+              class="w3-button w3-green w3-right"
+              onclick="closeNewFile(), openSuccessModal()"
+              >Create
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal that pops up when you click on "Upload File" -->
+    <div id="upload-file" class="w3-modal" style="z-index:4">
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="project-banner" style="padding: 8px 16px">
+          <h2 style="background-color: inherit">Upload File</h2>
+        </div>
+        <div class="w3-panel">
+          <input id="image-file" type="file" />
+          <br /><br />
+          
+          <label for="due">Add to project</label>
+          <select
+            class="w3-input w3-margin-bottom"
+            style="display: block; cursor: pointer; caret-color: transparent;"
+            onkeypress="return false;"
+          >
+            <option></option>
+            <option>SOFTENG 350 Assignment 3</option>
+            <option>Monitor Tools Ver 1.0</option>
+            <option>ENGGEN 303 Report</option>
+            <option>Monitor Tools UI beta</option>
+            <option>Fitness Tracker</option>
+            <option>StudyShare Development</option>
+          </select>
+
+          <label>Message</label>
+            <input
+              class="w3-input w3-margin-bottom"
+              style="height:150px"
+              placeholder=""
+            />
+            <br>
+          <div class="w3-section">
+            <a
+              class="w3-button w3-red"
+              onclick="document.getElementById('upload-file').style.display='none'"
+            >Cancel <i class="fa fa-remove"></i>
+            </a>
+            <a
+              class="w3-button w3-green w3-right"
+              onclick="closeUploadFile(), openSuccessModal('New File Uploaded')"
+            >Upload <i class="fa fa-paper-plane"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal that pops up when you edit a file-->
+    <div id="edit-file" class="w3-modal" style="z-index:4;">
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="project-banner" style="padding: 8px 16px">
+          <h2 style="background-color: inherit">Edit File</h2>
+        </div>
+        <div class="w3-panel">
+          <label>File Name</label>
+          <div style="
+            display: grid;
+            grid-template-columns: 1fr 94.375px;
+          ">
+          <input class="w3-input w3-margin-bottom" type="text" placeholder="" />
+          <a onClick="deleteFile()" class="w3-button w3-red w3-margin-bottom"  style="float: right;">Delete <i class="	fa fa-trash-o"></i></a>
+        </div>
+          <label>Share with</label>
+          <br />
+          <div style="
+            display: grid;
+            grid-template-columns: 1fr 94.375px;
+          ">
+            <select class="w3-input" type="text"
+                    style="display: block; cursor: pointer;"/>
+              <option></option>
+              <option>Kate Matthews &#xf007</option>
+              <option>John Smith &#xf007</option>
+              <option>MT DevTeam &#xf0c0</option>
+              <option>Bob's Buddies &#xf0c0</option>
+              <option>StudyShare &#xf0c0</option>
+            </select>
+            <button style="width: 94.375px; height: 40px" onclick="document.getElementById('hidden-edit-file-user').style.display='block'">Add <i class="fa fa-user-plus"></i></button>
+            <div class="w3-input" id="hidden-edit-file-user" style="display: none">
+              <p style="margin: 0">Kate Matthews<i class="	fa fa-user-times" style="float: right;"></i></p>
+            </div>
+          </div>
+          <br>
+
+          <label>Message</label>
+          <input
+            class="w3-input w3-margin-bottom"
+            style="height:150px"
+            placeholder=""
+          />
+          <br>
+
+          <div class="w3-section">
+            <a
+              class="w3-button w3-red"
+              onclick="document.getElementById('edit-file').style.display='none'"
+            >Cancel <i class="fa fa-remove"></i>
+            </a>
+            <a
+              class="w3-button w3-green w3-right"
+              onclick="closeEditFile(); openSuccessModal('File edited')"
+              >Edit 
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal that pops up when an action is successfl (like when a new file is made) -->
+    <div id="success-modal" class="w3-modal" style="z-index:4">
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="project-banner" style="padding: 8px 16px">
+          <h2 style="background-color: inherit">New File Created</h2>
+        </div>
+        <div class="w3-panel" style="text-align: center; padding-bottom: 10px;">
+          <a class="w3-button w3-green w3-middle"
+             onclick="document.getElementById('success-modal').style.display='none'"
+          >Ok</a>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal that pops up when a project is edited-->
+    <div id="edit-success-modal" class="w3-modal" style="z-index:4">
+        <div class="w3-modal-content w3-animate-zoom">
+          <div class="project-banner" style="padding: 8px 16px">
+            <h2 style="background-color: inherit">Project edited</h2>
+          </div>
+          <div class="w3-panel" style="text-align: center; padding-bottom: 10px;">
+            <a
+            class="w3-button w3-green w3-middle"
+            onclick="closeEditModal(), document.getElementById('edit-success-modal').style.display='none'"
+            >Ok <i class=""></i
+          ></a>
+          <br>
+        </div>
+      </div>
+    </div>
+    
+    <button id="blank-tag" class="w3-button" style="margin-left:auto;background-color: #393939;margin-bottom: 5px; display:none">
+      <i style="margin-left:10px;" class="fa fa fa-tag"></i>
+    </button>
+
+    <!-- Blank sharee button for cloning -->
+    <div class="w3-input shared-user" id="edit-shared-user" style="display:none">
+      <p style="margin: 0"><span id="shared-user-name"></span><i class="	fa fa-user-times" style="float: right;"></i></p>
+    </div>
+
+    <!-- Blank tag for cloning -->
+    <button id="edit-tag" class="w3-button" style="background-color: #393939; display: none; margin-top: 15px; margin-right: 15px;">
+      <span id="edit-tag-text"></span>
+      <i style="margin-left:10px;" class="fa fa-tag"></i>
+    </button>
+
+    <script>
+    /* 
+     * Toggle createOptions side bar
+     */
+    function openCreateOptions() {
+      document.getElementById("createOptions").style.width = "250px";
+    }
+
+    // Set the width of the side navigation to 0
+    function closeCreateOptions() {
+      document.getElementById("createOptions").style.width = "0";
+    }
+
+    /* 
+     * Show the create projects modal
+     */
+    function showCreateProject() {
+      document.getElementById("create-project").style.display = "inline";
+    }
+
+    /* 
+     * Edit project functions
+     */
+    // Set the default tags for all of the projects
+    let tags= [
+      ["SOFTENG350", "Assignment", "Urgent"],
+      ["Monitor Tools"],
+      ["ENGGEN303", "Assignment"],
+      ["Monitor Tools"],
+      new Array(),
+      ["StudyShare"]
+    ];
+
+    // Set the default sharees for all of the projects
+    let sharedWith = [
+      ["Me", "Kate Matthews", "Robert Chen"],
+      ["MT DevTeam"],
+      ["Bob's Buddies"],
+      ["MT DevTeam"],
+      ["Me"],
+      ["StudyShare"]
+    ];
+
+    // Set the editId to be outside of the possible range, as well as make empty
+    //  arrays for tags and sharees added in the edit modal
+    var editId = -1;
+    var newTags = new Array();
+    var newUsers = new Array();
+
+    // Gets the appropriate tags and sharees for the selected project in the project edit modal
+    function showEditProject(id) {
+
+      // Get the project to be edited
+      var project = document.getElementsByClassName("project-grid-container")[0].children[id];
+
+      // Get the project name
+      var name = project.getElementsByClassName("project-title")[0].text;
+
+      // Get the project date and adjust the day to be in the right format
+      var date = new Date (project.getElementsByClassName("due-date")[0].textContent);
+      date.setDate(date.getDate()+1);
+      
+      // Show the edit modal project and set the name and date for it
+      document.getElementById("edit-project-name").value = name.trim();
+      document.getElementById("edit-due-date").valueAsDate = date;
+      document.getElementById("edit-project").style.display = "inline";
+
+      // Add all the sharees to the edit modal
+      for(let i=sharedWith[id].length-1; i>=0; i--) {
+        // Clone the default sharee button
+        var button = document.getElementById('edit-shared-user');
+        var newButton = button.cloneNode(true);
+        newButton.classList.add("new-edit-user");
+
+        // Update the new sharee buttons text
+        newButton.children[0].children[0].innerHTML = sharedWith[id][i];
+
+        // Display the new button
+        newButton.style.display = 'block';
+
+        // Place it in the appropriate place in the webpage
+        document.getElementById("edit-users").appendChild(newButton);
+        
+      }
+
+      // Add all the tags to the edit modal
+      for(let i=tags[id].length-1; i>=0; i--) {
+
+        // Check if the tag is a reasonable value (not null / empty)
+        if(tags[id][i]) {
+
+          // Clone the default edit tag
+          var tag = document.getElementById('edit-tag');
+          var newTag = tag.cloneNode(true);
+          newTag.classList.add("new-edit-tag");
+
+        // Update the new tags text
+          newTag.children[0].innerHTML = tags[id][i];
+
+        // Display the new tag
+          newTag.style.display = 'inline';
+
+        // Place the tag in the appropriate place in the webpage
+          document.getElementById("edit-tags").appendChild(newTag);
+        }
+        
+      }
+
+      // Set the editId to the Id of the selected project
+      editId = id;
+    }
+
+    // Resets the inputs in the project edit modal and the editId, also clears any tags or new sharees from the edit modal
+    function closeEditModal() {
+      document.getElementById("edit-users").innerHTML = "";
+      document.getElementById("edit-tags").innerHTML = "";
+      document.getElementById("edit-share-name").value = "";
+      document.getElementById('edit-tag-name').value = "";
+
+      document.getElementById("edit-project").style.display = "none";
+
+      newTags = new Array();
+      newUsers = new Array();
+
+      editId = -1;
+    }
+
+    // Adds a new sharee to the project edit modal
+    function addUser() {
+      
+      // Gets the name of the sharee to add from the input box
+      var name = document.getElementById("edit-share-name").value;
+
+      // Checks if the name is a reasonable value (not empty)
+      if(name) {
+        
+        // Adds the name to the list of new sharees and clears the input box
+        newUsers.push(name);
+        document.getElementById("edit-share-name").value = "";
+
+        // Clones the default sharee button
+        var button = document.getElementById('edit-shared-user');
+        var newButton = button.cloneNode(true);
+        newButton.classList.add("new-edit-user");
+
+        // Updates the buttons text
+        newButton.children[0].children[0].innerHTML = name;
+
+        // Displays the new sharee
+        newButton.style.display = 'block';
+
+        // Places the new sharee in the appropriate place in the edit modal
+        document.getElementById("edit-users").appendChild(newButton);
+      }
+    }
+
+    // Adds a new tag to the project edit modal
+    function addTag() {
+
+      // Gets the name of the tag to add from the input box
+      var tagName = document.getElementById('edit-tag-name').value;
+      
+      // Checks if the name is a reasonable value (not empty)
+      if(tagName) {
+
+        // Adds the name to the list of new tags and clears the input box
+          newTags.push(tagName);
+          document.getElementById("edit-tag-name").value = "";
+
+        // Clones the default tag button
+          var tag = document.getElementById('edit-tag');
+          var newTag = tag.cloneNode(true);
+          newTag.classList.add("new-edit-tag");
+
+        // Updates the buttons text
+          newTag.children[0].innerHTML = tagName;
+
+        // Displays the new tag
+          newTag.style.display = 'inline';
+
+        // Places the new tag in the appropriate place in the edit modal
+          document.getElementById("edit-tags").appendChild(newTag);
+        }
+    }
+
+    // Gets all the entered data from the project edit modal and updates the appropriate project
+    function doEdit() {
+
+      // Get the project to edit
+      var project = document.getElementsByClassName("project-grid-container")[0].children[editId];
+
+      // Updates the projects name
+      project.getElementsByClassName("project-title")[0].text = document.getElementById("edit-project-name").value;
+
+      // Updates the projects date in the correct format
+      var date = new Date(document.getElementById("edit-due-date").valueAsDate);
+      const options = {day: 'numeric', month: 'short', year: 'numeric' };
+      project.getElementsByClassName("due-date")[0].textContent = date.toLocaleDateString('en-GB', options);
+
+      // Adds all the new sharees to the list of sharees for the project
+      for(let i=0; i<newUsers.length; i++) {
+        sharedWith[editId].push(newUsers[i]);
+      }
+
+      // Adds all the new tags to the list of tags for the project
+      for(let i=0; i<newTags.length; i++) {
+        tags[editId].push(newTags[i]);
+      }
+
+      // Clears all the previous sharee text from the project 
+      var users =  project.getElementsByClassName("users")[0];
+      users.innerHTML = "";
+
+      // Adds all the current sharees to the project
+      for(let i=0; i<sharedWith[editId].length; i++) {
+
+        // Creates a label with the sharee inside and adds it to the sharee list
+        var label = document.createElement("LABEL");
+        label.innerHTML = "&emsp;&emsp;" + sharedWith[editId][i];
+        users.appendChild(label);
+
+        // Creates a line break after the newly added sharee
+        var br = document.createElement("br");
+        label.after(br);
+      }
+
+      // Clears all the previous tags from the project
+      var tagContainer = project.getElementsByClassName("tags")[0];
+      tagContainer.innerHTML = "";
+
+      // Gets the default tag
+      var blankTag = document.getElementById("blank-tag");
+
+      // Adds all the current tags to the project
+      for(let i=0; i<tags[editId].length; i++) {
+
+        // Clones the blank tag
+        var newTag = blankTag.cloneNode();
+
+        // Sets the tag text and adds the tag icon
+        newTag.innerHTML = tags[editId][i] + "<i style=\"margin-left:10px;\" class=\"fa fa fa-tag\"></i>";
+        
+        // Display the tag
+        newTag.style.display = "inline";
+
+        // Add the tag to the appropriate place in the webpage
+        tagContainer.appendChild(newTag);
+      }
+    }
+
+    // Show success modal after edit a project
+    function openProjectEditSuccessModal() {
+      document.getElementById("edit-success-modal").style.display = "block";
+    }
+
+    /* 
+     * New project functions
+     */
+    // Shows the hidden 6th project, hides the create project modal and updates 
+    // the projects number in the sidebar
+    function createNewProject() {
+      document.getElementById("hidden-project").style.display = "inline";
+      document.getElementById('create-project').style.display='none';
+      document.getElementById('projects-num').innerHTML = "Projects (6)";
+    }
+
+    // Shows the newly added sharee on the project creation menu
+    function showHiddenUser() {
+        document.getElementById("hidden-shared-user").style.display = "block";
+    }
+
+    /* 
+     * Show success modal successful actions
+     */
+    function openSuccessModal(successText) {
+      document.querySelector("#success-modal h2").textContent = successText ? successText : "New File Created";
+      document.getElementById("success-modal").style.display = "block";
+    }
+   
+    /* 
+     * Upload file function
+     */
+    // Shows the upload file modal
+    function showUploadFile() {
+      document.getElementById("upload-file").style.display = "block";
+    }
+
+    // Close upload file modal and display the hardcoded file
+    function closeUploadFile() {
+      document.getElementById("upload-file").style.display = "none";
+      let uploadedFile = document.getElementsByClassName("uploaded-file");
+      for (let i = 0; i < uploadedFile.length; i++) {
+        uploadedFile[i].style.display = "inline";
+      }
+    }
+
+    /* 
+     * Edit file functions
+     */
+    // Shows the edit file modal
+    function showEditFile() {
+      document.getElementById("edit-file").style.display = "block";
+    }
+
+    // Hides the edit file modal
+    function closeEditFile() {
+      document.getElementById("edit-file").style.display = "none";
+    }
+
+    // Delete the hardcoded file
+    function deleteFile() {
+      var file = document.getElementsByClassName("delete");
+
+      for(let i=0; i< file.length; i++) {
+        file[i].style.display = 'none';
+      }
+    }
+
+    /* 
+     * New file functions
+     */
+    function showNewFile() {
+      document.getElementById("new-file").style.display = "block";
+    }
+
+    // Close new file modal and display the hardcoded file
+    function closeNewFile() {
+      document.getElementById("new-file").style.display = "none";
+      let createdFile = document.getElementsByClassName("created-file");
+      for (let i = 0; i < createdFile.length; i++) {
+        createdFile[i].style.display = "inline";
+      }
+    }
+
+    /* 
+     * Show the inside of each projects
+     */
+    // Store the names of the projects
+    let projects = ["SOFTENG 350 Assignment 3", "Monitor Tools Ver 1.0", "ENGGEN 303 Report", "Monitor Tools UI beta", "Fitness Tracker"];
+    // Store the files in each project
+    let filesInProjects = [
+    [
+        {
+          name: "mockup.png",
+          date: "1/3/20",
+          by: "Kate Matthews"
+        }
+      ],
+      [
+        {
+          name: "monitor.java",
+          date: "Yesterday",
+          by: "Robert Chen"
+        }
+      ],
+      [
+        {
+          name: "TGIP.doc",
+          date: "5/5/20",
+          by: "Bob"
+        }
+      ],
+      [
+        {
+          name: "TGIP.doc",
+          date: "5/5/20",
+          by: "Bob"
+        }
+      ],
+      [
+      {
+          name: "exercise.doc",
+          date: "Today",
+          by: "Me"
+        },
+        {
+          name: "meal.doc",
+          date: "Today",
+          by: "Me"
+        }
+      ]
+    ];
+
+    // Open the hardcoded project (the sixth project)
+    function openAProject() {
+      document.getElementById("projects").style.display = "none";
+      let fileGrid = document.getElementsByClassName("file-view-grid")[0];
+      fileGrid.style.display = "grid";
+      let subNavigation = document.getElementById("project-sub-navigation");
+      subNavigation.style.display = "block";
+      subNavigation.textContent = "StudyShare Development";
+
+      // Empty the project files
+      let fileGridChildrenLength = fileGrid.children.length;
+      // Skip the first 12 which is the hardcoded StudyShare example
+      for (let i = fileGridChildrenLength - 1; i > 11; i--) {
+        fileGrid.removeChild(fileGrid.children[i]);
+      }
+
+      // Sort options for files
+      let options = document.querySelectorAll("#filter option");
+      options[0].textContent = "Alphabetical";
+      options[1].textContent = "Edited Date";
+      options[2].textContent = "Creation Date";
+      options[3].style.display = "none";
+    }
+
+    // Open the first 5 projects programatically
+    function openAProjectExtended(i) {
+      document.getElementById("projects").style.display = "none";
+      let fileGrid = document.getElementsByClassName("file-view-grid")[0];
+      fileGrid.style.display = "grid";
+      let subNavigation = document.getElementById("project-sub-navigation");
+      subNavigation.style.display = "block";
+      subNavigation.textContent = projects[i];
+
+      // Empty the project files
+      let fileGridChildrenLength = fileGrid.children.length;
+      // Skip the first 12 which is the hardcoded StudyShare example
+      for (let i = fileGridChildrenLength - 1; i > 11; i--) {
+        fileGrid.removeChild(fileGrid.children[i]);
+      }
+
+      // Load the files
+      for (let j = 0; j < filesInProjects[i].length; j++) {
+        let fileName = createField(filesInProjects[i][j].name);
+        let fileDate = createField(filesInProjects[i][j].date);
+        fileName.classList.add("center");
+        let fileBy = createField(filesInProjects[i][j].by);
+        fileName.classList.add("center");
+        let icon = createFileEllipsis();
+        fileGrid.appendChild(fileName);
+        fileGrid.appendChild(fileDate);
+        fileGrid.appendChild(fileBy);
+        fileGrid.appendChild(icon);
+      }
+
+      // Sort options for files
+      let options = document.querySelectorAll("#filter option");
+      options[0].textContent = "Alphabetical";
+      options[1].textContent = "Edited Date";
+      options[2].textContent = "Creation Date";
+      options[3].style.display = "none";
+    }
+
+    // Create a field for the file table
+    function createField(text) {
+      let file = document.createElement("p"); 
+      file.appendChild(document.createTextNode(text));
+      file.classList.add("file");
+      return file;
+    }
+
+    // Create the edit button for the file table
+    function createFileEllipsis() {
+      let icon = document.createElement("i");
+      icon.classList.add("fa");
+      icon.classList.add("fa-ellipsis-v");
+      icon.classList.add("file");
+      icon.classList.add("center");
+      icon.addEventListener("click", showEditFile);
+      return icon;
+    }
+
+    /* 
+     * Show the list of projects
+     */
+    function openProjectView() {
+      document.getElementById("projects").style.display = "grid";
+      document.getElementsByClassName("file-view-grid")[0].style.display = "none";
+      document.getElementById("project-sub-navigation").style.display = "none";
+
+      let options = document.querySelectorAll("#filter option");
+      options[0].textContent = "Due date";
+      options[1].textContent = "Creation Date";
+      options[2].textContent = "Alphabetical";
+      options[3].style.display = "Block";
+    }
+    </script>
+  </body>
+</html>

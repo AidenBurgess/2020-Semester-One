@@ -1,0 +1,327 @@
+/*
+  Sets the background colour, text colour and font for the page
+*/
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+#highlight-nav-element {
+  font-family: "RobotoDraft", "Roboto", sans-serif;
+  background-color: #393939;
+  color: #c9c9c9;
+}
+
+/*
+  Highlight the due date of projects
+*/
+.due-date {
+  color: red;
+  display: inline;
+}
+
+/*
+  Navigation bar
+*/
+.w3-sidebar {
+  background-color: #202020;
+}
+
+/*
+  Navigation bar items
+*/
+.w3-sidebar .w3-bar-item {
+  padding: 16px;
+}
+
+.project-icon {
+  font-size: 300px;
+}
+
+/*
+  Grid for list of projects
+*/
+.project-grid-container {
+  padding-top: 5vh;
+  margin-left: 380px;
+  margin-right: 60px;
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*
+  Hide the sixth project
+*/
+#hidden-project {
+  display: none;
+}
+
+/*
+  Style of each project
+*/
+.project-item {
+  min-height: 170px;
+  background-color: #2e2e2e;
+  box-shadow: 1px 4px 8px 0 #141414;
+  padding-bottom: 10px;
+}
+
+.project-banner {
+  padding: 5px 10px;
+  padding-left: 20px;
+  width: 100%;
+  background-color: #504e5e;
+  color: #ffffff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  cursor: default;
+}
+
+/*
+  Remove the link underline on the project titles
+*/
+.project-title {
+  text-decoration: none;
+}
+
+/*
+  Change the colour of the project titled when hovered to make it obvious that it is clickable
+*/
+.project-title:hover {
+  color: #c9c9c9;
+}
+
+.project-description {
+  margin-left: 20px;
+  background-color: #2e2e2e;
+  color: #c9c9c9;
+  padding-right: 20px;
+}
+
+/*
+  Hide the sixth project
+*/
+#hidden-project {
+  display: none;
+}
+
+/*
+  Filter/sort at the top
+*/
+#filter {
+  margin-left: 380px;
+  padding-top: 62px;
+}
+
+/*
+  Create options menu
+*/
+.createOptions {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 45px; /* Stay at the top */
+  right: 0;
+  background-color: #202020; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 54px; /* Place content 54px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the createOptions */
+}
+
+/* The navigation menu links */
+.createOptions a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #c9c9c9;
+  display: inline-block;
+  transition: 0.3s;
+  overflow-wrap: none;
+  white-space: nowrap;
+}
+
+/* When you mouse over the navigation links, change their color */
+.createOptions a:hover {
+  color: #504e5e;
+}
+
+.createOptions .closebtn {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  font-size: 36px;
+  padding: 0 17px;
+}
+
+/*
+  Button that open create options menu
+*/
+.createbutton {
+  border-style: none;
+  cursor: pointer;
+  background-color: #393939;
+}
+
+/*
+  Set the icon in the create button to the right colours
+*/
+.fa.fa-plus-square-o.w3-xxxlarge {
+  position: relative;
+  color: #c9c9c9;
+  background-color: #393939;
+}
+
+/*
+  Change the colour of the icon when hovered 
+*/
+.fa.fa-plus-square-o.w3-xxxlarge:hover {
+  color: #504e5e;
+}
+
+/*
+  Set the text colour of the input fields so the text stands out
+*/
+.w3-input {
+  color: #c9c9c9;
+}
+
+/*
+  Remove the outline around highlighted input boxed
+*/
+.w3-input:focus {
+  outline: none;
+  border-color: black;
+}
+
+/*
+  Places the header at the top of the page, even when scrolling
+*/
+#header {
+  position: fixed;
+  padding: 0;
+  width: 100%;
+  height: 45px;
+  background-color: #504e5e;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*
+  Moves the left-side navigation system to sit under the header
+*/
+nav {
+  margin-top: 45px;
+}
+
+/*
+  Make the title in the top left appear clickable
+*/
+#title {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*
+  Keep the + icon on the right side of the screen even when scrolling
+*/
+.right-icon {
+  float: right;
+  margin-right: 22.5px;
+  font-size: 30px;
+}
+
+/*
+  Move the modals down in the page but keep the blur effect above it
+*/
+#success-modal,
+#edit-success-modal {
+  padding-top: 200px;
+}
+
+/*
+  Remove the outline around highlighted buttons
+*/
+button:focus {
+  outline: none;
+}
+
+/*
+  Place the icon in the right of its container and give it padding so 
+  its click area is larger
+*/
+.fa-ellipsis-v {
+  float: right;
+  padding-left: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 10px;
+}
+
+/*
+  Make the icon look clickable
+*/
+.fa-ellipsis-v:hover {
+  cursor: pointer;
+}
+
+/*
+  Add the icons in the project edit sharee selections
+*/
+select {
+  font-family: "FontAwesome", "RobotoDraft";
+}
+
+/*
+  Setup the files in a grid with borders between them
+*/
+.file-view-grid {
+  display: none;
+  box-shadow: 1px 4px 8px 0 #141414;
+  margin-left: 380px;
+  margin-right: 60px;
+  margin-top: 45px;
+  grid-template-columns: 1fr 150px 150px 50px;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  background-color: #141414;
+}
+
+/*
+  Headers of file grid table
+*/
+.file-view-header {
+  margin: 0;
+  padding: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #504e5e;
+  color: #ffffff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+/*
+  Each cell of file grid table
+*/
+.file {
+  margin: 0;
+  padding: 10px;
+  background-color: #393939;
+}
+
+/*
+  Hide created and uploaded files by default
+*/
+.uploaded-file,
+.created-file {
+  display: none;
+}

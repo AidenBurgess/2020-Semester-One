@@ -1,0 +1,38 @@
+.file-button {
+    height: 230px;
+    width: 230px;
+    padding: 0;
+    border: 0;
+}
+
+.dropdown-content{
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    position: absolute;
+    height: fit-content;
+    top: 5px;
+    left: 100px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: lightgray;
+}
+
+.fa-user-alt {
+    margin-right: 20px;
+}
+
+.fa-history:hover{
+    background-color: transparent;
+   color:#4d94ff;
+}
+

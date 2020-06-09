@@ -1,0 +1,89 @@
+#mySidebar {
+    background-color: #b3d9ff;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid darkblue;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.triangle-bottom {
+    width: 0;
+    height: 0;
+    border-top: 10px solid darkblue;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.other-folder-triangle {
+    border-left: 10px solid black;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid blue;
+}
+
+.fa-folder {
+    color: darkblue;
+}
+
+.fa-folder-other {
+    color: black;
+}
+
+.folder-title {
+    margin: auto auto auto 10px;
+    color: black;
+}
+
+.fa-plus {
+    color: darkblue;
+    margin: auto 5px auto 60px;
+}
+
+.flex-container {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.break {
+    height: 2px;
+    background: #66adff;
+    border-width: 0;
+    width: 98%;
+    margin: auto;
+}
+
+.fa-clock, .fa-star, .fa-trash {
+    color: darkblue;
+    margin-left: 15px;
+
+}
+
+#button-EN303,#button-SE350,#button-SE351,#button-SE364,#Others-button,#Previous-button, #Star-button, #Recent-button,#Trash-button{
+    height: 50px;
+}
+
+#newFolder{
+    background-color: #e6f7ff;
+    border: 1px solid lightgrey;
+    border-radius:15px 50px;
+    margin: 10px 10px;
+    width: 220px;
+}
+
+#softeng350-folder-expand a{
+    height: 45px;
+}

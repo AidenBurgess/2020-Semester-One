@@ -1,0 +1,34 @@
+.sort-container {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.fa-arrow-up {
+    margin-left: 20px;
+    color: gray;
+}
+
+.sort-button {
+    font-size: larger;
+}
+
+.folder-button {
+    width: 230px;
+    display: flex;
+    margin-left: 20px;
+    border: 0;
+    padding: 0;
+    outline: none;
+}
+
+.folder {
+    width: 100%;
+}
+
+.folder-container {
+    display: flex;
+}
+
+#softeng350-folder-container {
+    display: none;
+}
