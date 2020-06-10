@@ -493,6 +493,11 @@ The next figure shows the log corresponding to a particular schedule at
 \end_layout
 
 \begin_layout Standard
+After the system crash, all the operations after the checkpoint are rolled
+ back.
+\end_layout
+
+\begin_layout Standard
 We will use active transactions 
 \begin_inset Formula $(L_{1})$
 \end_inset
@@ -545,8 +550,24 @@ Redo all write_item operations of committed transactions in
 , in the order they are written in the log using REDO procedure.
 \end_layout
 
-\begin_layout Itemize
-T4
+\begin_layout Enumerate
+[write_item, 
+\begin_inset Formula $T_{4}$
+\end_inset
+
+, D, 25, 15]
+\end_layout
+
+\begin_layout Enumerate
+[write_item, 
+\begin_inset Formula $T_{4}$
+\end_inset
+
+, A, 30, 20]
+\end_layout
+
+\begin_layout Standard
+No dirty reads take place, so no cascading rollback takes place.
 \end_layout
 
 \end_body

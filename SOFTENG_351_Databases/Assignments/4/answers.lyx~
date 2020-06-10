@@ -505,13 +505,48 @@ We will use active transactions
 \end_layout
 
 \begin_layout Standard
-Undo all write_item operations of active transactions, using the UNDO procedure.
+Undo all write_item operations in 
+\begin_inset Formula $L_{1}$
+\end_inset
+
+, using the UNDO procedure.
  This should be done in reverse order.
 \end_layout
 
+\begin_layout Enumerate
+[write_item, 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+, D, 15, 25]
+\end_layout
+
+\begin_layout Enumerate
+[write_item, 
+\begin_inset Formula $T_{3}$
+\end_inset
+
+, C, 30, 40]
+\end_layout
+
+\begin_layout Enumerate
+[write_item, 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+, B, 12, 18]
+\end_layout
+
 \begin_layout Standard
-Redo all write_item operations of committed transactions from the log, in
- the order they are written in the log using REDO procedure.
+Redo all write_item operations of committed transactions in 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+, in the order they are written in the log using REDO procedure.
+\end_layout
+
+\begin_layout Itemize
+T4
 \end_layout
 
 \end_body

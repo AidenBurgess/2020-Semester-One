@@ -492,5 +492,74 @@ The next figure shows the log corresponding to a particular schedule at
  places.
 \end_layout
 
+\begin_layout Standard
+We will use active transactions 
+\begin_inset Formula $(L_{1})$
+\end_inset
+
+ and commited transactions since last checkpoint 
+\begin_inset Formula $(L_{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Undo all write_item operations in 
+\begin_inset Formula $L_{1}$
+\end_inset
+
+, using the UNDO procedure.
+ This should be done in reverse order.
+\end_layout
+
+\begin_layout Enumerate
+[write_item, 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+, D, 15, 25]
+\end_layout
+
+\begin_layout Enumerate
+[write_item, 
+\begin_inset Formula $T_{3}$
+\end_inset
+
+, C, 30, 40]
+\end_layout
+
+\begin_layout Enumerate
+[write_item, 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+, B, 12, 18]
+\end_layout
+
+\begin_layout Standard
+Redo all write_item operations of committed transactions in 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+, in the order they are written in the log using REDO procedure.
+\end_layout
+
+\begin_layout Enumerate
+[write_item, 
+\begin_inset Formula $T_{4}$
+\end_inset
+
+, D, 25, 15]
+\end_layout
+
+\begin_layout Enumerate
+[write_item, 
+\begin_inset Formula $T_{4}$
+\end_inset
+
+, A, 30, 20]
+\end_layout
+
 \end_body
 \end_document
