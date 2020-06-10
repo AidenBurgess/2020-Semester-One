@@ -425,6 +425,39 @@ d)
 7.
 \end_layout
 
+\begin_layout Standard
+active -> partially committed -> committed -> terminated
+\end_layout
+
+\begin_layout Standard
+This occurs if the transaction ends successfully and the commit conditions
+ are met.
+ The changes are committed to the database state then the transaction is
+ terminated.
+\end_layout
+
+\begin_layout Standard
+active -> partially committed -> failed -> terminated
+\end_layout
+
+\begin_layout Standard
+This occurs if the transaction ends successfully but the commit conditions
+ are not met.
+ The transaction is then aborted and goes to the failed state, which is
+ then terminated.
+ No changes are made to the database state.
+\end_layout
+
+\begin_layout Standard
+active -> failed -> terminated
+\end_layout
+
+\begin_layout Standard
+This occurs if the transaction is not successful, it goes to a failed state,
+ and then is terminated.
+ No changes are made to the database.
+\end_layout
+
 \begin_layout Section*
 8.
 \end_layout
