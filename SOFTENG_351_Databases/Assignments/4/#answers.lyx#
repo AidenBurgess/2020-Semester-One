@@ -178,7 +178,7 @@ a)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $n_{w}\times\frac{n_{x}}{V(x\,B)}\times\frac{n_{y}}{V(y\,C)}\times\frac{n_{z}}{V(z\,D)}=1000\times40\times60\times100=240,000,000\,tuples$
+\begin_inset Formula $n_{w}\times\frac{n_{x}}{V(w\,B)}\times\frac{n_{y}}{V(x\,C)}\times\frac{n_{z}}{V(y\,D)}=\frac{1000\times2000\times3000\times}{60\times100\times50}=80,000,000\,tuples$
 \end_inset
 
 
@@ -211,7 +211,7 @@ d)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $estimate(\vert\sigma_{C=20}(y)\bowtie z\vert)=60\times\frac{n_{z}}{V(z,\,D)}=60\times\frac{4000}{40}=6000$
+\begin_inset Formula $estimate(\vert\sigma_{C=20}(y)\bowtie z\vert)=60\times\frac{n_{z}}{V(y,\,D)}=60\times\frac{4000}{50}=4800$
 \end_inset
 
 
@@ -275,7 +275,42 @@ a)
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Formula $z\bowtie((w\bowtie x)\bowtie y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $((x\bowtie w)\bowtie y)\bowtie z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $z\bowtie((x\bowtie w)\bowtie y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 \begin_inset Formula $w\bowtie((x\bowtie y)\bowtie z)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $((x\bowtie y)\bowtie z)\bowtie w$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $w\bowtie((y\bowtie x)\bowtie z)$
 \end_inset
 
 
@@ -289,6 +324,27 @@ a)
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Formula $z\bowtie(w\bowtie(x\bowtie y))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(w\bowtie(y\bowtie x))\bowtie z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $z\bowtie(w\bowtie(y\bowtie x))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 \begin_inset Formula $w\bowtie(x\bowtie(y\bowtie z))$
 \end_inset
 
@@ -296,33 +352,107 @@ a)
 \end_layout
 
 \begin_layout Itemize
-(
-\begin_inset Formula $w\bowtie x)\bowtie(y\bowtie z)$
+\begin_inset Formula $(x\bowtie(y\bowtie z))\bowtie w$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $w\bowtie(x\bowtie(z\bowtie y))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(x\bowtie(z\bowtie y))\bowtie w$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(w\bowtie x)\bowtie(y\bowtie z)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(y\bowtie z)\bowtie(w\bowtie x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(y\bowtie z)\bowtie(x\bowtie w)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(x\bowtie w)\bowtie(y\bowtie z)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(x\bowtie w)\bowtie(z\bowtie y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(z\bowtie y)\bowtie(x\bowtie w)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(w\bowtie x)\bowtie(z\bowtie y)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(z\bowtie y)\bowtie(w\bowtie x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Theres another 16, but this is left as an exercise for the reader.
+ Total possible is 40
 \end_layout
 
 \begin_layout Subsection*
-b)
+b) this is wrong
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $estimate(\vert w\bowtie x\vert)=n_{w}\times\frac{n_{x}}{V(x,\,B)}=1000\times\frac{2000}{50}=40,000$
+\begin_inset Formula $estimate(\vert w\bowtie x\vert)=n_{w}\times\frac{n_{x}}{V(w,\,B)}=1000\times\frac{2000}{60}=33,333$
 \end_inset
 
-
+ 100 vals for c
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $estimate(\vert y\bowtie z\vert)=n_{y}\times\frac{n_{z}}{V(z,\,D)}=3000\times\frac{4000}{40}=300,000$
+\begin_inset Formula $estimate(\vert y\bowtie z\vert)=n_{y}\times\frac{n_{z}}{V(y,\,D)}=3000\times\frac{4000}{50}=240,000$
 \end_inset
 
-
+ 50 vals
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $estimate(\vert(w\bowtie x)\bowtie(y\bowtie z)\vert)=n_{w\bowtie x}\times\frac{n_{y\bowtie z}}{V(C,\,y\bowtie z)}$
+\begin_inset Formula $estimate(\vert(w\bowtie x)\bowtie(y\bowtie z)\vert)=n_{w\bowtie x}\times\frac{n_{y\bowtie z}}{V(y\bowtie z,\,C)}$
 \end_inset
 
 
@@ -337,7 +467,7 @@ The only unknown variable is
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $estimate(V(C,\,y\bowtie z))=min\{V(y,C),n_{y\bowtie z}\}=min\{50,300,000\}=50$
+\begin_inset Formula $estimate(V(C,\,y\bowtie z))=min\{V(y,C),n_{y\bowtie z}\}=min\{50,240,000\}=50$
 \end_inset
 
 
@@ -345,14 +475,79 @@ The only unknown variable is
 
 \begin_layout Standard
 Therefore, 
-\begin_inset Formula $estimate(\vert(w\bowtie x)\bowtie(y\bowtie z)\vert)=40,000\times\frac{300,000}{50}=240,000,000\,tuples$
+\begin_inset Formula $estimate(\vert(w\bowtie x)\bowtie(y\bowtie z)\vert)=40,000\times\frac{240,000}{50}=192,000,000\,tuples$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Subsection*
-c)
+c) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $cost(w\bowtie x)=n_{w}+n_{x}=200\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $cost(y\bowtie z)=n_{y}+n_{z}=200\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $cost((w\bowtie x)\bowtie(y\bowtie z))=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+10 tuple/block in w
+\end_layout
+
+\begin_layout Standard
+20 tuples/block in x
+\end_layout
+
+\begin_layout Standard
+6.66 tuples/block
+\end_layout
+
+\begin_layout Standard
+how many blocks?
+\end_layout
+
+\begin_layout Standard
+1 block/6tuples
+\end_layout
+
+\begin_layout Standard
+Sorting cost of 
+\begin_inset Formula $w\bowtie x=4\times\frac{40,000}{6}=26667\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sorting cost of 
+\begin_inset Formula $y\bowtie z=4\times\frac{300,000}{17}=70589\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Merge join cost: 
+\begin_inset Formula $ $
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -367,12 +562,121 @@ Need to demonstrate why it is the best
 a)
 \end_layout
 
+\begin_layout Enumerate
+Table scan entire relation and filter by those which match the condition:
+ 
+\begin_inset Formula $1000\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Index-scan for a=1 then filter based on other conditions: 
+\begin_inset Formula $50\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Index scan by b=2 then filter based on other conditions: 
+\begin_inset Formula $5\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Index scan by d=3 then filter based on other conditions: 
+\begin_inset Formula $10\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Choose plan 3, which has lowest cost at 5 I/Os
+\end_layout
+
 \begin_layout Subsection*
 b)
 \end_layout
 
+\begin_layout Enumerate
+Table scan entire relation and filter by conditions: 
+\begin_inset Formula $1000\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Index scan for a=1 then filter based on other conditions: 
+\begin_inset Formula $50\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Index scan for b=2 then filter based on other conditions: 
+\begin_inset Formula $5\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Index scan for c>=3 then filter based on other conditions: 
+\begin_inset Formula $1667\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Choose plan 3, which has lowest cost at 5 I/Os
+\end_layout
+
 \begin_layout Subsection*
 c)
+\end_layout
+
+\begin_layout Enumerate
+Table scan entire relation and filter by conditions: 
+\begin_inset Formula $1000\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Index scan for a=1 then filter based on other conditions: 
+\begin_inset Formula $50\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Index scan for b<=2 then filter based on other conditions: 
+\begin_inset Formula $1667\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Index scan for c>=3 then filter based on other conditions: 
+\begin_inset Formula $1667\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Choose plan 2, which has lowest cost at 50 I/Os
 \end_layout
 
 \begin_layout Section*
@@ -483,13 +787,8 @@ Another solution is to setup a time limit so that a transaction that exceeds
 \end_layout
 
 \begin_layout Standard
-The next figure shows the log corresponding to a particular schedule at
- the point of a system crash for four transactions T1, T2, T3, and T4.
- Suppose that we use immediate update protocol with checkpointing.
- Describe the recovery process from the system crash.
- Specify which transactions are rolled back, which operations in the log
- are redone and which are undone and whether any cascading rollback takes
- places.
+After the system crash, all the operations after the checkpoint are rolled
+ back.
 \end_layout
 
 \begin_layout Standard
@@ -559,6 +858,10 @@ Redo all write_item operations of committed transactions in
 \end_inset
 
 , A, 30, 20]
+\end_layout
+
+\begin_layout Standard
+No dirty reads take place, so no cascading rollback takes place.
 \end_layout
 
 \end_body
