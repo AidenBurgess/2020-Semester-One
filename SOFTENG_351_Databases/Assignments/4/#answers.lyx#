@@ -452,6 +452,12 @@ This occurs if the transaction ends successfully but the commit conditions
 active -> failed -> terminated
 \end_layout
 
+\begin_layout Standard
+This occurs if the transaction is not successful, it goes to a failed state,
+ and then is terminated.
+ No changes are made to the database.
+\end_layout
+
 \begin_layout Section*
 8.
 \end_layout
@@ -474,6 +480,16 @@ Another solution is to setup a time limit so that a transaction that exceeds
 
 \begin_layout Section*
 9.
+\end_layout
+
+\begin_layout Standard
+The next figure shows the log corresponding to a particular schedule at
+ the point of a system crash for four transactions T1, T2, T3, and T4.
+ Suppose that we use immediate update protocol with checkpointing.
+ Describe the recovery process from the system crash.
+ Specify which transactions are rolled back, which operations in the log
+ are redone and which are undone and whether any cascading rollback takes
+ places.
 \end_layout
 
 \end_body

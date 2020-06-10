@@ -430,11 +430,32 @@ active -> partially committed -> committed -> terminated
 \end_layout
 
 \begin_layout Standard
+This occurs if the transaction ends successfully and the commit conditions
+ are met.
+ The changes are committed to the database state then the transaction is
+ terminated.
+\end_layout
+
+\begin_layout Standard
 active -> partially committed -> failed -> terminated
 \end_layout
 
 \begin_layout Standard
+This occurs if the transaction ends successfully but the commit conditions
+ are not met.
+ The transaction is then aborted and goes to the failed state, which is
+ then terminated.
+ No changes are made to the database state.
+\end_layout
+
+\begin_layout Standard
 active -> failed -> terminated
+\end_layout
+
+\begin_layout Standard
+This occurs if the transaction is not successful, it goes to a failed state,
+ and then is terminated.
+ No changes are made to the database.
 \end_layout
 
 \begin_layout Section*
@@ -459,6 +480,38 @@ Another solution is to setup a time limit so that a transaction that exceeds
 
 \begin_layout Section*
 9.
+\end_layout
+
+\begin_layout Standard
+The next figure shows the log corresponding to a particular schedule at
+ the point of a system crash for four transactions T1, T2, T3, and T4.
+ Suppose that we use immediate update protocol with checkpointing.
+ Describe the recovery process from the system crash.
+ Specify which transactions are rolled back, which operations in the log
+ are redone and which are undone and whether any cascading rollback takes
+ places.
+\end_layout
+
+\begin_layout Standard
+We will use active transactions 
+\begin_inset Formula $(L_{1})$
+\end_inset
+
+ and commited transactions since last checkpoint 
+\begin_inset Formula $(L_{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Undo all write_item operations of active transactions, using the UNDO procedure.
+ This should be done in reverse order.
+\end_layout
+
+\begin_layout Standard
+Redo all write_item operations of committed transactions from the log, in
+ the order they are written in the log using REDO procedure.
 \end_layout
 
 \end_body
