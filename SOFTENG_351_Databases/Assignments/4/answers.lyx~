@@ -163,6 +163,7 @@ start
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted1.png
+	scale 80
 
 \end_inset
 
@@ -468,7 +469,7 @@ Therefore,
 
 \begin_layout Standard
 Number of blocks: 
-\begin_inset Formula $4,000,000\,tuples$
+\begin_inset Formula $4,000,000$
 \end_inset
 
 
@@ -493,35 +494,16 @@ c)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $cost((w\bowtie x)\bowtie(y\bowtie z))=$
+Blocking factor of 
+\begin_inset Formula $w\bowtie x=\frac{1}{\frac{1}{10}+\frac{1}{20}}=6.66\approx6$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-10 tuple/block in w
-\end_layout
-
-\begin_layout Standard
-20 tuples/block in x
-\end_layout
-
-\begin_layout Standard
-6.66 tuples/block
-\end_layout
-
-\begin_layout Standard
-how many blocks?
-\end_layout
-
-\begin_layout Standard
-1 block/6tuples
-\end_layout
-
-\begin_layout Standard
-Sorting cost of 
-\begin_inset Formula $w\bowtie x=4\times\frac{40,000}{6}=26667\,I/Os$
+Blocking factor of 
+\begin_inset Formula $y\bowtie z=\frac{1}{\frac{1}{30}+\frac{1}{40}}=17.14\approx17$
 \end_inset
 
 
@@ -529,7 +511,15 @@ Sorting cost of
 
 \begin_layout Standard
 Sorting cost of 
-\begin_inset Formula $y\bowtie z=4\times\frac{300,000}{17}=70589\,I/Os$
+\begin_inset Formula $w\bowtie x=4\times\frac{33,333}{6}=22222\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sorting cost of 
+\begin_inset Formula $y\bowtie z=4\times\frac{240,000}{17}=56471\,I/Os$
 \end_inset
 
 
@@ -537,10 +527,14 @@ Sorting cost of
 
 \begin_layout Standard
 Merge join cost: 
-\begin_inset Formula $ $
+\begin_inset Formula $\frac{33,333}{6}+\frac{240,000}{17}=19,673\,I/Os$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Total cost = 98,766 I/Os
 \end_layout
 
 \begin_layout Section*
@@ -674,7 +668,8 @@ Choose plan 2, which has lowest cost at 50 I/Os
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted2.png
+	filename pasted3.png
+	scale 60
 
 \end_inset
 
@@ -698,20 +693,64 @@ The schedule is not conflict-serializable, as there is a cycle in the precedence
 6.
 \end_layout
 
+\begin_layout Standard
+i) refers to 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ and ii) refers to 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 a)
+\end_layout
+
+\begin_layout Subsubsection*
+i) 1
+\end_layout
+
+\begin_layout Subsubsection*
+ii)
 \end_layout
 
 \begin_layout Subsection*
 b)
 \end_layout
 
+\begin_layout Subsubsection*
+i) 1
+\end_layout
+
+\begin_layout Subsubsection*
+ii)
+\end_layout
+
 \begin_layout Subsection*
 c)
 \end_layout
 
+\begin_layout Subsubsection*
+i) 4
+\end_layout
+
+\begin_layout Subsubsection*
+ii)
+\end_layout
+
 \begin_layout Subsection*
 d)
+\end_layout
+
+\begin_layout Subsubsection*
+i) 24
+\end_layout
+
+\begin_layout Subsubsection*
+ii)
 \end_layout
 
 \begin_layout Section*
