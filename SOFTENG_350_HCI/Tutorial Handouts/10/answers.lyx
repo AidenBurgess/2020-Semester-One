@@ -1,0 +1,264 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Variables to change every new document
+\newcommand{\hmwkClass}{SOFTENG 350} % Course/class
+\newcommand{\hmwkNumber}{10} % Assignment number
+
+% Constants to set once
+\newcommand{\hmwkAuthorName}{Aiden Burgess} % Your name
+\newcommand{\hmwkUserID}{abur970} % User ID
+\newcommand{\hmwkStudentNumber}{600280511} % Student number
+
+% Packages
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+% General document properties
+\linespread{1.1} % Line spacing
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+% Required to not count titlepage in page numbering
+\addtocounter {page} {-1}
+
+% Make a simple command for use in document body
+\newcommand{\start}{
+\maketitle
+\thispagestyle{empty}
+\newpage
+}
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\rhead{\hmwkClass:\ Lab\ \#\hmwkNumber}
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+% The following 2 commands setup the title page
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ Lab\ \#\hmwkNumber}}\\
+\normalsize\vspace{0.1in}\small{ \today }\\
+\vspace{3in}
+}
+
+\author{
+  \textbf{\hmwkAuthorName} \\
+  \texttt{\hmwkUserID \hspace{0.1in}- \hmwkStudentNumber}
+}
+
+% Do not display standard date since we use a custom date
+\date{}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+start
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Reviews
+\end_layout
+
+\begin_layout Subsection*
+Yujia Wu - Group 11
+\end_layout
+
+\begin_layout Subsection*
+Strength
+\end_layout
+
+\begin_layout Standard
+The user needs section is excellent.
+ The user needs that are identified are interesting and clearly relevant
+ for university students working in a group.
+ Also, the explanations of what the user needs represent are clear.
+ I found the section on 
+\begin_inset Quotes eld
+\end_inset
+
+intelligence need
+\begin_inset Quotes erd
+\end_inset
+
+ to be very informing.
+ Furthermore, there are examples given of possible solutions and what currently
+ exists in other systems.
+ It was also clear that the user needs directly influenced the teams design
+ decisions, as images of how these user needs were implemented were shown
+ alongside the explanations.
+\end_layout
+
+\begin_layout Subsection*
+Improvement
+\end_layout
+
+\begin_layout Standard
+Usage testing results are a bit lacking in terms of discussion and implications.
+ There are two areas that are identified as problematic, and they are described
+ properly and given reasonable solutions.
+ However, these changes are both based on quantitative observations.
+ This is due to there being no qualitative results, so problems with how
+ the UI is used can't be discovered.
+ When taking into account these observations, more discussion can occur
+ and greater changes can be made to improve the application.
+\end_layout
+
+\begin_layout Subsection*
+Joel Shin - Group 12
+\end_layout
+
+\begin_layout Subsection*
+Strength
+\end_layout
+
+\begin_layout Standard
+The usage testing results section was clearly laid out and followed a logical
+ structure.
+ It was pleasing to see both quantitative and qualitative results being
+ examined and discussed.
+ There were many solutions proposed for future iterations, and these solutions
+ were derived from clear analysis and reasoning as to why the previous implement
+ation was not ideal.
+ One particular part of this section that was outstanding was the use of
+ Likert Scales and the clear presentation of the information gathered using
+ this system.
+\end_layout
+
+\begin_layout Subsection*
+Improvement
+\end_layout
+
+\begin_layout Standard
+The prototype description section does specify the user needs, however I
+ feel they were not explained or described in enough detail.
+ Some reasoning as to why these user needs are related to university students
+ would be helpful.
+ It would also be good to see a greater variety of user needs, as the four
+ chosen relate to functionality.
+ Some ecological or emotional user needs would strengthen this section of
+ the report.
+ However, it was commendable to discern the components of the application
+ those particular user needs were associated with.
+\end_layout
+
+\begin_layout Section*
+Comparison
+\end_layout
+
+\begin_layout Standard
+The amount of modal functionality implemented by Group 12 is impressive.
+ There are five different modals possible, and the modal that is tied to
+ the share functionality is customised to include the file name in the input
+ field prefilled.
+ There was also actual functionality to add a new project.
+ Group 11 had one modal which was for sharing, however their application
+ had impressive functionality in terms of navigation.
+ It is possible to navigate through the different projects and view the
+ files in each one.
+ They also implemented a history feature which was quite innovative and
+ useful.
+\end_layout
+
+\end_body
+\end_document
