@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<title>Example Gallery</title>
+<!-- author: Gerald Weber, 2020-05-07 -->
+<!-- all images from Wikimedia commons -->
+</head>
+<link rel=stylesheet type="text/css" href="main4.css">
+<body> 
+
+<img id="fullview"  onclick='makeMax();'  src="full/blank.jpg">
+<div class="flex-container">
+	<!-- Add on double click method to each thumb -->
+<img class="thumb" data-ord="1"  onclick='changeMainImg(this);' ondblclick="toLast()" src="full/01.jpg">
+<img class="thumb" data-ord="2"  onclick='changeMainImg(this);' ondblclick="toLast()" src="full/02.jpg">
+<img class="thumb" data-ord="3"  onclick='changeMainImg(this);' ondblclick="toLast()" src="full/03.jpg">
+<img class="thumb" data-ord="4"  onclick='changeMainImg(this);' ondblclick="toLast()" src="full/04.jpg">
+<img class="thumb" data-ord="5"  onclick='changeMainImg(this);' ondblclick="toLast()" src="full/05.jpg">
+<img class="thumb" data-ord="6"  onclick='changeMainImg(this);' ondblclick="toLast()" src="full/06.jpg">
+<img class="thumb" data-ord="7"  onclick='changeMainImg(this);' ondblclick="toLast()" src="full/07.jpg">
+<img class="thumb" data-ord="8"  onclick='changeMainImg(this);' ondblclick="toLast()" src="full/08.jpg">
+<img class="thumb" data-ord="9"  onclick='changeMainImg(this);' ondblclick="toLast()" src="full/09.jpg">
+</div>
+
+
+<script >
+const thumbs = document.querySelectorAll('.thumb');
+
+var hasStorage;
+if (typeof(Storage) !== "undefined") {
+  hasStorage = true;
+  // Code to initially store or retrieve data.
+  if ( localStorage.maxPreference){
+	 thumbs.forEach(thumb => { 
+		thumb.style.order=localStorage.getItem(thumb.dataset.ord);
+		if (thumb.style.order==localStorage.maxPreference){
+		   document.getElementById("fullview").src = thumb.src;
+		}	
+	 })
+  } else {
+	 localStorage.maxPreference=1;
+	//  Add minPreference to keep track of rightmost ord value
+	 localStorage.minPreference=100;
+	 thumbs.forEach(thumb => { 
+		if (thumb.dataset.ord==1){
+		   document.getElementById("fullview").src = thumb.src;
+		}	
+		localStorage.setItem(thumb.dataset.ord, thumb.dataset.ord);})	 
+  } 
+} else {
+  // Sorry! No Web Storage support..
+  hasStorage = false;
+}
+
+    var current;
+    function changeMainImg(that) {
+        document.getElementById("fullview").src=that.src;
+		current=that;
+    }
+    function makeMax() {
+	    localStorage.maxPreference--;
+		if (current) {  
+		    current.style.order=localStorage.maxPreference;
+			localStorage.setItem(current.dataset.ord, localStorage.maxPreference);
+		}
+    }
+
+	function changeMainImg(that) {
+        document.getElementById("fullview").src=that.src;
+		current=that;
+    }
+
+	// Add toLast function to decrease minPreference and move thumb to rightmost position
+	function toLast() {
+	    localStorage.minPreference++;
+		if (current) {
+		    current.style.order=localStorage.minPreference;
+			localStorage.setItem(current.dataset.ord, localStorage.minPreference);
+		}
+    }
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
