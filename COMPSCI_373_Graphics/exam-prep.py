@@ -147,6 +147,7 @@ def computeConnectedComponentLabeling(pixel_array, image_width, image_height):
     currentLabel = 1
     visited = set()
     ccl = [[0 for i in range(image_width)] for j in range(image_height)]
+    counts = {}
     
     for i in range(image_height):
         for j in range(image_width):
@@ -158,6 +159,7 @@ def computeConnectedComponentLabeling(pixel_array, image_width, image_height):
                 count = 0
                 while q.size() != 0:
                     x, y = q.dequeue()
+                    count += 1
                     ccl[x][y] = currentLabel
                     # Left
                     if (0<=y-1) and (pixel_array[x][y-1]!=0) and ((x, y-1) not in visited):
@@ -176,13 +178,8 @@ def computeConnectedComponentLabeling(pixel_array, image_width, image_height):
                         q.enqueue((x+1,y))
                         visited.add((x+1,y))
                 
+                counts[currentLabel] = count
                 currentLabel +=1
-
-    # Count number of pixels in each component
-    counts = {}
-    for i in range(1, currentLabel):
-        count = sum(x.count(i) for x in ccl)
-        counts[i] = count
     
     return ccl, counts
     
@@ -358,6 +355,33 @@ def scaleTo0And255AndQuantize(pixel_array, image_width, image_height):
         for j in range(image_width):
             new[i][j] = min(255, max(0, round((pixel_array[i][j]-min_val) *(255/(max_val-min_val)))))
             
+    return new
+
+
+def computeBoxAveraging3x3(pixel_array, image_width, image_height):
+    new = createInitializedGreyscalePixelArray(image_width, image_height)
+    
+    for i in range(1, image_height-1):
+        for j in range(1, image_width-1):
+            total = 0
+            for x in range(-1, 2):
+                for y in range(-1, 2):
+                    total += pixel_array[i+x][j+y]
+            new[i][j] = total/9
+    return new
+
+
+def computeGenericLinearFilter3x3(pixel_array, image_width, image_height, filter_kernel):
+    new = createInitializedGreyscalePixelArray(image_width, image_height)
+    
+    for i in range(1, image_height-1):
+        for j in range(1, image_width-1):
+            total = 0
+            for x in range(-1, 2):
+                for y in range(-1, 2):
+                    total += filter_kernel[x+1][y+1] * pixel_array[i+x][j+y]
+            new[i][j] = total
+    
     return new
 
 
