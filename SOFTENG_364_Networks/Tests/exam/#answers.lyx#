@@ -600,10 +600,12 @@ Network mask tells the client how many bits of the ip addresses are for
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Some networks are set up to automatically recognise specific devices by
  their MAC address, and always assign them the same IP address.
  State whether this is the case here, and justify your answer.
- 
+ _ FIX XXXFKJ FDSGHLKDSHJ
 \end_layout
 
 \begin_layout Subsection*
@@ -635,6 +637,10 @@ The local DNS server would then contact the root DNS server, which would
 a)
 \end_layout
 
+\begin_layout Standard
+For this question I assume longest prefix matching.
+\end_layout
+
 \begin_layout Subsubsection*
 i.
 \end_layout
@@ -642,7 +648,7 @@ i.
 \begin_layout Standard
 Router forwards packet through link interface 1.
  The ip address matches the corresponding CIDR entry of 171.55.001110**.********
- as the packet ip address it 172.55.00111001.12.
+ as the packet ip address is 172.55.00111001.12.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -650,23 +656,62 @@ ii.
 \end_layout
 
 \begin_layout Standard
-
+Router forwards packet through link interface 2.
+ The ip address matches the corresponding CIDR entry of 171.55.001111**.********
+ as the packet ip address is 172.55.00111111.121.
 \end_layout
 
 \begin_layout Subsubsection*
 iii.
 \end_layout
 
+\begin_layout Standard
+Router forwards packet through link interface 4.
+ The packet ip address is 172.55.00110100.5.
+ This does not match any specific CIDR entry in the table, so goes through
+ the default link interface.
+\end_layout
+
 \begin_layout Subsubsection*
 iv.
+\end_layout
+
+\begin_layout Standard
+Router forwards packet through link interface 3.
+ The ip address matches the corresponding CIDR entry of 217.3.0010100*.********
+ as the packet ip address is 217.3.00101001.35.
 \end_layout
 
 \begin_layout Subsubsection*
 v.
 \end_layout
 
+\begin_layout Standard
+Router forwards packet through link interface 4.
+ The packet ip address is 217.3.53.233.
+ This does not match any specific CIDR entry in the table, so goes through
+ the default link interface.
+\end_layout
+
 \begin_layout Subsection*
 b)
+\end_layout
+
+\begin_layout Standard
+Using your answers in Question 3(a) explain why routers have forwarding
+ tables, and the concept of route aggregation in a forwarding table.
+ Your answer should be about 150 words.
+\end_layout
+
+\begin_layout Standard
+Route aggregation: combining of multiple smaller prefixes into larger ones.
+ This allows more efficient advertisement of routing information.
+\end_layout
+
+\begin_layout Standard
+Routers have forwarding tables to allow for fast and efficient routing of
+ packets.
+ This process needs to be done quickly to prevent queueing at the router.
 \end_layout
 
 \begin_layout Subsection*
