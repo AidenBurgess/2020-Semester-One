@@ -476,8 +476,8 @@ The four steps to dynamically assign an IP address to the laptop are: DHCP
  The client in a DHCP conversation is given the port number 68, and the
  server is given port number 67.
  In the first step the host (laptop) broadcasts a DHCP Discover message
- to all machines on the network.
- Then, the server responds with a DHCP Offer message.
+ to all machines on the network, asking for an IP address.
+ The server responds with a DHCP Offer message.
  This is also broadcast to the entire network as the laptop does not have
  an IP address yet.
  Then the host requests an IP address using the DHCP Request message broadcast
@@ -801,15 +801,6 @@ Using your knowledge of routing between autonomous systems, discuss the
 \end_layout
 
 \begin_layout Standard
-BGP: Border Gateway Protocol.
- Inter-domain routing protocol (holds the internet together).
- Includes eBGP: obtain subnet reachability information from neighbouring
- ASes and iBGP: propagate reachability routes to other networks based on
- reachability information and policy.
- Built on top of TCP, semi-permanent connection
-\end_layout
-
-\begin_layout Standard
 This allows specific drones to connect to other drone sub-nets.
 \end_layout
 
@@ -836,16 +827,16 @@ Drones within the sub-nets are updated with information from drones outside
  the subnet
 \end_layout
 
+\begin_layout Itemize
+Distributed system - Not reliant on a single drone or network
+\end_layout
+
 \begin_layout Standard
 Cons
 \end_layout
 
 \begin_layout Itemize
-Complex configuration
-\end_layout
-
-\begin_layout Itemize
-Distrubted
+Complex configuration - Requires high effort from administrator to set up
 \end_layout
 
 \begin_layout Itemize
@@ -876,14 +867,6 @@ Drones in the network could use ICMP to communicate network-level information.
 \series bold
 Describe what would happen if sub-nets stopped being cooperative and instead
  started focus on their own interests instead of the overall swarm.
-\end_layout
-
-\begin_layout Standard
-Route selection protocol for BGP might be non cooperative
-\end_layout
-
-\begin_layout Standard
-Prioritises own packets rather than others.
 \end_layout
 
 \begin_layout Standard
@@ -956,11 +939,30 @@ SSL: Secure Sockets Layer.
 \end_layout
 
 \begin_layout Standard
+
+\series bold
+Confidentiality.
+ Message Integrity.
+ Authenticity.
+\end_layout
+
+\begin_layout Standard
+public key encryption.
+ Symmetric encryption.
+ MAC algorithm
+\end_layout
+
+\begin_layout Standard
 May require drones to have certificates to authenticate their identities.
 \end_layout
 
 \begin_layout Standard
 All-Drones Zone (Relay + Search)
+\end_layout
+
+\begin_layout Itemize
+Assume that free communications means multiple two-way communications between
+ drones.
 \end_layout
 
 \begin_layout Itemize
@@ -972,7 +974,13 @@ These flows should be protected using SSL protocol.
 \end_layout
 
 \begin_layout Itemize
-Needs certificate for both relay and search drones
+Both relay and search drones need to have certificates registered with a
+ security authority
+\end_layout
+
+\begin_layout Itemize
+Stateful packet filtering with a firewall to increase security and manage
+ connections over time.
 \end_layout
 
 \begin_layout Standard
@@ -988,7 +996,17 @@ Data flow from operators to drones and vice versa
 \end_layout
 
 \begin_layout Itemize
-Just RSA
+These flows should be protected using SSL protocol.
+\end_layout
+
+\begin_layout Itemize
+Both operators and drones need to have certificates registered with a security
+ authority
+\end_layout
+
+\begin_layout Itemize
+Stateful packet filtering with a firewall to increase security and manage
+ connections over time.
 \end_layout
 
 \begin_layout Standard
@@ -1000,19 +1018,21 @@ Only the operator needs a certificate
 \end_layout
 
 \begin_layout Itemize
-Data flow from operator to public?
+Data flow from operator to public
 \end_layout
 
 \begin_layout Itemize
-cryptography
+Secure e-mail - use the operator's private key, the recipients public key,
+ and a newly created symmetric key.
 \end_layout
 
 \begin_layout Itemize
-one way encryption?????
+The public key needs to be certified by a certification authority before
+ sending out the message.
 \end_layout
 
 \begin_layout Itemize
-no security needed?
+Assuming the operator knows which recipients need to receive their message.
 \end_layout
 
 \begin_layout Standard
@@ -1023,19 +1043,61 @@ For your design, discuss what the potential costs would be and how they
 \end_layout
 
 \begin_layout Standard
-Cost of certificate
+All-Drones Zone (Relay + Search) Costs
+\end_layout
+
+\begin_layout Itemize
+Setup of SSL connection increases setup delay
+\end_layout
+
+\begin_layout Itemize
+Each SSL record contains 14 bytes of extra information, increasing transmission
+ times and network congestion.
+\end_layout
+
+\begin_layout Itemize
+Verification of certificates increases delay further and increases network
+ congestion.
+ 
 \end_layout
 
 \begin_layout Standard
-Performance - latency and bandwidth affected
+Operators Zone (Operators + Drones) Costs
+\end_layout
+
+\begin_layout Itemize
+Setup of SSL connection increases setup delay
+\end_layout
+
+\begin_layout Itemize
+Each SSL record contains 14 bytes of extra information, increasing transmission
+ times and network congestion.
+\end_layout
+
+\begin_layout Itemize
+Verification of certificates increases delay further and increases network
+ congestion.
+ 
 \end_layout
 
 \begin_layout Standard
-Setup takes longer
+Public Zone Costs
+\end_layout
+
+\begin_layout Itemize
+Not really any costs, so no impact on network performance.
+\end_layout
+
+\begin_layout Itemize
+Man in middle attacks
+\end_layout
+
+\begin_layout Itemize
+Takes time to certify the public key of recipients
 \end_layout
 
 \begin_layout Section*
-4 - seems ok 300-400 words
+4
 \end_layout
 
 \begin_layout Standard
@@ -1137,6 +1199,8 @@ If RTCP detects missing or delayed data, it may change the encoding of the
  audio and video in the RTP stream.
  This can be done dynamically within a call as each RTP packet contains
  a field specifying the encoding.
+ This lowers the bandwidth needed, reducing queueing delays in routers,
+ leading to a more reliable connection.
 \end_layout
 
 \end_body

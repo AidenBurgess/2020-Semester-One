@@ -476,8 +476,8 @@ The four steps to dynamically assign an IP address to the laptop are: DHCP
  The client in a DHCP conversation is given the port number 68, and the
  server is given port number 67.
  In the first step the host (laptop) broadcasts a DHCP Discover message
- to all machines on the network.
- Then, the server responds with a DHCP Offer message.
+ to all machines on the network, asking for an IP address.
+ The server responds with a DHCP Offer message.
  This is also broadcast to the entire network as the laptop does not have
  an IP address yet.
  Then the host requests an IP address using the DHCP Request message broadcast
@@ -801,15 +801,6 @@ Using your knowledge of routing between autonomous systems, discuss the
 \end_layout
 
 \begin_layout Standard
-BGP: Border Gateway Protocol.
- Inter-domain routing protocol (holds the internet together).
- Includes eBGP: obtain subnet reachability information from neighbouring
- ASes and iBGP: propagate reachability routes to other networks based on
- reachability information and policy.
- Built on top of TCP, semi-permanent connection
-\end_layout
-
-\begin_layout Standard
 This allows specific drones to connect to other drone sub-nets.
 \end_layout
 
@@ -836,16 +827,16 @@ Drones within the sub-nets are updated with information from drones outside
  the subnet
 \end_layout
 
+\begin_layout Itemize
+Distributed system - Not reliant on a single drone or network
+\end_layout
+
 \begin_layout Standard
 Cons
 \end_layout
 
 \begin_layout Itemize
-Complex configuration
-\end_layout
-
-\begin_layout Itemize
-Distrubted
+Complex configuration - Requires high effort from administrator to set up
 \end_layout
 
 \begin_layout Itemize
@@ -876,14 +867,6 @@ Drones in the network could use ICMP to communicate network-level information.
 \series bold
 Describe what would happen if sub-nets stopped being cooperative and instead
  started focus on their own interests instead of the overall swarm.
-\end_layout
-
-\begin_layout Standard
-Route selection protocol for BGP might be non cooperative
-\end_layout
-
-\begin_layout Standard
-Prioritises own packets rather than others.
 \end_layout
 
 \begin_layout Standard
@@ -956,11 +939,30 @@ SSL: Secure Sockets Layer.
 \end_layout
 
 \begin_layout Standard
+
+\series bold
+Confidentiality.
+ Message Integrity.
+ Authenticity.
+\end_layout
+
+\begin_layout Standard
+public key encryption.
+ Symmetric encryption.
+ MAC algorithm
+\end_layout
+
+\begin_layout Standard
 May require drones to have certificates to authenticate their identities.
 \end_layout
 
 \begin_layout Standard
 All-Drones Zone (Relay + Search)
+\end_layout
+
+\begin_layout Itemize
+Assume that free communications means multiple two-way communications between
+ drones.
 \end_layout
 
 \begin_layout Itemize
@@ -972,7 +974,12 @@ These flows should be protected using SSL protocol.
 \end_layout
 
 \begin_layout Itemize
-Needs certificate for both relay and search drones
+Both relay and search drones need to have certificates registered with a
+ security authority
+\end_layout
+
+\begin_layout Itemize
+Stateful packet filtering with a firewall
 \end_layout
 
 \begin_layout Standard
@@ -988,7 +995,16 @@ Data flow from operators to drones and vice versa
 \end_layout
 
 \begin_layout Itemize
-Just RSA
+These flows should be protected using SSL protocol.
+\end_layout
+
+\begin_layout Itemize
+Both operators and drones need to have certificates registered with a security
+ authority
+\end_layout
+
+\begin_layout Itemize
+Stateful packet filtering with a firewall
 \end_layout
 
 \begin_layout Standard
@@ -1000,19 +1016,21 @@ Only the operator needs a certificate
 \end_layout
 
 \begin_layout Itemize
-Data flow from operator to public?
+Data flow from operator to public
 \end_layout
 
 \begin_layout Itemize
-cryptography
+Secure e-mail - use the operator's private key, the recipients public key,
+ and a newly created symmetric key.
 \end_layout
 
 \begin_layout Itemize
-one way encryption?????
+The public key needs to be certified by a certification authority before
+ sending out the message.
 \end_layout
 
 \begin_layout Itemize
-no security needed?
+Assuming the operator knows which recipients need to receive their message.
 \end_layout
 
 \begin_layout Standard
@@ -1023,54 +1041,65 @@ For your design, discuss what the potential costs would be and how they
 \end_layout
 
 \begin_layout Standard
-Cost of certificate
+All-Drones Zone (Relay + Search) Costs
 \end_layout
 
-\begin_layout Standard
-Performance - latency and bandwidth affected
+\begin_layout Itemize
+Setup of SSL connection increases setup delay
 \end_layout
 
-\begin_layout Standard
-Setup takes longer
+\begin_layout Itemize
+Each SSL record contains 14 bytes of extra information, increasing transmission
+ times and network congestion.
 \end_layout
 
-\begin_layout Section*
-4 - seems ok 300-400 words
-\end_layout
-
-\begin_layout Standard
-The drones in DSRS have a number of sensors and actuators that allow the
- operators to both perceive and interact with the world.
- These sensors include microphones, videos and speakers.
- Given the DSRS system allows manoeuvring drones close to people who need
- rescuing, the project sponsors have decided the system could also be useful
- for communicating with these people.
-\end_layout
-
-\begin_layout Standard
-To meet the project sponsors’ requests, the designers have decided to implement
- functionality that would allow for a conversation between an operator and
- another person via a drone.
- As the operator could be operating multiple drones, they need to be able
- to switch between multiple conversations or merge multiple conversations
- into a single conference conversation.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Using your knowledge of multimedia networking, discuss what issues need
- to be considered implementing the conversation functionality.
+\begin_layout Itemize
+Verification of certificates increases delay further and increases network
+ congestion.
  
 \end_layout
 
 \begin_layout Standard
-What issues need to be considered implementing the conversation functionality
+Operators Zone (Operators + Drones) Costs
 \end_layout
 
 \begin_layout Itemize
-Latency - Should be low to maintain conversational aspect.
- A target should be below 150 msec of end to end delay.
+Setup of SSL connection increases setup delay
+\end_layout
+
+\begin_layout Itemize
+Each SSL record contains 14 bytes of extra information, increasing transmission
+ times and network congestion.
+\end_layout
+
+\begin_layout Itemize
+Verification of certificates increases delay further and increases network
+ congestion.
+ 
+\end_layout
+
+\begin_layout Standard
+Public Zone Costs
+\end_layout
+
+\begin_layout Itemize
+Not really any costs, so no impact on network performance.
+\end_layout
+
+\begin_layout Itemize
+Man in middle attacks
+\end_layout
+
+\begin_layout Itemize
+Takes time to certify the public key of recipients
+\end_layout
+
+\begin_layout Section*
+4
+\end_layout
+
+\begin_layout Standard
+What issues need to be considered implementing the conversation functionality
 \end_layout
 
 \begin_layout Itemize
@@ -1083,37 +1112,32 @@ Bandwidth - How much data can the drones process and receive from the operator
 \end_layout
 
 \begin_layout Itemize
-Network loss
+Network loss - Packet loss due to network congestion.
 \end_layout
 
 \begin_layout Itemize
-Delay loss
+Delay loss - Should be low to maintain conversational aspect.
+ A target should be below 150 msec of end to end delay.
+ If data arrives too late for playout at receiver it may not be played.
 \end_layout
 
 \begin_layout Itemize
-Loss tolerance
+Loss tolerance - How much loss in data can be accepted before being noticed
 \end_layout
 
 \begin_layout Itemize
-Delay jitter - variable network delay
+Delay jitter - variable network delay may result in freezing or buffering
+ at client playback
 \end_layout
 
 \begin_layout Itemize
-Recovery from packet loss - add delay
+Recovery from packet loss - How should lost packets be dealt with
 \end_layout
 
 \begin_layout Itemize
 Security - only those that are authorised to should be able to use this
  conversation functionality.
  Also, the stream of data should be confidential and maintain integrity.
-\end_layout
-
-\begin_layout Itemize
-constant playout - change wording
-\end_layout
-
-\begin_layout Itemize
-managing network congestion - change wording
 \end_layout
 
 \begin_layout Standard
@@ -1130,62 +1154,51 @@ Include details on how the functionality could handle missing or delayed
 \end_layout
 
 \begin_layout Standard
-RTP: Packet strucute for packets containing audio and video data.
- Encapsulated in UDP segements.
- Interoperability: if two VoIP apps run RTP, they are able to work together.
+Interoperability: if two VoIP apps run RTP, they are able to work together.
 \end_layout
 
 \begin_layout Standard
-RTCP: Real-Time Control Protocol.
- Works in conjunction with RTP.
- 
+RTP and RTCP are common standards, which increases accessibility and availabilit
+y.
 \end_layout
 
 \begin_layout Standard
-common standard
+RTCP multicast - transfers data to all clients on the call.
 \end_layout
 
 \begin_layout Standard
-RTCP multicast - transfer data to multiple places
+As the number of participants increases each participant reduces RTCP traffic.
 \end_layout
 
 \begin_layout Standard
-As the number of participants increases each participant reduces RTCP traffic
+Each stream has a unique identifier.
+ This allows RTP clients to handle multiple streams.
 \end_layout
 
 \begin_layout Standard
-They can do this by changing the audio encoding.
- This can be done dynamically during a call
+RTCP packets have statistical information, allowing clients to change performanc
+e of applications based on this data.
 \end_layout
 
 \begin_layout Standard
-Limits bandwidth- bandwidth scaling
+Bandwidth scaling - RTCP limits its traffic to 5% of session bandwidth.
+ Ensures quality between clients sending RTCP traffic.
+ Each RTCP participant shares traffic equally.
+ RTCP handles RTP clients bandwidth and ensures equal distribution
 \end_layout
 
 \begin_layout Standard
-Stream synchronization
+RTP has no QoS guarantee so it does not inherently prevent missing or delayed
+ data in and of itself.
 \end_layout
 
 \begin_layout Standard
-Doesnt send data when no talking is being done on call
-\begin_inset Formula $\begin{array}{ccccc}
-\\
-\\
-\\
-\\
-\\
-\end{array}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Packet types with statistic information
-\end_layout
-
-\begin_layout Standard
-Ensure same encoding, can dynamically change encoding
+If RTCP detects missing or delayed data, it may change the encoding of the
+ audio and video in the RTP stream.
+ This can be done dynamically within a call as each RTP packet contains
+ a field specifying the encoding.
+ This lowers the bandwidth needed, reducing queueing delays in routers,
+ leading to a more reliable connection.
 \end_layout
 
 \end_body
