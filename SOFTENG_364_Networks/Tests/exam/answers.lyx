@@ -762,7 +762,7 @@ The requests are sent through the same socket of the DNS server.
 \end_layout
 
 \begin_layout Section*
-1 7/10 a little tough
+1 7/10 a little tough - not enough words atm
 \end_layout
 
 \begin_layout Standard
@@ -818,28 +818,21 @@ The specific behaviour of routing is based on policy.
 \end_layout
 
 \begin_layout Standard
-Autonomous system routing
-\end_layout
-
-\begin_layout Standard
-Allows subnet to advertise its existence to the rest of Internet.
-\end_layout
-
-\begin_layout Standard
-Administrative autonomy
-\end_layout
-
-\begin_layout Standard
 Benefits
 \end_layout
 
 \begin_layout Itemize
-Flexible and scalable
+Scales to very large networks of sub-nets due to hierarchical routing
 \end_layout
 
 \begin_layout Itemize
 Flexible through the use of policies which allow administrators to configure
- behaviour of their drones
+ behaviour of path advertisement and therefore the routes used.
+\end_layout
+
+\begin_layout Itemize
+Drones within the sub-nets are updated with information from drones outside
+ the subnet
 \end_layout
 
 \begin_layout Standard
@@ -851,7 +844,7 @@ Complex configuration
 \end_layout
 
 \begin_layout Itemize
-Slow convergence
+Depending on policy, performance may be impacted greatly
 \end_layout
 
 \begin_layout Itemize
@@ -859,23 +852,18 @@ Security - opening up the system to external drones which may be malicious
 \end_layout
 
 \begin_layout Itemize
-Needs load balancing
-\end_layout
-
-\begin_layout Itemize
 May need to introduce a new type of drone with greater processing power
+ to handle connections between swarms
 \end_layout
 
 \begin_layout Standard
-ICMP: Internet Control Message Protocol.
- Used by hosts and routers to communicate network-level information.
- Includes error reporting and pinging.
- Network-layer above IP.
- Carried in IP datagrams.
- One of the main protocols in IP.
- Also used by tracert - get paths, lengths, and advertise this.
- Route advertisement router discovery.
- Drones unreachable
+Drones in the network could use ICMP to communicate network-level information.
+ For example, if a host or network was unreachable this could be communicated
+ using ICMP.
+ Another specific example of ICMP use is through traceroute, which takes
+ advantage of the TTL field and TTL expired ICMP message to discover routes
+ between drones.
+ This could be used for error checking or integrated into the BGP-like protocol.
 \end_layout
 
 \begin_layout Standard
@@ -891,6 +879,17 @@ Route selection protocol for BGP might be non cooperative
 
 \begin_layout Standard
 Prioritises own packets rather than others.
+\end_layout
+
+\begin_layout Standard
+Sub-nets may eliminate path advertisements to competitors or forward packets
+ out of their sub-net as fast as possible to reduce the load on their network.
+\end_layout
+
+\begin_layout Standard
+Although this may benefit the specific sub-nets, this would be likely to
+ reduce performance for the overall network, as packets may take longer
+ and slower paths to reach their destinations.
 \end_layout
 
 \begin_layout Section*

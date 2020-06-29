@@ -806,6 +806,15 @@ BGP: Border Gateway Protocol.
  Includes eBGP: obtain subnet reachability information from neighbouring
  ASes and iBGP: propagate reachability routes to other networks based on
  reachability information and policy.
+ Built on top of TCP, semi-permanent connection
+\end_layout
+
+\begin_layout Standard
+This allows specific drones to connect to other drone sub-nets.
+\end_layout
+
+\begin_layout Standard
+The specific behaviour of routing is based on policy.
 \end_layout
 
 \begin_layout Standard
@@ -814,10 +823,6 @@ Autonomous system routing
 
 \begin_layout Standard
 Allows subnet to advertise its existence to the rest of Internet.
-\end_layout
-
-\begin_layout Standard
-eBGP is between ASes and iBGP is inside ASes
 \end_layout
 
 \begin_layout Standard
@@ -830,6 +835,11 @@ Benefits
 
 \begin_layout Itemize
 Flexible and scalable
+\end_layout
+
+\begin_layout Itemize
+Flexible through the use of policies which allow administrators to configure
+ behaviour of path advertisement
 \end_layout
 
 \begin_layout Standard
@@ -845,11 +855,15 @@ Slow convergence
 \end_layout
 
 \begin_layout Itemize
-Security - wikipedia
+Security - opening up the system to external drones which may be malicious
 \end_layout
 
 \begin_layout Itemize
 Needs load balancing
+\end_layout
+
+\begin_layout Itemize
+May need to introduce a new type of drone with greater processing power
 \end_layout
 
 \begin_layout Standard
@@ -942,6 +956,14 @@ SSL: Secure Sockets Layer.
 \series bold
 For your design, discuss what the potential costs would be and how they
  would impact the network performance.
+\end_layout
+
+\begin_layout Standard
+Cost of certificate
+\end_layout
+
+\begin_layout Standard
+Performance
 \end_layout
 
 \begin_layout Section*
