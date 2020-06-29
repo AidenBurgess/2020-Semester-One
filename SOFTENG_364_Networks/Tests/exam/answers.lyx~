@@ -219,13 +219,13 @@ Using the above trace discuss the four-step process to dynamically assign
 \begin_layout Standard
 Identify the four steps in the trace, give their packet numbers, and discuss
  what happens in the step.
- 
+ - Done
 \end_layout
 
 \begin_layout Standard
 For each step be sure to also state what the source and destination IP addresses
  are, what the port addresses will be.
- 
+ - Done
 \end_layout
 
 \begin_layout Standard
@@ -249,7 +249,7 @@ Make sure your entire answer is supported by values, where relevant, from
 \end_layout
 
 \begin_layout Subsection*
-a)
+a) too long atm
 \end_layout
 
 \begin_layout Standard
@@ -567,8 +567,60 @@ The four steps to dynamically assign an IP address to the laptop are: DHCP
  retransmission errors and to keep track of the conversation.
 \end_layout
 
+\begin_layout Standard
+The laptop will have the IP address for 10 days, as that is the value of
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+IP Address Lease Time
+\begin_inset Quotes erd
+\end_inset
+
+ field in the DHCP ACK message.
+\end_layout
+
+\begin_layout Standard
+The DHCP protocol also provides:
+\end_layout
+
+\begin_layout Itemize
+Address of the first-hop router for client to allow the client to make requests
+ to hosts outside of the local network.
+\end_layout
+
+\begin_layout Itemize
+Name and IP address of DNS server to allow the client to retrieve IP information
+ about websites.
+\end_layout
+
+\begin_layout Itemize
+Network mask tells the client how many bits of the ip addresses are for
+ hosts and subnets.
+\end_layout
+
+\begin_layout Standard
+Some networks are set up to automatically recognise specific devices by
+ their MAC address, and always assign them the same IP address.
+ State whether this is the case here, and justify your answer.
+ 
+\end_layout
+
 \begin_layout Subsection*
 b)
+\end_layout
+
+\begin_layout Standard
+The DNS is a distributed hierarchical database with, root name servers,
+ top-level domain servers and authoritative DNS servers.
+ Consider the scenario where the IP address for weather.geek.nz was needed
+ by a host but the name is not cached in the local DNS name server.
+ Discuss the recursive solution where the IP address for weather.geek.nz would
+ be retrieved.
+\end_layout
+
+\begin_layout Standard
+The local DNS server would then
 \end_layout
 
 \begin_layout Section*
