@@ -600,10 +600,12 @@ Network mask tells the client how many bits of the ip addresses are for
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Some networks are set up to automatically recognise specific devices by
  their MAC address, and always assign them the same IP address.
  State whether this is the case here, and justify your answer.
- 
+ _ FIX XXXFKJ FDSGHLKDSHJ
 \end_layout
 
 \begin_layout Subsection*
@@ -632,7 +634,7 @@ The local DNS server would then contact the root DNS server, which would
 \end_layout
 
 \begin_layout Subsection*
-a)
+a) (5)
 \end_layout
 
 \begin_layout Standard
@@ -692,11 +694,39 @@ Router forwards packet through link interface 4.
 \end_layout
 
 \begin_layout Subsection*
-b)
+b) need to pad this out (4)
+\end_layout
+
+\begin_layout Standard
+Using your answers in Question 3(a) explain why routers have forwarding
+ tables, and the concept of route aggregation in a forwarding table.
+ Your answer should be about 150 words.
+\end_layout
+
+\begin_layout Standard
+Route aggregation: combining of multiple smaller prefixes into larger ones.
+ This allows more efficient advertisement of routing information.
+\end_layout
+
+\begin_layout Standard
+Routers have forwarding tables to allow for fast and efficient routing of
+ packets.
+ This process needs to be done quickly to prevent queueing at the router.
+ Each packet that is seen by the router is passed onto other routers via
+ the forwarding table.
+ These forwarding tables match IP addresses to certain outputs and are computed
+ using routing algorithms.
 \end_layout
 
 \begin_layout Subsection*
-c)
+c) (1)
+\end_layout
+
+\begin_layout Standard
+No, as the packets sent using TCP may be lost or retransmitted, layer 4
+ still needs to handle out-of-order data.
+ Layer 3 ensures that packets broken down into datagrams are able to be
+ reassembled in the correct order.
 \end_layout
 
 \begin_layout Section*

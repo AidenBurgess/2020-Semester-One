@@ -694,7 +694,7 @@ Router forwards packet through link interface 4.
 \end_layout
 
 \begin_layout Subsection*
-b)
+b) need to pad this out
 \end_layout
 
 \begin_layout Standard
@@ -712,6 +712,8 @@ Route aggregation: combining of multiple smaller prefixes into larger ones.
 Routers have forwarding tables to allow for fast and efficient routing of
  packets.
  This process needs to be done quickly to prevent queueing at the router.
+ Each packet that is seen by the router is passed onto other routers via
+ the forwarding ta
 \end_layout
 
 \begin_layout Subsection*
