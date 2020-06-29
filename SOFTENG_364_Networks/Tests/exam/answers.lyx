@@ -951,6 +951,10 @@ SSL: Secure Sockets Layer.
 \end_layout
 
 \begin_layout Standard
+May require drones to have certificates to authenticate their identities.
+\end_layout
+
+\begin_layout Standard
 All-Drones Zone (Relay + Search)
 \end_layout
 

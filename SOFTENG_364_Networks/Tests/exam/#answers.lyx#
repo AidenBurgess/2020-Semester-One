@@ -762,7 +762,7 @@ The requests are sent through the same socket of the DNS server.
 \end_layout
 
 \begin_layout Section*
-1 7/10 a little tough
+1 7/10 a little tough - not enough words atm
 \end_layout
 
 \begin_layout Standard
@@ -831,7 +831,8 @@ Flexible through the use of policies which allow administrators to configure
 \end_layout
 
 \begin_layout Itemize
-Performance
+Drones within the sub-nets are updated with information from drones outside
+ the subnet
 \end_layout
 
 \begin_layout Standard
@@ -950,6 +951,50 @@ SSL: Secure Sockets Layer.
 \end_layout
 
 \begin_layout Standard
+May require drones to have certificates to authenticate their identities.
+\end_layout
+
+\begin_layout Standard
+All-Drones Zone (Relay + Search)
+\end_layout
+
+\begin_layout Itemize
+There is data flow from relay drones to search drones and vice versa.
+\end_layout
+
+\begin_layout Itemize
+These flows should be protected using SSL protocol.
+\end_layout
+
+\begin_layout Itemize
+Needs certificate for both relay and search drones
+\end_layout
+
+\begin_layout Standard
+Operators Zone (Operators + Drones)
+\end_layout
+
+\begin_layout Itemize
+Operators and drones need certificates
+\end_layout
+
+\begin_layout Itemize
+Data flow from operators to drones and vice versa
+\end_layout
+
+\begin_layout Standard
+Public Zone 
+\end_layout
+
+\begin_layout Itemize
+Only the operator needs a certificate
+\end_layout
+
+\begin_layout Itemize
+Data flow from operator to public?
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 For your design, discuss what the potential costs would be and how they
@@ -961,7 +1006,11 @@ Cost of certificate
 \end_layout
 
 \begin_layout Standard
-Performance
+Performance - latency and bandwidth affected
+\end_layout
+
+\begin_layout Standard
+Setup takes longer
 \end_layout
 
 \begin_layout Section*
@@ -999,19 +1048,42 @@ What issues need to be considered implementing the conversation functionality
 \end_layout
 
 \begin_layout Itemize
-Latency
+Latency - Should be low to maintain conversational aspect.
+ A target should be below 150 msec of end to end delay.
 \end_layout
 
 \begin_layout Itemize
-Bandwidth
+Bandwidth - How much data can the drones process and receive from the operator
+ affects many aspects of the conversation functionality.
+ If the bandwidth is very low, then audio only may need to be used.
+ At higher bandwidths video can be included as well, but will need to be
+ compressed depending on the bandwidth.
 \end_layout
 
 \begin_layout Itemize
-Compression
+Network loss
 \end_layout
 
 \begin_layout Itemize
-Audio, or Audio+Video, or text
+Delay loss
+\end_layout
+
+\begin_layout Itemize
+Loss tolerance
+\end_layout
+
+\begin_layout Itemize
+Delay jitter
+\end_layout
+
+\begin_layout Itemize
+Recovery from packet loss - add delay
+\end_layout
+
+\begin_layout Itemize
+Security - only those that are authorised to should be able to use this
+ conversation functionality.
+ Also, the stream of data should be confidential and maintain integrity.
 \end_layout
 
 \begin_layout Standard
