@@ -1039,38 +1039,7 @@ Setup takes longer
 \end_layout
 
 \begin_layout Standard
-The drones in DSRS have a number of sensors and actuators that allow the
- operators to both perceive and interact with the world.
- These sensors include microphones, videos and speakers.
- Given the DSRS system allows manoeuvring drones close to people who need
- rescuing, the project sponsors have decided the system could also be useful
- for communicating with these people.
-\end_layout
-
-\begin_layout Standard
-To meet the project sponsors’ requests, the designers have decided to implement
- functionality that would allow for a conversation between an operator and
- another person via a drone.
- As the operator could be operating multiple drones, they need to be able
- to switch between multiple conversations or merge multiple conversations
- into a single conference conversation.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Using your knowledge of multimedia networking, discuss what issues need
- to be considered implementing the conversation functionality.
- 
-\end_layout
-
-\begin_layout Standard
 What issues need to be considered implementing the conversation functionality
-\end_layout
-
-\begin_layout Itemize
-Latency - Should be low to maintain conversational aspect.
- A target should be below 150 msec of end to end delay.
 \end_layout
 
 \begin_layout Itemize
@@ -1083,37 +1052,32 @@ Bandwidth - How much data can the drones process and receive from the operator
 \end_layout
 
 \begin_layout Itemize
-Network loss
+Network loss - Packet loss due to network congestion.
 \end_layout
 
 \begin_layout Itemize
-Delay loss
+Delay loss - Should be low to maintain conversational aspect.
+ A target should be below 150 msec of end to end delay.
+ If data arrives too late for playout at receiver it may not be played.
 \end_layout
 
 \begin_layout Itemize
-Loss tolerance
+Loss tolerance - How much loss in data can be accepted before being noticed
 \end_layout
 
 \begin_layout Itemize
-Delay jitter - variable network delay
+Delay jitter - variable network delay may result in freezing or buffering
+ at client playback
 \end_layout
 
 \begin_layout Itemize
-Recovery from packet loss - add delay
+Recovery from packet loss - How should lost packets be dealt with
 \end_layout
 
 \begin_layout Itemize
 Security - only those that are authorised to should be able to use this
  conversation functionality.
  Also, the stream of data should be confidential and maintain integrity.
-\end_layout
-
-\begin_layout Itemize
-constant playout - change wording
-\end_layout
-
-\begin_layout Itemize
-managing network congestion - change wording
 \end_layout
 
 \begin_layout Standard
@@ -1130,62 +1094,49 @@ Include details on how the functionality could handle missing or delayed
 \end_layout
 
 \begin_layout Standard
-RTP: Packet strucute for packets containing audio and video data.
- Encapsulated in UDP segements.
- Interoperability: if two VoIP apps run RTP, they are able to work together.
+Interoperability: if two VoIP apps run RTP, they are able to work together.
 \end_layout
 
 \begin_layout Standard
-RTCP: Real-Time Control Protocol.
- Works in conjunction with RTP.
- 
+RTP and RTCP are common standards, which increases accessibility and availabilit
+y.
 \end_layout
 
 \begin_layout Standard
-common standard
+RTCP multicast - transfers data to all clients on the call.
 \end_layout
 
 \begin_layout Standard
-RTCP multicast - transfer data to multiple places
+As the number of participants increases each participant reduces RTCP traffic.
 \end_layout
 
 \begin_layout Standard
-As the number of participants increases each participant reduces RTCP traffic
+Each stream has a unique identifier.
+ This allows RTP clients to handle multiple streams.
 \end_layout
 
 \begin_layout Standard
-They can do this by changing the audio encoding.
- This can be done dynamically during a call
+RTCP packets have statistical information, allowing clients to change performanc
+e of applications based on this data.
 \end_layout
 
 \begin_layout Standard
-Limits bandwidth- bandwidth scaling
+Bandwidth scaling - RTCP limits its traffic to 5% of session bandwidth.
+ Ensures quality between clients sending RTCP traffic.
+ Each RTCP participant shares traffic equally.
+ RTCP handles RTP clients bandwidth and ensures equal distribution
 \end_layout
 
 \begin_layout Standard
-Stream synchronization
+RTP has no QoS guarantee so it does not inherently prevent missing or delayed
+ data in and of itself.
 \end_layout
 
 \begin_layout Standard
-Doesnt send data when no talking is being done on call
-\begin_inset Formula $\begin{array}{ccccc}
-\\
-\\
-\\
-\\
-\\
-\end{array}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Packet types with statistic information
-\end_layout
-
-\begin_layout Standard
-Ensure same encoding, can dynamically change encoding
+If RTCP detects missing or delayed data, it may change the encoding of the
+ audio and video in the RTP stream.
+ This can be done dynamically within a call as each RTP packet contains
+ a field specifying the encoding.
 \end_layout
 
 \end_body

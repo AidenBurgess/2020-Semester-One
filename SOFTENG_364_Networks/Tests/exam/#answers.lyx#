@@ -1069,11 +1069,6 @@ What issues need to be considered implementing the conversation functionality
 \end_layout
 
 \begin_layout Itemize
-Latency - Should be low to maintain conversational aspect.
- A target should be below 150 msec of end to end delay.
-\end_layout
-
-\begin_layout Itemize
 Bandwidth - How much data can the drones process and receive from the operator
  affects many aspects of the conversation functionality.
  If the bandwidth is very low, then audio only may need to be used.
@@ -1083,37 +1078,32 @@ Bandwidth - How much data can the drones process and receive from the operator
 \end_layout
 
 \begin_layout Itemize
-Network loss
+Network loss - Packet loss due to network congestion.
 \end_layout
 
 \begin_layout Itemize
-Delay loss
+Delay loss - Should be low to maintain conversational aspect.
+ A target should be below 150 msec of end to end delay.
+ If data arrives too late for playout at receiver it may not be played.
 \end_layout
 
 \begin_layout Itemize
-Loss tolerance
+Loss tolerance - How much loss in data can be accepted before being noticed
 \end_layout
 
 \begin_layout Itemize
-Delay jitter - variable network delay
+Delay jitter - variable network delay may result in freezing or buffering
+ at client playback
 \end_layout
 
 \begin_layout Itemize
-Recovery from packet loss - add delay
+Recovery from packet loss - How should lost packets be dealt with
 \end_layout
 
 \begin_layout Itemize
 Security - only those that are authorised to should be able to use this
  conversation functionality.
  Also, the stream of data should be confidential and maintain integrity.
-\end_layout
-
-\begin_layout Itemize
-constant playout - change wording
-\end_layout
-
-\begin_layout Itemize
-managing network congestion - change wording
 \end_layout
 
 \begin_layout Standard
@@ -1130,9 +1120,7 @@ Include details on how the functionality could handle missing or delayed
 \end_layout
 
 \begin_layout Standard
-RTP: Packet strucute for packets containing audio and video data.
- Encapsulated in UDP segements.
- Interoperability: if two VoIP apps run RTP, they are able to work together.
+Interoperability: if two VoIP apps run RTP, they are able to work together.
 \end_layout
 
 \begin_layout Standard
@@ -1142,7 +1130,8 @@ RTCP: Real-Time Control Protocol.
 \end_layout
 
 \begin_layout Standard
-common standard
+RTP and RTCP are common standards, which increases accessibility and availabilit
+y.
 \end_layout
 
 \begin_layout Standard
@@ -1150,27 +1139,36 @@ RTCP multicast - transfer data to multiple places
 \end_layout
 
 \begin_layout Standard
-As the number of participants increases
+As the number of participants increases each participant reduces RTCP traffic
 \end_layout
 
 \begin_layout Standard
-Limits bandwidth- bandwidth scaling
+Each stream has a unique identifier.
+ The RTP client can handle multiple streams.
 \end_layout
 
 \begin_layout Standard
-Stream synchronization
+Packet types with statistic information, allows clients to change performance
+ of applications based on this data.
 \end_layout
 
 \begin_layout Standard
-Doesnt send data 
+Bandwidth scaling - RTCP limits its traffic to 5% of session bandwidth.
+ Ensures quality between clients sending RTCP traffic.
+ Each RTCP participant shares traffic equally.
+ RTCP handles RTP clients bandwidth and ensures equal distribution
 \end_layout
 
 \begin_layout Standard
-Packet types with statistic information
+RTP has no QoS guarantee so it does not inherently prevent missing or delayed
+ data in and of itself.
 \end_layout
 
 \begin_layout Standard
-Ensure same encoding, can dynamically change encoding
+If RTCP detects missing or delayed data, it may change the encoding of the
+ audio and video in the RTP stream.
+ This can be done dynamically within a call as each RTP packet contains
+ a field specifying the encoding.
 \end_layout
 
 \end_body
