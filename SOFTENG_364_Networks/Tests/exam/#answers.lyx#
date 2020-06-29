@@ -634,7 +634,7 @@ The local DNS server would then contact the root DNS server, which would
 \end_layout
 
 \begin_layout Subsection*
-a)
+a) (5)
 \end_layout
 
 \begin_layout Standard
@@ -694,7 +694,7 @@ Router forwards packet through link interface 4.
 \end_layout
 
 \begin_layout Subsection*
-b) need to pad this out
+b) need to pad this out (4)
 \end_layout
 
 \begin_layout Standard
@@ -713,11 +713,20 @@ Routers have forwarding tables to allow for fast and efficient routing of
  packets.
  This process needs to be done quickly to prevent queueing at the router.
  Each packet that is seen by the router is passed onto other routers via
- the forwarding ta
+ the forwarding table.
+ These forwarding tables match IP addresses to certain outputs and are computed
+ using routing algorithms.
 \end_layout
 
 \begin_layout Subsection*
-c)
+c) (1)
+\end_layout
+
+\begin_layout Standard
+No, as the packets sent using TCP may be lost or retransmitted, layer 4
+ still needs to handle out-of-order data.
+ Layer 3 ensures that packets broken down into datagrams are able to be
+ reassembled in the correct order.
 \end_layout
 
 \begin_layout Section*
@@ -725,19 +734,58 @@ c)
 \end_layout
 
 \begin_layout Subsection*
-a)
+a) (2)
+\end_layout
+
+\begin_layout Standard
+Bug-eyes is an app which creates a super image from the cameras of collection
+ of mobile devices.
+ The mobile devices are connected in a network.
+ Each device has its own unique address, the BP (Bug protocol) number, which
+ is dynamically allocated when the device joins the network.
+ This is an application layer process.
+ Your task is to decide which transportation protocol to use: UDP or TCP.
+ State your choice and give 4 reasons why you have selected that protocol.
+ Make sure you justify your reasons.
+\end_layout
+
+\begin_layout Standard
+Use TCP.
+\end_layout
+
+\begin_layout Standard
+Data is guaranteed to be delivered to the client, as TCP automatically retransmi
+ts packets.
+ As the devices are mobile, they are likely to be connected via wireless
+ means, 
+\end_layout
+
+\begin_layout Standard
+Data is guaranteed to be delivered to the receiver with no errors as TCP
+ checks for errors.
+ This allows for lower effort on the application layer dealing with errors.
+\end_layout
+
+\begin_layout Standard
+The arrival of data using TCP will be in order, so the application layer
+ will not need to handle out of order images.
+\end_layout
+
+\begin_layout Standard
+TCP allows for graceful shutdown of the connection between sender and receiver,
+ so they know when the connection has been terminated.
 \end_layout
 
 \begin_layout Subsection*
-b)
+b) (3)
 \end_layout
 
 \begin_layout Subsection*
-c)
+c) (3)
 \end_layout
 
 \begin_layout Subsection*
-d)
+d) (2)
 \end_layout
 
 \end_body

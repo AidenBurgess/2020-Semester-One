@@ -734,19 +734,45 @@ No, as the packets sent using TCP may be lost or retransmitted, layer 4
 \end_layout
 
 \begin_layout Subsection*
-a)
+a) (2)
+\end_layout
+
+\begin_layout Standard
+Use TCP.
+\end_layout
+
+\begin_layout Standard
+Data is guaranteed to be delivered to the client, as TCP automatically retransmi
+ts packets.
+ This is more reliable than UDP and ensures all the data is collected.
+\end_layout
+
+\begin_layout Standard
+Data is guaranteed to be delivered to the receiver with no errors as TCP
+ checks for errors.
+ This allows for lower effort on the application layer dealing with errors.
+\end_layout
+
+\begin_layout Standard
+The arrival of data using TCP will be in order, so the application layer
+ will not need to handle out of order images.
+\end_layout
+
+\begin_layout Standard
+TCP allows for graceful shutdown of the connection between sender and receiver,
+ so they know when the connection has been terminated.
 \end_layout
 
 \begin_layout Subsection*
-b)
+b) (3)
 \end_layout
 
 \begin_layout Subsection*
-c)
+c) (3)
 \end_layout
 
 \begin_layout Subsection*
-d)
+d) (2)
 \end_layout
 
 \end_body
