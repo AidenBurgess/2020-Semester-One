@@ -738,26 +738,13 @@ a) (2)
 \end_layout
 
 \begin_layout Standard
-Bug-eyes is an app which creates a super image from the cameras of collection
- of mobile devices.
- The mobile devices are connected in a network.
- Each device has its own unique address, the BP (Bug protocol) number, which
- is dynamically allocated when the device joins the network.
- This is an application layer process.
- Your task is to decide which transportation protocol to use: UDP or TCP.
- State your choice and give 4 reasons why you have selected that protocol.
- Make sure you justify your reasons.
-\end_layout
-
-\begin_layout Standard
 Use TCP.
 \end_layout
 
 \begin_layout Standard
 Data is guaranteed to be delivered to the client, as TCP automatically retransmi
 ts packets.
- As the devices are mobile, they are likely to be connected via wireless
- means, 
+ This is more reliable than UDP and ensures all the data is collected.
 \end_layout
 
 \begin_layout Standard
@@ -777,15 +764,50 @@ TCP allows for graceful shutdown of the connection between sender and receiver,
 \end_layout
 
 \begin_layout Subsection*
-b) (3)
+b) (3) 100 words
+\end_layout
+
+\begin_layout Standard
+NAT is network address translation.
+ This method allows a local network to only use one external IP address.
+ The IP addresses of devices on the local network are not visible to the
+ external hosts and are not explicitly addressable.
+ This violates the end to end argument as external hosts are not talking
+ directly with hosts within a NAT network.
+ Instead, they talk through an intermediary NAT router, which interferes
+ in the conversation.
 \end_layout
 
 \begin_layout Subsection*
 c) (3)
 \end_layout
 
+\begin_layout Standard
+As the subnet mask takes 20 bits and an IP address has 32 bits.
+ This leaves 12 bits for hosts on the network.
+ Therefore, there can be a maximum of 
+\begin_inset Formula $2^{12}=4096$
+\end_inset
+
+ hosts.
+ The maximum amount if 20 hosts were routers is therefore 4076 hosts.
+\end_layout
+
 \begin_layout Subsection*
 d) (2)
+\end_layout
+
+\begin_layout Standard
+Consider a DNS server that is simultaneously being contacting by two hosts
+ with a type A DNS request.
+ Are the requests sent through the same socket of the DNS server? If they
+ are, how will the process on the DNS server know how to send the right
+ answer to the right host?
+\end_layout
+
+\begin_layout Standard
+The requests are sent through the same socket of the DNS server.
+ They are 
 \end_layout
 
 \end_body

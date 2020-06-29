@@ -764,15 +764,43 @@ TCP allows for graceful shutdown of the connection between sender and receiver,
 \end_layout
 
 \begin_layout Subsection*
-b) (3)
+b) (3) 100 words
+\end_layout
+
+\begin_layout Standard
+NAT is network address translation.
+ This method allows a local network to only use one external IP address.
+ The IP addresses of devices on the local network are not visible to the
+ external hosts and are not explicitly addressable.
+ This violates the end to end argument as external hosts are not talking
+ directly with hosts within a NAT network.
+ Instead, they talk through an intermediary NAT router, which interferes
+ in the conversation.
 \end_layout
 
 \begin_layout Subsection*
 c) (3)
 \end_layout
 
+\begin_layout Standard
+As the subnet mask takes 20 bits and an IP address has 32 bits.
+ This leaves 12 bits for hosts on the network.
+ Therefore, there can be a maximum of 
+\begin_inset Formula $2^{12}=4096$
+\end_inset
+
+ hosts.
+ The maximum amount if 20 hosts were routers is therefore 4076 hosts.
+\end_layout
+
 \begin_layout Subsection*
-d) (2)
+d) (2) - unsure
+\end_layout
+
+\begin_layout Standard
+The requests are sent through the same socket of the DNS server.
+ They are distinguished by their unique identification numbers.
+ Each query and reply pair have the same identification number.
 \end_layout
 
 \end_body
