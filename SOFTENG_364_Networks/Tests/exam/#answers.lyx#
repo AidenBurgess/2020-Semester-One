@@ -169,54 +169,6 @@ start
 
 \end_layout
 
-\begin_layout Standard
-Priya, a software engineering student, was interested in how her home network
- assigned her laptop an IP number, when she connected to the network, so
- she did a Wireshark capture.
- The above figure is the Wireshark trace of the moments when DHCP dynamically
- assign IP-address (Links to an external site.) parameters (and other things)
- to her laptop.
- 
-\end_layout
-
-\begin_layout Standard
-Using the above trace discuss the four-step process to dynamically assign
- an IP address to the laptop.
- 
-\end_layout
-
-\begin_layout Standard
-Identify the four steps in the trace, give their packet numbers, and discuss
- what happens in the step.
- - Done
-\end_layout
-
-\begin_layout Standard
-For each step be sure to also state what the source and destination IP addresses
- are, what the port addresses will be.
- - Done
-\end_layout
-
-\begin_layout Standard
-Discuss how long the laptop will have the IP address, as well as discuss
- three other important pieces of information that the DHCP protocol will
- provide to Priya’s laptop about the network it has connected to.
- You will need to justify why these pieces of information are important.
-\end_layout
-
-\begin_layout Standard
-Some networks are set up to automatically recognise specific devices by
- their MAC address, and always assign them the same IP address.
- State whether this is the case here, and justify your answer.
- 
-\end_layout
-
-\begin_layout Standard
-Make sure your entire answer is supported by values, where relevant, from
- the above Wireshark trace.
- Your answer should be around 200-250 words.
-\end_layout
-
 \begin_layout Subsection*
 a) too long atm
 \end_layout
@@ -571,10 +523,21 @@ Network mask tells the client how many bits of the ip addresses are for
 \begin_layout Standard
 
 \series bold
+our ip address is 192.168.178.103
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 Some networks are set up to automatically recognise specific devices by
  their MAC address, and always assign them the same IP address.
  State whether this is the case here, and justify your answer.
- _ FIX XXXFKJ FDSGHLKDSHJ
+\end_layout
+
+\begin_layout Standard
+It appears that this network does assign the same IP address to a specific
+ MAC address, as after the DHCP release message, the same IP address is
+ offered.
 \end_layout
 
 \begin_layout Subsection*
@@ -783,17 +746,19 @@ As the subnet mask takes 20 bits and an IP address has 32 bits.
 \end_inset
 
  hosts.
- The maximum amount if 20 hosts were routers is therefore 4076 hosts.
+ The maximum amount if 20 hosts were routers is 4076 hosts as each router
+ has an IP address.
 \end_layout
 
 \begin_layout Subsection*
-d) (2) - unsure
+d) (2) - unsure, what about ip and port number
 \end_layout
 
 \begin_layout Standard
 The requests are sent through the same socket of the DNS server.
  They are distinguished by their unique identification numbers.
  Each query and reply pair have the same identification number.
+ The hosts are also identified by their ip and port numbers.
 \end_layout
 
 \begin_layout Section*
@@ -826,25 +791,173 @@ As a requirement of the funding, other organisations need to add their own
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Using your knowledge of routing between autonomous systems, discuss the
  benefits and costs of using a BGP-like protocol for DSRS.
  Include details of how ICMP could be used to help diagnose problems between
  the different sub-nets.
- Describe what would happen if sub-nets stopped being cooperative and instead
- started focus on their own interests instead of the overall swarm.
+ 
 \end_layout
 
 \begin_layout Standard
 BGP: Border Gateway Protocol.
- Inter-domain routing protocol (holds the 
+ Inter-domain routing protocol (holds the internet together).
+ Includes eBGP: obtain subnet reachability information from neighbouring
+ ASes and iBGP: propagate reachability routes to other networks based on
+ reachability information and policy.
 \end_layout
 
 \begin_layout Standard
-ICMP
+This allows specific drones to connect to other drone sub-nets.
+\end_layout
+
+\begin_layout Standard
+The specific behaviour of routing is based on policy.
+\end_layout
+
+\begin_layout Standard
+Autonomous system routing
+\end_layout
+
+\begin_layout Standard
+Allows subnet to advertise its existence to the rest of Internet.
+\end_layout
+
+\begin_layout Standard
+Administrative autonomy
+\end_layout
+
+\begin_layout Standard
+Benefits
+\end_layout
+
+\begin_layout Itemize
+Flexible and scalable
+\end_layout
+
+\begin_layout Standard
+Cons
+\end_layout
+
+\begin_layout Itemize
+Complex configuration
+\end_layout
+
+\begin_layout Itemize
+Slow convergence
+\end_layout
+
+\begin_layout Itemize
+Security - opening up the system to external drones which may be malicious
+\end_layout
+
+\begin_layout Itemize
+Needs load balancing
+\end_layout
+
+\begin_layout Itemize
+May need to introduce a new type of drone with greater processing power
+\end_layout
+
+\begin_layout Standard
+ICMP: Internet Control Message Protocol.
+ Used by hosts and routers to communicate network-level information.
+ Includes error reporting and pinging.
+ Network-layer above IP.
+ Carried in IP datagrams.
+ One of the main protocols in IP.
+ Also used by tracert - get paths, lengths, and advertise this.
+ Route advertisement router discovery.
+ Drones unreachable
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Describe what would happen if sub-nets stopped being cooperative and instead
+ started focus on their own interests instead of the overall swarm.
+\end_layout
+
+\begin_layout Standard
+Route selection protocol for BGP might be non cooperative
+\end_layout
+
+\begin_layout Standard
+Prioritises own packets rather than others.
 \end_layout
 
 \begin_layout Section*
 3 - hmm pretty tough
+\end_layout
+
+\begin_layout Standard
+Now that the DSRS project is expanding, security has become an important
+ issue.
+ The various funders are requiring that the drones in the swarm are secure
+ and that an outside hacker would not be able to either observe what is
+ happening in the swarm or take over any drones.
+\end_layout
+
+\begin_layout Standard
+To meet the funders’ requirements, the lead designers in the DSRS have decided
+ to implement a multiple level security system.
+ They desire all messages in the system to be confidential and authenticated,
+ while ensuring that the services are always available.
+ Knowing the risks of implementing their own protocols, they have decided
+ to use pre-existing protocols, including SSL and public key cryptography.
+\end_layout
+
+\begin_layout Standard
+Using the multiple level approach, the designers have decided to split the
+ network into three security zones.
+ The first zone will contain all the drones (both relay and search) and
+ allow free communications between them.
+ The second zone will contain the operators and allow two-way communications
+ between the drones and operators.
+ The third zone will be a public zone that only allows one-way traffic out
+ from the operator zone.
+\end_layout
+
+\begin_layout Standard
+The designers want to ensure that each zone is secure and only allows the
+ authorised traffic between the different zones.
+ However, given they have complete control over the networks protocols in
+ the network, they are sure they can lock down the network while still allowing
+ normal operation.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Using your knowledge of SSL and operational security, describe how the three
+ zones could be configured and what additional infrastructure would be required.
+ Include details of the data flows between the three zones and how each
+ data flow would be secured.
+ 
+\end_layout
+
+\begin_layout Standard
+SSL: Secure Sockets Layer.
+ Widely deployed security protocol.
+ Provides confidentiality, integrity, authentication.
+ Available to all TCP applications.
+ Between the App and Transport Layers.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+For your design, discuss what the potential costs would be and how they
+ would impact the network performance.
+\end_layout
+
+\begin_layout Standard
+Cost of certificate
+\end_layout
+
+\begin_layout Standard
+Performance
 \end_layout
 
 \begin_layout Section*
@@ -870,12 +983,11 @@ To meet the project sponsors’ requests, the designers have decided to implemen
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Using your knowledge of multimedia networking, discuss what issues need
  to be considered implementing the conversation functionality.
- Describe how RTP and RTCP could be used to handle the requirements for
- multiple conversations and changing between conversations.
- Include details on how the functionality could handle missing or delayed
- data.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -899,8 +1011,16 @@ Audio, or Audio+Video, or text
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Describe how RTP and RTCP could be used to handle the requirements for multiple
  conversations and changing between conversations.
+
+\series default
+ 
+\series bold
+Include details on how the functionality could handle missing or delayed
+ data.
 \end_layout
 
 \begin_layout Standard
