@@ -794,7 +794,13 @@ As the subnet mask takes 20 bits and an IP address has 32 bits.
 \end_layout
 
 \begin_layout Subsection*
-d) (2)
+d) (2) - unsure
+\end_layout
+
+\begin_layout Standard
+The requests are sent through the same socket of the DNS server.
+ They are distinguished by their unique identification numbers.
+ Each query and reply pair have the same identification number.
 \end_layout
 
 \end_body

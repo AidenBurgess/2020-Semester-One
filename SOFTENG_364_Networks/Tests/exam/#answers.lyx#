@@ -157,47 +157,16 @@ start
 \end_layout
 
 \begin_layout Section*
-1 - seems pretty tough
-\end_layout
-
-\begin_layout Subsection*
-a)
-\end_layout
-
-\begin_layout Subsubsection*
-i.
-\end_layout
-
-\begin_layout Subsubsection*
-ii.
-\end_layout
-
-\begin_layout Subsubsection*
-iii.
-\end_layout
-
-\begin_layout Subsection*
-b)
-\end_layout
-
-\begin_layout Subsection*
-c)
-\end_layout
-
-\begin_layout Subsubsection*
-i.
-\end_layout
-
-\begin_layout Subsubsection*
-ii.
-\end_layout
-
-\begin_layout Subsubsection*
-iii.
-\end_layout
-
-\begin_layout Section*
 2 - seems decently easy
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted1.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -768,6 +737,21 @@ b) (3) 100 words
 \end_layout
 
 \begin_layout Standard
+\begin_inset Graphics
+	filename pasted3.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 NAT is network address translation.
  This method allows a local network to only use one external IP address.
  The IP addresses of devices on the local network are not visible to the
@@ -779,7 +763,16 @@ NAT is network address translation.
 \end_layout
 
 \begin_layout Subsection*
-c) (3)
+c) (3) - needs to be fixed
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted2.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -794,20 +787,134 @@ As the subnet mask takes 20 bits and an IP address has 32 bits.
 \end_layout
 
 \begin_layout Subsection*
-d) (2)
-\end_layout
-
-\begin_layout Standard
-Consider a DNS server that is simultaneously being contacting by two hosts
- with a type A DNS request.
- Are the requests sent through the same socket of the DNS server? If they
- are, how will the process on the DNS server know how to send the right
- answer to the right host?
+d) (2) - unsure
 \end_layout
 
 \begin_layout Standard
 The requests are sent through the same socket of the DNS server.
- They are 
+ They are distinguished by their unique identification numbers.
+ Each query and reply pair have the same identification number.
+\end_layout
+
+\begin_layout Section*
+1 7/10 a little tough
+\end_layout
+
+\begin_layout Standard
+The Drone Swarm Rescue System (DSRS) project is growing in size.
+ The initial prototype, with multiple drones communicating over Wi-Fi, has
+ been a huge success.
+ The prototype has shown multiple drones can communicate with each other
+ and build their own private network.
+\end_layout
+
+\begin_layout Standard
+The project has been so successful that it has attracted funding from several
+ US government organisations.
+ And while they like the current work, they want to open up the network
+ so other organisations (e.g.
+ US companies) can provide drones as part of the swarm.
+\end_layout
+
+\begin_layout Standard
+As a requirement of the funding, other organisations need to add their own
+ “sub-nets” of drones.
+ These sub-nets will consist of multiple drones implementing their own network.
+ But the multiple sub-nets will need to communicate with each other.
+ One way to model this design is to treat each sub-net as a separate autonomous
+ system.
+\end_layout
+
+\begin_layout Standard
+Using your knowledge of routing between autonomous systems, discuss the
+ benefits and costs of using a BGP-like protocol for DSRS.
+ Include details of how ICMP could be used to help diagnose problems between
+ the different sub-nets.
+ Describe what would happen if sub-nets stopped being cooperative and instead
+ started focus on their own interests instead of the overall swarm.
+\end_layout
+
+\begin_layout Standard
+BGP: Border Gateway Protocol.
+ Inter-domain routing protocol (holds the 
+\end_layout
+
+\begin_layout Standard
+ICMP
+\end_layout
+
+\begin_layout Section*
+3 - hmm pretty tough
+\end_layout
+
+\begin_layout Section*
+4 - seems ok 300-400 words
+\end_layout
+
+\begin_layout Standard
+The drones in DSRS have a number of sensors and actuators that allow the
+ operators to both perceive and interact with the world.
+ These sensors include microphones, videos and speakers.
+ Given the DSRS system allows manoeuvring drones close to people who need
+ rescuing, the project sponsors have decided the system could also be useful
+ for communicating with these people.
+\end_layout
+
+\begin_layout Standard
+To meet the project sponsors’ requests, the designers have decided to implement
+ functionality that would allow for a conversation between an operator and
+ another person via a drone.
+ As the operator could be operating multiple drones, they need to be able
+ to switch between multiple conversations or merge multiple conversations
+ into a single conference conversation.
+\end_layout
+
+\begin_layout Standard
+Using your knowledge of multimedia networking, discuss what issues need
+ to be considered implementing the conversation functionality.
+ Describe how RTP and RTCP could be used to handle the requirements for
+ multiple conversations and changing between conversations.
+ Include details on how the functionality could handle missing or delayed
+ data.
+\end_layout
+
+\begin_layout Standard
+What issues need to be considered implementing the conversation functionality
+\end_layout
+
+\begin_layout Itemize
+Latency
+\end_layout
+
+\begin_layout Itemize
+Bandwidth
+\end_layout
+
+\begin_layout Itemize
+Compression
+\end_layout
+
+\begin_layout Itemize
+Audio, or Audio+Video, or text
+\end_layout
+
+\begin_layout Standard
+Describe how RTP and RTCP could be used to handle the requirements for multiple
+ conversations and changing between conversations.
+\end_layout
+
+\begin_layout Standard
+RTP: Real-Time Protocol.
+ Runs in end systems.
+ Packet strucute for packets containing audio and video data.
+ Encapsulated in UDP segements.
+ Interoperability: if two VoIP apps run TYP, they are able to work together.
+\end_layout
+
+\begin_layout Standard
+RTCP: Real-Time Control Protocol.
+ Works in conjunction with RTP.
+ 
 \end_layout
 
 \end_body
