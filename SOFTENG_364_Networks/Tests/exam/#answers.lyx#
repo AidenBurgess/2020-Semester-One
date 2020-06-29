@@ -971,6 +971,7 @@ There is data flow from relay drones to search drones and vice versa.
 
 \begin_layout Itemize
 These flows should be protected using SSL protocol.
+ This provides confidentiality, integrity, and authentication.
 \end_layout
 
 \begin_layout Itemize
@@ -979,7 +980,8 @@ Both relay and search drones need to have certificates registered with a
 \end_layout
 
 \begin_layout Itemize
-Stateful packet filtering with a firewall
+Stateful packet filtering with a firewall to increase security and manage
+ connections over time.
 \end_layout
 
 \begin_layout Standard
@@ -991,11 +993,12 @@ Operators and drones need certificates
 \end_layout
 
 \begin_layout Itemize
-Data flow from operators to drones and vice versa
+Data flows from operators to drones and vice versa
 \end_layout
 
 \begin_layout Itemize
 These flows should be protected using SSL protocol.
+ This provides confidentiality, integrity, and authentication.
 \end_layout
 
 \begin_layout Itemize
@@ -1004,11 +1007,16 @@ Both operators and drones need to have certificates registered with a security
 \end_layout
 
 \begin_layout Itemize
-Stateful packet filtering with a firewall
+Stateful packet filtering with a firewall to increase security and manage
+ connections over time.
 \end_layout
 
 \begin_layout Standard
 Public Zone
+\end_layout
+
+\begin_layout Itemize
+Assuming the operator knows which recipients need to receive their message.
 \end_layout
 
 \begin_layout Itemize
@@ -1030,7 +1038,7 @@ The public key needs to be certified by a certification authority before
 \end_layout
 
 \begin_layout Itemize
-Assuming the operator knows which recipients need to receive their message.
+This ensures confidentiality, authenticity, and integrity of the messages.
 \end_layout
 
 \begin_layout Standard
@@ -1059,12 +1067,31 @@ Verification of certificates increases delay further and increases network
  
 \end_layout
 
+\begin_layout Itemize
+The firewall increases delay in the network
+\end_layout
+
 \begin_layout Standard
 Operators Zone (Operators + Drones) Costs
 \end_layout
 
 \begin_layout Itemize
-sadsa
+Setup of SSL connection increases setup delay
+\end_layout
+
+\begin_layout Itemize
+Each SSL record contains 14 bytes of extra information, increasing transmission
+ times and network congestion.
+\end_layout
+
+\begin_layout Itemize
+Verification of certificates increases delay further and increases network
+ congestion.
+ 
+\end_layout
+
+\begin_layout Itemize
+The firewall increases delay in the network
 \end_layout
 
 \begin_layout Standard
@@ -1072,27 +1099,13 @@ Public Zone Costs
 \end_layout
 
 \begin_layout Itemize
-Not really any costs, so no impact on network performance.
+Takes time to certify the public key of recipients, increasing delay and
+ network congestion (as requests need to be sent to verify).
 \end_layout
 
 \begin_layout Itemize
-Man in middle attacks
-\end_layout
-
-\begin_layout Itemize
-Takes time to certify the public key of recipients
-\end_layout
-
-\begin_layout Standard
-Cost of certificate
-\end_layout
-
-\begin_layout Standard
-Performance - latency and bandwidth affected
-\end_layout
-
-\begin_layout Standard
-Setup takes longer
+Increases delay in sending out messages the process of creating a secure
+ email takes time.
 \end_layout
 
 \begin_layout Section*

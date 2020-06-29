@@ -979,7 +979,8 @@ Both relay and search drones need to have certificates registered with a
 \end_layout
 
 \begin_layout Itemize
-Stateful packet filtering with a firewall
+Stateful packet filtering with a firewall to increase security and manage
+ connections over time.
 \end_layout
 
 \begin_layout Standard
@@ -1004,11 +1005,16 @@ Both operators and drones need to have certificates registered with a security
 \end_layout
 
 \begin_layout Itemize
-Stateful packet filtering with a firewall
+Stateful packet filtering with a firewall to increase security and manage
+ connections over time.
 \end_layout
 
 \begin_layout Standard
 Public Zone
+\end_layout
+
+\begin_layout Itemize
+Assuming the operator knows which recipients need to receive their message.
 \end_layout
 
 \begin_layout Itemize
@@ -1030,7 +1036,7 @@ The public key needs to be certified by a certification authority before
 \end_layout
 
 \begin_layout Itemize
-Assuming the operator knows which recipients need to receive their message.
+This ensures confidentiality, authenticity, and integrity of the messages.
 \end_layout
 
 \begin_layout Standard
@@ -1083,15 +1089,13 @@ Public Zone Costs
 \end_layout
 
 \begin_layout Itemize
-Not really any costs, so no impact on network performance.
+Takes time to certify the public key of recipients, increasing delay and
+ network congestion (as requests need to be sent to verify).
 \end_layout
 
 \begin_layout Itemize
-Man in middle attacks
-\end_layout
-
-\begin_layout Itemize
-Takes time to certify the public key of recipients
+Increases delay in sending out messages the process of creating a secure
+ email takes time.
 \end_layout
 
 \begin_layout Section*
