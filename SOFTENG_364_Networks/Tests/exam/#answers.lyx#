@@ -762,7 +762,7 @@ The requests are sent through the same socket of the DNS server.
 \end_layout
 
 \begin_layout Section*
-1 7/10 a little tough - not enough words atm
+1 7/10 a little tough - not enough words atm expand points
 \end_layout
 
 \begin_layout Standard
@@ -826,8 +826,9 @@ Scales to very large networks of sub-nets due to hierarchical routing
 \end_layout
 
 \begin_layout Itemize
-Flexible through the use of policies which allow administrators to configure
- behaviour of path advertisement and therefore the routes used.
+Flexible (administrative autonomy) through the use of policies which allow
+ administrators to configure behaviour of path advertisement and therefore
+ the routes used.
 \end_layout
 
 \begin_layout Itemize
@@ -841,6 +842,10 @@ Cons
 
 \begin_layout Itemize
 Complex configuration
+\end_layout
+
+\begin_layout Itemize
+Distrubted
 \end_layout
 
 \begin_layout Itemize
@@ -982,8 +987,12 @@ Operators and drones need certificates
 Data flow from operators to drones and vice versa
 \end_layout
 
+\begin_layout Itemize
+Just RSA
+\end_layout
+
 \begin_layout Standard
-Public Zone 
+Public Zone
 \end_layout
 
 \begin_layout Itemize
@@ -992,6 +1001,18 @@ Only the operator needs a certificate
 
 \begin_layout Itemize
 Data flow from operator to public?
+\end_layout
+
+\begin_layout Itemize
+cryptography
+\end_layout
+
+\begin_layout Itemize
+one way encryption?????
+\end_layout
+
+\begin_layout Itemize
+no security needed?
 \end_layout
 
 \begin_layout Standard
@@ -1058,6 +1079,7 @@ Bandwidth - How much data can the drones process and receive from the operator
  If the bandwidth is very low, then audio only may need to be used.
  At higher bandwidths video can be included as well, but will need to be
  compressed depending on the bandwidth.
+ Change amount of compression
 \end_layout
 
 \begin_layout Itemize
@@ -1073,7 +1095,7 @@ Loss tolerance
 \end_layout
 
 \begin_layout Itemize
-Delay jitter
+Delay jitter - variable network delay
 \end_layout
 
 \begin_layout Itemize
@@ -1084,6 +1106,14 @@ Recovery from packet loss - add delay
 Security - only those that are authorised to should be able to use this
  conversation functionality.
  Also, the stream of data should be confidential and maintain integrity.
+\end_layout
+
+\begin_layout Itemize
+constant playout - change wording
+\end_layout
+
+\begin_layout Itemize
+managing network congestion - change wording
 \end_layout
 
 \begin_layout Standard
@@ -1100,17 +1130,47 @@ Include details on how the functionality could handle missing or delayed
 \end_layout
 
 \begin_layout Standard
-RTP: Real-Time Protocol.
- Runs in end systems.
- Packet strucute for packets containing audio and video data.
+RTP: Packet strucute for packets containing audio and video data.
  Encapsulated in UDP segements.
- Interoperability: if two VoIP apps run TYP, they are able to work together.
+ Interoperability: if two VoIP apps run RTP, they are able to work together.
 \end_layout
 
 \begin_layout Standard
 RTCP: Real-Time Control Protocol.
  Works in conjunction with RTP.
  
+\end_layout
+
+\begin_layout Standard
+common standard
+\end_layout
+
+\begin_layout Standard
+RTCP multicast - transfer data to multiple places
+\end_layout
+
+\begin_layout Standard
+As the number of participants increases
+\end_layout
+
+\begin_layout Standard
+Limits bandwidth- bandwidth scaling
+\end_layout
+
+\begin_layout Standard
+Stream synchronization
+\end_layout
+
+\begin_layout Standard
+Doesnt send data 
+\end_layout
+
+\begin_layout Standard
+Packet types with statistic information
+\end_layout
+
+\begin_layout Standard
+Ensure same encoding, can dynamically change encoding
 \end_layout
 
 \end_body
