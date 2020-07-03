@@ -328,15 +328,65 @@ ii.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $ALL\_COURSES\leftarrow$
+\begin_inset Formula $ALL\_COURSES\leftarrow\pi_{Course\_number}(\sigma_{Year='08'}(SECTION))$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $STUDENT\_COURSES\leftarrow\sigma_{Year='08'}(STUDENT*GRADE\_REPORT)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+base it on equal counts
+\end_layout
+
+\begin_layout Standard
 Retrieve the names and major departments of the students who did not study
  all the courses that were offered in 2008.
+\end_layout
+
+\begin_layout Standard
+SELECT Student_number
+\end_layout
+
+\begin_layout Standard
+FROM GRADE_REPORT
+\end_layout
+
+\begin_layout Standard
+WHERE NOT EXISTS(( SELECT Course_number 
+\end_layout
+
+\begin_layout Standard
+FROM SECTION
+\end_layout
+
+\begin_layout Standard
+WHERE Year=
+\begin_inset Quotes erd
+\end_inset
+
+08
+\begin_inset Quotes erd
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Standard
+EXCEPT (SELECT Course
 \end_layout
 
 \begin_layout Section*
@@ -411,6 +461,15 @@ As there are three passes, the sorting takes
 ii.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted8.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 Question 4 - Seems tough
 \end_layout
@@ -455,6 +514,27 @@ c)
 
 \begin_layout Subsubsection*
 i.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted9.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is a deadlock as a cycle exists between 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection*

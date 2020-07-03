@@ -328,15 +328,65 @@ ii.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $ALL\_COURSES\leftarrow$
+\begin_inset Formula $ALL\_COURSES\leftarrow\pi_{Course\_number}(\sigma_{Year='08'}(SECTION))$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $STUDENT\_COURSES\leftarrow\sigma_{Year='08'}(STUDENT*GRADE\_REPORT)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+base it on equal counts
+\end_layout
+
+\begin_layout Standard
 Retrieve the names and major departments of the students who did not study
  all the courses that were offered in 2008.
+\end_layout
+
+\begin_layout Standard
+SELECT Student_number
+\end_layout
+
+\begin_layout Standard
+FROM GRADE_REPORT
+\end_layout
+
+\begin_layout Standard
+WHERE NOT EXISTS(( SELECT Course_number 
+\end_layout
+
+\begin_layout Standard
+FROM SECTION
+\end_layout
+
+\begin_layout Standard
+WHERE Year=
+\begin_inset Quotes erd
+\end_inset
+
+08
+\begin_inset Quotes erd
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Standard
+EXCEPT (SELECT Course
 \end_layout
 
 \begin_layout Section*
@@ -466,8 +516,98 @@ c)
 i.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted9.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is a deadlock as a cycle exists between 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsubsection*
 ii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ is waiting on 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ for the lock on B.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ is waiting on 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ for the lock on A.
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ has a higher TS, 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ is aborted, and subsequently the lock on A is released.
+ Immediately, 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ grabs the lock exclusive lock on B and 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ is waiting for 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ for the lock on A and B.
+ This is accepted because 
+\begin_inset Formula $TS(T_{1})<TS(T_{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This allows 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ to finish its transaction and commit.
+ Subsequently, 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ can grab the locks for A and B and complete its transaction.
+\end_layout
+
+\begin_layout Standard
+Therefore, the deadlock has been avoided.
 \end_layout
 
 \begin_layout Section*
