@@ -494,38 +494,42 @@ As z is smaller than y, it will be used in the outer loop.
 
 \end_layout
 
-\begin_layout Subsection*
-Merge Join then Nested Loop Join
-\end_layout
-
 \begin_layout Standard
-As x and z are both clustered on B, then
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $x\bowtie z=n_{x}+n_{z}=250+150=400\,I/Os$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-As x and z have a common key of A, the calculation of 
-\begin_inset Formula $n_{x\bowtie z}$
+As y and z have a common key of A, the calculation of 
+\begin_inset Formula $n_{y\bowtie z}$
 \end_inset
 
  is relatively simple:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $n_{x\bowtie z}=min(n_{x},n_{z})=150$
+\begin_inset Formula $|y\bowtie z|=min(|y|,|z|)=300$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $(x\bowtie z)\bowtie y=n_{x\bowtie z}+n_{y}=150+400=550\,I/Os$
+As there is no pipelining, the result must be written:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Cost\,of\,writing=\frac{|y\bowtie z|}{bfr}=\frac{300}{2}=150\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $y\bowtie z$
+\end_inset
+
+ is smaller than x, it will be used in the outer loop.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x\bowtie(y\bowtie z)=|y\bowtie z|\times\frac{n_{x}}{V(A,x)}=300\times\frac{250}{50}=1500\,I/Os$
 \end_inset
 
 
@@ -533,10 +537,75 @@ As x and z have a common key of A, the calculation of
 
 \begin_layout Standard
 Total Cost = 
-\begin_inset Formula $400+550=950\,I/Os$
+\begin_inset Formula $300+150+1500=1950\,I/Os$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection*
+Merge Join then Nested Loop Join
+\end_layout
+
+\begin_layout Standard
+As x and y are both clustered on B, then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x\bowtie y=n_{x}+n_{y}=250+200=450\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As x and y have a common key of B, the calculation of 
+\begin_inset Formula $n_{x\bowtie y}$
+\end_inset
+
+ is relatively simple:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n_{x\bowtie y}=min(n_{x},n_{y})=200$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As there is no pipelining, the result must be written:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Cost\,of\,writing=\frac{|x\bowtie y|}{bfr}=\frac{200}{2}=100\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(x\bowtie y)\bowtie z=n_{x\bowtie y}+n_{z}=200+400=600\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Total Cost = 
+\begin_inset Formula $450+100+600=1150\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, the most optimal cost is by using merge join on x and z, then
+ using nested loop join on the resultant relation with y.
+\end_layout
+
+\begin_layout Standard
+The cost is 1050 I/Os.
 \end_layout
 
 \begin_layout Section*
