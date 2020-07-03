@@ -382,6 +382,31 @@ b) need to do, seems ok
 i.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted7.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Each pass takes 
+\begin_inset Formula $19\times2=38\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As there are three passes, the sorting takes 
+\begin_inset Formula $38\times3=116\,I/Os$
+\end_inset
+
+ in total.
+\end_layout
+
 \begin_layout Subsubsection*
 ii.
 \end_layout
@@ -438,6 +463,70 @@ ii.
 
 \begin_layout Section*
 Question 6
+\end_layout
+
+\begin_layout Subsection*
+1
+\end_layout
+
+\begin_layout Standard
+As the transaction has been committed and is included in a checkpoint, no
+ further instructions are needed.
+ No action
+\end_layout
+
+\begin_layout Subsection*
+2 should it be before+after the checkpoint?
+\end_layout
+
+\begin_layout Standard
+Redo all write_item operations of 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ from the log after the checkpoint, in the order in which they were written
+ into the log, using the REDO procedure.
+\end_layout
+
+\begin_layout Subsection*
+3
+\end_layout
+
+\begin_layout Standard
+Undo all the write_item operations of 
+\begin_inset Formula $T_{3}$
+\end_inset
+
+ using the UNDO procedure before and after the checkpoint.
+ The operations should be undone in the reverse of the order in which they
+ were written to the log.
+\end_layout
+
+\begin_layout Subsection*
+4
+\end_layout
+
+\begin_layout Standard
+Redo all write_item operations of 
+\begin_inset Formula $T_{4}$
+\end_inset
+
+ from the log after the checkpoint, in the order in which they were written
+ into the log, using the REDO procedure.
+\end_layout
+
+\begin_layout Subsection*
+5
+\end_layout
+
+\begin_layout Standard
+Undo all the write_item operations of 
+\begin_inset Formula $T_{5}$
+\end_inset
+
+ using the UNDO procedure after the checkpoint.
+ The operations should be undone in the reverse of the order in which they
+ were written to the log.
 \end_layout
 
 \end_body
