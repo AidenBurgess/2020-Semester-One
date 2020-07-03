@@ -265,7 +265,7 @@ SELECT Course_name, Course_number, Credit_hours, Semester, Year, Grade
 
 \begin_layout Plain Layout
 
-FROM (GRADE_REPORT NATURAL JOIN SECTION NATURAL JOIN COURSE)
+FROM GRADE_REPORT NATURAL JOIN SECTION NATURAL JOIN COURSE
 \end_layout
 
 \begin_layout Plain Layout
@@ -316,6 +316,15 @@ i.
 
 \begin_layout Subsubsection*
 ii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted2.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

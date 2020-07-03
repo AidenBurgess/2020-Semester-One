@@ -160,9 +160,10 @@ start
 Question 1
 \end_layout
 
-\begin_layout Section*
+\begin_layout Standard
 \begin_inset Graphics
-	filename pasted1.png
+	filename pasted12.png
+	scale 50
 
 \end_inset
 
@@ -219,7 +220,6 @@ ALTER TABLE STUDENT ADD COLUMN Birth_Date DATE;
 
 \begin_layout Subsubsection*
 iii.
- can test this
 \end_layout
 
 \begin_layout Standard
@@ -265,7 +265,7 @@ SELECT Course_name, Course_number, Credit_hours, Semester, Year, Grade
 
 \begin_layout Plain Layout
 
-FROM GRADE_REPORT NATURAL JOIN SECTION NATURAL JOIN COURSE
+FROM (GRADE_REPORT NATURAL JOIN SECTION NATURAL JOIN COURSE)
 \end_layout
 
 \begin_layout Plain Layout
@@ -319,12 +319,12 @@ ii.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename pasted2.png
+Assume a student can not take two of the same course in the same year.
+\end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+Assume that to satisfy the requirement a student needs to take all courses
+ (non duplicate) available in the year '08', regardless of major.
 \end_layout
 
 \begin_layout Standard
@@ -335,58 +335,31 @@ ii.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $STUDENT\_COURSES\leftarrow\sigma_{Year='08'}(STUDENT*GRADE\_REPORT)$
+\begin_inset Formula $STUDENT\_COURSES\leftarrow\sigma_{Year='08'}(STUDENT*GRADE\_REPORT*SECTION)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $ $
+\begin_inset Formula $NUM\_COURSES(Total\_courses)\leftarrow\Im_{COUNT\,Course\_number}(ALL\_COURSES)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-base it on equal counts
-\end_layout
-
-\begin_layout Standard
-Retrieve the names and major departments of the students who did not study
- all the courses that were offered in 2008.
-\end_layout
-
-\begin_layout Standard
-SELECT Student_number
-\end_layout
-
-\begin_layout Standard
-FROM GRADE_REPORT
-\end_layout
-
-\begin_layout Standard
-WHERE NOT EXISTS(( SELECT Course_number 
-\end_layout
-
-\begin_layout Standard
-FROM SECTION
-\end_layout
-
-\begin_layout Standard
-WHERE Year=
-\begin_inset Quotes erd
+\begin_inset Formula $STUDENT\_NUM\_COURSES(Student\_courses)\leftarrow_{Student\_number}\Im_{COUNT\,Course\_number}(STUDENT\_COURSES)$
 \end_inset
 
-08
-\begin_inset Quotes erd
-\end_inset
 
-) 
 \end_layout
 
 \begin_layout Standard
-EXCEPT (SELECT Course
+\begin_inset Formula $RESULT(Name,Major)\leftarrow NUM\_COURSES\bowtie_{Total\_courses=Student\_courses}STUDENT\_NUM\_COURSES$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -400,6 +373,7 @@ a)
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted3.png
+	scale 60
 
 \end_inset
 
@@ -409,6 +383,7 @@ a)
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted4.png
+	scale 50
 
 \end_inset
 
@@ -418,6 +393,7 @@ a)
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted5.png
+	scale 50
 
 \end_inset
 
@@ -425,7 +401,7 @@ a)
 \end_layout
 
 \begin_layout Subsection*
-b) need to do, seems ok
+b)
 \end_layout
 
 \begin_layout Subsubsection*
@@ -435,6 +411,7 @@ i.
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted7.png
+	scale 55
 
 \end_inset
 
@@ -464,6 +441,7 @@ ii.
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted8.png
+	scale 50
 
 \end_inset
 
@@ -472,6 +450,18 @@ ii.
 
 \begin_layout Section*
 Question 4 - Seems tough
+\end_layout
+
+\begin_layout Standard
+Assume that each attribute of a 
+\begin_inset Quotes eld
+\end_inset
+
+combined key
+\begin_inset Quotes erd
+\end_inset
+
+ is a key as well.
 \end_layout
 
 \begin_layout Subsection*
@@ -510,7 +500,7 @@ As y and z have a common key of A, the calculation of
 \end_layout
 
 \begin_layout Standard
-As there is no pipelining, the result must be written:
+As there is no pipelining, the intermediate result must be written:
 \end_layout
 
 \begin_layout Standard
@@ -567,14 +557,14 @@ As x and y have a common key of B, the calculation of
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $n_{x\bowtie y}=min(n_{x},n_{y})=200$
+\begin_inset Formula $|x\bowtie y|=min(|x|,|y|)=200$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-As there is no pipelining, the result must be written:
+As there is no pipelining, the intermediate result must be written:
 \end_layout
 
 \begin_layout Standard
@@ -632,6 +622,7 @@ b)
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted6.png
+	scale 65
 
 \end_inset
 
@@ -653,6 +644,7 @@ i.
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted9.png
+	scale 65
 
 \end_inset
 
