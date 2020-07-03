@@ -209,7 +209,7 @@ status open
 
 \begin_layout Plain Layout
 
-ALTER TABLE STUDENT ADD COLUMN Birt_Date DATE;
+ALTER TABLE STUDENT ADD COLUMN Birth_Date DATE;
 \end_layout
 
 \end_inset
@@ -252,6 +252,32 @@ WHERE Student_number='17' AND Section_identifier='119';
 iv.
 \end_layout
 
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT Course_name, Course_number, Credit_hours, Semester, Year, Grade
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM GRADE_REPORT NATURAL JOIN SECTION NATURAL JOIN COURSE
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE Student_number='8'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 b)
 \end_layout
@@ -260,8 +286,57 @@ b)
 i.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula $ANDERSON\_SECTIONS\leftarrow\sigma_{Instructor='Anderson'}(SECTION)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $NUM\_STUDENTS\leftarrow{}_{Section\_identifier}\Im_{COUNT\,Student\_number}(GRADE\_REPORT*ANDERSON\_SECTIONS)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $COURSE\_INFO\leftarrow\pi_{Course\_name,\,Course\_number,\,Semester,\,Year}(COURSE*ANDERSON\_SECTIONS)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $RESULT\leftarrow COURSE\_INFO*NUM\_STUDENTS$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 ii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ALL\_COURSES\leftarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Retrieve the names and major departments of the students who did not study
+ all the courses that were offered in 2008.
 \end_layout
 
 \begin_layout Section*
@@ -270,6 +345,33 @@ Question 3
 
 \begin_layout Subsection*
 a)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted5.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
