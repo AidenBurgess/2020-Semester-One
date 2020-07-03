@@ -451,7 +451,7 @@ Each pass takes
 
 \begin_layout Standard
 As there are three passes, the sorting takes 
-\begin_inset Formula $38\times3=116\,I/Os$
+\begin_inset Formula $38\times3=114\,I/Os$
 \end_inset
 
  in total.
@@ -472,6 +472,118 @@ ii.
 
 \begin_layout Section*
 Question 4 - Seems tough
+\end_layout
+
+\begin_layout Subsection*
+Nested Loop Join then Nested Loop Join
+\end_layout
+
+\begin_layout Standard
+Assume that joining the smallest relations first leads to lowest cost.
+ Therefore, join y and z.
+\end_layout
+
+\begin_layout Standard
+As z is smaller than y, it will be used in the outer loop.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y\bowtie z=|z|\times\frac{n_{y}}{max(V(C,\,y),\,V(C,\,z),)}=300\times\frac{200}{100}=300\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As y and z have a common key of A, the calculation of 
+\begin_inset Formula $n_{y\bowtie z}$
+\end_inset
+
+ is relatively simple:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $|y\bowtie z|=min(|y|,|z|)=300$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $y\bowtie z$
+\end_inset
+
+ is smaller than x, it will be used in the outer loop.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x\bowtie(y\bowtie z)=|y\bowtie z|\times\frac{n_{x}}{V(A,x)}=300\times\frac{250}{50}=1500\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Total Cost = 
+\begin_inset Formula $300+1500=1800\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Merge Join then Nested Loop Join
+\end_layout
+
+\begin_layout Standard
+As x and z are both clustered on B, then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x\bowtie z=n_{x}+n_{z}=250+150=400\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As x and z have a common key of A, the calculation of 
+\begin_inset Formula $n_{x\bowtie z}$
+\end_inset
+
+ is relatively simple:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n_{x\bowtie z}=min(n_{x},n_{z})=150$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(x\bowtie z)\bowtie y=n_{x\bowtie z}+n_{y}=150+400=550\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Total Cost = 
+\begin_inset Formula $400+550=950\,I/Os$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore, the most optimal cost is by using merge join on x and z, then
+ using nested loop join on the resultant relation with y.
+\end_layout
+
+\begin_layout Standard
+The cost is 950 I/Os.
 \end_layout
 
 \begin_layout Section*
