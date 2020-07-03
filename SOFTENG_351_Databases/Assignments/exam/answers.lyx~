@@ -181,12 +181,70 @@ a)
 i.
 \end_layout
 
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ALTER TABLE COURSE ALTER Department SET DEFAULT 'CS';
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 ii.
 \end_layout
 
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ALTER TABLE STUDENT ADD COLUMN Birt_Date DATE;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 iii.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=SQL"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+UPDATE GRADE_REPORT
+\end_layout
+
+\begin_layout Plain Layout
+
+SET Grade='B'
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE Student_number='17' AND Section_identifier='119';
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -226,11 +284,35 @@ ii.
 \end_layout
 
 \begin_layout Section*
-Question 1
+Question 4
 \end_layout
 
 \begin_layout Section*
-Question 1
+Question 5
+\end_layout
+
+\begin_layout Subsection*
+a)
+\end_layout
+
+\begin_layout Subsection*
+b)
+\end_layout
+
+\begin_layout Subsection*
+c)
+\end_layout
+
+\begin_layout Subsubsection*
+i.
+\end_layout
+
+\begin_layout Subsubsection*
+ii.
+\end_layout
+
+\begin_layout Section*
+Question 6
 \end_layout
 
 \end_body
