@@ -347,8 +347,35 @@ Question 3
 a)
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted5.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
-b)
+b) need to do, seems ok
 \end_layout
 
 \begin_layout Subsubsection*
@@ -360,7 +387,7 @@ ii.
 \end_layout
 
 \begin_layout Section*
-Question 4
+Question 4 - Seems tough
 \end_layout
 
 \begin_layout Section*
@@ -371,8 +398,30 @@ Question 5
 a)
 \end_layout
 
+\begin_layout Standard
+Insert locks using conservative (static) 2PL: A transaction T requests all
+ the shared and exclusive locks needed by T immediately before the first
+ operation of T while a lock of T is Question Sheet SOFTENG 351 7 of 7 released
+ immediately after its final use by T.
+ Explain why conservative (static) 2PL can prevent deadlock, i.e., eventually
+ all transactions can complete.
+\end_layout
+
 \begin_layout Subsection*
 b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted6.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As there is a cycle in the graph, the schedule is not conflict-serializable.
 \end_layout
 
 \begin_layout Subsection*

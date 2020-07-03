@@ -375,7 +375,7 @@ a)
 \end_layout
 
 \begin_layout Subsection*
-b)
+b) need to do, seems ok
 \end_layout
 
 \begin_layout Subsubsection*
@@ -387,7 +387,7 @@ ii.
 \end_layout
 
 \begin_layout Section*
-Question 4
+Question 4 - Seems tough
 \end_layout
 
 \begin_layout Section*
@@ -398,8 +398,30 @@ Question 5
 a)
 \end_layout
 
+\begin_layout Standard
+Insert locks using conservative (static) 2PL: A transaction T requests all
+ the shared and exclusive locks needed by T immediately before the first
+ operation of T while a lock of T is Question Sheet SOFTENG 351 7 of 7 released
+ immediately after its final use by T.
+ Explain why conservative (static) 2PL can prevent deadlock, i.e., eventually
+ all transactions can complete.
+\end_layout
+
 \begin_layout Subsection*
 b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted6.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As there is a cycle in the graph, the schedule is not conflict-serializable.
 \end_layout
 
 \begin_layout Subsection*
@@ -416,6 +438,70 @@ ii.
 
 \begin_layout Section*
 Question 6
+\end_layout
+
+\begin_layout Subsection*
+1
+\end_layout
+
+\begin_layout Standard
+As the transaction has been committed and is included in a checkpoint, no
+ further instructions are needed.
+ No action
+\end_layout
+
+\begin_layout Subsection*
+2 should it be before+after the checkpoint?
+\end_layout
+
+\begin_layout Standard
+Redo all write_item operations of 
+\begin_inset Formula $T_{2}$
+\end_inset
+
+ from the log after the checkpoint, in the order in which they were written
+ into the log, using the REDO procedure.
+\end_layout
+
+\begin_layout Subsection*
+3
+\end_layout
+
+\begin_layout Standard
+Undo all the write_item operations of 
+\begin_inset Formula $T_{3}$
+\end_inset
+
+ using the UNDO procedure before and after the checkpoint.
+ The operations should be undone in the reverse of the order in which they
+ were written to the log.
+\end_layout
+
+\begin_layout Subsection*
+4
+\end_layout
+
+\begin_layout Standard
+Redo all write_item operations of 
+\begin_inset Formula $T_{4}$
+\end_inset
+
+ from the log after the checkpoint, in the order in which they were written
+ into the log, using the REDO procedure.
+\end_layout
+
+\begin_layout Subsection*
+5
+\end_layout
+
+\begin_layout Standard
+Undo all the write_item operations of 
+\begin_inset Formula $T_{5}$
+\end_inset
+
+ using the UNDO procedure after the checkpoint.
+ The operations should be undone in the reverse of the order in which they
+ were written to the log.
 \end_layout
 
 \end_body
